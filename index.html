@@ -1,437 +1,220 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="google-site-verification" content="LE-06LoYiWq6hWWrVJVYyZa16LUcijuwfTQ8EoHmPDs" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="Shane Tools Ultra — free tools, calculators, developer utilities and fitness guides.">
-<title>Shane Tools Ultra</title>
-
+<!-- SHANE TOOLS ULTRA — GLOBAL UPGRADE MODULE -->
 <style>
-:root{color-scheme:dark;--bg:#071426;--panel:#10243b;--line:#29445f;--text:#f2f8ff;--muted:#a8bdd0;--cyan:#00d4ff;--blue:#1677ff}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,Arial,sans-serif;padding-bottom:90px}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer;color:inherit}
-header{position:sticky;top:0;z-index:5;background:#071426f5;border-bottom:1px solid var(--line)}
-.wrap{width:min(1100px,calc(100% - 28px));margin:auto}
-.top{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0}
-.logo{font-size:21px;font-weight:900}.logo span{color:var(--cyan)}
-input,textarea,select{width:100%;padding:12px;background:#071629;color:white;border:1px solid var(--line);border-radius:12px}
-#search{max-width:430px}
-button,.link{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:#142e49;text-decoration:none}
-.primary{background:linear-gradient(100deg,var(--blue),#00aeea);border:0;font-weight:750}
-.hero{margin:22px 0;padding:clamp(22px,5vw,42px);border:1px solid var(--line);border-radius:24px;background:linear-gradient(140deg,#123453,#0b192b)}
-.kicker{color:var(--cyan);font-weight:800;letter-spacing:1.5px;font-size:12px}
-h1{font-size:clamp(34px,7vw,58px);line-height:1.08;margin:14px 0}
-h2{font-size:24px;margin:0 0 5px}
-p,.muted{color:var(--muted)}
-.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
-.section{padding:20px 0}
-.head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.card,.panel{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:14px}
-.card h3{font-size:15px;margin:10px 0 4px}
-.card p{font-size:12px;min-height:36px;margin:0 0 12px}
-.card .row button:first-child{flex:1}
-.ico{width:40px;height:40px;border-radius:12px;background:#173c5b;display:grid;place-items:center;font-size:22px}
-.page[hidden]{display:none!important}
-.filters{display:flex;gap:8px;overflow:auto;padding:3px 0 14px}
-.filters button{white-space:nowrap}
-.filters .selected{background:var(--blue)}
-.adslot{margin:18px 0;padding:14px;text-align:center;border:1px dashed #34506c;border-radius:12px;color:#8ba5bd;font-size:11px;min-height:46px}
-.bottom{position:fixed;z-index:10;bottom:0;left:0;right:0;background:#071426f7;border-top:1px solid var(--line);padding:7px 7px max(7px,env(safe-area-inset-bottom))}
-.nav{width:min(650px,100%);margin:auto;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
-.nav button{border:0;background:transparent;color:var(--muted);font-size:11px;padding:5px 0}
-.nav button span{display:block;font-size:21px}
-.nav button.active{background:#153b59;color:var(--cyan)}
-.modal{display:none;position:fixed;z-index:20;inset:0;padding:14px;background:#020814e8;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.dialog{width:min(580px,100%);max-height:88dvh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
-.dialoghead{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.dialoghead h2{font-size:21px}
-.field{margin:12px 0}
-.field label{display:block;margin-bottom:5px;color:var(--muted)}
-.result{white-space:pre-wrap;overflow-wrap:anywhere;padding:13px;margin:12px 0;background:#071629;border:1px solid var(--line);border-radius:12px;min-height:40px}
-.exercise{width:100%;text-align:left;margin:5px 0}
-.demo{text-align:center;padding:25px 10px;background:radial-gradient(circle,#174c6b,#071426);border-radius:16px}
-.figure{font-size:68px;animation:bob 1.4s ease-in-out infinite alternate}
-@keyframes bob{to{transform:translateY(-8px) rotate(3deg)}}
-footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:12px;margin-top:25px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:540px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:10px}.top #search{order:3;max-width:none;flex-basis:100%}}
+#global-upgrade{color:#f3f8ff}
+#global-upgrade .gu-panel{background:#10243b;border:1px solid #29445f;border-radius:16px;padding:16px;margin:12px 0}
+#global-upgrade input,#global-upgrade select{max-width:100%;background:#071629;color:#fff;border:1px solid #34516b;border-radius:10px;padding:10px}
+#global-upgrade button{background:#173b59;color:#fff;border:1px solid #34516b;border-radius:10px;padding:10px;cursor:pointer}
+#global-upgrade .gu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+#global-upgrade .gu-item{background:#10243b;border:1px solid #29445f;border-radius:13px;padding:12px}
+#global-upgrade .gu-item small{display:block;color:#a8bdd0;margin:5px 0 10px}
+#global-upgrade .gu-primary{background:linear-gradient(100deg,#1677ff,#00bfe8)}
+#global-upgrade .gu-result{overflow-wrap:anywhere;white-space:pre-wrap;margin-top:12px;padding:12px;background:#071629;border-radius:10px}
+#global-upgrade .gu-motion{font-size:64px;text-align:center;animation:guMove 1.3s ease-in-out infinite alternate}
+@keyframes guMove{to{transform:translateY(-9px) rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){#global-upgrade .gu-motion{animation:none}}
 </style>
-</head>
 
-<body>
-<header>
-  <div class="wrap top">
-    <div class="logo">SHANE <span>TOOLS</span></div>
-    <input id="search" type="search" placeholder="Search tools..." aria-label="Search tools">
+<section id="global-upgrade">
+  <div class="gu-panel">
+    <h2>🌍 Global Tools</h2>
+    <p>Choose a region to see relevant utilities and regional formats.</p>
+    <select id="gu-country" aria-label="Choose country">
+      <option value="PK">Pakistan · PKR · DD/MM/YYYY</option>
+      <option value="SA">Saudi Arabia · SAR · Arabic support</option>
+      <option value="US">United States · USD · MM/DD/YYYY</option>
+      <option value="GB">United Kingdom · GBP · DD/MM/YYYY</option>
+      <option value="BH">Bahrain · BHD · Arabic support</option>
+      <option value="AE">United Arab Emirates · AED</option>
+      <option value="CA">Canada · CAD</option>
+      <option value="AU">Australia · AUD</option>
+      <option value="IN">India · INR</option>
+      <option value="GLOBAL">Other countries · Global tools</option>
+    </select>
+    <div class="gu-grid" id="gu-regional"></div>
   </div>
-</header>
 
-<main class="wrap">
-<section id="home" class="page">
-  <div class="hero">
-    <div class="kicker">YOUR DIGITAL TOOLKIT</div>
-    <h1>One hub.<br><span style="color:var(--cyan)">Endless possibilities.</span></h1>
-    <p>Practical tools for developers, students, creators and everyday life.</p>
-    <div class="row">
-      <button class="primary" data-go="tools">Explore tools ↗</button>
-      <button data-go="fitness">Gym 2026</button>
+  <div class="gu-panel">
+    <h2>🎨 Optional Logo Studio</h2>
+    <p>Upload your own logo if you want. It is optional.</p>
+    <input type="file" id="gu-logo-file" accept="image/png,image/jpeg,image/webp">
+    <div id="gu-logo-preview" style="margin:12px 0"></div>
+    <label>Logo size <input id="gu-logo-size" type="range" min="40" max="240" value="100"></label>
+    <div class="gu-result" id="gu-logo-status">No logo selected.</div>
+    <button id="gu-logo-remove">Remove logo</button>
+  </div>
+
+  <div class="gu-panel">
+    <h2>🏋️ Gym 2026</h2>
+    <div class="gu-motion" id="gu-figure">🏃</div>
+    <h3 id="gu-exercise-name">March in place</h3>
+    <p id="gu-exercise-desc">Move gently at a comfortable pace.</p>
+    <div id="gu-clock" style="font-size:32px;font-weight:800">00:30</div>
+    <div class="gu-grid">
+      <button class="gu-primary" id="gu-start">Start</button>
+      <button id="gu-next">Next exercise</button>
+      <button id="gu-reset">Reset</button>
     </div>
+    <p>Animated illustrations are demonstrations, not medical advice or exact human-motion models.</p>
   </div>
-  <div class="adslot">Advertisement</div>
-  <div class="head"><h2>Popular tools</h2><button data-go="tools">View all</button></div>
-  <div id="popular" class="grid"></div>
-</section>
 
-<section id="tools" class="page section" hidden>
-  <h2>All Tools</h2><p>Search, choose a category and open a utility.</p>
-  <div id="filters" class="filters"></div>
-  <div id="toolGrid" class="grid"></div>
-</section>
-
-<section id="fitness" class="page section" hidden>
-  <h2>Gym 2026</h2><p>Beginner-friendly movement timer with animated illustrations.</p>
-  <div class="panel">
-    <div class="demo">
-      <div id="figure" class="figure">🏃</div>
-      <h2 id="exerciseName">March in place</h2>
-      <p id="exerciseDesc">March gently at a comfortable pace.</p>
-      <div id="clock" style="font-size:36px;font-weight:900">00:30</div>
-      <div class="row" style="justify-content:center">
-        <button class="primary" id="workoutStart">Start</button>
-        <button id="workoutReset">Reset</button>
-      </div>
-    </div>
-    <div id="exerciseList"></div>
-    <p>Animations are illustrative, not accurate human-motion demonstrations. Stop if you feel pain or dizziness.</p>
+  <div class="gu-panel">
+    <h2>🧰 Utility Lab</h2>
+    <select id="gu-tool">
+      <option value="word">Word counter</option>
+      <option value="case">Text case converter</option>
+      <option value="slug">URL slug generator</option>
+      <option value="json">JSON formatter</option>
+      <option value="base64">Base64 encoder</option>
+      <option value="url">URL encoder</option>
+      <option value="percent">Percentage calculator</option>
+      <option value="color">HEX colour converter</option>
+    </select>
+    <textarea id="gu-input" rows="4" style="display:block;width:100%;margin-top:10px" placeholder="Enter text, JSON, colour or numbers"></textarea>
+    <button class="gu-primary" id="gu-run" style="margin-top:10px">Run tool</button>
+    <div class="gu-result" id="gu-result" aria-live="polite"></div>
+    <button id="gu-copy">Copy result</button>
   </div>
 </section>
-
-<section id="daily" class="page section" hidden>
-  <h2>Daily Essentials</h2><p>External services open separately and may have their own terms.</p>
-  <div class="grid">
-    <article class="card"><div class="ico">🖼️</div><h3>Photopea</h3><p>Online image editor.</p><a class="link" href="https://www.photopea.com/" target="_blank" rel="noopener">Open ↗</a></article>
-    <article class="card"><div class="ico">📄</div><h3>iLovePDF</h3><p>PDF conversion tools.</p><a class="link" href="https://www.ilovepdf.com/" target="_blank" rel="noopener">Open ↗</a></article>
-    <article class="card"><div class="ico">🚀</div><h3>Speedtest</h3><p>Test connection speed.</p><a class="link" href="https://www.speedtest.net/" target="_blank" rel="noopener">Open ↗</a></article>
-    <article class="card"><div class="ico">✂️</div><h3>Remove.bg</h3><p>Online background removal.</p><a class="link" href="https://www.remove.bg/" target="_blank" rel="noopener">Open ↗</a></article>
-    <article class="card"><div class="ico">🧑‍💻</div><h3>GitHub</h3><p>Code hosting and collaboration.</p><a class="link" href="https://github.com/" target="_blank" rel="noopener">Open ↗</a></article>
-    <article class="card"><div class="ico">📚</div><h3>MDN</h3><p>Web development documentation.</p><a class="link" href="https://developer.mozilla.org/" target="_blank" rel="noopener">Open ↗</a></article>
-  </div>
-</section>
-
-<section id="saved" class="page section" hidden>
-  <h2>Saved Tools</h2><p>Favourites are stored in this browser.</p>
-  <div id="savedGrid" class="grid"></div>
-</section>
-
-<footer>© <span id="year"></span> Shane Tools Ultra · Local utilities run in your browser. External services have separate privacy policies.</footer>
-</main>
-
-<nav class="bottom" aria-label="Main navigation">
-  <div class="nav">
-    <button class="active" data-go="home"><span>⌂</span>Home</button>
-    <button data-go="tools"><span>▦</span>Tools</button>
-    <button data-go="fitness"><span>♧</span>Fitness</button>
-    <button data-go="daily"><span>✦</span>Daily</button>
-    <button data-go="saved"><span>♡</span>Saved</button>
-  </div>
-</nav>
-
-<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="dialog">
-    <div class="dialoghead"><h2 id="modalTitle">Tool</h2><button id="closeModal" aria-label="Close">✕</button></div>
-    <div id="modalContent"></div>
-  </div>
-</div>
 
 <script>
+(function(){
 "use strict";
 const $=id=>document.getElementById(id);
-
-const tools=[
-{id:"word",n:"Word Counter",c:"Text",i:"📝",d:"Count words and characters.",p:1},
-{id:"case",n:"Case Converter",c:"Text",i:"🔠",d:"Convert uppercase and lowercase.",p:1},
-{id:"reverse",n:"Reverse Text",c:"Text",i:"↔️",d:"Reverse text."},
-{id:"slug",n:"Slug Maker",c:"Text",i:"🔗",d:"Make URL-friendly text."},
-{id:"password",n:"Password Generator",c:"Security",i:"🔐",d:"Generate random passwords.",p:1},
-{id:"uuid",n:"UUID Generator",c:"Developer",i:"🧬",d:"Generate a UUID."},
-{id:"json",n:"JSON Formatter",c:"Developer",i:"{ }",d:"Format and validate JSON.",p:1},
-{id:"base64",n:"Base64 Converter",c:"Developer",i:"💻",d:"Encode or decode Base64."},
-{id:"url",n:"URL Encoder",c:"Developer",i:"🌐",d:"Encode or decode URL text."},
-{id:"color",n:"HEX to RGB",c:"Design",i:"🎨",d:"Convert a HEX colour."},
-{id:"bmi",n:"BMI Calculator",c:"Health",i:"⚖️",d:"Calculate adult BMI.",p:1},
-{id:"age",n:"Age Calculator",c:"Calculator",i:"🎂",d:"Calculate age from birth date."},
-{id:"percent",n:"Percentage Calculator",c:"Calculator",i:"％",d:"Calculate percentages.",p:1},
-{id:"discount",n:"Discount Calculator",c:"Calculator",i:"🏷️",d:"Calculate discounted price."},
-{id:"tip",n:"Tip Calculator",c:"Calculator",i:"🧾",d:"Calculate tip and bill split."},
-{id:"interest",n:"Simple Interest",c:"Calculator",i:"💰",d:"Calculate simple interest."},
-{id:"date",n:"Date Difference",c:"Calculator",i:"📅",d:"Calculate days between dates."},
-{id:"notes",n:"Quick Notes",c:"Productivity",i:"📒",d:"Save notes on this device."},
-{id:"focus",n:"Focus Timer",c:"Productivity",i:"⏱️",d:"A 25-minute focus timer."},
-{id:"qr",n:"QR Code Maker",c:"Creator",i:"▦",d:"Create a QR using an external service."}
+const countries={
+ PK:{name:"Pakistan",currency:"PKR",date:"DD/MM/YYYY",locale:"en-PK"},
+ SA:{name:"Saudi Arabia",currency:"SAR",date:"DD/MM/YYYY",locale:"en-SA"},
+ US:{name:"United States",currency:"USD",date:"MM/DD/YYYY",locale:"en-US"},
+ GB:{name:"United Kingdom",currency:"GBP",date:"DD/MM/YYYY",locale:"en-GB"},
+ BH:{name:"Bahrain",currency:"BHD",date:"DD/MM/YYYY",locale:"en-BH"},
+ AE:{name:"United Arab Emirates",currency:"AED",date:"DD/MM/YYYY",locale:"en-AE"},
+ CA:{name:"Canada",currency:"CAD",date:"YYYY-MM-DD",locale:"en-CA"},
+ AU:{name:"Australia",currency:"AUD",date:"DD/MM/YYYY",locale:"en-AU"},
+ IN:{name:"India",currency:"INR",date:"DD/MM/YYYY",locale:"en-IN"},
+ GLOBAL:{name:"Global",currency:"USD",date:"YYYY-MM-DD",locale:"en"}
+};
+const regional=[
+ {name:"Currency format",desc:"Format a number using the selected currency",run:(c)=>new Intl.NumberFormat(c.locale,{style:"currency",currency:c.currency}).format(1234.56)},
+ {name:"Date format",desc:"Display today's date in the selected region",run:(c)=>new Intl.DateTimeFormat(c.locale,{dateStyle:"full"}).format(new Date())},
+ {name:"Number format",desc:"Regional thousands and decimal separators",run:(c)=>new Intl.NumberFormat(c.locale,{maximumFractionDigits:3}).format(1234567.89)},
+ {name:"Time format",desc:"Show the current time in your browser's timezone",run:(c)=>new Intl.DateTimeFormat(c.locale,{timeStyle:"medium"}).format(new Date())}
 ];
-
-let fav=[];
-try{fav=JSON.parse(localStorage.getItem("shane-fav")||"[]")}catch{}
-let category="All",query="";
-$("year").textContent=new Date().getFullYear();
-
-function esc(s){
- return String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-}
-function card(t){
- return `<article class="card">
- <div class="ico">${t.i}</div><h3>${t.n}</h3><p>${t.d}</p>
- <div class="row"><button class="primary" data-open="${t.id}">Open</button>
- <button data-fav="${t.id}" aria-label="Toggle favourite">${fav.includes(t.id)?"♥":"♡"}</button></div></article>`;
-}
-function render(){
- const filtered=tools.filter(t=>(category==="All"||t.c===category)&&(t.n+" "+t.d+" "+t.c).toLowerCase().includes(query.toLowerCase()));
- $("toolGrid").innerHTML=filtered.length?filtered.map(card).join(""):"<p>No matching tools. Try another search.</p>";
- $("popular").innerHTML=tools.filter(t=>t.p).map(card).join("");
- const saved=tools.filter(t=>fav.includes(t.id));
- $("savedGrid").innerHTML=saved.length?saved.map(card).join(""):"<p>No saved tools yet. Tap ♡ on a tool to save it.</p>";
- $("filters").innerHTML=["All",...new Set(tools.map(t=>t.c))].map(c=>`<button data-category="${c}" class="${c===category?"selected":""}">${c}</button>`).join("");
-}
-function go(id){
- document.querySelectorAll(".page").forEach(p=>p.hidden=true);
- $(id).hidden=false;
- document.querySelectorAll("[data-go]").forEach(b=>b.classList.toggle("active",b.dataset.go===id));
- window.scrollTo({top:0,behavior:"smooth"});
-}
-document.addEventListener("click",e=>{
- const goBtn=e.target.closest("[data-go]");
- if(goBtn){go(goBtn.dataset.go);return}
- const cat=e.target.closest("[data-category]");
- if(cat){category=cat.dataset.category;render();return}
- const favBtn=e.target.closest("[data-fav]");
- if(favBtn){
-  const id=favBtn.dataset.fav;
-  fav=fav.includes(id)?fav.filter(x=>x!==id):[...fav,id];
-  try{localStorage.setItem("shane-fav",JSON.stringify(fav))}catch{}
-  render();return;
- }
- const openBtn=e.target.closest("[data-open]");
- if(openBtn)openTool(openBtn.dataset.open);
-});
-$("search").addEventListener("input",e=>{
- query=e.target.value;category="All";go("tools");render();
-});
-$("closeModal").addEventListener("click",closeModal);
-$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-function closeModal(){$("modal").classList.remove("open")}
-function show(title,html){
- $("modalTitle").textContent=title;
- $("modalContent").innerHTML=html;
- $("modal").classList.add("open");
-}
-function field(label,id,type="text",placeholder=""){
- return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}"></div>`;
-}
-function area(label,id,placeholder=""){
- return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" placeholder="${placeholder}"></textarea></div>`;
-}
-function result(s){$("result").textContent=s}
-function copyResult(){
- const s=$("result")?.textContent||"";
- if(!s)return;
- if(navigator.clipboard&&isSecureContext){
-  navigator.clipboard.writeText(s).then(()=>alert("Copied!")).catch(()=>alert("Copy failed. Select the text and copy it manually."));
- }else alert("Select the result and copy it manually.");
-}
-function copyButton(){return '<button data-copy-result>Copy result</button>'}
-document.addEventListener("click",e=>{if(e.target.closest("[data-copy-result]"))copyResult()});
-
-function openTool(id){
- const t=tools.find(x=>x.id===id);if(!t)return;
- let html="";
- switch(id){
- case "word":
- html=area("Text","v","Type or paste text...")+'<div id="stats" class="result">Words: 0 · Characters: 0</div>';
- break;
- case "case":
- html=area("Text","v","Enter text...")+'<div class="row"><button data-action="upper">UPPERCASE</button><button data-action="lower">lowercase</button><button data-action="title">Title Case</button></div><div id="result" class="result"></div>'+copyButton();
- break;
- case "reverse":case "slug":
- html=area("Text","v","Enter text...")+'<button class="primary" data-action="'+id+'">Convert</button><div id="result" class="result"></div>'+copyButton();
- break;
- case "password":
- html=field("Length (8–64)","n","number","16")+'<label><input id="symbols" type="checkbox" checked style="width:auto"> Include symbols</label><button class="primary" data-action="password">Generate password</button><div id="result" class="result"></div>'+copyButton();
- break;
- case "uuid":
- html='<button class="primary" data-action="uuid">Generate UUID</button><div id="result" class="result"></div>'+copyButton();
- break;
- case "json":
- html=area("JSON","v","Paste JSON here...")+'<button class="primary" data-action="json">Format JSON</button><div id="result" class="result"></div>'+copyButton();
- break;
- case "base64":case "url":
- html=area("Input","v","Enter text...")+'<div class="row"><button data-action="'+id+'-encode">Encode</button><button data-action="'+id+'-decode">Decode</button></div><div id="result" class="result"></div>'+copyButton();
- break;
- case "color":
- html=field("HEX colour","v","text","#1677ff")+'<button class="primary" data-action="color">Convert</button><div id="result" class="result"></div>';
- break;
- case "bmi":
- html=field("Weight (kg)","w","number","60")+field("Height (cm)","h","number","170")+'<button class="primary" data-action="bmi">Calculate</button><div id="result" class="result"></div><p>For teenagers, BMI must be interpreted using age-specific guidance. This is not a diagnosis.</p>';
- break;
- case "age":
- html=field("Date of birth","d","date")+'<button class="primary" data-action="age">Calculate age</button><div id="result" class="result"></div>';
- break;
- case "percent":case "discount":case "tip":case "interest":
- html=field("Amount","n","number","1000")+field(id==="interest"?"Annual rate (%)":id==="tip"?"Tip (%)":id==="discount"?"Discount (%)":"Percentage (%)","p","number","10")+(id==="tip"||id==="interest"?field(id==="tip"?"People splitting":"Years","q","number","1"):"")+'<button class="primary" data-action="'+id+'">Calculate</button><div id="result" class="result"></div>';
- break;
- case "date":
- html=field("Start date","a","date")+field("End date","b","date")+'<button class="primary" data-action="date">Calculate days</button><div id="result" class="result"></div>';
- break;
- case "notes":
- html=area("Notes","v","Your notes...")+'<div class="row"><button class="primary" data-action="save-notes">Save</button><button data-action="load-notes">Load</button></div><p>Notes remain in this browser only.</p>';
- break;
- case "focus":
- html='<div id="result" class="result">25:00</div><div class="row"><button class="primary" data-action="focus-toggle">Start / Pause</button><button data-action="focus-reset">Reset</button></div>';
- break;
- case "qr":
- html=field("Text or URL","v","text","https://example.com")+'<button class="primary" data-action="qr">Generate QR</button><div id="qrResult" class="result"></div><p>QR generation uses a third-party service. Do not encode private information.</p>';
- break;
- }
- show(t.n,html);
- if(id==="word")$("v").addEventListener("input",()=>{
-  const s=$("v").value,n=s.trim()?s.trim().split(/\s+/).length:0;
-  $("stats").textContent=`Words: ${n} · Characters: ${s.length} · Reading time: ${Math.max(1,Math.ceil(n/200))} min`;
+function renderRegional(){
+ const code=$("gu-country").value,c=countries[code];
+ $("gu-regional").innerHTML="";
+ regional.forEach(item=>{
+  const el=document.createElement("article");
+  el.className="gu-item";
+  const h=document.createElement("strong");h.textContent=item.name;
+  const p=document.createElement("small");p.textContent=item.desc;
+  const b=document.createElement("button");b.textContent="Use tool";
+  b.addEventListener("click",()=>alert(item.name+": "+item.run(c)));
+  el.append(h,p,b);$("gu-regional").append(el);
  });
- if(id==="notes")$("v").value=localStorage.getItem("shane-notes")||"";
- if(id==="focus")focusRender();
 }
+$("gu-country").addEventListener("change",renderRegional);
+renderRegional();
 
-let focusSeconds=1500,focusTimer=null;
-let workoutIndex=0,workoutSeconds=30,workoutTimer=null;
+/* Optional logo preview. Image is not uploaded to any server. */
+let logoUrl=null;
+$("gu-logo-file").addEventListener("change",()=>{
+ const f=$("gu-logo-file").files[0];
+ if(!f)return;
+ if(!["image/png","image/jpeg","image/webp"].includes(f.type)||f.size>3*1024*1024){
+  $("gu-logo-status").textContent="Choose a PNG, JPEG or WebP image under 3 MB.";
+  $("gu-logo-file").value="";return;
+ }
+ if(logoUrl)URL.revokeObjectURL(logoUrl);
+ logoUrl=URL.createObjectURL(f);
+ const img=document.createElement("img");
+ img.src=logoUrl;img.alt="Your selected logo";
+ img.style.width=$("gu-logo-size").value+"px";
+ img.style.maxWidth="100%";
+ img.style.height="auto";
+ img.style.objectFit="contain";
+ $("gu-logo-preview").replaceChildren(img);
+ $("gu-logo-status").textContent="Logo preview ready. It has not been uploaded.";
+});
+$("gu-logo-size").addEventListener("input",()=>{
+ const img=$("gu-logo-preview").querySelector("img");
+ if(img)img.style.width=$("gu-logo-size").value+"px";
+});
+$("gu-logo-remove").addEventListener("click",()=>{
+ if(logoUrl)URL.revokeObjectURL(logoUrl);
+ logoUrl=null;$("gu-logo-preview").replaceChildren();
+ $("gu-logo-file").value="";$("gu-logo-status").textContent="No logo selected.";
+});
+
+/* Fitness timer: start, pause, next, and reset */
 const exercises=[
  ["🏃","March in place","March gently at a comfortable pace."],
- ["🏋️","Bodyweight squats","Use a comfortable range of movement."],
- ["🙌","Wall push-ups","Push gently against a wall."],
- ["🧍","Standing knee raises","Raise each knee comfortably."],
+ ["🙌","Wall push-ups","Use a wall and a comfortable range of motion."],
+ ["🧍","Standing knee raises","Alternate knees without rushing."],
+ ["🏋️","Bodyweight squats","Use a comfortable range of motion."],
  ["🧘","Rest and breathe","Relax and breathe normally."]
 ];
-function focusRender(){if($("result"))$("result").textContent=String(Math.floor(focusSeconds/60)).padStart(2,"0")+":"+String(focusSeconds%60).padStart(2,"0")}
-function workoutRender(){
- const e=exercises[workoutIndex];
- $("figure").textContent=e[0];$("exerciseName").textContent=e[1];$("exerciseDesc").textContent=e[2];
- $("clock").textContent="00:"+String(workoutSeconds).padStart(2,"0");
- $("exerciseList").innerHTML=exercises.map((x,i)=>`<button class="exercise" data-exercise="${i}">${x[0]} ${x[1]}</button>`).join("");
+let ix=0,seconds=30,timer=null;
+function drawWorkout(){
+ const e=exercises[ix];
+ $("gu-figure").textContent=e[0];
+ $("gu-exercise-name").textContent=e[1];
+ $("gu-exercise-desc").textContent=e[2];
+ $("gu-clock").textContent="00:"+String(seconds).padStart(2,"0");
 }
-function chooseExercise(i){
- clearInterval(workoutTimer);workoutTimer=null;workoutIndex=i;workoutSeconds=30;
- $("workoutStart").textContent="Start";workoutRender();
-}
-$("workoutStart").addEventListener("click",()=>{
- if(workoutTimer){clearInterval(workoutTimer);workoutTimer=null;$("workoutStart").textContent="Resume";return}
- $("workoutStart").textContent="Pause";
- workoutTimer=setInterval(()=>{
-  workoutSeconds--;workoutRender();
-  if(workoutSeconds<=0){clearInterval(workoutTimer);workoutTimer=null;$("workoutStart").textContent="Next exercise";$("workoutStart").onclick=null;}
+function stopWorkout(){if(timer!==null)clearInterval(timer);timer=null;$("gu-start").textContent="Start";}
+function nextWorkout(){stopWorkout();ix=(ix+1)%exercises.length;seconds=30;drawWorkout();}
+$("gu-start").addEventListener("click",()=>{
+ if(timer!==null){stopWorkout();return;}
+ if(seconds<=0){nextWorkout();}
+ $("gu-start").textContent="Pause";
+ timer=setInterval(()=>{
+  seconds--;drawWorkout();
+  if(seconds<=0){stopWorkout();$("gu-start").textContent="Next exercise";}
  },1000);
 });
-$("workoutReset").addEventListener("click",()=>chooseExercise(workoutIndex));
-$("exerciseList").addEventListener("click",e=>{
- const b=e.target.closest("[data-exercise]");if(b)chooseExercise(Number(b.dataset.exercise));
-});
-$("workoutStart").addEventListener("click",function next(){
- if(workoutSeconds<=0)chooseExercise((workoutIndex+1)%exercises.length);
-});
+$("gu-next").addEventListener("click",nextWorkout);
+$("gu-reset").addEventListener("click",()=>{stopWorkout();seconds=30;drawWorkout();});
+drawWorkout();
 
-document.addEventListener("click",e=>{
- const b=e.target.closest("[data-action]");if(!b)return;
- const a=b.dataset.action,s=$("v")?.value||"";
+/* Utility engines */
+let lastResult="";
+function setResult(s){lastResult=String(s);$("gu-result").textContent=lastResult;}
+$("gu-run").addEventListener("click",()=>{
+ const v=$("gu-input").value,tool=$("gu-tool").value;
  try{
-  switch(a){
-   case "upper":result(s.toUpperCase());break;
-   case "lower":result(s.toLowerCase());break;
-   case "title":result(s.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()));break;
-   case "reverse":result(Array.from(s).reverse().join(""));break;
-   case "slug":result(s.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""));break;
-   case "password":{
-    const n=Math.max(8,Math.min(64,Number($("n").value)||16));
-    const chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789"+($("symbols").checked?"!@#$%&*_-+=":"");
-    const bytes=crypto.getRandomValues(new Uint32Array(n));
-    result(Array.from(bytes,x=>chars[x%chars.length]).join(""));break;
+  switch(tool){
+   case "word":{
+    const n=v.trim()?v.trim().split(/\s+/u).length:0;
+    setResult("Words: "+n+"\nCharacters: "+v.length+"\nCharacters without spaces: "+v.replace(/\s/g,"").length);break;
    }
-   case "uuid":result(crypto.randomUUID?crypto.randomUUID():"UUID generation unsupported by this browser.");break;
-   case "json":result(JSON.stringify(JSON.parse(s),null,2));break;
-   case "base64-encode":result(btoa(String.fromCharCode(...new TextEncoder().encode(s))));break;
-   case "base64-decode":result(new TextDecoder().decode(Uint8Array.from(atob(s.trim()),c=>c.charCodeAt(0))));break;
-   case "url-encode":result(encodeURIComponent(s));break;
-   case "url-decode":result(decodeURIComponent(s));break;
+   case "case":setResult(v.toLowerCase().replace(/\b\p{L}/gu,ch=>ch.toUpperCase()));break;
+   case "slug":setResult(v.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""));break;
+   case "json":setResult(JSON.stringify(JSON.parse(v),null,2));break;
+   case "base64":setResult(btoa(Array.from(new TextEncoder().encode(v),b=>String.fromCharCode(b)).join("")));break;
+   case "url":setResult(encodeURIComponent(v));break;
+   case "percent":{
+    const parts=v.split(/[,\s]+/).map(Number);
+    if(parts.length<2||parts.some(n=>!Number.isFinite(n)))throw Error("Enter amount and percentage, e.g. 250, 15");
+    setResult((parts[0]*parts[1]/100).toFixed(2));break;
+   }
    case "color":{
-    let h=s.trim().replace("#","");
-    if(!/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(h))throw Error("Enter a valid HEX colour.");
-    if(h.length===3)h=[...h].map(c=>c+c).join("");
-    const n=parseInt(h,16);result(`#${h.toUpperCase()} → rgb(${n>>16}, ${(n>>8)&255}, ${n&255})`);break;
-   }
-   case "bmi":{
-    const w=Number($("w").value),h=Number($("h").value)/100;
-    if(w<=0||h<=0)throw Error("Enter valid measurements.");
-    result("BMI: "+(w/(h*h)).toFixed(1));break;
-   }
-   case "age":{
-    const d=new Date($("d").value),now=new Date();
-    if(isNaN(d)||d>now)throw Error("Choose a valid date in the past.");
-    let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth();
-    if(now.getDate()<d.getDate())m--;if(m<0){y--;m+=12}
-    result(`${y} years and ${m} months approximately.`);break;
-   }
-   case "percent":case "discount":case "tip":case "interest":{
-    const n=Number($("n").value),p=Number($("p").value),q=Number($("q")?.value||1);
-    if(!Number.isFinite(n)||!Number.isFinite(p))throw Error("Enter valid numbers.");
-    if(a==="percent")result((n*p/100).toFixed(2));
-    if(a==="discount")result(`Savings: ${(n*p/100).toFixed(2)}\nFinal price: ${(n-n*p/100).toFixed(2)}`);
-    if(a==="tip"){if(q<1)throw Error("People must be at least 1.");result(`Tip: ${(n*p/100).toFixed(2)}\nTotal: ${(n+n*p/100).toFixed(2)}\nPer person: ${((n+n*p/100)/q).toFixed(2)}`)}
-    if(a==="interest"){if(q<0)throw Error("Years cannot be negative.");result(`Interest: ${(n*p*q/100).toFixed(2)}\nTotal: ${(n+n*p*q/100).toFixed(2)}`)}
-    break;
-   }
-   case "date":{
-    const x=new Date($("a").value),y=new Date($("b").value);
-    if(isNaN(x)||isNaN(y))throw Error("Choose both dates.");
-    result(Math.round(Math.abs(y-x)/86400000)+" days");break;
-   }
-   case "save-notes":localStorage.setItem("shane-notes",s);alert("Saved on this device.");break;
-   case "load-notes":$("v").value=localStorage.getItem("shane-notes")||"";break;
-   case "focus-toggle":
-    if(focusTimer){clearInterval(focusTimer);focusTimer=null}
-    else{focusTimer=setInterval(()=>{if(focusSeconds>0)focusSeconds--;focusRender();if(!focusSeconds){clearInterval(focusTimer);focusTimer=null;alert("Focus session complete.")}},1000)}
-    break;
-   case "focus-reset":clearInterval(focusTimer);focusTimer=null;focusSeconds=1500;focusRender();break;
-   case "qr":{
-    if(!s.trim())throw Error("Enter text or a URL.");
-    const img=document.createElement("img");
-    img.alt="QR code";img.width=220;img.height=220;img.style.maxWidth="100%";img.style.background="white";img.style.padding="6px";
-    img.src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="+encodeURIComponent(s);
-    $("qrResult").replaceChildren(img);break;
+    let h=v.trim().replace("#","");
+    if(!/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(h))throw Error("Enter HEX such as #00AEEF");
+    if(h.length===3)h=[...h].map(x=>x+x).join("");
+    const n=parseInt(h,16);
+    setResult("#"+h.toUpperCase()+"\nrgb("+[n>>16,(n>>8)&255,n&255].join(", ")+")");break;
    }
   }
- }catch(err){if($("result"))result("Error: "+err.message)}
+ }catch(e){setResult("Could not process input: "+e.message);}
 });
-render();workoutRender();
+$("gu-copy").addEventListener("click",async()=>{
+ if(!lastResult)return;
+ try{
+  if(!navigator.clipboard||!isSecureContext)throw Error("Clipboard API unavailable");
+  await navigator.clipboard.writeText(lastResult);
+  $("gu-copy").textContent="Copied!";
+  setTimeout(()=>$("gu-copy").textContent="Copy result",1500);
+ }catch(e){alert("Copy is unavailable in this browser. Select the result and copy it manually.");}
+});
+})();
 </script>
-
-<!-- Monetag on-click zone: original publisher code and zone ID -->
-<script>
-(function(s){
-  s.dataset.zone='12088071';
-  s.src='https://al5sm.com/tag.min.js';
-})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-</script>
-
-<!-- Monetag in-page push zone: original publisher code and zone ID -->
-<script>
-(function(s){
-  s.dataset.zone='12088232';
-  s.src='https://nap5k.com/tag.min.js';
-})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-</script>
-</body>
-</html>
