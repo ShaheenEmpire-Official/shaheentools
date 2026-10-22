@@ -1,540 +1,927 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
- <!-- Open Graph Tags for WhatsApp Preview -->
-<meta property="og:title" content="Shaheen Tools Ultra" />
-<meta property="og:description" content="Free tools, calculators, developer utilities and fitness guides created by Abdul Basit." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://shaheentools.vercel.app/" />
-<meta property="og:image" content="https://shaheentools.vercel.app/favicon.ico" />
- 
- <!-- Title & Meta Description -->
-<title>Shaheen Tools Ultra - Free Tools & Developer Utilities</title>
-<meta name="description" content="Shaheen Tools Ultra created by Abdul Basit. Practical free tools, calculators, developer utilities, and guides.">
-<meta name="author" content="Abdul Basit">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="SHAHEEN is a practical digital workspace with free online tools, study helpers, focus sessions, daily planning and gentle movement breaks.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://shaheentools.vercel.app/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>SHAHEEN — Free Online Tools & Everyday Workspace</title>
 
-<!-- Google Developer Schema Markup -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SHAHEEN">
+<meta property="og:title" content="SHAHEEN — Free Online Tools & Everyday Workspace">
+<meta property="og:description" content="Useful free tools, study helpers, focus sessions, daily planning and more in one mobile-friendly workspace.">
+<meta property="og:url" content="https://shaheentools.vercel.app/">
+<meta property="og:image" content="https://shaheentools.vercel.app/shaheen-og.png">
+<meta property="og:image:alt" content="SHAHEEN digital workspace preview">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SHAHEEN — Free Online Tools & Everyday Workspace">
+<meta name="twitter:description" content="Useful free tools, study helpers, focus sessions, daily planning and more.">
+<meta name="twitter:image" content="https://shaheentools.vercel.app/shaheen-og.png">
+
+<!-- Google Search Console: paste Google's exact verification meta tag here after verification setup. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Shaheen Tools Ultra",
-  "alternateName": "Shaheen Tools",
+  "name": "SHAHEEN",
   "url": "https://shaheentools.vercel.app/",
-  "author": {
-    "@type": "Person",
-    "name": "Abdul Basit",
-    "jobTitle": "Software Developer"
-  }
+  "description": "A practical digital workspace for free tools, study, planning and focus.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shaheen Tools Team"
+  },
+  "inLanguage": "en"
 }
 </script>
- 
- 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="Shane Tools Ultra — free global tools, calculators, developer utilities, design tools and fitness guides.">
-<title>Shane Tools Ultra — Global Digital Toolkit</title>
 
-<!-- Monetag OnClick zone: original publisher code. Load once. -->
-<script>(function(s){s.dataset.zone='12088071';s.src='https://al5sm.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<!-- Monetag OnClick zone 12088071: included once. -->
+<script>(function(s){s.dataset.zone='12088071';s.src='https://al5sm.com/tag.min.js'})(document.head.appendChild(document.createElement('script')))</script>
 
-<!-- Monetag In-Page Push zone: original publisher code. Load once. -->
-<script>(function(s){s.dataset.zone='12088232';s.src='https://nap5k.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<!-- Monetag In-Page Push zone 12088232: included once. -->
+<script>(function(s){s.dataset.zone='12088232';s.src='https://nap5k.com/tag.min.js'})(document.head.appendChild(document.createElement('script')))</script>
 
 <style>
-:root{color-scheme:dark;--bg:#071426;--panel:#10243b;--panel2:#142e49;--line:#29445f;--text:#f2f8ff;--muted:#a8bdd0;--cyan:#00d4ff;--blue:#1677ff;--radius:17px}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,Arial,sans-serif;padding-bottom:88px}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer;color:inherit}
-a{color:var(--cyan)}
-button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.wrap{width:min(1120px,calc(100% - 28px));margin:auto}
-header{position:sticky;top:0;z-index:10;background:#071426f5;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
-.top{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;flex-wrap:wrap}
-.logo{font-size:22px;font-weight:950;letter-spacing:-.8px}
-.logo span,.cyan{color:var(--cyan)}
-#search{width:min(430px,100%)}
-input,textarea,select{width:100%;background:#071629;color:white;border:1px solid var(--line);border-radius:11px;padding:12px}
-textarea{resize:vertical;min-height:120px}
-button,.btn{border:1px solid var(--line);border-radius:11px;padding:10px 13px;background:var(--panel2);text-decoration:none;display:inline-block}
-.primary{background:linear-gradient(100deg,var(--blue),#00aeea);border:0;font-weight:800}
-.hero{margin:22px 0;padding:clamp(22px,5vw,44px);border:1px solid var(--line);border-radius:25px;background:radial-gradient(ellipse at top right,#17466b,transparent 65%),linear-gradient(145deg,#102c48,#091729)}
-.kicker{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:900}
-h1{font-size:clamp(35px,7vw,62px);line-height:1.06;letter-spacing:-2px;margin:15px 0}
-h2{font-size:24px;line-height:1.25;margin:0 0 9px}
-h3{font-size:16px;margin:8px 0}
-p{color:var(--muted)}
-.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
-.section{padding:20px 0}
-.page[hidden]{display:none!important}
-.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.card,.panel{min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);padding:14px}
-.card h3{overflow-wrap:anywhere}
-.card p{font-size:12px;min-height:37px;margin:4px 0 12px}
-.card .row button:first-child{flex:1}
-.ico{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#173d5b;font-size:23px}
-.filters{display:flex;gap:8px;overflow-x:auto;padding:5px 0 15px}
-.filters button{white-space:nowrap}
-.filters .selected{background:var(--blue)}
-.adslot{margin:18px 0;min-height:48px;border:1px dashed #34516b;border-radius:12px;display:grid;place-items:center;color:#819bb4;font-size:11px}
-.bottom{position:fixed;z-index:15;bottom:0;left:0;right:0;background:#071426f7;border-top:1px solid var(--line);padding:7px 7px max(7px,env(safe-area-inset-bottom));backdrop-filter:blur(14px)}
-.nav{width:min(720px,100%);margin:auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
-.nav button{border:0;background:transparent;color:var(--muted);font-size:10px;padding:6px 0}
-.nav button span{display:block;font-size:21px}
-.nav button.active{background:#153b59;color:var(--cyan)}
-.field{margin:12px 0}
-.field label{display:block;color:var(--muted);margin-bottom:5px}
-.result{white-space:pre-wrap;overflow-wrap:anywhere;background:#061222;border:1px solid var(--line);border-radius:12px;padding:13px;min-height:45px;margin:12px 0}
-.modal{display:none;position:fixed;z-index:30;inset:0;padding:14px;background:#020814e8;align-items:center;justify-content:center}
-.modal.open{display:flex}
-.dialog{width:min(650px,100%);max-height:90dvh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
-.dialoghead{display:flex;justify-content:space-between;gap:10px;align-items:center}
-.dialoghead h2{font-size:21px}
-.demo{padding:22px 12px;text-align:center;border-radius:17px;background:radial-gradient(circle,#174c6b,#071426)}
-.figure{font-size:68px;animation:bob 1.3s ease-in-out infinite alternate}
-@keyframes bob{to{transform:translateY(-8px) rotate(4deg)}}
-.exercise{width:100%;text-align:left;margin:4px 0}
-footer{border-top:1px solid var(--line);margin-top:25px;padding:22px 0;color:var(--muted);font-size:12px}
-@media(max-width:780px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:10px}.top #search{order:3;flex-basis:100%;width:100%}.nav button{font-size:9px}.nav button span{font-size:20px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+:root {
+  --bg:#071426; --bg2:#0b1c31; --panel:#0e233a; --panel2:#132c47;
+  --text:#f1f7ff; --muted:#9fb4ca; --line:rgba(190,220,255,.14);
+  --cyan:#41dcff; --blue:#4778ff; --green:#59df9a; --gold:#ffd178;
+  --red:#ff9292; --shadow:0 18px 54px rgba(0,0,0,.24);
+  --r:19px; --max:1280px;
+}
+* { box-sizing:border-box }
+html { scroll-behavior:smooth }
+body {
+  margin:0;
+  background:radial-gradient(ellipse at 15% -8%,rgba(37,123,202,.20),transparent 42%),var(--bg);
+  color:var(--text);
+  font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  min-height:100vh;
+}
+body.light {
+  --bg:#f2f7fc; --bg2:#e7f0fb; --panel:#fff; --panel2:#f4f8fd;
+  --text:#13243b; --muted:#5c718a; --line:rgba(25,55,90,.15);
+  --shadow:0 16px 42px rgba(26,55,86,.10);
+  background:linear-gradient(130deg,#eff7ff,#f9fbff 55%,#ebfaff);
+}
+button,input,select,textarea { font:inherit }
+button { cursor:pointer }
+button:disabled { opacity:.55;cursor:not-allowed }
+a { color:inherit }
+img { max-width:100% }
+[hidden] { display:none!important }
+button:focus-visible,a:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible {
+  outline:3px solid var(--cyan);outline-offset:3px;
+}
+.muted { color:var(--muted) }
+.small { font-size:.88rem }
+.tiny { font-size:.76rem }
+.eyebrow {
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;
+  font-weight:850;color:var(--cyan);
+}
+h1,h2,h3,p { margin-top:0 }
+h1 { font-size:clamp(2.1rem,5.2vw,4.3rem);line-height:1.03;letter-spacing:-.048em;margin-bottom:15px }
+h2 { font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-.025em;margin-bottom:7px }
+h3 { font-size:1.03rem;margin-bottom:7px }
+
+.shell { max-width:var(--max);margin:auto;padding:20px 22px 100px }
+.topbar { display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:20px }
+.brand { display:flex;gap:11px;align-items:center;min-width:150px }
+.brand-mark {
+  width:47px;height:47px;border-radius:15px;border:1px solid rgba(65,220,255,.4);
+  display:grid;place-items:center;background:linear-gradient(135deg,rgba(65,220,255,.18),rgba(71,120,255,.2));
+  color:var(--cyan);font-size:1.6rem;font-weight:1000;overflow:hidden;
+}
+.brand-mark img { width:100%;height:100%;object-fit:cover }
+.brand-name { font-size:1.15rem;font-weight:1000;letter-spacing:.16em }
+.brand-sub { font-size:.72rem;color:var(--muted) }
+.top-actions { display:flex;align-items:center;gap:8px }
+.searchbar {
+  display:flex;align-items:center;gap:9px;flex:1;max-width:490px;min-width:130px;
+  border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  padding:0 12px;min-height:46px;
+}
+.searchbar input {
+  width:100%;min-width:0;border:0!important;outline:0!important;
+  padding:8px 0!important;background:transparent!important;color:var(--text);
+}
+.searchbar span { color:var(--muted) }
+.icon-btn,.btn,.nav-btn,.card,.chip {
+  border:1px solid var(--line);background:var(--panel);color:var(--text);
+  border-radius:12px;transition:transform .15s,border-color .15s,background .15s;
+}
+.icon-btn { height:42px;min-width:42px;display:grid;place-items:center }
+.btn { padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:750 }
+.btn.primary { background:linear-gradient(110deg,var(--blue),#286de0);border-color:transparent;color:white;box-shadow:0 8px 22px rgba(44,111,232,.22) }
+.btn.ghost { background:transparent }
+.btn:hover,.icon-btn:hover,.nav-btn:hover,.card:hover,.chip:hover {
+  border-color:rgba(65,220,255,.6);transform:translateY(-1px);
+}
+select,input,textarea {
+  background:var(--bg2);color:var(--text);border:1px solid var(--line);
+  border-radius:10px;padding:10px 11px;max-width:100%;
+}
+input[type=number],input[type=text],input[type=date],input[type=datetime-local],textarea { width:100% }
+textarea { min-height:115px;resize:vertical }
+
+.layout { display:grid;grid-template-columns:205px minmax(0,1fr);gap:21px }
+.sidebar {
+  position:sticky;top:15px;align-self:start;background:rgba(12,31,53,.72);
+  border:1px solid var(--line);border-radius:19px;padding:10px;backdrop-filter:blur(16px);
+}
+body.light .sidebar { background:rgba(255,255,255,.8) }
+.nav-label { font-size:.67rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:10px 11px 6px }
+.nav-list { display:grid;gap:5px }
+.nav-btn { display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:10px 11px;background:transparent;border-color:transparent;color:var(--muted);font-weight:720 }
+.nav-icon { width:22px;text-align:center;font-size:1.08rem }
+.nav-btn.active { color:var(--text);border-color:rgba(65,220,255,.25);background:linear-gradient(90deg,rgba(65,220,255,.13),rgba(71,120,255,.08)) }
+.side-note { font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding:13px 9px 7px;margin-top:12px }
+.main { min-width:0 }
+.page { animation:appear .18s ease }
+@keyframes appear { from{opacity:.6;transform:translateY(3px)}to{opacity:1;transform:translateY(0)} }
+
+.hero {
+  position:relative;overflow:hidden;border-radius:25px;padding:clamp(24px,4vw,44px);
+  border:1px solid rgba(65,220,255,.24);background:linear-gradient(120deg,#12365a,#0d223c 62%,#163b5e);
+  box-shadow:var(--shadow);margin-bottom:18px;
+}
+.hero:after {
+  content:"S";position:absolute;right:3%;top:-40%;font-size:clamp(13rem,28vw,25rem);
+  font-weight:1000;color:rgba(65,220,255,.05);pointer-events:none;
+}
+.hero-inner { max-width:750px;position:relative;z-index:1 }
+.hero p { color:#c3d8eb;max-width:680px;font-size:1.02rem }
+.hero-actions { display:flex;flex-wrap:wrap;gap:9px;margin-top:20px }
+.tags { display:flex;gap:7px;flex-wrap:wrap;margin-top:18px }
+.tag { border:1px solid rgba(195,223,255,.17);background:rgba(5,20,38,.24);color:#d1e4f4;border-radius:99px;padding:5px 9px;font-size:.75rem }
+.section-head { display:flex;justify-content:space-between;align-items:end;gap:12px;margin:25px 0 13px }
+.section-head p { margin:0 }
+.stats { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:17px }
+.stat { padding:14px;border:1px solid var(--line);border-radius:15px;background:var(--panel) }
+.stat strong { display:block;font-size:1.5rem;letter-spacing:-.04em }
+.stat span { font-size:.77rem;color:var(--muted) }
+.daily-callout { display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(110deg,rgba(50,116,218,.14),rgba(65,220,255,.07));border:1px solid rgba(65,220,255,.19);border-radius:16px;padding:16px }
+.daily-callout p { margin:4px 0 0;color:var(--muted);font-size:.86rem }
+.grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px }
+.grid.two { grid-template-columns:repeat(2,minmax(0,1fr)) }
+.card { min-width:0;min-height:155px;padding:15px;text-align:left;display:flex;flex-direction:column;gap:9px;position:relative }
+.cardtop { display:flex;align-items:center;justify-content:space-between;gap:8px }
+.tool-icon { width:41px;height:41px;border-radius:13px;border:1px solid rgba(65,220,255,.16);background:linear-gradient(140deg,rgba(65,220,255,.14),rgba(71,120,255,.16));display:grid;place-items:center;font-size:1.28rem }
+.card h3 { margin:0 }
+.card p { font-size:.81rem;color:var(--muted);margin:0 }
+.cardbottom { margin-top:auto;font-size:.76rem;color:var(--cyan);font-weight:800 }
+.fav { border:0;background:transparent;color:var(--muted);font-size:1.2rem;padding:3px }
+.fav.on { color:var(--gold) }
+.panel { background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:19px;box-shadow:var(--shadow) }
+.ad-slot { min-height:82px;margin:20px 0;padding:16px;border:1px dashed var(--line);border-radius:14px;background:rgba(120,150,180,.03);display:grid;align-content:center;gap:4px;text-align:center }
+.ad-label { font-size:.63rem;font-weight:850;letter-spacing:.16em;color:var(--muted) }
+.ad-slot p { margin:0;font-size:.77rem;color:var(--muted) }
+.filters { display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 }
+.chip { font-size:.78rem;padding:7px 11px;color:var(--muted) }
+.chip.active { background:rgba(65,220,255,.12);color:var(--text);border-color:rgba(65,220,255,.45) }
+.toolbar { display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:13px 0 }
+.field { display:grid;gap:5px;margin-bottom:13px }
+.field label { font-size:.84rem;font-weight:740 }
+.field small { font-size:.76rem;color:var(--muted) }
+.field-row { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px }
+.result { white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid rgba(65,220,255,.24);background:rgba(65,220,255,.05);padding:14px;border-radius:12px;margin:13px 0;min-height:52px }
+.result img { max-width:100% }
+.list { display:grid;gap:8px }
+.list-row { display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px }
+.grow { flex:1;min-width:0 }
+.list-row p { margin:3px 0 0;color:var(--muted);font-size:.78rem }
+.empty { grid-column:1/-1;border:1px dashed var(--line);border-radius:14px;padding:25px;text-align:center;color:var(--muted) }
+.clockgrid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px }
+.clock { background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:12px }
+.clock strong { display:block;font-variant-numeric:tabular-nums;font-size:1.15rem }
+.clock span { font-size:.75rem;color:var(--muted) }
+.timer { text-align:center }
+.timer-ring { height:min(72vw,310px);width:min(72vw,310px);border-radius:50%;border:9px solid rgba(65,220,255,.13);border-top-color:var(--cyan);border-right-color:var(--blue);display:grid;place-items:center;margin:22px auto;box-shadow:inset 0 0 35px rgba(65,220,255,.07) }
+.timer-ring.running { animation:spin 18s linear infinite }
+@keyframes spin { to{transform:rotate(360deg)} }
+.timer-ring .timer-content { animation:unspin 18s linear infinite }
+@keyframes unspin { to{transform:rotate(-360deg)} }
+.timer-display { font-size:clamp(3.4rem,10vw,5.8rem);font-weight:1000;letter-spacing:-.07em;font-variant-numeric:tabular-nums;line-height:1.1 }
+.exercise-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px }
+.exercise { background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px }
+.exercise-art { height:100px;border-radius:12px;background:linear-gradient(145deg,rgba(65,220,255,.08),rgba(71,120,255,.09));display:grid;place-items:center;margin-bottom:11px;font-size:2.3rem }
+.exercise-art span { display:inline-block;animation:gentleMove 2.5s ease-in-out infinite alternate }
+.exercise:nth-child(2n) .exercise-art span { animation-delay:.4s }
+.exercise:nth-child(3n) .exercise-art span { animation-delay:.8s }
+@keyframes gentleMove { from{transform:translateY(4px) rotate(-4deg)}to{transform:translateY(-6px) rotate(4deg)} }
+.exercise p,.exercise li { font-size:.79rem;color:var(--muted) }
+.check { width:18px;height:18px;accent-color:var(--cyan) }
+.flashcard { width:100%;min-height:155px;padding:22px;border:1px solid rgba(65,220,255,.25);background:linear-gradient(135deg,rgba(65,220,255,.09),rgba(71,120,255,.12));border-radius:15px;color:var(--text);font-size:1.1rem;font-weight:760 }
+.notice { border-left:3px solid var(--cyan);background:rgba(65,220,255,.045);padding:9px 12px;border-radius:0 9px 9px 0;color:var(--muted);font-size:.8rem }
+.footer { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:var(--muted);font-size:.77rem }
+.footer button { border:0;background:none;color:var(--muted);text-decoration:underline;padding:0 }
+.modal-backdrop { position:fixed;inset:0;z-index:60;background:rgba(0,8,20,.78);backdrop-filter:blur(8px);display:grid;place-items:center;padding:14px }
+.modal { width:min(700px,100%);max-height:91vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.5) }
+.modal-head { position:sticky;top:0;z-index:2;background:var(--panel);border-bottom:1px solid var(--line);padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px }
+.modal-head h2 { font-size:1.1rem;margin:0 }
+.modal-body { padding:18px }
+.close { height:36px;width:36px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text);font-size:1.2rem }
+.toast { position:fixed;left:50%;bottom:88px;z-index:100;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#effcff;color:#09233b;border-radius:11px;padding:10px 15px;font-weight:800;max-width:90vw;text-align:center;box-shadow:var(--shadow);transition:.2s }
+.toast.show { opacity:1;transform:translate(-50%,0) }
+.bottom-nav { display:none }
+.logo-file { display:none }
+.exercise-timer { font-size:.8rem;color:var(--cyan) }
+.visual-contrast { padding:20px;text-align:center;border-radius:12px;margin:10px 0 }
+
+@media(max-width:1000px) {
+  .layout { grid-template-columns:175px minmax(0,1fr) }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .exercise-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+}
+@media(max-width:720px) {
+  .shell { padding:12px 12px 95px }
+  .topbar { gap:8px;flex-wrap:wrap }
+  .brand-mark { width:41px;height:41px }
+  .brand-sub { display:none }
+  .top-actions { margin-left:auto }
+  .top-actions .optional { display:none }
+  .searchbar { order:3;max-width:none;flex-basis:100% }
+  .layout { display:block }
+  .sidebar { display:none }
+  .hero { padding:24px 19px }
+  .hero p { font-size:.96rem }
+  .grid,.grid.two { grid-template-columns:repeat(2,minmax(0,1fr));gap:9px }
+  .card { padding:12px;min-height:150px }
+  .card p { font-size:.77rem }
+  .tool-icon { width:37px;height:37px }
+  .stats { gap:7px }
+  .stat { padding:11px }
+  .stat strong { font-size:1.2rem }
+  .stat span { font-size:.7rem }
+  .section-head { align-items:start }
+  .daily-callout { align-items:flex-start }
+  .clockgrid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .field-row { grid-template-columns:1fr }
+  .bottom-nav {
+    display:grid;position:fixed;z-index:30;left:8px;right:8px;
+    bottom:max(7px,env(safe-area-inset-bottom));
+    grid-template-columns:repeat(5,minmax(0,1fr));padding:6px;
+    background:rgba(7,22,40,.94);border:1px solid rgba(160,206,245,.22);
+    border-radius:17px;backdrop-filter:blur(22px);box-shadow:0 14px 45px rgba(0,0,0,.35);
+  }
+  body.light .bottom-nav { background:rgba(255,255,255,.95) }
+  .bottom-nav .nav-btn { display:grid;justify-items:center;text-align:center;gap:1px;padding:6px 2px;font-size:.62rem }
+  .bottom-nav .nav-icon { width:auto;font-size:1.06rem }
+  .bottom-nav .nav-btn.active { color:var(--cyan);background:rgba(65,220,255,.1) }
+  .exercise-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .footer { padding-bottom:10px }
+}
+@media(max-width:420px) {
+  .grid,.grid.two,.exercise-grid { grid-template-columns:1fr }
+  .card { min-height:130px }
+  .brand-name { font-size:1.02rem }
+  .hero-actions .btn { flex:1 }
+  .timer-ring { height:78vw;width:78vw }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important }
+}
 </style>
 </head>
-
 <body>
-<header>
- <div class="wrap top">
-  <div class="logo">SHANE <span>TOOLS</span></div>
-  <input id="search" type="search" placeholder="Search 500 tools..." aria-label="Search tools">
- </div>
+<div class="shell">
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" id="brandMark" aria-label="SHAHEEN logo">S</div>
+    <div><div class="brand-name">SHAHEEN</div><div class="brand-sub">Useful things. One workspace.</div></div>
+  </div>
+  <div class="searchbar" role="search">
+    <span aria-hidden="true">⌕</span>
+    <input id="globalSearch" type="search" placeholder="Search 51 tools and daily features…" aria-label="Search SHAHEEN">
+    <button class="icon-btn" id="searchGo" title="Search">↵</button>
+  </div>
+  <div class="top-actions">
+    <select id="regionSelect" aria-label="Choose region" title="Regional formats">
+      <option value="global">Global</option><option value="pk">Pakistan</option>
+      <option value="sa">Saudi Arabia</option><option value="us">United States</option>
+      <option value="uk">United Kingdom</option><option value="bh">Bahrain</option>
+      <option value="ae">UAE</option><option value="ca">Canada</option>
+      <option value="au">Australia</option><option value="in">India</option>
+    </select>
+    <button class="icon-btn optional" id="shareBtn" aria-label="Share website" title="Share">↗</button>
+    <button class="icon-btn optional" id="logoBtn" aria-label="Upload logo" title="Use your logo">▧</button>
+    <input id="logoFile" class="logo-file" type="file" accept="image/png,image/jpeg,image/webp">
+    <button class="icon-btn" id="themeBtn" aria-label="Switch theme" title="Theme">☼</button>
+  </div>
 </header>
 
-<main class="wrap">
-<section id="home" class="page">
- <div class="hero">
-  <div class="kicker">YOUR GLOBAL DIGITAL TOOLKIT</div>
-  <h1>One hub.<br><span class="cyan">Endless possibilities.</span></h1>
-  <p>Free browser utilities for students, developers, creators, businesses and everyday life.</p>
-  <div class="row">
-   <button class="primary" data-go="tools">Explore tools ↗</button>
-   <button data-go="gym">Gym 2026</button>
+<div class="layout">
+<aside class="sidebar">
+  <div class="nav-label">Workspace</div>
+  <nav class="nav-list" aria-label="Main navigation">
+    <button class="nav-btn active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
+    <button class="nav-btn" data-page="tools"><span class="nav-icon">▦</span>All tools</button>
+    <button class="nav-btn" data-page="focus"><span class="nav-icon">◷</span>Focus room</button>
+    <button class="nav-btn" data-page="study"><span class="nav-icon">✎</span>Study room</button>
+    <button class="nav-btn" data-page="gym"><span class="nav-icon">↗</span>Gym 2026</button>
+    <button class="nav-btn" data-page="daily"><span class="nav-icon">✓</span>Daily desk</button>
+    <button class="nav-btn" data-page="saved"><span class="nav-icon">☆</span>Saved</button>
+    <button class="nav-btn" data-page="about"><span class="nav-icon">ⓘ</span>About & privacy</button>
+  </nav>
+  <div class="side-note"><strong>Built for usefulness.</strong><br>Take breaks. Keep your data under your control.</div>
+</aside>
+
+<main class="main" id="main">
+<section class="page" id="page-home">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Your everyday digital workspace</div>
+      <h1>Make space for<br><span style="color:var(--cyan)">better ideas.</span></h1>
+      <p>Explore practical text, number, file and planning utilities, learn something small, and take a mindful break—all in one mobile-friendly workspace.</p>
+      <div class="hero-actions">
+        <button class="btn primary" data-go="tools">Explore tools →</button>
+        <button class="btn" data-go="study">Open study room</button>
+        <button class="btn ghost" data-go="focus">Start focus session</button>
+      </div>
+      <div class="tags">
+        <span class="tag">51 core tools</span><span class="tag">10 regional formats</span>
+        <span class="tag">Local-first personal notes</span><span class="tag">Phone-friendly</span>
+      </div>
+    </div>
   </div>
-  <p id="toolCount">Loading tools...</p>
- </div>
- <div class="adslot">Advertisement</div>
- <div class="head"><h2>Popular tools</h2><button data-go="tools">View all</button></div>
- <div class="grid" id="popular"></div>
- <div class="panel" style="margin-top:18px">
-  <h2>Built for the world 🌍</h2>
-  <p>Country-aware date, number and currency formatting, useful local formats and tools that work across devices.</p>
-  <button class="primary" data-go="global">Explore global tools</button>
- </div>
-</section>
 
-<section id="tools" class="page section" hidden>
- <h2>All Tools</h2>
- <p>Search the catalogue or filter by category. Tool variations use regional settings where applicable.</p>
- <div id="filters" class="filters"></div>
- <div id="toolGrid" class="grid"></div>
- <p id="toolStatus"></p>
-</section>
-
-<section id="gym" class="page section" hidden>
- <h2>Gym 2026</h2>
- <p>Simple timed movements with animated illustrations. Start at a comfortable pace.</p>
- <div class="panel">
-  <div class="demo">
-   <div class="figure" id="figure">🏃</div>
-   <h2 id="exerciseName">March in place</h2>
-   <p id="exerciseDesc">March gently at a comfortable pace.</p>
-   <div id="clock" style="font-size:38px;font-weight:900">00:30</div>
-   <div class="row" style="justify-content:center">
-    <button class="primary" id="gymStart">Start</button>
-    <button id="gymNext">Next</button>
-    <button id="gymReset">Reset</button>
-   </div>
+  <div class="stats">
+    <div class="stat"><strong id="toolCount">51</strong><span>Core tools</span></div>
+    <div class="stat"><strong id="regionCount">510</strong><span>Tool-region combinations</span></div>
+    <div class="stat"><strong id="doneCount">0</strong><span>Tasks done today</span></div>
   </div>
-  <div id="exerciseList" style="margin-top:15px"></div>
-  <p>These animations are illustrative, not exact human-motion demonstrations. Stop if you feel pain, dizziness or unusual discomfort.</p>
- </div>
+
+  <div class="daily-callout">
+    <div><div class="eyebrow">Small daily challenge</div><h3 id="challengeTitle" style="margin:5px 0 0">Do one useful thing.</h3><p id="challengeText">Pick a small task that matters to you.</p></div>
+    <button id="challengeBtn" class="btn primary">Mark complete ✓</button>
+  </div>
+
+  <div class="section-head"><div><h2>Quick tools</h2><p class="muted small">A few useful starting points.</p></div><button class="btn ghost" data-go="tools">Browse all →</button></div>
+  <div class="grid" id="featuredGrid"></div>
+
+  <div class="ad-slot">
+    <div class="ad-label">ADVERTISEMENT</div>
+    <p>Ads are provided by the ad network and are separate from website controls.</p>
+    <p>Never click an ad accidentally or just to support SHAHEEN.</p>
+  </div>
+
+  <div class="section-head"><div><h2>World clock</h2><p class="muted small">Current times for common work and study locations.</p></div></div>
+  <div class="clockgrid" id="homeClocks"></div>
 </section>
 
-<section id="global" class="page section" hidden>
- <h2>Global Essentials</h2>
- <p>Regional formatting, language helpers and useful services.</p>
- <div class="panel">
-  <label for="country">Choose your region</label>
-  <select id="country">
-   <option value="PK">Pakistan — PKR</option>
-   <option value="SA">Saudi Arabia — SAR</option>
-   <option value="US">United States — USD</option>
-   <option value="GB">United Kingdom — GBP</option>
-   <option value="BH">Bahrain — BHD</option>
-   <option value="AE">United Arab Emirates — AED</option>
-   <option value="CA">Canada — CAD</option>
-   <option value="AU">Australia — AUD</option>
-   <option value="IN">India — INR</option>
-   <option value="GLOBAL">Global — USD</option>
-  </select>
-  <div id="regionalTools" class="grid" style="margin-top:15px"></div>
- </div>
- <div class="grid" style="margin-top:16px">
-  <article class="card"><div class="ico">📄</div><h3>PDF tools</h3><p>Open a free online PDF service.</p><a class="btn" href="https://www.ilovepdf.com/" target="_blank" rel="noopener noreferrer">Open service ↗</a></article>
-  <article class="card"><div class="ico">🎨</div><h3>Design tools</h3><p>Design, images and visual content.</p><a class="btn" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Open service ↗</a></article>
-  <article class="card"><div class="ico">💻</div><h3>Developer docs</h3><p>Web platform documentation.</p><a class="btn" href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Open docs ↗</a></article>
-  <article class="card"><div class="ico">🧑‍💻</div><h3>Code hosting</h3><p>Repositories and collaboration.</p><a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a></article>
-  <article class="card"><div class="ico">🌐</div><h3>Translation</h3><p>Translate between languages.</p><a class="btn" href="https://translate.google.com/" target="_blank" rel="noopener noreferrer">Open translator ↗</a></article>
-  <article class="card"><div class="ico">🔎</div><h3>Search</h3><p>Find information on the web.</p><a class="btn" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Open search ↗</a></article>
- </div>
- <p>External services have their own terms and privacy policies. Links are not endorsements or integrations.</p>
+<section class="page" id="page-tools" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Tool library</div><h2>Find the right utility</h2><p class="muted small">51 tools across ten regional format profiles. Regional formatting changes numbers, currency and time—not the core tool count.</p></div></div>
+  <div class="toolbar"><div class="searchbar" style="max-width:none"><span>⌕</span><input id="toolSearch" type="search" placeholder="Search by name or task" aria-label="Search tool library"></div></div>
+  <div class="filters" id="categoryFilters">
+    <button class="chip active" data-category="All">All</button>
+    <button class="chip" data-category="Numbers">Numbers</button>
+    <button class="chip" data-category="Text">Text</button>
+    <button class="chip" data-category="Files">Files & data</button>
+    <button class="chip" data-category="Colors">Colors</button>
+    <button class="chip" data-category="Time">Time & planning</button>
+    <button class="chip" data-category="Productivity">Productivity</button>
+  </div>
+  <div class="grid" id="toolsGrid"></div>
 </section>
 
-<section id="saved" class="page section" hidden>
- <h2>Saved Tools ♡</h2>
- <p>Favourites are saved locally in this browser.</p>
- <div id="savedGrid" class="grid"></div>
+<section class="page" id="page-focus" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Work, then rest</div><h2>Focus room</h2><p class="muted small">Use a short, realistic session. The timer is local to this browser tab.</p></div></div>
+  <div class="panel timer">
+    <div class="filters" style="justify-content:center">
+      <button class="chip active" data-timer="focus">Focus · 25 min</button>
+      <button class="chip" data-timer="short">Break · 5 min</button>
+      <button class="chip" data-timer="long">Long break · 15 min</button>
+    </div>
+    <div class="timer-ring" id="timerRing"><div class="timer-content"><div class="timer-display" id="timerDisplay">25:00</div><div class="muted small">One thing at a time</div></div></div>
+    <div class="hero-actions" style="justify-content:center"><button class="btn primary" id="timerStart">Start</button><button class="btn" id="timerReset">Reset</button></div>
+    <div class="field" style="max-width:560px;margin:20px auto 0;text-align:left"><label for="focusGoal">Session goal</label><input id="focusGoal" type="text" maxlength="160" placeholder="Example: revise one chapter"><button class="btn" id="saveGoal" style="margin-top:7px;align-self:start">Save goal on this device</button></div>
+    <div id="goalView" class="result" hidden></div>
+  </div>
 </section>
 
-<section id="logoStudio" class="page section" hidden>
- <h2>Optional Logo Studio 🎨</h2>
- <p>Choose whether to add your own logo. It stays in your browser and is not uploaded.</p>
- <div class="panel">
-  <div class="field"><label for="logoFile">Upload a logo (PNG, JPEG or WebP, up to 3 MB)</label><input id="logoFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
-  <div class="field"><label for="logoSize">Preview size</label><input id="logoSize" type="range" min="40" max="240" value="120"></div>
-  <div id="logoPreview" class="result">No logo selected.</div>
-  <button id="logoRemove">Remove logo</button>
- </div>
+<section class="page" id="page-study" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Active recall</div><h2>Study room</h2><p class="muted small">Practice small questions, flip cards and create your own deck in this browser.</p></div></div>
+  <div class="panel"><h3>Quick flashcards</h3><button class="flashcard" id="flashCard">What does URL stand for?</button><div class="hero-actions" style="justify-content:center"><button class="btn" id="flashPrev">← Previous</button><button class="btn primary" id="flashNext">Next card →</button></div><p class="muted tiny" id="flashStatus" style="text-align:center;margin-top:10px"></p></div>
+  <div class="section-head"><div><h2>Your own cards</h2><p class="muted small">Add a question and answer for revision.</p></div></div>
+  <div class="panel"><form id="flashForm"><div class="field"><label for="flashQ">Question</label><input id="flashQ" type="text" maxlength="240" required></div><div class="field"><label for="flashA">Answer</label><textarea id="flashA" required maxlength="1200"></textarea></div><button class="btn primary">Add card</button></form><div id="userCards" class="list" style="margin-top:14px"></div></div>
 </section>
 
-<footer>
- <div>© <span id="year"></span> Shane Tools Ultra</div>
- <p>Local tools process data in your browser where possible. External services may process data according to their own policies. Ads are separate from tool controls.</p>
- <div class="row"><a href="https://www.monetag.com/" target="_blank" rel="noopener noreferrer">Advertising partner</a></div>
-</footer>
+<section class="page" id="page-gym" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Gym 2026 · gentle movement</div><h2>GYM 2026 — Move & stretch</h2><p class="muted small">Animated cues for short breaks, not medical exercise prescriptions. Move comfortably and stop if anything hurts.</p></div></div>
+  <div class="daily-callout"><div><h3 style="margin:0">Balance matters</h3><p>Take screen breaks, hydrate and allow time for rest and sleep.</p></div><span style="font-size:2rem">🌿</span></div>
+  <div class="exercise-grid" id="exerciseGrid" style="margin-top:15px"></div>
+  <div class="notice" style="margin-top:15px">These are simple animated visual cues rather than realistic video demonstrations. If you have an injury or health concern, ask a qualified professional which movements are suitable.</div>
+</section>
+
+<section class="page" id="page-daily" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Your day, your pace</div><h2>Daily desk</h2><p class="muted small">Tasks, notes and habits are saved in this browser. They do not sync to an online account.</p></div></div>
+  <div class="panel"><h3>Add a task</h3><form id="taskForm"><div class="field-row"><div class="field"><label for="taskInput">What do you want to do?</label><input id="taskInput" type="text" maxlength="180" required placeholder="One clear next step"></div><div class="field"><label for="taskArea">Area</label><select id="taskArea"><option>Personal</option><option>Study</option><option>Work</option><option>Movement break</option></select></div></div><button class="btn primary">Add task +</button></form></div>
+  <div class="section-head"><div><h2>Today's tasks</h2><p class="muted small">Progress without pressure.</p></div><button class="btn ghost" id="clearTasks">Clear completed</button></div><div id="taskList" class="list"></div>
+  <div class="section-head"><div><h2>Scratchpad</h2><p class="muted small">Don't store passwords or sensitive secrets here.</p></div></div>
+  <div class="panel"><div class="field"><label for="notes">Notes</label><textarea id="notes" placeholder="Ideas, reminders or a question to explore…"></textarea></div><div class="hero-actions"><button class="btn primary" id="saveNotes">Save notes</button><button class="btn" id="copyNotes">Copy</button><button class="btn ghost" id="downloadNotes">Download .txt</button></div><p class="muted tiny" id="notesStatus" style="margin:10px 0 0">Stored on this device only.</p></div>
+  <div class="section-head"><div><h2>Habits check-in</h2><p class="muted small">Choose one or more realistic daily habits.</p></div></div><div id="habits" class="panel list"></div>
+</section>
+
+<section class="page" id="page-saved" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Your shortcuts</div><h2>Saved tools</h2><p class="muted small">Tap the star on any tool to save it here.</p></div></div>
+  <div id="savedGrid" class="grid"></div>
+  <div class="section-head"><div><h2>Recently opened</h2><p class="muted small">Your last few tools on this device.</p></div></div>
+  <div id="recentGrid" class="grid"></div>
+</section>
+
+<section class="page" id="page-about" hidden>
+  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">About this project</div><h2>SHAHEEN</h2><p class="muted small">Developer label: Shaheen Tools Team</p></div></div>
+  <div class="panel">
+    <h3>Purpose</h3><p>SHAHEEN combines practical browser-based utilities with study, planning, focus and wellbeing features. The goal is to save people time and help them complete real tasks.</p>
+    <h3>Data and privacy</h3><p>Saved tools, tasks, notes, habits, theme and custom logo are kept in your browser's local storage. They do not automatically sync across devices. Do not save passwords or confidential information here.</p>
+    <p>The QR generator sends the entered text to an external QR service to generate the image. Image optimization happens locally in your browser. Monetag ad scripts may process information under the ad provider's policies. Review applicable privacy and consent requirements before public launch.</p>
+    <h3>Ads</h3><p>Advertisements are independent from tool controls. We do not ask visitors to click ads, and tools should never be disguised as ads.</p>
+    <h3>Google products</h3><p>Google Search Console monitors a website's search presence. Google Play Console manages Android apps; a website cannot register an Android app listing by adding SEO tags alone.</p>
+    <div class="list">
+      <div class="list-row"><div class="grow"><strong>Google Search Console</strong><p>Verify website ownership, inspect URLs and submit sitemap.</p></div><a class="btn" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
+      <div class="list-row"><div class="grow"><strong>Bing Webmaster Tools</strong><p>Submit the site and sitemap to Bing.</p></div><a class="btn" href="https://www.bing.com/webmasters/about" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
+      <div class="list-row"><div class="grow"><strong>Monetag dashboard</strong><p>Check zone installation and ad reporting.</p></div><a class="btn" href="https://monetag.com/" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
+    </div>
+  </div>
+</section>
 </main>
-
-<nav class="bottom" aria-label="Main navigation">
- <div class="nav">
-  <button class="active" data-go="home"><span>⌂</span>Home</button>
-  <button data-go="tools"><span>▦</span>Tools</button>
-  <button data-go="gym"><span>♧</span>Gym</button>
-  <button data-go="global"><span>🌍</span>Global</button>
-  <button data-go="saved"><span>♡</span>Saved</button>
-  <button data-go="logoStudio"><span>🎨</span>Logo</button>
- </div>
-</nav>
-
-<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="dialog">
-  <div class="dialoghead"><h2 id="modalTitle">Tool</h2><button id="closeModal" aria-label="Close">✕</button></div>
-  <div id="modalContent"></div>
- </div>
+</div>
+<footer class="footer"><div>© <span id="year"></span> SHAHEEN · Shaheen Tools Team</div><div class="hero-actions" style="margin:0"><button data-go="about">About & privacy</button><button id="footerShare">Share</button></div></footer>
 </div>
 
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <button class="nav-btn active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
+  <button class="nav-btn" data-page="tools"><span class="nav-icon">▦</span>Tools</button>
+  <button class="nav-btn" data-page="focus"><span class="nav-icon">◷</span>Focus</button>
+  <button class="nav-btn" data-page="daily"><span class="nav-icon">✓</span>Daily</button>
+  <button class="nav-btn" data-page="saved"><span class="nav-icon">☆</span>Saved</button>
+</nav>
+<div class="modal-backdrop" id="toolModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal"><div class="modal-head"><h2 id="modalTitle">Tool</h2><button class="close" id="modalClose" aria-label="Close tool">×</button></div><div class="modal-body" id="modalBody"></div></div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 <script>
-"use strict";
-const $=id=>document.getElementById(id);
-$("year").textContent=new Date().getFullYear();
+'use strict';
 
-const regions={
- PK:{label:"Pakistan",locale:"en-PK",currency:"PKR"},
- SA:{label:"Saudi Arabia",locale:"en-SA",currency:"SAR"},
- US:{label:"United States",locale:"en-US",currency:"USD"},
- GB:{label:"United Kingdom",locale:"en-GB",currency:"GBP"},
- BH:{label:"Bahrain",locale:"en-BH",currency:"BHD"},
- AE:{label:"United Arab Emirates",locale:"en-AE",currency:"AED"},
- CA:{label:"Canada",locale:"en-CA",currency:"CAD"},
- AU:{label:"Australia",locale:"en-AU",currency:"AUD"},
- IN:{label:"India",locale:"en-IN",currency:"INR"},
- GLOBAL:{label:"Global",locale:"en",currency:"USD"}
+const SITE_URL='https://shaheentools.vercel.app/';
+const STORE={
+  theme:'sh_v3_theme',saved:'sh_v3_saved',recent:'sh_v3_recent',
+  tasks:'sh_v3_tasks',notes:'sh_v3_notes',goal:'sh_v3_goal',
+  logo:'sh_v3_logo',challenge:'sh_v3_challenge',region:'sh_v3_region',
+  habits:'sh_v3_habits',userCards:'sh_v3_usercards'
 };
-let selectedRegion="PK",category="All",query="",favorites=[];
-try{favorites=JSON.parse(localStorage.getItem("st-favorites")||"[]")}catch{}
 
-const definitions=[
-["Word Counter","Text","📝","words"],
-["Character Counter","Text","🔤","chars"],
-["Line Counter","Text","📃","lines"],
-["Uppercase Converter","Text","🔠","upper"],
-["Lowercase Converter","Text","🔡","lower"],
-["Title Case Converter","Text","🔤","title"],
-["Reverse Text","Text","↔️","reverse"],
-["Remove Extra Spaces","Text","🧹","spaces"],
-["Remove Duplicate Lines","Text","🧽","dedupe"],
-["Sort Lines","Text","↕️","sort"],
-["Text Slug Generator","Text","🔗","slug"],
-["Text to Binary","Developer","01","binary"],
-["Binary to Text","Developer","💻","unbinary"],
-["Text to Hex","Developer","🔢","hex"],
-["Hex to Text","Developer","🔣","unhex"],
-["Base64 Encoder","Developer","💻","b64"],
-["Base64 Decoder","Developer","📥","unb64"],
-["URL Encoder","Developer","🌐","url"],
-["URL Decoder","Developer","🔓","unurl"],
-["JSON Formatter","Developer","{ }","json"],
-["JSON Minifier","Developer","{}","minjson"],
-["CSV to JSON","Developer","📊","csvjson"],
-["JSON to CSV","Developer","📋","jsoncsv"],
-["Email Validator","Developer","✉️","email"],
-["URL Validator","Developer","🔗","validurl"],
-["Password Generator","Security","🔐","password"],
-["UUID Generator","Developer","🧬","uuid"],
-["SHA-256 Hash","Security","🔏","hash"],
-["Lorem Ipsum Generator","Writing","📄","lorem"],
-["Word Frequency","Writing","📈","frequency"],
-["Percentage Calculator","Calculator","％","percent"],
-["Discount Calculator","Calculator","🏷️","discount"],
-["Tip Calculator","Calculator","🧾","tip"],
-["Simple Interest","Finance","💰","interest"],
-["Compound Interest","Finance","📈","compound"],
-["Loan Payment Estimator","Finance","🏦","loan"],
-["BMI Calculator","Health","⚖️","bmi"],
-["Age Calculator","Date & Time","🎂","age"],
-["Date Difference","Date & Time","📅","datediff"],
-["Date Formatter","Global","🗓️","date"],
-["Time Formatter","Global","🕒","time"],
-["Regional Number Format","Global","🔢","number"],
-["Regional Currency Format","Global","💱","currency"],
-["HEX to RGB","Design","🎨","hexrgb"],
-["RGB to HEX","Design","🌈","rgbhex"],
-["Temperature Converter","Converter","🌡️","temperature"],
-["Length Converter","Converter","📏","length"],
-["Weight Converter","Converter","⚖️","weight"],
-["Speed Converter","Converter","🚗","speed"],
-["QR Code Generator","Creator","▦","qr"],
-["Markdown Preview Text","Writing","✍️","markdown"]
+const REGIONS={
+  global:{label:'Global',locale:'en-US',currency:'USD',symbol:'$',zone:'UTC'},
+  pk:{label:'Pakistan',locale:'en-PK',currency:'PKR',symbol:'Rs',zone:'Asia/Karachi'},
+  sa:{label:'Saudi Arabia',locale:'en-SA',currency:'SAR',symbol:'SAR',zone:'Asia/Riyadh'},
+  us:{label:'United States',locale:'en-US',currency:'USD',symbol:'$',zone:'America/New_York'},
+  uk:{label:'United Kingdom',locale:'en-GB',currency:'GBP',symbol:'£',zone:'Europe/London'},
+  bh:{label:'Bahrain',locale:'en-BH',currency:'BHD',symbol:'BHD',zone:'Asia/Bahrain'},
+  ae:{label:'UAE',locale:'en-AE',currency:'AED',symbol:'AED',zone:'Asia/Dubai'},
+  ca:{label:'Canada',locale:'en-CA',currency:'CAD',symbol:'CA$',zone:'America/Toronto'},
+  au:{label:'Australia',locale:'en-AU',currency:'AUD',symbol:'A$',zone:'Australia/Sydney'},
+  in:{label:'India',locale:'en-IN',currency:'INR',symbol:'₹',zone:'Asia/Kolkata'}
+};
+
+const TOOL_ROWS=[
+['calculator','Everyday calculator','∑','Numbers','calc','Add, subtract, multiply, divide and powers.'],
+['percentage','Percentage calculator','％','Numbers','percent','Find a percentage of a number.'],
+['discount','Discount calculator','🏷','Numbers','discount','Estimate discount amount and final price.'],
+['tip','Tip calculator','☕','Numbers','tip','Calculate a tip and split a bill.'],
+['bill-splitter','Bill splitter','↔','Numbers','split','Split an amount between people.'],
+['tax-estimator','Tax estimator','＄','Numbers','tax','Estimate tax added to a price.'],
+['simple-interest','Simple interest','↗','Numbers','simpleInterest','Calculate simple interest and total.'],
+['compound-growth','Compound growth','📈','Numbers','compoundInterest','Estimate compound growth.'],
+['loan-estimate','Loan payment estimate','▤','Numbers','loan','Estimate monthly payment; not a lending quote.'],
+['savings-goal','Savings goal planner','🎯','Numbers','savings','Estimate months to a savings target.'],
+['date-difference','Date difference','▣','Time','dateDiff','Count calendar days between dates.'],
+['age-calculator','Age calculator','🎂','Time','age','Calculate age from a birth date.'],
+['countdown','Event countdown','⏳','Time','countdown','Count down to a chosen date and time.'],
+['unit-converter','Unit converter','⇄','Numbers','unit','Convert common length, mass and temperature units.'],
+['data-converter','Data size converter','💾','Numbers','data','Convert bytes, KB, MB, GB and TB.'],
+['cooking-volume','Cooking volume converter','🥄','Numbers','cooking','Convert common volume measures.'],
+['word-counter','Word counter','Aa','Text','word','Count words, characters, lines and paragraphs.'],
+['character-counter','Character counter','¶','Text','char','Count characters with and without spaces.'],
+['reading-time','Reading time estimator','📖','Text','reading','Estimate reading time from text.'],
+['word-frequency','Word frequency analyzer','▥','Text','frequency','Count words and show common terms.'],
+['case-converter','Text case converter','Tt','Text','case','Convert uppercase, lowercase and title case.'],
+['reverse-text','Reverse text','↶','Text','reverse','Reverse characters in a string.'],
+['slug-maker','URL slug maker','🔗','Text','slug','Create a readable URL slug.'],
+['deduplicate-lines','Remove duplicate lines','≡','Text','dedupe','Remove repeated lines while preserving order.'],
+['sort-lines','Sort lines','↕','Text','sort','Sort lines alphabetically.'],
+['space-cleaner','Clean extra spaces','␠','Text','spaces','Normalize whitespace in text.'],
+['text-diff','Text difference checker','⇆','Text','compare','Compare two text blocks and show a basic difference summary.'],
+['json-formatter','JSON formatter','{}','Text','jsonFormat','Pretty-print valid JSON.'],
+['json-validator','JSON validator','✓','Text','jsonValidate','Validate JSON syntax.'],
+['base64-encode','Base64 encoder','▧','Text','base64Encode','Encode UTF-8 text as Base64.'],
+['base64-decode','Base64 decoder','▤','Text','base64Decode','Decode Base64 to UTF-8 text.'],
+['url-encode','URL component encoder','↗','Text','urlEncode','Encode URL component text.'],
+['url-decode','URL component decoder','↙','Text','urlDecode','Decode URL component text.'],
+['html-escape','HTML entity escaper','</>','Text','htmlEscape','Escape HTML-sensitive characters.'],
+['markdown-preview','Markdown preview','M↓','Text','markdown','Preview simple Markdown safely.'],
+['rot13','ROT13 converter','🔄','Text','rot13','Apply ROT13 text transformation.'],
+['morse','Morse code tool','·−','Text','morse','Encode text as Morse or decode common Morse.'],
+['binary-encode','Text to binary','010','Text','binaryEncode','Encode UTF-8 text bytes as binary.'],
+['binary-decode','Binary to text','101','Text','binaryDecode','Decode 8-bit binary groups as UTF-8.'],
+['password-generator','Password generator','⛨','Productivity','password','Generate random passwords locally.'],
+['uuid-generator','UUID generator','⌗','Productivity','uuid','Generate a random UUID.'],
+['random-picker','Random list picker','🎲','Productivity','random','Pick one item from your own list.'],
+['qr-maker','QR code generator','▦','Files','qr','Create a QR image for text or a URL.'],
+['image-optimizer','Image optimizer','▧','Files','image','Resize and compress an image locally.'],
+['color-inspector','Color inspector','◉','Colors','color','Inspect color values in HEX, RGB and HSL.'],
+['contrast-checker','Color contrast checker','◒','Colors','contrast','Estimate WCAG contrast for two colors.'],
+['gradient-builder','CSS gradient builder','🌈','Colors','gradient','Build a two-color CSS gradient.'],
+['lorem-maker','Placeholder text maker','¶','Text','lorem','Create placeholder text for layouts.'],
+['csv-to-json','CSV to JSON','⇢','Files','csvjson','Convert a simple CSV table to JSON.'],
+['json-to-csv','JSON to CSV','⇠','Files','jsoncsv','Convert an array of objects to CSV.'],
+['markdown-table','Markdown table maker','▦','Text','mdtable','Turn pipe-separated rows into a Markdown table.']
+];
+const TOOLS=TOOL_ROWS.map(([id,name,icon,category,kind,desc])=>({id,name,icon,category,kind,desc}));
+
+const EXERCISES=[
+{name:'Easy march in place',icon:'🚶',dur:45,desc:'Stand comfortably and move gently at an easy pace.'},
+{name:'Shoulder rolls',icon:'🔄',dur:30,desc:'Roll shoulders slowly forward, then backward.'},
+{name:'Comfortable standing reach',icon:'🙆',dur:30,desc:'Reach upward only as far as feels comfortable, then relax.'},
+{name:'Ankle circles',icon:'🦶',dur:30,desc:'Hold a stable support and draw small circles with each ankle.'},
+{name:'Seated posture reset',icon:'🪑',dur:30,desc:'Sit comfortably, relax your jaw and let shoulders soften.'},
+{name:'Eye break',icon:'👀',dur:20,desc:'Look into the distance and blink naturally for a few moments.'}
 ];
 
-// Each core utility is offered for ten regional settings: 50 × 10 = 500 entries.
-// Regional variants share an engine, with region-aware formatting where applicable.
-const tools=[];
-definitions.forEach((d,index)=>{
- Object.entries(regions).forEach(([code,r])=>{
-  tools.push({
-   id:"t"+index+"-"+code,
-   base:index,
-   name:d[0]+(code==="GLOBAL"?"":" · "+code),
-   coreName:d[0],category:d[1],icon:d[2],engine:d[3],region:code,
-   description:d[0]+" for "+r.label+"."
-  });
- });
-});
+const FLASH=[
+{q:'What does URL stand for?',a:'Uniform Resource Locator—the address of a resource on the web.'},
+{q:'What does JSON stand for?',a:'JavaScript Object Notation—a structured data text format.'},
+{q:'What is a sitemap?',a:'A file listing URLs on a website to help search engines discover them.'},
+{q:'What is active recall?',a:'Practising remembering information without first looking at your notes, then checking accuracy.'},
+{q:'What does CSS do?',a:'CSS controls the visual style and layout of HTML content.'},
+{q:'What is two-factor authentication?',a:'A sign-in method using an additional proof beyond the password.'},
+{q:'What is a browser cache?',a:'A local store of resources that can help pages load faster on repeat visits.'},
+{q:'What is a canonical URL?',a:'The preferred URL for a page when similar or duplicate URLs exist.'}
+];
 
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function card(t){
- return `<article class="card"><div class="ico">${t.icon}</div><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><div class="row"><button class="primary" data-open="${t.id}">Open</button><button data-fav="${t.id}" aria-label="Save ${esc(t.name)}">${favorites.includes(t.id)?"♥":"♡"}</button></div></article>`;
+const $=s=>document.querySelector(s);
+const $$=s=>Array.from(document.querySelectorAll(s));
+let activePage='home',activeCategory='All',currentTool=null,toastTimer=null;
+let flashIndex=0,flashShown=false,timerMode='focus',timerSeconds=1500,timerRunning=false,timerInterval=null;
+let activeExerciseTimers=new Map();
+
+function read(key,fallback){try{const raw=localStorage.getItem(key);return raw===null?fallback:JSON.parse(raw)}catch{return fallback}}
+function write(key,val){try{localStorage.setItem(key,JSON.stringify(val));return true}catch{return false}}
+function toast(msg){const e=$('#toast');e.textContent=msg;e.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove('show'),2400)}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function num(v,label){if(v===''||v===null||!Number.isFinite(Number(v)))throw new Error('Enter a valid number for '+label+'.');return Number(v)}
+function region(){return REGIONS[$('#regionSelect').value]||REGIONS.global}
+function fmt(v,max=2){return Number(v).toLocaleString(region().locale,{maximumFractionDigits:max})}
+function money(v){return region().symbol+' '+fmt(v,2)}
+
+function toolCard(t){
+ const saved=read(STORE.saved,[]).includes(t.id);
+ return `<article class="card" data-tool="${t.id}">
+ <div class="cardtop"><span class="tool-icon" aria-hidden="true">${esc(t.icon)}</span>
+ <button class="fav ${saved?'on':''}" data-fav="${t.id}" aria-label="${saved?'Unsave':'Save'} ${esc(t.name)}">${saved?'★':'☆'}</button></div>
+ <h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p><div class="cardbottom">Open tool →</div></article>`;
 }
-function render(){
- const filtered=tools.filter(t=>(category==="All"||t.category===category)&&(t.name+" "+t.category+" "+t.description).toLowerCase().includes(query.toLowerCase()));
- $("toolGrid").innerHTML=filtered.map(card).join("")||"<p>No matching tools. Try another search.</p>";
- $("toolStatus").textContent=filtered.length+" tools shown";
- $("popular").innerHTML=tools.filter(t=>["words","password","json","percent","qr","currency"].includes(t.engine)&&t.region===selectedRegion).slice(0,8).map(card).join("");
- const saved=tools.filter(t=>favorites.includes(t.id));
- $("savedGrid").innerHTML=saved.map(card).join("")||"<p>No saved tools yet. Tap ♡ on any tool.</p>";
- $("filters").innerHTML=["All",...new Set(tools.map(t=>t.category))].map(c=>`<button data-category="${esc(c)}" class="${c===category?"selected":""}">${esc(c)}</button>`).join("");
- $("toolCount").textContent=tools.length+" regionalized tool entries · Search and filter";
+function renderToolGrids(){
+ const q=($('#toolSearch')?.value||$('#globalSearch')?.value||'').trim().toLowerCase();
+ const found=TOOLS.filter(t=>(activeCategory==='All'||t.category===activeCategory)&&(!q||(t.name+' '+t.desc+' '+t.category).toLowerCase().includes(q)));
+ $('#toolsGrid').innerHTML=found.length?found.map(toolCard).join(''):'<div class="empty">No tool matches that search. Try another word or select All.</div>';
+ $('#featuredGrid').innerHTML=TOOLS.slice(0,6).map(toolCard).join('');
+ renderSaved();
 }
-function go(id){
- document.querySelectorAll(".page").forEach(p=>p.hidden=true);
- $(id).hidden=false;
- document.querySelectorAll("[data-go]").forEach(b=>b.classList.toggle("active",b.dataset.go===id));
- window.scrollTo({top:0,behavior:"smooth"});
+function renderSaved(){
+ const saved=read(STORE.saved,[]),recent=read(STORE.recent,[]);
+ $('#savedGrid').innerHTML=saved.length?TOOLS.filter(t=>saved.includes(t.id)).map(toolCard).join():'<div class="empty">No saved tools yet. Tap ☆ on any tool.</div>';
+ $('#recentGrid').innerHTML=recent.length?recent.map(id=>TOOLS.find(t=>t.id===id)).filter(Boolean).map(toolCard).join():'<div class="empty">Your recently opened tools will appear here.</div>';
 }
-document.addEventListener("click",e=>{
- const g=e.target.closest("[data-go]");if(g){go(g.dataset.go);return}
- const c=e.target.closest("[data-category]");if(c){category=c.dataset.category;render();return}
- const f=e.target.closest("[data-fav]");if(f){
-  const id=f.dataset.fav;
-  favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
-  try{localStorage.setItem("st-favorites",JSON.stringify(favorites))}catch{}
-  render();return;
- }
- const o=e.target.closest("[data-open]");if(o)openTool(o.dataset.open);
-});
-$("search").addEventListener("input",e=>{query=e.target.value;category="All";go("tools");render()});
-$("closeModal").addEventListener("click",closeModal);
-$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-function closeModal(){$("modal").classList.remove("open")}
-function show(title,html){$("modalTitle").textContent=title;$("modalContent").innerHTML=html;$("modal").classList.add("open")}
-function area(label="Input",id="v",placeholder="Enter text..."){return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" placeholder="${placeholder}"></textarea></div>`}
-function field(label,id,type="number",placeholder="0"){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}"></div>`}
-function out(s){const el=$("result");if(el)el.textContent=String(s)}
-function getInput(){return $("v")?.value||""}
-function resultUI(){return '<div id="result" class="result" aria-live="polite"></div><button data-copy>Copy result</button>'}
-function buttonUI(engine){return `<button class="primary" data-run="${engine}">Run tool</button>`}
+function showPage(page){
+ if(!$('#page-'+page))page='home';
+ activePage=page;
+ $$('.page').forEach(p=>p.hidden=p.id!=='page-'+page);
+ $$('[data-page]').forEach(b=>{const yes=b.dataset.page===page;b.classList.toggle('active',yes);if(yes)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ if(page==='tools')renderToolGrids();
+ if(page==='saved')renderSaved();
+ if(page==='daily')renderTasks();
+ if(page==='gym')renderExercises();
+ if(page==='study')renderFlash();
+ if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function toggleSaved(id){
+ let arr=read(STORE.saved,[]);
+ arr=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];
+ write(STORE.saved,arr);renderToolGrids();renderSaved();
+ toast(arr.includes(id)?'Saved on this device':'Removed from saved');
+}
+
+/* Each tool has a clearly typed form. */
+function fieldsFor(kind){
+ const txt=[{id:'text',label:'Text',type:'textarea',placeholder:'Type or paste text here…'}];
+ const map={
+ calc:[{id:'a',label:'First number',type:'number',value:'24'},{id:'op',label:'Operation',type:'select',value:'+',options:[['+','Add (+)'],['-','Subtract (-)'],['*','Multiply (×)'],['/','Divide (÷)'],['%','Remainder (%)'],['pow','Power']]},{id:'b',label:'Second number',type:'number',value:'6'}],
+ percent:[{id:'base',label:'Number',type:'number',value:'100'},{id:'rate',label:'Percentage (%)',type:'number',value:'15'}],
+ discount:[{id:'price',label:'Original price',type:'number',value:'100'},{id:'rate',label:'Discount (%)',type:'number',value:'15'}],
+ tip:[{id:'bill',label:'Bill amount',type:'number',value:'100'},{id:'rate',label:'Tip (%)',type:'number',value:'10'},{id:'people',label:'People',type:'number',value:'2'}],
+ split:[{id:'total',label:'Total amount',type:'number',value:'100'},{id:'people',label:'People',type:'number',value:'3'}],
+ tax:[{id:'amount',label:'Amount before tax',type:'number',value:'100'},{id:'rate',label:'Tax rate (%)',type:'number',value:'5'}],
+ simpleInterest:[{id:'principal',label:'Principal',type:'number',value:'1000'},{id:'rate',label:'Annual interest (%)',type:'number',value:'5'},{id:'years',label:'Years',type:'number',value:'2'}],
+ compoundInterest:[{id:'principal',label:'Starting amount',type:'number',value:'1000'},{id:'rate',label:'Annual rate (%)',type:'number',value:'5'},{id:'years',label:'Years',type:'number',value:'5'},{id:'freq',label:'Compounds per year',type:'number',value:'12'}],
+ loan:[{id:'principal',label:'Loan principal',type:'number',value:'10000'},{id:'rate',label:'Annual rate (%)',type:'number',value:'8'},{id:'months',label:'Months',type:'number',value:'36'}],
+ savings:[{id:'target',label:'Target amount',type:'number',value:'5000'},{id:'current',label:'Current savings',type:'number',value:'500'},{id:'monthly',label:'Monthly contribution',type:'number',value:'250'}],
+ dateDiff:[{id:'start',label:'Start date',type:'date'},{id:'end',label:'End date',type:'date'}],
+ age:[{id:'birth',label:'Date of birth',type:'date'}],
+ countdown:[{id:'target',label:'Target date and time',type:'datetime-local'}],
+ unit:[{id:'value',label:'Value',type:'number',value:'1'},{id:'group',label:'Category',type:'select',value:'length',options:[['length','Length'],['mass','Mass'],['temperature','Temperature']]},{id:'from',label:'From unit',type:'select',value:'km',options:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles'],['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds'],['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]},{id:'to',label:'To unit',type:'select',value:'mi',options:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles'],['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds'],['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]}],
+ data:[{id:'value',label:'Value',type:'number',value:'1'},{id:'from',label:'From',type:'select',value:'MB',options:[['B','Bytes'],['KB','KB'],['MB','MB'],['GB','GB'],['TB','TB']]},{id:'to',label:'To',type:'select',value:'KB',options:[['B','Bytes'],['KB','KB'],['MB','MB'],['GB','GB'],['TB','TB']]}],
+ cooking:[{id:'value',label:'Volume',type:'number',value:'1'},{id:'from',label:'From',type:'select',value:'cup',options:[['tsp','Teaspoon'],['tbsp','Tablespoon'],['ml','Milliliter'],['l','Liter'],['cup','US cup']]},{id:'to',label:'To',type:'select',value:'ml',options:[['tsp','Teaspoon'],['tbsp','Tablespoon'],['ml','Milliliter'],['l','Liter'],['cup','US cup']]}],
+ word:txt,char:txt,reading:txt,frequency:txt,
+ case:[{id:'mode',label:'Conversion',type:'select',value:'title',options:[['upper','UPPERCASE'],['lower','lowercase'],['title','Title Case'],['sentence','Sentence case']]},...txt],
+ reverse:txt,slug:txt,dedupe:txt,sort:txt,spaces:txt,
+ compare:[{id:'left',label:'First text',type:'textarea',placeholder:'Paste first version…'},{id:'right',label:'Second text',type:'textarea',placeholder:'Paste second version…'}],
+ jsonFormat:txt,jsonValidate:txt,base64Encode:txt,base64Decode:txt,urlEncode:txt,urlDecode:txt,htmlEscape:txt,markdown:txt,rot13:txt,
+ morse:[{id:'mode',label:'Mode',type:'select',value:'encode',options:[['encode','Encode text'],['decode','Decode Morse']]},...txt],
+ binaryEncode:txt,binaryDecode:txt,
+ password:[{id:'length',label:'Length (8–64)',type:'number',value:'20'},{id:'charset',label:'Character set',type:'select',value:'full',options:[['full','Letters, numbers, symbols'],['alnum','Letters and numbers'],['easy','Avoid similar-looking characters']]}],
+ uuid:[],random:txt,qr:[{id:'text',label:'Text or URL',type:'textarea',placeholder:'https://example.com'}],
+ image:[{id:'file',label:'Choose an image (max 15 MB)',type:'file'},{id:'width',label:'Maximum width (pixels)',type:'number',value:'1600'},{id:'quality',label:'Quality (0.2 to 1)',type:'number',value:'0.82'},{id:'format',label:'Output format',type:'select',value:'image/jpeg',options:[['image/jpeg','JPEG'],['image/webp','WebP'],['image/png','PNG']]}],
+ color:[{id:'color',label:'Choose a color',type:'color',value:'#41dcff'}],
+ contrast:[{id:'fg',label:'Text color',type:'color',value:'#ffffff'},{id:'bg',label:'Background color',type:'color',value:'#071426'}],
+ gradient:[{id:'c1',label:'First color',type:'color',value:'#41dcff'},{id:'c2',label:'Second color',type:'color',value:'#4778ff'},{id:'angle',label:'Angle (degrees)',type:'number',value:'135'}],
+ lorem:[{id:'paras',label:'Paragraphs (1–10)',type:'number',value:'3'},{id:'words',label:'Words per paragraph (5–100)',type:'number',value:'35'}],
+ csvjson:txt,jsoncsv:txt,mdtable:txt
+ };
+ return map[kind]||txt;
+}
+function fieldHTML(f){
+ const id='f-'+f.id,base=`id="${id}" data-in="${f.id}"`;
+ if(f.type==='textarea')return `<div class="field"><label for="${id}">${esc(f.label)}</label><textarea ${base} placeholder="${esc(f.placeholder||'')}"></textarea></div>`;
+ if(f.type==='select')return `<div class="field"><label for="${id}">${esc(f.label)}</label><select ${base}>${f.options.map(([v,l])=>`<option value="${esc(v)}" ${v===f.value?'selected':''}>${esc(l)}</option>`).join('')}</select></div>`;
+ return `<div class="field"><label for="${id}">${esc(f.label)}</label><input ${base} type="${f.type}" ${f.value!==undefined?`value="${esc(f.value)}"`:''} ${f.type==='number'?'step="any"':''} ${f.type==='file'?'accept="image/png,image/jpeg,image/webp"':''}></div>`;
+}
+function modalTemplate(t){
+ const fields=fieldsFor(t.kind);
+ return `${t.kind==='qr'?'<div class="notice">QR generation uses an external service. Do not enter passwords or confidential information.</div>':''}${t.kind==='image'?'<div class="notice">Image processing runs locally in this browser.</div>':''}<p class="muted small">${esc(t.desc)} · Region: ${esc(region().label)}</p><form id="toolForm">${fields.map(fieldHTML).join('')}<button class="btn primary" type="submit">Run ${esc(t.name)}</button></form><div id="toolResult" class="result" aria-live="polite">Result will appear here.</div><div class="hero-actions"><button class="btn" id="copyResult" type="button">Copy result</button><button class="btn ghost" id="downloadResult" type="button">Download result</button></div>`;
+}
+function getVal(id){const e=$(`[data-in="${id}"]`);return e?e.value:''}
+function resultText(value){const box=$('#toolResult');box.innerHTML='';box.dataset.copy=String(value);box.textContent=String(value)}
+function setResultHTML(html,text){const box=$('#toolResult');box.innerHTML=html;box.dataset.copy=text||box.textContent}
 
 function openTool(id){
- const t=tools.find(x=>x.id===id);if(!t)return;
- const e=t.engine;
- let html=area("Input","v","Enter text or values for this tool...");
- if(["percent","discount","tip","interest","compound","loan","bmi"].includes(e))html=field("First value (amount / weight)","a")+field("Second value (rate / height)","b")+field("Third value (years / people)","c");
- if(e==="temperature"||e==="length"||e==="weight"||e==="speed")html=field("Value","a")+`<div class="field"><label for="unit">Conversion</label><select id="unit">${({temperature:'<option value="tc">Celsius → Fahrenheit</option><option value="tf">Fahrenheit → Celsius</option>',length:'<option value="km">Kilometres → Miles</option><option value="mk">Miles → Kilometres</option>',weight:'<option value="kg">Kilograms → Pounds</option><option value="lb">Pounds → Kilograms</option>',speed:'<option value="kmh">km/h → mph</option><option value="mph">mph → km/h</option>'})[e]}</select></div>`;
- if(e==="password")html=field("Password length (8–64)","a","number","16")+'<label><input id="symbols" type="checkbox" checked style="width:auto"> Include symbols</label>';
- if(e==="age")html=field("Birth date","a","date");
- if(e==="datediff")html=field("Start date","a","date")+field("End date","b","date");
- if(e==="qr")html=area("Text or URL","v","Enter text or a URL...");
- if(e==="rgbhex")html=area("RGB values","v","255, 120, 20");
- if(e==="hexrgb")html=area("HEX colour","v","#00d4ff");
- if(e==="number"||e==="currency")html=field("Number","a","number","1234.56");
- if(e==="date"||e==="time"||e==="currency"||e==="number")html+='<p>Region: '+esc(regions[t.region].label)+'</p>';
- show(t.name,html+buttonUI(e)+resultUI());
-}
-function safeNum(id){const n=Number($(id)?.value);if(!Number.isFinite(n))throw Error("Please enter valid numbers.");return n}
-function csvParse(s){
- const lines=s.trim().split(/\r?\n/);
- return lines.map(line=>{let cells=[],cur="",q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'&&line[i+1]==='"'&&q){cur+='"';i++}else if(ch==='"')q=!q;else if(ch===","&&!q){cells.push(cur);cur=""}else cur+=ch}cells.push(cur);return cells});
-}
-function runEngine(e,t){
- const s=getInput(),r=regions[t.region]||regions.GLOBAL;
- switch(e){
- case "words":{const words=s.trim()?s.trim().split(/\s+/u).length:0;return `Words: ${words}\nCharacters: ${s.length}\nCharacters excluding spaces: ${s.replace(/\s/g,"").length}\nLines: ${s? s.split(/\r?\n/).length:0}`;}
- case "chars":return `Characters: ${s.length}\nWithout whitespace: ${s.replace(/\s/g,"").length}`;
- case "lines":return `Lines: ${s?s.split(/\r?\n/).length:0}`;
- case "upper":return s.toUpperCase();
- case "lower":return s.toLowerCase();
- case "title":return s.toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());
- case "reverse":return Array.from(s).reverse().join("");
- case "spaces":return s.split(/\r?\n/).map(x=>x.replace(/\s+/g," ").trim()).join("\n");
- case "dedupe":return [...new Set(s.split(/\r?\n/))].join("\n");
- case "sort":return s.split(/\r?\n/).sort((a,b)=>a.localeCompare(b)).join("\n");
- case "slug":return s.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
- case "binary":return Array.from(new TextEncoder().encode(s),b=>b.toString(2).padStart(8,"0")).join(" ");
- case "unbinary":return new TextDecoder().decode(new Uint8Array(s.trim().split(/\s+/).map(x=>{if(!/^[01]{1,8}$/.test(x))throw Error("Use binary bytes separated by spaces.");return parseInt(x,2)})));
- case "hex":return Array.from(new TextEncoder().encode(s),b=>b.toString(16).padStart(2,"0")).join(" ");
- case "unhex":return new TextDecoder().decode(new Uint8Array(s.trim().split(/\s+/).map(x=>{if(!/^[\da-f]{1,2}$/i.test(x))throw Error("Use hexadecimal bytes separated by spaces.");return parseInt(x,16)})));
- case "b64":return btoa(Array.from(new TextEncoder().encode(s),b=>String.fromCharCode(b)).join(""));
- case "unb64":return new TextDecoder().decode(Uint8Array.from(atob(s.trim()),c=>c.charCodeAt(0)));
- case "url":return encodeURIComponent(s);
- case "unurl":return decodeURIComponent(s);
- case "json":return JSON.stringify(JSON.parse(s),null,2);
- case "minjson":return JSON.stringify(JSON.parse(s));
- case "csvjson":{const rows=csvParse(s);if(rows.length<2)throw Error("Add a header row and at least one data row.");const heads=rows[0];return JSON.stringify(rows.slice(1).map(row=>Object.fromEntries(heads.map((h,i)=>[h,row[i]??""]))),null,2);}
- case "jsoncsv":{const data=JSON.parse(s);if(!Array.isArray(data)||!data.length||typeof data[0]!=="object")throw Error("Enter a non-empty array of objects.");const heads=[...new Set(data.flatMap(Object.keys))];const cell=x=>{const v=String(x??"");return /[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};return [heads.map(cell).join(","),...data.map(o=>heads.map(h=>cell(o[h])).join(","))].join("\n");}
- case "email":return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim())?"Basic email format looks valid.":"Email format does not look valid.";
- case "validurl":try{const u=new URL(s);return ["http:","https:"].includes(u.protocol)?"Valid HTTP/HTTPS URL.":"Use an HTTP or HTTPS URL."}catch{return "Invalid URL."}
- case "password":{const n=Math.max(8,Math.min(64,Math.floor(safeNum("a")||16))),chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789"+($("symbols")?.checked?"!@#$%&*_-+=":"");const b=crypto.getRandomValues(new Uint32Array(n));return Array.from(b,x=>chars[x%chars.length]).join("");}
- case "uuid":return crypto.randomUUID?crypto.randomUUID():"UUID generation is not supported in this browser.";
- case "hash":return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(buf=>Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,"0")).join(""));
- case "lorem":return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ".repeat(5).trim();
- case "frequency":{const counts={};for(const w of s.toLowerCase().match(/[\p{L}\p{N}']+/gu)||[])counts[w]=(counts[w]||0)+1;return Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([w,n])=>w+": "+n).join("\n")||"No words found.";}
- case "percent":{const a=safeNum("a"),b=safeNum("b");return (a*b/100).toFixed(2);}
- case "discount":{const a=safeNum("a"),b=safeNum("b");return `Savings: ${(a*b/100).toFixed(2)}\nFinal price: ${(a-a*b/100).toFixed(2)}`;}
- case "tip":{const a=safeNum("a"),b=safeNum("b"),c=Math.max(1,safeNum("c")||1);return `Tip: ${(a*b/100).toFixed(2)}\nTotal: ${(a+a*b/100).toFixed(2)}\nPer person: ${((a+a*b/100)/c).toFixed(2)}`;}
- case "interest":{const a=safeNum("a"),b=safeNum("b"),c=safeNum("c");return `Interest: ${(a*b*c/100).toFixed(2)}\nTotal: ${(a+a*b*c/100).toFixed(2)}`;}
- case "compound":{const p=safeNum("a"),rate=safeNum("b")/100,years=safeNum("c");const total=p*Math.pow(1+rate,years);return `Total: ${total.toFixed(2)}\nInterest: ${(total-p).toFixed(2)}`;}
- case "loan":{const p=safeNum("a"),annual=safeNum("b")/1200,n=Math.round(safeNum("c"));if(p<=0||n<=0)throw Error("Amount and number of months must be positive.");const m=annual===0?p/n:p*annual/(1-Math.pow(1+annual,-n));return `Estimated monthly payment: ${m.toFixed(2)}\nTotal paid: ${(m*n).toFixed(2)}\nThis is an estimate, excluding fees and taxes.`;}
- case "bmi":{const w=safeNum("a"),h=safeNum("b")/100;if(w<=0||h<=0)throw Error("Enter valid weight in kg and height in cm.");return "BMI: "+(w/(h*h)).toFixed(1)+"\nFor teenagers, BMI needs age-specific interpretation; this number alone is not a diagnosis.";}
- case "age":{const d=new Date($("a").value),now=new Date();if(isNaN(d)||d>now)throw Error("Choose a valid birth date in the past.");let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth();if(now.getDate()<d.getDate())m--;if(m<0){y--;m+=12}return `${y} years, ${m} months approximately.`;}
- case "datediff":{const a=new Date($("a").value),b=new Date($("b").value);if(isNaN(a)||isNaN(b))throw Error("Choose both dates.");return Math.round(Math.abs(b-a)/86400000)+" days between dates.";}
- case "date":return new Intl.DateTimeFormat(r.locale,{dateStyle:"full"}).format(new Date());
- case "time":return new Intl.DateTimeFormat(r.locale,{timeStyle:"medium"}).format(new Date());
- case "number":return new Intl.NumberFormat(r.locale,{maximumFractionDigits:4}).format(safeNum("a"));
- case "currency":return new Intl.NumberFormat(r.locale,{style:"currency",currency:r.currency}).format(safeNum("a"))+"\nFormatting only — not a live exchange-rate conversion.";
- case "hexrgb":{let h=s.trim().replace("#","");if(!/^(?:[\da-f]{3}|[\da-f]{6})$/i.test(h))throw Error("Enter HEX such as #00AEEF.");if(h.length===3)h=[...h].map(x=>x+x).join("");const n=parseInt(h,16);return "#"+h.toUpperCase()+"\nrgb("+[n>>16,(n>>8)&255,n&255].join(", ")+")";}
- case "rgbhex":{const a=s.split(/[,\s]+/).map(Number);if(a.length!==3||a.some(n=>!Number.isInteger(n)||n<0||n>255))throw Error("Enter RGB values like 255, 120, 20.");return "#"+a.map(n=>n.toString(16).padStart(2,"0")).join("").toUpperCase();}
- case "temperature":{const a=safeNum("a"),u=$("unit").value;return (u==="tc"?a*9/5+32:(a-32)*5/9).toFixed(2)+(u==="tc"?" °F":" °C");}
- case "length":{const a=safeNum("a"),u=$("unit").value;return (u==="km"?a*.621371:a/0.621371).toFixed(4)+(u==="km"?" miles":" km");}
- case "weight":{const a=safeNum("a"),u=$("unit").value;return (u==="kg"?a*2.20462:a/2.20462).toFixed(4)+(u==="kg"?" lb":" kg");}
- case "speed":{const a=safeNum("a"),u=$("unit").value;return (u==="kmh"?a/1.609344:a*1.609344).toFixed(3)+(u==="kmh"?" mph":" km/h");}
- case "qr":return `<img alt="Generated QR code" width="220" height="220" style="background:white;padding:6px;max-width:100%" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(s)}"><p>QR generation uses an external service. Do not encode sensitive information.</p>`;
- case "markdown":return s;
- default:throw Error("This utility is not implemented yet.");
+ const t=TOOLS.find(x=>x.id===id);if(!t)return;
+ currentTool=t;
+ let recent=read(STORE.recent,[]).filter(x=>x!==id);recent.unshift(id);write(STORE.recent,recent.slice(0,8));renderSaved();
+ $('#modalTitle').textContent=t.name;$('#modalBody').innerHTML=modalTemplate(t);
+ $('#toolModal').hidden=false;document.body.style.overflow='hidden';
+ $('#toolForm').addEventListener('submit',e=>{e.preventDefault();runTool(t)});
+ $('#copyResult').onclick=()=>copyText($('#toolResult').dataset.copy||$('#toolResult').textContent);
+ $('#downloadResult').onclick=()=>downloadText(t.id+'-result.txt',$('#toolResult').dataset.copy||$('#toolResult').textContent);
+ if(t.kind==='unit'){
+  const group=$('[data-in="group"]'),from=$('[data-in="from"]'),to=$('[data-in="to"]');
+  const optsByGroup={
+   length:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles']],
+   mass:[['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds']],
+   temperature:[['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]
+  };
+  const refresh=()=>{
+   const opts=optsByGroup[group.value]||optsByGroup.length,oldFrom=from.value,oldTo=to.value;
+   from.innerHTML=opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
+   to.innerHTML=opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
+   from.value=opts.some(x=>x[0]===oldFrom)?oldFrom:opts[0][0];
+   to.value=opts.some(x=>x[0]===oldTo)&&oldTo!==from.value?oldTo:opts[Math.min(1,opts.length-1)][0];
+  };
+  group.addEventListener('change',refresh);refresh();
  }
+ if(t.kind==='dateDiff'){$('[data-in="start"]').value=new Date().toISOString().slice(0,10);$('[data-in="end"]').value=new Date().toISOString().slice(0,10)}
+ if(t.kind==='age')$('[data-in="birth"]').max=new Date().toISOString().slice(0,10);
+ if(t.kind==='countdown')$('[data-in="target"]').value=new Date(Date.now()+86400000).toISOString().slice(0,16);
+ if(t.kind==='password'||t.kind==='uuid')$('#toolForm').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}));
+ $('#modalClose').focus();
 }
+function closeTool(){if(currentTool?.cleanup)currentTool.cleanup();$('#toolModal').hidden=true;document.body.style.overflow='';currentTool=null}
 
-document.addEventListener("click",async e=>{
- const b=e.target.closest("[data-run]");if(b){
-  const t=tools.find(x=>x.engine===b.dataset.run&&x.region===selectedRegion)||tools.find(x=>x.engine===b.dataset.run);
-  try{
-   const value=runEngine(b.dataset.run,t||{region:selectedRegion});
-   if(value&&typeof value.then==="function")out(await value);
-   else if(b.dataset.run==="qr"){
-    $("result").innerHTML=value;
-   }else out(value);
-  }catch(err){out("Error: "+err.message)}
-  return;
+function parseCSV(line){
+ const rows=[];let row=[],cur='',quoted=false;
+ for(let i=0;i<line.length;i++){
+  const c=line[i];
+  if(c==='"'&&quoted&&line[i+1]==='"'){cur+='"';i++}
+  else if(c==='"'){quoted=!quoted}
+  else if(c===','&&!quoted){row.push(cur);cur=''}
+  else cur+=c;
  }
- if(e.target.closest("[data-copy]")){
-  const text=$("result")?.innerText||"";
-  try{await navigator.clipboard.writeText(text);e.target.textContent="Copied!"}
-  catch{alert("Clipboard unavailable. Select the result and copy it manually.")}
- }
-});
+ row.push(cur);return row;
+}
+function csvToRows(text){
+ const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).filter(line=>line.trim()!=='');
+ if(!lines.length)return [];
+ return lines.map(parseCSV);
+}
+function csvCell(v){const s=String(v??'');return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}
+function textToBase64(s){const bytes=new TextEncoder().encode(s);let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin)}
+function base64ToText(s){const bin=atob(s.trim());const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return new TextDecoder('utf-8',{fatal:true}).decode(bytes)}
+const MORSE={A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','.':'.-.-.-',',':'--..--','?':'..--..','!':'-.-.--'};
 
-$("country").addEventListener("change",()=>{
- selectedRegion=$("country").value;
- $("regionalTools").innerHTML="";
- const r=regions[selectedRegion];
- [
-  ["Number format",()=>new Intl.NumberFormat(r.locale).format(1234567.89)],
-  ["Currency format",()=>new Intl.NumberFormat(r.locale,{style:"currency",currency:r.currency}).format(1234.56)],
-  ["Date format",()=>new Intl.DateTimeFormat(r.locale,{dateStyle:"full"}).format(new Date())],
-  ["Time format",()=>new Intl.DateTimeFormat(r.locale,{timeStyle:"medium"}).format(new Date())]
- ].forEach(([name,fn])=>{
-  const el=document.createElement("article");el.className="card";
-  const h=document.createElement("h3");h.textContent=name;
-  const p=document.createElement("p");p.textContent=fn();
-  el.append(h,p);$("regionalTools").append(el);
+function runTool(t){
+ try{
+ const val=id=>getVal(id),text=val('text');let out='';
+ switch(t.kind){
+ case'calc':{
+  const a=num(val('a'),'first number'),b=num(val('b'),'second number'),op=val('op');
+  let r=op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:op==='/'?(b===0?NaN:a/b):op==='%'?(b===0?NaN:a%b):a**b;
+  if(!Number.isFinite(r))throw new Error('This operation has no finite result. Check division by zero or power size.');
+  out='Result: '+fmt(r,10);break;
+ }
+ case'percent':{const a=num(val('base'),'number'),r=num(val('rate'),'percentage');out=`${fmt(r)}% of ${fmt(a)} = ${fmt(a*r/100,4)}`;break}
+ case'discount':{const p=num(val('price'),'price'),r=num(val('rate'),'discount');if(p<0||r<0||r>100)throw new Error('Price must be non-negative and discount must be 0–100%.');out=`Discount amount: ${money(p*r/100)}\nFinal price: ${money(p*(1-r/100))}`;break}
+ case'tip':{const b=num(val('bill'),'bill'),r=num(val('rate'),'tip percent'),n=Math.floor(num(val('people'),'people'));if(b<0||r<0||n<1)throw new Error('Use a non-negative bill and tip and at least one person.');out=`Tip: ${money(b*r/100)}\nTotal: ${money(b*(1+r/100))}\nPer person: ${money(b*(1+r/100)/n)}`;break}
+ case'split':{const v=num(val('total'),'total'),p=Math.floor(num(val('people'),'people'));if(v<0||p<1)throw new Error('Total must be non-negative and people must be at least one.');out=`Amount per person: ${money(v/p)}\nTotal amount: ${money(v)}`;break}
+ case'tax':{const a=num(val('amount'),'amount'),r=num(val('rate'),'tax rate');if(a<0||r<0)throw new Error('Enter non-negative values.');out=`Estimated tax: ${money(a*r/100)}\nTotal including estimated tax: ${money(a*(1+r/100))}\nCalculation only, not tax advice.`;break}
+ case'simpleInterest':{const p=num(val('principal'),'principal'),r=num(val('rate'),'rate'),y=num(val('years'),'years');if(p<0||r<0||y<0)throw new Error('Values must be non-negative.');const i=p*r*y/100;out=`Simple interest: ${money(i)}\nTotal: ${money(p+i)}`;break}
+ case'compoundInterest':{const p=num(val('principal'),'starting amount'),r=num(val('rate'),'annual rate'),y=num(val('years'),'years'),n=num(val('freq'),'compounds per year');if(p<0||r<0||y<0||n<=0)throw new Error('Use non-negative amount/rate/years and positive compounding frequency.');const total=p*Math.pow(1+r/(100*n),n*y);out=`Estimated final amount: ${money(total)}\nEstimated growth: ${money(total-p)}\nBefore fees, taxes and real rate changes.`;break}
+ case'loan':{const p=num(val('principal'),'principal'),annual=num(val('rate'),'annual rate'),n=Math.floor(num(val('months'),'months'));if(p<0||annual<0||n<1)throw new Error('Use non-negative principal/rate and at least one month.');const r=annual/1200,m=r===0?p/n:p*r/(1-Math.pow(1+r,-n));out=`Estimated monthly payment: ${money(m)}\nEstimated total payments: ${money(m*n)}\nEstimated interest: ${money(m*n-p)}\nSimplified estimate, not a loan offer.`;break}
+ case'savings':{const target=num(val('target'),'target'),current=num(val('current'),'current savings'),monthly=num(val('monthly'),'monthly contribution');if(target<0||current<0||monthly<0)throw new Error('Values cannot be negative.');out=current>=target?'You have reached or passed this target.':monthly===0?'A positive monthly contribution is needed to estimate a timeline.':`Remaining amount: ${money(target-current)}\nEstimated months: ${Math.ceil((target-current)/monthly)}\nExcludes interest and price changes.`;break}
+ case'dateDiff':{const a=val('start'),b=val('end');if(!a||!b)throw new Error('Choose both dates.');const d1=new Date(a+'T12:00:00Z'),d2=new Date(b+'T12:00:00Z'),days=Math.round((d2-d1)/86400000);out=`Difference: ${Math.abs(days).toLocaleString(region().locale)} day(s)${days<0?' (end date comes earlier)':''}\nApproximate weeks: ${(Math.abs(days)/7).toFixed(1)}`;break}
+ case'age':{const s=val('birth');if(!s)throw new Error('Choose a birth date.');const b=new Date(s+'T12:00:00'),now=new Date();if(b>now)throw new Error('Birth date must not be in the future.');let y=now.getFullYear()-b.getFullYear(),m=now.getMonth()-b.getMonth(),d=now.getDate()-b.getDate();if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(m<0){y--;m+=12}out=`Age: ${y} years, ${m} months, ${d} days`;break}
+ case'countdown':{const v=val('target');if(!v)throw new Error('Choose a target date and time.');const delta=new Date(v).getTime()-Date.now();if(delta<=0)out='That target time is now or in the past.';else{let s=Math.floor(delta/1000),d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;out=`Remaining: ${d} day(s), ${h} hour(s), ${m} minute(s), ${s} second(s).`}break}
+ case'unit':{
+  const v=num(val('value'),'value'),from=val('from'),to=val('to'),group=val('group');
+  const length={mm:.001,cm:.01,m:1,km:1000,in:.0254,ft:.3048,mi:1609.344},mass={mg:.000001,g:.001,kg:1,oz:.028349523125,lb:.45359237};
+  let r;
+  if(group==='length'){if(!(from in length)||!(to in length))throw new Error('Choose length units for both fields.');r=v*length[from]/length[to]}
+  else if(group==='mass'){if(!(from in mass)||!(to in mass))throw new Error('Choose mass units for both fields.');r=v*mass[from]/mass[to]}
+  else{const temps=['C','F','K'];if(!temps.includes(from)||!temps.includes(to))throw new Error('Choose temperature units for both fields.');const c=from==='C'?v:from==='F'?(v-32)*5/9:v-273.15;r=to==='C'?c:to==='F'?c*9/5+32:c+273.15}
+  out=`${fmt(v,8)} ${from} = ${fmt(r,8)} ${to}`;break
+ }
+ case'data':{const v=num(val('value'),'value');if(v<0)throw new Error('Value must be non-negative.');const f={B:1,KB:1000,MB:1e6,GB:1e9,TB:1e12};out=`${fmt(v,8)} ${val('from')} = ${fmt(v*f[val('from')]/f[val('to')],8)} ${val('to')} (decimal units)`;break}
+ case'cooking':{const v=num(val('value'),'volume');if(v<0)throw new Error('Volume cannot be negative.');const ml={tsp:4.92892159375,tbsp:14.78676478125,ml:1,l:1000,cup:236.5882365};out=`${fmt(v,6)} ${val('from')} = ${fmt(v*ml[val('from')]/ml[val('to')],6)} ${val('to')}\nUS customary cup approximation.`;break}
+ case'word':case'char':case'reading':case'frequency':{
+  const words=text.trim().match(/\S+/g)||[],chars=text.length,lines=text?text.split(/\r\n|\n|\r/).length:0,paragraphs=text.trim()?text.trim().split(/\n\s*\n/).length:0;
+  if(t.kind==='word')out=`Words: ${words.length}\nCharacters (including spaces): ${chars}\nCharacters (excluding whitespace): ${text.replace(/\s/g,'').length}\nLines: ${lines}\nParagraphs: ${paragraphs}`;
+  else if(t.kind==='char')out=`Characters including spaces: ${chars}\nCharacters excluding whitespace: ${text.replace(/\s/g,'').length}\nLetters/numbers: ${(text.match(/[\p{L}\p{N}]/gu)||[]).length}\nWhitespace characters: ${(text.match(/\s/g)||[]).length}`;
+  else if(t.kind==='reading')out=`Words: ${words.length}\nEstimated reading time at 200 words/minute: ${Math.max(1,Math.ceil(words.length/200))} minute(s).`;
+  else{const counts={};words.forEach(w=>{const k=w.toLocaleLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu,'');if(k)counts[k]=(counts[k]||0)+1});out=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([w,n])=>`${w}: ${n}`).join('\n')||'No words found.'}
+  break
+ }
+ case'case':{const m=val('mode');out=m==='upper'?text.toLocaleUpperCase():m==='lower'?text.toLocaleLowerCase():m==='title'?text.toLocaleLowerCase().replace(/(^|[\s\-'’])\p{L}/gu,c=>c.toLocaleUpperCase()):text.toLocaleLowerCase().replace(/(^\s*|[.!?]\s+)(\p{L})/gu,(_,a,b)=>a+b.toLocaleUpperCase());break}
+ case'reverse':out=Array.from(text).reverse().join('');break;
+ case'slug':out=text.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');break;
+ case'dedupe':out=[...new Set(text.split(/\r?\n/))].join('\n');break;
+ case'sort':out=text.split(/\r?\n/).sort((a,b)=>a.localeCompare(b,region().locale)).join('\n');break;
+ case'spaces':out=text.replace(/[\t ]+/g,' ').replace(/ *\n */g,'\n').trim();break;
+ case'compare':{const a=val('left'),b=val('right');let i=0;while(i<a.length&&i<b.length&&a[i]===b[i])i++;out=a===b?'The two texts are identical.':`Texts differ.\nFirst difference at character index: ${i}\nFirst text length: ${a.length}\nSecond text length: ${b.length}\nFirst text excerpt: ${a.slice(Math.max(0,i-20),i+45)}\nSecond text excerpt: ${b.slice(Math.max(0,i-20),i+45)}`;break}
+ case'jsonFormat':case'jsonValidate':{let v;try{v=JSON.parse(text)}catch(e){throw new Error('Invalid JSON: '+e.message)}out=t.kind==='jsonFormat'?JSON.stringify(v,null,2):'Valid JSON ✓\nTop-level type: '+(Array.isArray(v)?'array':v===null?'null':typeof v);break}
+ case'base64Encode':out=textToBase64(text);break;
+ case'base64Decode':out=base64ToText(text);break;
+ case'urlEncode':out=encodeURIComponent(text);break;
+ case'urlDecode':out=decodeURIComponent(text.replace(/\+/g,'%20'));break;
+ case'htmlEscape':out=text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));break;
+ case'markdown':{const html=esc(text).replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h2>$1</h2>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*([^*]+)\*/g,'<em>$1</em>').replace(/\n/g,'<br>');setResultHTML('<div>'+html+'</div>',text);return}
+ case'rot13':out=text.replace(/[a-zA-Z]/g,c=>String.fromCharCode(c.charCodeAt(0)+(c.toLowerCase()<='m'?13:-13)));break;
+ case'morse':{if(val('mode')==='encode')out=Array.from(text.toUpperCase()).map(c=>c===' '?'/':MORSE[c]||'').join(' ').replace(/\s+/g,' ').trim();else{const reverse=Object.fromEntries(Object.entries(MORSE).map(([k,v])=>[v,k]));out=text.trim().split(/\s*\/\s*|\s{2,}/).map(part=>part.trim().split(/\s+/).map(code=>reverse[code]||'?').join('')).join(' ')}break}
+ case'binaryEncode':out=Array.from(new TextEncoder().encode(text)).map(b=>b.toString(2).padStart(8,'0')).join(' ');break;
+ case'binaryDecode':{const groups=text.trim().split(/\s+/);if(!text.trim()){out='';break}if(groups.some(g=>!/^[01]{8}$/.test(g)))throw new Error('Use groups of exactly 8 binary digits separated by spaces.');out=new TextDecoder('utf-8',{fatal:true}).decode(Uint8Array.from(groups,g=>parseInt(g,2)));break}
+ case'password':{const n=Math.max(8,Math.min(64,Math.floor(num(val('length'),'length')))),chars=val('charset')==='easy'?'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789':val('charset')==='alnum'?'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789':'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}?';const bytes=new Uint32Array(n);crypto.getRandomValues(bytes);out=Array.from(bytes,b=>chars[b%chars.length]).join('');break}
+ case'uuid':out=crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=crypto.getRandomValues(new Uint8Array(1))[0]%16;return(c==='x'?r:(r&3|8)).toString(16)});break;
+ case'random':{const items=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(!items.length)throw new Error('Enter one or more choices, one per line.');const rand=crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;out='Selected item:\n'+items[Math.floor(rand*items.length)];break}
+ case'qr':{if(!text.trim())throw new Error('Enter text or a URL first.');const url='https://api.qrserver.com/v1/create-qr-code/?size=260x260&data='+encodeURIComponent(text.trim());setResultHTML(`<p>QR preview (generated by an external service):</p><img id="qrImage" alt="QR code preview" width="260" height="260" style="display:block;background:#fff;padding:8px;border-radius:10px;margin:10px auto" referrerpolicy="no-referrer" src="${url}"><p class="tiny muted">Only use non-confidential text. The text is sent to the QR provider.</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open QR image</a>`,text.trim());$('#qrImage').onerror=()=>toast('Could not load QR service; check connection.');return}
+ case'image':{
+  const f=$('[data-in="file"]').files[0];if(!f)throw new Error('Choose an image first.');if(f.size>15*1024*1024)throw new Error('Choose an image below 15 MB.');if(!f.type.startsWith('image/'))throw new Error('Choose an image file.');
+  const width=Math.max(100,Math.min(6000,num(val('width'),'maximum width'))),quality=Math.max(.2,Math.min(1,num(val('quality'),'quality'))),format=val('format');
+  const img=new Image(),objectURL=URL.createObjectURL(f);
+  img.onload=()=>{const scale=Math.min(1,width/img.width),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));const ctx=canvas.getContext('2d');if(format==='image/jpeg'){ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height)}ctx.drawImage(img,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{URL.revokeObjectURL(objectURL);if(!blob){resultText('This image format could not be converted in this browser.');return}const outURL=URL.createObjectURL(blob);currentTool.cleanup=()=>URL.revokeObjectURL(outURL);setResultHTML(`<img alt="Optimized image preview" style="display:block;max-height:250px;border-radius:10px;margin:8px auto" src="${outURL}"><p>${canvas.width} × ${canvas.height}; ${(blob.size/1024).toFixed(1)} KB. Original ${(f.size/1024).toFixed(1)} KB.</p><a class="btn primary" download="shaheen-optimized.${format==='image/jpeg'?'jpg':format==='image/png'?'png':'webp'}" href="${outURL}">Download image</a>`,`Image size: ${(blob.size/1024).toFixed(1)} KB`)},format,format==='image/png'?undefined:quality)};
+  img.onerror=()=>{URL.revokeObjectURL(objectURL);resultText('This image could not be opened. Try a JPG, PNG or WebP file.')};
+  img.src=objectURL;resultText('Processing image locally…');return
+ }
+ case'color':{const c=val('color'),{r,g,b}=hexRgb(c),hsl=rgbHsl(r,g,b);setResultHTML(`<div style="display:flex;gap:12px;align-items:center"><div style="width:70px;height:70px;background:${c};border-radius:13px;border:1px solid var(--line)"></div><div><strong>${c.toUpperCase()}</strong><br>RGB(${r}, ${g}, ${b})<br>HSL(${hsl.h}°, ${hsl.s}%, ${hsl.l}%)</div></div>`,`${c.toUpperCase()}\nRGB(${r}, ${g}, ${b})\nHSL(${hsl.h}°, ${hsl.s}%, ${hsl.l}%)`);return}
+ case'contrast':{const fg=val('fg'),bg=val('bg'),ratio=contrastRatio(fg,bg),status=ratio>=7?'AAA for normal text':ratio>=4.5?'AA for normal text':ratio>=3?'Large text only (AA threshold)':'Does not meet common WCAG AA text contrast thresholds';setResultHTML(`<div class="visual-contrast" style="color:${fg};background:${bg}"><strong>Readable text preview</strong><p style="margin:4px 0">Example content for contrast checking</p></div><strong>Contrast ratio: ${ratio.toFixed(2)}:1</strong><p>${status}</p><p class="tiny muted">Review your full interface for accessibility.</p>`,`Contrast ${ratio.toFixed(2)}:1 — ${status}`);return}
+ case'gradient':{const c1=val('c1'),c2=val('c2'),a=Math.max(0,Math.min(360,num(val('angle'),'angle'))),css=`linear-gradient(${a}deg, ${c1}, ${c2})`;setResultHTML(`<div style="height:110px;border-radius:12px;background:${css};margin-bottom:12px"></div><code>${esc(css)}</code>`,css);return}
+ case'lorem':{const ps=Math.max(1,Math.min(10,Math.floor(num(val('paras'),'paragraphs')))),n=Math.max(5,Math.min(100,Math.floor(num(val('words'),'words per paragraph')))),words='clear useful digital workspace ideas make a small task easier people learn build write plan create improve daily practice simple examples content design testing progress meaningful action'.split(' ');out=Array.from({length:ps},(_,p)=>Array.from({length:n},(_,i)=>words[(i*3+p*7)%words.length]).join(' ')+'.').join('\n\n');break}
+ case'csvjson':{const rows=csvToRows(text);if(rows.length<2)throw new Error('Paste a CSV header row plus at least one data row.');const headers=rows[0];out=JSON.stringify(rows.slice(1).map(row=>Object.fromEntries(headers.map((h,i)=>[h,row[i]??'']))),null,2);break}
+ case'jsoncsv':{const arr=JSON.parse(text);if(!Array.isArray(arr)||!arr.every(x=>x&&typeof x==='object'&&!Array.isArray(x)))throw new Error('Input must be a JSON array of objects.');const headers=[...new Set(arr.flatMap(x=>Object.keys(x)))];out=[headers.map(csvCell).join(','),...arr.map(row=>headers.map(h=>csvCell(typeof row[h]==='object'&&row[h]!==null?JSON.stringify(row[h]):row[h])).join(','))].join('\r\n');break}
+ case'mdtable':{const rows=text.split(/\r?\n/).filter(Boolean).map(row=>row.split('|').map(c=>c.trim()));if(!rows.length)throw new Error('Enter rows separated by newlines and columns separated by |.');const n=Math.max(...rows.map(r=>r.length)),padded=rows.map(r=>Array.from({length:n},(_,i)=>r[i]||''));out='| '+padded[0].join(' | ')+' |\n| '+Array(n).fill('---').join(' | ')+' |'+padded.slice(1).map(r=>'\n| '+r.join(' | ')+' |').join('');break}
+ default:throw new Error('This tool type is not implemented.');
+ }
+ resultText(out);
+ }catch(err){resultText('Error: '+(err?.message||'Could not process this input.'))}
+}
+function hexRgb(hex){const s=hex.replace('#','');return{r:parseInt(s.slice(0,2),16),g:parseInt(s.slice(2,4),16),b:parseInt(s.slice(4,6),16)}}
+function rgbHsl(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b);let h=0,s=0,l=(max+min)/2;if(max!==min){const d=max-min;s=l>.5?d/(2-max-min):d/(max+min);switch(max){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;case b:h=(r-g)/d+4;break}h*=60}return{h:Math.round(h),s:Math.round(s*100),l:Math.round(l*100)}}
+function luminance(hex){const {r,g,b}=hexRgb(hex);return[r,g,b].map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0)}
+function contrastRatio(fg,bg){const a=luminance(fg),b=luminance(bg);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05)}
+function copyText(value){const s=String(value??'');if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(s).then(()=>toast('Copied')).catch(()=>fallbackCopy(s));else fallbackCopy(s)}
+function fallbackCopy(s){const ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Copied')}catch{toast('Browser blocked copying—select the result manually.')}ta.remove()}
+function downloadText(name,text,mime='text/plain;charset=utf-8'){const blob=new Blob([text],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+
+function renderClocks(selector){
+ const entries=[['Karachi','Asia/Karachi'],['Riyadh','Asia/Riyadh'],['Manama','Asia/Bahrain'],['London','Europe/London'],['New York','America/New_York'],['UTC','UTC']];
+ const node=$(selector);if(!node)return;
+ node.innerHTML=entries.map(([name,zone])=>`<div class="clock"><span>${name} · ${zone}</span><strong data-zone="${zone}">--:--:--</strong><span data-datezone="${zone}">Loading date…</span></div>`).join('');
+ tickClocks();
+}
+function tickClocks(){
+ $$('[data-zone]').forEach(e=>{
+  const z=e.dataset.zone;
+  e.textContent=new Intl.DateTimeFormat('en',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:z}).format(new Date());
+  const d=$(`[data-datezone="${z}"]`);
+  if(d)d.textContent=new Intl.DateTimeFormat('en',{weekday:'short',day:'numeric',month:'short',timeZone:z}).format(new Date());
  });
- render();
-});
-$("country").dispatchEvent(new Event("change"));
-
-/* Optional logo preview: local-only, no upload. */
-let logoUrl=null;
-$("logoFile").addEventListener("change",()=>{
- const f=$("logoFile").files[0];if(!f)return;
- if(!["image/png","image/jpeg","image/webp"].includes(f.type)||f.size>3*1024*1024){
-  $("logoPreview").textContent="Choose PNG, JPEG or WebP under 3 MB.";$("logoFile").value="";return;
- }
- if(logoUrl)URL.revokeObjectURL(logoUrl);
- logoUrl=URL.createObjectURL(f);
- const img=document.createElement("img");img.src=logoUrl;img.alt="Logo preview";img.style.width=$("logoSize").value+"px";img.style.maxWidth="100%";
- $("logoPreview").replaceChildren(img);
-});
-$("logoSize").addEventListener("input",()=>{const img=$("logoPreview").querySelector("img");if(img)img.style.width=$("logoSize").value+"px"});
-$("logoRemove").addEventListener("click",()=>{if(logoUrl)URL.revokeObjectURL(logoUrl);logoUrl=null;$("logoFile").value="";$("logoPreview").textContent="No logo selected."});
-
-/* Gym 2026 timer */
-const exercises=[
- ["🏃","March in place","March gently at a comfortable pace."],
- ["🙌","Wall push-ups","Use a wall and a comfortable range of motion."],
- ["🧍","Standing knee raises","Alternate knees comfortably."],
- ["🏋️","Bodyweight squats","Use a comfortable range of movement."],
- ["🧘","Rest and breathe","Relax and breathe normally."]
-];
-let exerciseIndex=0,seconds=30,gymTimer=null;
-function drawGym(){
- const x=exercises[exerciseIndex];
- $("figure").textContent=x[0];$("exerciseName").textContent=x[1];$("exerciseDesc").textContent=x[2];
- $("clock").textContent="00:"+String(seconds).padStart(2,"0");
- $("exerciseList").innerHTML=exercises.map((x,i)=>`<button class="exercise" data-exercise="${i}">${x[0]} ${x[1]}</button>`).join("");
 }
-function stopGym(){if(gymTimer!==null)clearInterval(gymTimer);gymTimer=null;$("gymStart").textContent="Start"}
-function nextGym(){stopGym();exerciseIndex=(exerciseIndex+1)%exercises.length;seconds=30;drawGym()}
-$("gymStart").addEventListener("click",()=>{
- if(gymTimer!==null){stopGym();return}
- if(seconds<=0)nextGym();
- $("gymStart").textContent="Pause";
- gymTimer=setInterval(()=>{
-  seconds--;drawGym();
-  if(seconds<=0){stopGym();$("gymStart").textContent="Next exercise"}
- },1000);
-});
-$("gymNext").addEventListener("click",nextGym);
-$("gymReset").addEventListener("click",()=>{stopGym();seconds=30;drawGym()});
-$("exerciseList").addEventListener("click",e=>{
- const b=e.target.closest("[data-exercise]");if(!b)return;
- stopGym();exerciseIndex=Number(b.dataset.exercise);seconds=30;drawGym();
-});
-$("gymStart").addEventListener("dblclick",()=>{if(seconds<=0)nextGym()});
+function challenge(){
+ const a=[['Tidy one small thing','Organize a file, note or workspace corner.'],['Review one flashcard','Practise remembering one concept and check the answer.'],['Take a screen break','Look away and relax for a little while.'],['Write the next action','Make one larger goal easier to begin.'],['Share something useful','Send a helpful resource to someone who may need it.'],['Plan a gentle movement break','Choose comfortable movement and stop if it hurts.'],['Allow time to rest','Rest and sleep matter as much as productive work.']];
+ const day=Math.floor(Date.now()/86400000)%a.length;$('#challengeTitle').textContent=a[day][0];$('#challengeText').textContent=a[day][1];
+ const done=read(STORE.challenge,'')===new Date().toISOString().slice(0,10);$('#challengeBtn').textContent=done?'Completed ✓':'Mark complete ✓';$('#challengeBtn').disabled=done;
+}
+function renderHome(){const ts=read(STORE.tasks,[]);$('#doneCount').textContent=ts.filter(t=>t.done).length;$('#toolCount').textContent=TOOLS.length;$('#regionCount').textContent=TOOLS.length*Object.keys(REGIONS).length;renderClocks('#homeClocks')}
+function renderTasks(){
+ const tasks=read(STORE.tasks,[]);
+ $('#taskList').innerHTML=tasks.length?tasks.map(t=>`<div class="list-row"><input class="check" type="checkbox" data-task-check="${esc(t.id)}" ${t.done?'checked':''} aria-label="Mark task complete"><div class="grow"><strong style="${t.done?'opacity:.6;text-decoration:line-through':''}">${esc(t.title)}</strong><p>${esc(t.area)} · ${t.done?'Complete':'Open'}</p></div><button class="icon-btn" data-task-delete="${esc(t.id)}" aria-label="Delete task">×</button></div>`).join(''):'<div class="empty">No tasks yet. Add one small next step above.</div>';
+ $('#notes').value=read(STORE.notes,'');
+ const done=read(STORE.habits,{}),habits=['Drink water','Take a screen break','Review one thing','Get some fresh air','Make time to rest'];
+ $('#habits').innerHTML=habits.map(h=>`<label class="list-row"><input class="check" type="checkbox" data-habit="${esc(h)}" ${done[h]?'checked':''}><span class="grow">${esc(h)}</span></label>`).join('');
+ $('#doneCount').textContent=tasks.filter(t=>t.done).length;
+}
+function renderExercises(){
+ $('#exerciseGrid').innerHTML=EXERCISES.map((x,i)=>`<article class="exercise"><div class="exercise-art"><span>${x.icon}</span></div><h3>${esc(x.name)}</h3><p>${esc(x.desc)}</p><div class="muted tiny">Suggested break: ${x.dur} seconds</div><button class="btn" data-ex-start="${i}" style="margin-top:10px">Start short timer</button><div class="exercise-timer" id="exTimer${i}" aria-live="polite"></div></article>`).join('');
+}
+function renderFlash(){
+ const c=FLASH[flashIndex];$('#flashCard').textContent=flashShown?c.a:c.q;$('#flashStatus').textContent=`Card ${flashIndex+1} of ${FLASH.length} · tap the card to ${flashShown?'show question':'reveal answer'}`;
+ const custom=read(STORE.userCards,[]);
+ $('#userCards').innerHTML=custom.length?custom.map((x,i)=>`<div class="list-row"><div class="grow"><strong>${esc(x.q)}</strong><p>${esc(x.a)}</p></div><button class="icon-btn" data-card-delete="${i}" aria-label="Delete card">×</button></div>`).join(''):'<div class="empty">Your custom cards will appear here.</div>';
+}
+function setTimer(mode){timerMode=mode;timerRunning=false;clearInterval(timerInterval);timerInterval=null;timerSeconds=mode==='focus'?1500:mode==='short'?300:900;$('#timerStart').textContent='Start';$('#timerRing').classList.remove('running');$$('[data-timer]').forEach(b=>b.classList.toggle('active',b.dataset.timer===mode));updateTimer()}
+function updateTimer(){const m=String(Math.floor(timerSeconds/60)).padStart(2,'0'),s=String(timerSeconds%60).padStart(2,'0');$('#timerDisplay').textContent=m+':'+s;document.title=(timerRunning?m+':'+s+' · ':'')+'SHAHEEN — Free Online Tools & Workspace'}
+function startTimer(){
+ if(timerRunning){timerRunning=false;clearInterval(timerInterval);timerInterval=null;$('#timerStart').textContent='Resume';$('#timerRing').classList.remove('running');return}
+ timerRunning=true;$('#timerStart').textContent='Pause';$('#timerRing').classList.add('running');
+ timerInterval=setInterval(()=>{if(timerSeconds>0){timerSeconds--;updateTimer()}else{clearInterval(timerInterval);timerInterval=null;timerRunning=false;$('#timerStart').textContent='Start again';$('#timerRing').classList.remove('running');updateTimer();toast(timerMode==='focus'?'Focus block finished—take a real break.':'Break finished—continue only if it feels right.')}},1000);
+}
+function shareSite(){
+ const url=location.href.split('#')[0]||SITE_URL,data={title:'SHAHEEN — Free Online Tools & Everyday Workspace',text:'Explore SHAHEEN: practical tools, study helpers and daily planning.',url};
+ if(navigator.share)navigator.share(data).catch(()=>{});
+ else window.open('https://wa.me/?text='+encodeURIComponent(data.title+' — '+data.text+' '+url),'_blank','noopener,noreferrer');
+}
+function applyRegion(){const r=region();$('#regionSelect').title=`Regional display format: ${r.label} · ${r.currency}`;renderToolGrids();renderHome()}
+function applyTheme(){const light=read(STORE.theme,'dark')==='light';document.body.classList.toggle('light',light);$('#themeBtn').textContent=light?'☾':'☼'}
+function restoreLogo(){const data=read(STORE.logo,'');if(data){const b=$('#brandMark');b.innerHTML='';const im=document.createElement('img');im.alt='Custom SHAHEEN logo';im.src=data;b.appendChild(im)}}
+function init(){
+ const regionSaved=read(STORE.region,'global');$('#regionSelect').value=REGIONS[regionSaved]?regionSaved:'global';
+ $('#year').textContent=new Date().getFullYear();applyTheme();restoreLogo();renderToolGrids();renderExercises();renderTasks();renderHome();challenge();
+ $('#focusGoal').value=read(STORE.goal,'');if($('#focusGoal').value){$('#goalView').hidden=false;$('#goalView').textContent='Saved goal: '+$('#focusGoal').value}
+ setTimer('focus');const hash=location.hash.slice(1);
+ if(['home','tools','focus','study','gym','daily','saved','about'].includes(hash))showPage(hash);
+ tickClocks();setInterval(tickClocks,1000);
+}
 
-render();drawGym();
+document.addEventListener('click',e=>{
+ const go=e.target.closest('[data-go]');if(go){showPage(go.dataset.go);return}
+ const nav=e.target.closest('[data-page]');if(nav){showPage(nav.dataset.page);return}
+ const fav=e.target.closest('[data-fav]');if(fav){e.stopPropagation();toggleSaved(fav.dataset.fav);return}
+ const tool=e.target.closest('[data-tool]');if(tool){openTool(tool.dataset.tool);return}
+ const cat=e.target.closest('[data-category]');if(cat){activeCategory=cat.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===cat));renderToolGrids();return}
+ const start=e.target.closest('[data-ex-start]');
+ if(start){
+  const i=Number(start.dataset.exStart),x=EXERCISES[i],node=$('#exTimer'+i);
+  if(activeExerciseTimers.has(i)){clearInterval(activeExerciseTimers.get(i));activeExerciseTimers.delete(i);node.textContent='Timer stopped';start.textContent='Start short timer';return}
+  let n=x.dur;start.textContent='Stop timer';node.textContent=n+' seconds';
+  const id=setInterval(()=>{n--;node.textContent=n+' seconds';if(n<=0){clearInterval(id);activeExerciseTimers.delete(i);start.textContent='Start short timer';node.textContent='Break complete';toast('Short break complete')}},1000);
+  activeExerciseTimers.set(i,id);return;
+ }
+ const del=e.target.closest('[data-task-delete]');if(del){write(STORE.tasks,read(STORE.tasks,[]).filter(t=>t.id!==del.dataset.taskDelete));renderTasks();renderHome();return}
+ const cd=e.target.closest('[data-card-delete]');if(cd){let a=read(STORE.userCards,[]);a.splice(Number(cd.dataset.cardDelete),1);write(STORE.userCards,a);renderFlash();return}
+});
+$('#globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){showPage('tools');$('#toolSearch').value=$('#globalSearch').value;renderToolGrids();$('#toolSearch').focus()}});
+$('#searchGo').onclick=()=>{showPage('tools');$('#toolSearch').value=$('#globalSearch').value;renderToolGrids()};
+$('#toolSearch').addEventListener('input',renderToolGrids);
+$('#regionSelect').addEventListener('change',()=>{write(STORE.region,$('#regionSelect').value);applyRegion();toast('Regional number/date formatting updated')});
+$('#themeBtn').onclick=()=>{write(STORE.theme,document.body.classList.contains('light')?'dark':'light');applyTheme()};
+$('#shareBtn').onclick=shareSite;$('#footerShare').onclick=shareSite;
+$('#logoBtn').onclick=()=>$('#logoFile').click();
+$('#logoFile').onchange=()=>{
+ const f=$('#logoFile').files[0];if(!f)return;
+ if(!/^image\/(png|jpeg|webp)$/.test(f.type))return toast('Choose PNG, JPG or WebP logo.');
+ if(f.size>400*1024)return toast('Logo must be under 400 KB.');
+ const reader=new FileReader();reader.onload=()=>{if(write(STORE.logo,reader.result)){restoreLogo();toast('Logo saved on this device')}else toast('Browser storage is full')};reader.readAsDataURL(f);
+};
+$('#challengeBtn').onclick=()=>{write(STORE.challenge,new Date().toISOString().slice(0,10));challenge();toast('Challenge marked complete')};
+$('#taskForm').onsubmit=e=>{e.preventDefault();const title=$('#taskInput').value.trim();if(!title)return;const tasks=read(STORE.tasks,[]);tasks.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title,area:$('#taskArea').value,done:false});if(!write(STORE.tasks,tasks))return toast('Browser storage is full');$('#taskInput').value='';renderTasks();renderHome();toast('Task added')};
+$('#taskList').addEventListener('change',e=>{const id=e.target.dataset.taskCheck;if(!id)return;write(STORE.tasks,read(STORE.tasks,[]).map(t=>t.id===id?{...t,done:e.target.checked}:t));renderTasks();renderHome()});
+$('#clearTasks').onclick=()=>{write(STORE.tasks,read(STORE.tasks,[]).filter(t=>!t.done));renderTasks();renderHome();toast('Completed tasks cleared')};
+$('#saveNotes').onclick=()=>{if(write(STORE.notes,$('#notes').value)){$('#notesStatus').textContent='Saved locally at '+new Date().toLocaleTimeString();toast('Notes saved')}else toast('Browser storage is full')};
+$('#copyNotes').onclick=()=>copyText($('#notes').value);$('#downloadNotes').onclick=()=>downloadText('shaheen-notes.txt',$('#notes').value);
+$('#habits').addEventListener('change',e=>{const h=e.target.dataset.habit;if(!h)return;const a=read(STORE.habits,{});a[h]=e.target.checked;write(STORE.habits,a)});
+$('#flashCard').onclick=()=>{flashShown=!flashShown;renderFlash()};
+$('#flashNext').onclick=()=>{flashIndex=(flashIndex+1)%FLASH.length;flashShown=false;renderFlash()};
+$('#flashPrev').onclick=()=>{flashIndex=(flashIndex-1+FLASH.length)%FLASH.length;flashShown=false;renderFlash()};
+$('#flashForm').onsubmit=e=>{e.preventDefault();const q=$('#flashQ').value.trim(),a=$('#flashA').value.trim();if(!q||!a)return;const cards=read(STORE.userCards,[]);cards.unshift({q,a});write(STORE.userCards,cards);$('#flashQ').value='';$('#flashA').value='';renderFlash();toast('Flashcard saved locally')};
+$('#timerStart').onclick=startTimer;$('#timerReset').onclick=()=>setTimer(timerMode);$$('[data-timer]').forEach(b=>b.onclick=()=>setTimer(b.dataset.timer));
+$('#saveGoal').onclick=()=>{const v=$('#focusGoal').value.trim();write(STORE.goal,v);$('#goalView').hidden=!v;$('#goalView').textContent=v?'Saved goal: '+v:'';toast(v?'Goal saved on this device':'Goal cleared')};
+$('#modalClose').onclick=closeTool;$('#toolModal').addEventListener('click',e=>{if(e.target===$('#toolModal'))closeTool()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#toolModal').hidden)closeTool();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
+init();
 </script>
 </body>
 </html>
