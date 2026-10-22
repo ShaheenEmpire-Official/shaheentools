@@ -1,220 +1,511 @@
 
-<!-- SHANE TOOLS ULTRA — GLOBAL UPGRADE MODULE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="Shane Tools Ultra — free global tools, calculators, developer utilities, design tools and fitness guides.">
+<title>Shane Tools Ultra — Global Digital Toolkit</title>
+
+<!-- Monetag OnClick zone: original publisher code. Load once. -->
+<script>(function(s){s.dataset.zone='12088071';s.src='https://al5sm.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<!-- Monetag In-Page Push zone: original publisher code. Load once. -->
+<script>(function(s){s.dataset.zone='12088232';s.src='https://nap5k.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 <style>
-#global-upgrade{color:#f3f8ff}
-#global-upgrade .gu-panel{background:#10243b;border:1px solid #29445f;border-radius:16px;padding:16px;margin:12px 0}
-#global-upgrade input,#global-upgrade select{max-width:100%;background:#071629;color:#fff;border:1px solid #34516b;border-radius:10px;padding:10px}
-#global-upgrade button{background:#173b59;color:#fff;border:1px solid #34516b;border-radius:10px;padding:10px;cursor:pointer}
-#global-upgrade .gu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
-#global-upgrade .gu-item{background:#10243b;border:1px solid #29445f;border-radius:13px;padding:12px}
-#global-upgrade .gu-item small{display:block;color:#a8bdd0;margin:5px 0 10px}
-#global-upgrade .gu-primary{background:linear-gradient(100deg,#1677ff,#00bfe8)}
-#global-upgrade .gu-result{overflow-wrap:anywhere;white-space:pre-wrap;margin-top:12px;padding:12px;background:#071629;border-radius:10px}
-#global-upgrade .gu-motion{font-size:64px;text-align:center;animation:guMove 1.3s ease-in-out infinite alternate}
-@keyframes guMove{to{transform:translateY(-9px) rotate(4deg)}}
-@media(prefers-reduced-motion:reduce){#global-upgrade .gu-motion{animation:none}}
+:root{color-scheme:dark;--bg:#071426;--panel:#10243b;--panel2:#142e49;--line:#29445f;--text:#f2f8ff;--muted:#a8bdd0;--cyan:#00d4ff;--blue:#1677ff;--radius:17px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,Arial,sans-serif;padding-bottom:88px}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer;color:inherit}
+a{color:var(--cyan)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:#071426f5;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.top{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:950;letter-spacing:-.8px}
+.logo span,.cyan{color:var(--cyan)}
+#search{width:min(430px,100%)}
+input,textarea,select{width:100%;background:#071629;color:white;border:1px solid var(--line);border-radius:11px;padding:12px}
+textarea{resize:vertical;min-height:120px}
+button,.btn{border:1px solid var(--line);border-radius:11px;padding:10px 13px;background:var(--panel2);text-decoration:none;display:inline-block}
+.primary{background:linear-gradient(100deg,var(--blue),#00aeea);border:0;font-weight:800}
+.hero{margin:22px 0;padding:clamp(22px,5vw,44px);border:1px solid var(--line);border-radius:25px;background:radial-gradient(ellipse at top right,#17466b,transparent 65%),linear-gradient(145deg,#102c48,#091729)}
+.kicker{color:var(--cyan);font-size:12px;letter-spacing:2px;font-weight:900}
+h1{font-size:clamp(35px,7vw,62px);line-height:1.06;letter-spacing:-2px;margin:15px 0}
+h2{font-size:24px;line-height:1.25;margin:0 0 9px}
+h3{font-size:16px;margin:8px 0}
+p{color:var(--muted)}
+.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.section{padding:20px 0}
+.page[hidden]{display:none!important}
+.head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card,.panel{min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);padding:14px}
+.card h3{overflow-wrap:anywhere}
+.card p{font-size:12px;min-height:37px;margin:4px 0 12px}
+.card .row button:first-child{flex:1}
+.ico{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#173d5b;font-size:23px}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:5px 0 15px}
+.filters button{white-space:nowrap}
+.filters .selected{background:var(--blue)}
+.adslot{margin:18px 0;min-height:48px;border:1px dashed #34516b;border-radius:12px;display:grid;place-items:center;color:#819bb4;font-size:11px}
+.bottom{position:fixed;z-index:15;bottom:0;left:0;right:0;background:#071426f7;border-top:1px solid var(--line);padding:7px 7px max(7px,env(safe-area-inset-bottom));backdrop-filter:blur(14px)}
+.nav{width:min(720px,100%);margin:auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+.nav button{border:0;background:transparent;color:var(--muted);font-size:10px;padding:6px 0}
+.nav button span{display:block;font-size:21px}
+.nav button.active{background:#153b59;color:var(--cyan)}
+.field{margin:12px 0}
+.field label{display:block;color:var(--muted);margin-bottom:5px}
+.result{white-space:pre-wrap;overflow-wrap:anywhere;background:#061222;border:1px solid var(--line);border-radius:12px;padding:13px;min-height:45px;margin:12px 0}
+.modal{display:none;position:fixed;z-index:30;inset:0;padding:14px;background:#020814e8;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.dialog{width:min(650px,100%);max-height:90dvh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
+.dialoghead{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.dialoghead h2{font-size:21px}
+.demo{padding:22px 12px;text-align:center;border-radius:17px;background:radial-gradient(circle,#174c6b,#071426)}
+.figure{font-size:68px;animation:bob 1.3s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-8px) rotate(4deg)}}
+.exercise{width:100%;text-align:left;margin:4px 0}
+footer{border-top:1px solid var(--line);margin-top:25px;padding:22px 0;color:var(--muted);font-size:12px}
+@media(max-width:780px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card{padding:10px}.top #search{order:3;flex-basis:100%;width:100%}.nav button{font-size:9px}.nav button span{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
 </style>
+</head>
 
-<section id="global-upgrade">
-  <div class="gu-panel">
-    <h2>🌍 Global Tools</h2>
-    <p>Choose a region to see relevant utilities and regional formats.</p>
-    <select id="gu-country" aria-label="Choose country">
-      <option value="PK">Pakistan · PKR · DD/MM/YYYY</option>
-      <option value="SA">Saudi Arabia · SAR · Arabic support</option>
-      <option value="US">United States · USD · MM/DD/YYYY</option>
-      <option value="GB">United Kingdom · GBP · DD/MM/YYYY</option>
-      <option value="BH">Bahrain · BHD · Arabic support</option>
-      <option value="AE">United Arab Emirates · AED</option>
-      <option value="CA">Canada · CAD</option>
-      <option value="AU">Australia · AUD</option>
-      <option value="IN">India · INR</option>
-      <option value="GLOBAL">Other countries · Global tools</option>
-    </select>
-    <div class="gu-grid" id="gu-regional"></div>
-  </div>
+<body>
+<header>
+ <div class="wrap top">
+  <div class="logo">SHANE <span>TOOLS</span></div>
+  <input id="search" type="search" placeholder="Search 500 tools..." aria-label="Search tools">
+ </div>
+</header>
 
-  <div class="gu-panel">
-    <h2>🎨 Optional Logo Studio</h2>
-    <p>Upload your own logo if you want. It is optional.</p>
-    <input type="file" id="gu-logo-file" accept="image/png,image/jpeg,image/webp">
-    <div id="gu-logo-preview" style="margin:12px 0"></div>
-    <label>Logo size <input id="gu-logo-size" type="range" min="40" max="240" value="100"></label>
-    <div class="gu-result" id="gu-logo-status">No logo selected.</div>
-    <button id="gu-logo-remove">Remove logo</button>
+<main class="wrap">
+<section id="home" class="page">
+ <div class="hero">
+  <div class="kicker">YOUR GLOBAL DIGITAL TOOLKIT</div>
+  <h1>One hub.<br><span class="cyan">Endless possibilities.</span></h1>
+  <p>Free browser utilities for students, developers, creators, businesses and everyday life.</p>
+  <div class="row">
+   <button class="primary" data-go="tools">Explore tools ↗</button>
+   <button data-go="gym">Gym 2026</button>
   </div>
-
-  <div class="gu-panel">
-    <h2>🏋️ Gym 2026</h2>
-    <div class="gu-motion" id="gu-figure">🏃</div>
-    <h3 id="gu-exercise-name">March in place</h3>
-    <p id="gu-exercise-desc">Move gently at a comfortable pace.</p>
-    <div id="gu-clock" style="font-size:32px;font-weight:800">00:30</div>
-    <div class="gu-grid">
-      <button class="gu-primary" id="gu-start">Start</button>
-      <button id="gu-next">Next exercise</button>
-      <button id="gu-reset">Reset</button>
-    </div>
-    <p>Animated illustrations are demonstrations, not medical advice or exact human-motion models.</p>
-  </div>
-
-  <div class="gu-panel">
-    <h2>🧰 Utility Lab</h2>
-    <select id="gu-tool">
-      <option value="word">Word counter</option>
-      <option value="case">Text case converter</option>
-      <option value="slug">URL slug generator</option>
-      <option value="json">JSON formatter</option>
-      <option value="base64">Base64 encoder</option>
-      <option value="url">URL encoder</option>
-      <option value="percent">Percentage calculator</option>
-      <option value="color">HEX colour converter</option>
-    </select>
-    <textarea id="gu-input" rows="4" style="display:block;width:100%;margin-top:10px" placeholder="Enter text, JSON, colour or numbers"></textarea>
-    <button class="gu-primary" id="gu-run" style="margin-top:10px">Run tool</button>
-    <div class="gu-result" id="gu-result" aria-live="polite"></div>
-    <button id="gu-copy">Copy result</button>
-  </div>
+  <p id="toolCount">Loading tools...</p>
+ </div>
+ <div class="adslot">Advertisement</div>
+ <div class="head"><h2>Popular tools</h2><button data-go="tools">View all</button></div>
+ <div class="grid" id="popular"></div>
+ <div class="panel" style="margin-top:18px">
+  <h2>Built for the world 🌍</h2>
+  <p>Country-aware date, number and currency formatting, useful local formats and tools that work across devices.</p>
+  <button class="primary" data-go="global">Explore global tools</button>
+ </div>
 </section>
 
+<section id="tools" class="page section" hidden>
+ <h2>All Tools</h2>
+ <p>Search the catalogue or filter by category. Tool variations use regional settings where applicable.</p>
+ <div id="filters" class="filters"></div>
+ <div id="toolGrid" class="grid"></div>
+ <p id="toolStatus"></p>
+</section>
+
+<section id="gym" class="page section" hidden>
+ <h2>Gym 2026</h2>
+ <p>Simple timed movements with animated illustrations. Start at a comfortable pace.</p>
+ <div class="panel">
+  <div class="demo">
+   <div class="figure" id="figure">🏃</div>
+   <h2 id="exerciseName">March in place</h2>
+   <p id="exerciseDesc">March gently at a comfortable pace.</p>
+   <div id="clock" style="font-size:38px;font-weight:900">00:30</div>
+   <div class="row" style="justify-content:center">
+    <button class="primary" id="gymStart">Start</button>
+    <button id="gymNext">Next</button>
+    <button id="gymReset">Reset</button>
+   </div>
+  </div>
+  <div id="exerciseList" style="margin-top:15px"></div>
+  <p>These animations are illustrative, not exact human-motion demonstrations. Stop if you feel pain, dizziness or unusual discomfort.</p>
+ </div>
+</section>
+
+<section id="global" class="page section" hidden>
+ <h2>Global Essentials</h2>
+ <p>Regional formatting, language helpers and useful services.</p>
+ <div class="panel">
+  <label for="country">Choose your region</label>
+  <select id="country">
+   <option value="PK">Pakistan — PKR</option>
+   <option value="SA">Saudi Arabia — SAR</option>
+   <option value="US">United States — USD</option>
+   <option value="GB">United Kingdom — GBP</option>
+   <option value="BH">Bahrain — BHD</option>
+   <option value="AE">United Arab Emirates — AED</option>
+   <option value="CA">Canada — CAD</option>
+   <option value="AU">Australia — AUD</option>
+   <option value="IN">India — INR</option>
+   <option value="GLOBAL">Global — USD</option>
+  </select>
+  <div id="regionalTools" class="grid" style="margin-top:15px"></div>
+ </div>
+ <div class="grid" style="margin-top:16px">
+  <article class="card"><div class="ico">📄</div><h3>PDF tools</h3><p>Open a free online PDF service.</p><a class="btn" href="https://www.ilovepdf.com/" target="_blank" rel="noopener noreferrer">Open service ↗</a></article>
+  <article class="card"><div class="ico">🎨</div><h3>Design tools</h3><p>Design, images and visual content.</p><a class="btn" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">Open service ↗</a></article>
+  <article class="card"><div class="ico">💻</div><h3>Developer docs</h3><p>Web platform documentation.</p><a class="btn" href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">Open docs ↗</a></article>
+  <article class="card"><div class="ico">🧑‍💻</div><h3>Code hosting</h3><p>Repositories and collaboration.</p><a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a></article>
+  <article class="card"><div class="ico">🌐</div><h3>Translation</h3><p>Translate between languages.</p><a class="btn" href="https://translate.google.com/" target="_blank" rel="noopener noreferrer">Open translator ↗</a></article>
+  <article class="card"><div class="ico">🔎</div><h3>Search</h3><p>Find information on the web.</p><a class="btn" href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Open search ↗</a></article>
+ </div>
+ <p>External services have their own terms and privacy policies. Links are not endorsements or integrations.</p>
+</section>
+
+<section id="saved" class="page section" hidden>
+ <h2>Saved Tools ♡</h2>
+ <p>Favourites are saved locally in this browser.</p>
+ <div id="savedGrid" class="grid"></div>
+</section>
+
+<section id="logoStudio" class="page section" hidden>
+ <h2>Optional Logo Studio 🎨</h2>
+ <p>Choose whether to add your own logo. It stays in your browser and is not uploaded.</p>
+ <div class="panel">
+  <div class="field"><label for="logoFile">Upload a logo (PNG, JPEG or WebP, up to 3 MB)</label><input id="logoFile" type="file" accept="image/png,image/jpeg,image/webp"></div>
+  <div class="field"><label for="logoSize">Preview size</label><input id="logoSize" type="range" min="40" max="240" value="120"></div>
+  <div id="logoPreview" class="result">No logo selected.</div>
+  <button id="logoRemove">Remove logo</button>
+ </div>
+</section>
+
+<footer>
+ <div>© <span id="year"></span> Shane Tools Ultra</div>
+ <p>Local tools process data in your browser where possible. External services may process data according to their own policies. Ads are separate from tool controls.</p>
+ <div class="row"><a href="https://www.monetag.com/" target="_blank" rel="noopener noreferrer">Advertising partner</a></div>
+</footer>
+</main>
+
+<nav class="bottom" aria-label="Main navigation">
+ <div class="nav">
+  <button class="active" data-go="home"><span>⌂</span>Home</button>
+  <button data-go="tools"><span>▦</span>Tools</button>
+  <button data-go="gym"><span>♧</span>Gym</button>
+  <button data-go="global"><span>🌍</span>Global</button>
+  <button data-go="saved"><span>♡</span>Saved</button>
+  <button data-go="logoStudio"><span>🎨</span>Logo</button>
+ </div>
+</nav>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="dialog">
+  <div class="dialoghead"><h2 id="modalTitle">Tool</h2><button id="closeModal" aria-label="Close">✕</button></div>
+  <div id="modalContent"></div>
+ </div>
+</div>
+
 <script>
-(function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const countries={
- PK:{name:"Pakistan",currency:"PKR",date:"DD/MM/YYYY",locale:"en-PK"},
- SA:{name:"Saudi Arabia",currency:"SAR",date:"DD/MM/YYYY",locale:"en-SA"},
- US:{name:"United States",currency:"USD",date:"MM/DD/YYYY",locale:"en-US"},
- GB:{name:"United Kingdom",currency:"GBP",date:"DD/MM/YYYY",locale:"en-GB"},
- BH:{name:"Bahrain",currency:"BHD",date:"DD/MM/YYYY",locale:"en-BH"},
- AE:{name:"United Arab Emirates",currency:"AED",date:"DD/MM/YYYY",locale:"en-AE"},
- CA:{name:"Canada",currency:"CAD",date:"YYYY-MM-DD",locale:"en-CA"},
- AU:{name:"Australia",currency:"AUD",date:"DD/MM/YYYY",locale:"en-AU"},
- IN:{name:"India",currency:"INR",date:"DD/MM/YYYY",locale:"en-IN"},
- GLOBAL:{name:"Global",currency:"USD",date:"YYYY-MM-DD",locale:"en"}
-};
-const regional=[
- {name:"Currency format",desc:"Format a number using the selected currency",run:(c)=>new Intl.NumberFormat(c.locale,{style:"currency",currency:c.currency}).format(1234.56)},
- {name:"Date format",desc:"Display today's date in the selected region",run:(c)=>new Intl.DateTimeFormat(c.locale,{dateStyle:"full"}).format(new Date())},
- {name:"Number format",desc:"Regional thousands and decimal separators",run:(c)=>new Intl.NumberFormat(c.locale,{maximumFractionDigits:3}).format(1234567.89)},
- {name:"Time format",desc:"Show the current time in your browser's timezone",run:(c)=>new Intl.DateTimeFormat(c.locale,{timeStyle:"medium"}).format(new Date())}
-];
-function renderRegional(){
- const code=$("gu-country").value,c=countries[code];
- $("gu-regional").innerHTML="";
- regional.forEach(item=>{
-  const el=document.createElement("article");
-  el.className="gu-item";
-  const h=document.createElement("strong");h.textContent=item.name;
-  const p=document.createElement("small");p.textContent=item.desc;
-  const b=document.createElement("button");b.textContent="Use tool";
-  b.addEventListener("click",()=>alert(item.name+": "+item.run(c)));
-  el.append(h,p,b);$("gu-regional").append(el);
- });
-}
-$("gu-country").addEventListener("change",renderRegional);
-renderRegional();
+$("year").textContent=new Date().getFullYear();
 
-/* Optional logo preview. Image is not uploaded to any server. */
+const regions={
+ PK:{label:"Pakistan",locale:"en-PK",currency:"PKR"},
+ SA:{label:"Saudi Arabia",locale:"en-SA",currency:"SAR"},
+ US:{label:"United States",locale:"en-US",currency:"USD"},
+ GB:{label:"United Kingdom",locale:"en-GB",currency:"GBP"},
+ BH:{label:"Bahrain",locale:"en-BH",currency:"BHD"},
+ AE:{label:"United Arab Emirates",locale:"en-AE",currency:"AED"},
+ CA:{label:"Canada",locale:"en-CA",currency:"CAD"},
+ AU:{label:"Australia",locale:"en-AU",currency:"AUD"},
+ IN:{label:"India",locale:"en-IN",currency:"INR"},
+ GLOBAL:{label:"Global",locale:"en",currency:"USD"}
+};
+let selectedRegion="PK",category="All",query="",favorites=[];
+try{favorites=JSON.parse(localStorage.getItem("st-favorites")||"[]")}catch{}
+
+const definitions=[
+["Word Counter","Text","📝","words"],
+["Character Counter","Text","🔤","chars"],
+["Line Counter","Text","📃","lines"],
+["Uppercase Converter","Text","🔠","upper"],
+["Lowercase Converter","Text","🔡","lower"],
+["Title Case Converter","Text","🔤","title"],
+["Reverse Text","Text","↔️","reverse"],
+["Remove Extra Spaces","Text","🧹","spaces"],
+["Remove Duplicate Lines","Text","🧽","dedupe"],
+["Sort Lines","Text","↕️","sort"],
+["Text Slug Generator","Text","🔗","slug"],
+["Text to Binary","Developer","01","binary"],
+["Binary to Text","Developer","💻","unbinary"],
+["Text to Hex","Developer","🔢","hex"],
+["Hex to Text","Developer","🔣","unhex"],
+["Base64 Encoder","Developer","💻","b64"],
+["Base64 Decoder","Developer","📥","unb64"],
+["URL Encoder","Developer","🌐","url"],
+["URL Decoder","Developer","🔓","unurl"],
+["JSON Formatter","Developer","{ }","json"],
+["JSON Minifier","Developer","{}","minjson"],
+["CSV to JSON","Developer","📊","csvjson"],
+["JSON to CSV","Developer","📋","jsoncsv"],
+["Email Validator","Developer","✉️","email"],
+["URL Validator","Developer","🔗","validurl"],
+["Password Generator","Security","🔐","password"],
+["UUID Generator","Developer","🧬","uuid"],
+["SHA-256 Hash","Security","🔏","hash"],
+["Lorem Ipsum Generator","Writing","📄","lorem"],
+["Word Frequency","Writing","📈","frequency"],
+["Percentage Calculator","Calculator","％","percent"],
+["Discount Calculator","Calculator","🏷️","discount"],
+["Tip Calculator","Calculator","🧾","tip"],
+["Simple Interest","Finance","💰","interest"],
+["Compound Interest","Finance","📈","compound"],
+["Loan Payment Estimator","Finance","🏦","loan"],
+["BMI Calculator","Health","⚖️","bmi"],
+["Age Calculator","Date & Time","🎂","age"],
+["Date Difference","Date & Time","📅","datediff"],
+["Date Formatter","Global","🗓️","date"],
+["Time Formatter","Global","🕒","time"],
+["Regional Number Format","Global","🔢","number"],
+["Regional Currency Format","Global","💱","currency"],
+["HEX to RGB","Design","🎨","hexrgb"],
+["RGB to HEX","Design","🌈","rgbhex"],
+["Temperature Converter","Converter","🌡️","temperature"],
+["Length Converter","Converter","📏","length"],
+["Weight Converter","Converter","⚖️","weight"],
+["Speed Converter","Converter","🚗","speed"],
+["QR Code Generator","Creator","▦","qr"],
+["Markdown Preview Text","Writing","✍️","markdown"]
+];
+
+// Each core utility is offered for ten regional settings: 50 × 10 = 500 entries.
+// Regional variants share an engine, with region-aware formatting where applicable.
+const tools=[];
+definitions.forEach((d,index)=>{
+ Object.entries(regions).forEach(([code,r])=>{
+  tools.push({
+   id:"t"+index+"-"+code,
+   base:index,
+   name:d[0]+(code==="GLOBAL"?"":" · "+code),
+   coreName:d[0],category:d[1],icon:d[2],engine:d[3],region:code,
+   description:d[0]+" for "+r.label+"."
+  });
+ });
+});
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function card(t){
+ return `<article class="card"><div class="ico">${t.icon}</div><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><div class="row"><button class="primary" data-open="${t.id}">Open</button><button data-fav="${t.id}" aria-label="Save ${esc(t.name)}">${favorites.includes(t.id)?"♥":"♡"}</button></div></article>`;
+}
+function render(){
+ const filtered=tools.filter(t=>(category==="All"||t.category===category)&&(t.name+" "+t.category+" "+t.description).toLowerCase().includes(query.toLowerCase()));
+ $("toolGrid").innerHTML=filtered.map(card).join("")||"<p>No matching tools. Try another search.</p>";
+ $("toolStatus").textContent=filtered.length+" tools shown";
+ $("popular").innerHTML=tools.filter(t=>["words","password","json","percent","qr","currency"].includes(t.engine)&&t.region===selectedRegion).slice(0,8).map(card).join("");
+ const saved=tools.filter(t=>favorites.includes(t.id));
+ $("savedGrid").innerHTML=saved.map(card).join("")||"<p>No saved tools yet. Tap ♡ on any tool.</p>";
+ $("filters").innerHTML=["All",...new Set(tools.map(t=>t.category))].map(c=>`<button data-category="${esc(c)}" class="${c===category?"selected":""}">${esc(c)}</button>`).join("");
+ $("toolCount").textContent=tools.length+" regionalized tool entries · Search and filter";
+}
+function go(id){
+ document.querySelectorAll(".page").forEach(p=>p.hidden=true);
+ $(id).hidden=false;
+ document.querySelectorAll("[data-go]").forEach(b=>b.classList.toggle("active",b.dataset.go===id));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.addEventListener("click",e=>{
+ const g=e.target.closest("[data-go]");if(g){go(g.dataset.go);return}
+ const c=e.target.closest("[data-category]");if(c){category=c.dataset.category;render();return}
+ const f=e.target.closest("[data-fav]");if(f){
+  const id=f.dataset.fav;
+  favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
+  try{localStorage.setItem("st-favorites",JSON.stringify(favorites))}catch{}
+  render();return;
+ }
+ const o=e.target.closest("[data-open]");if(o)openTool(o.dataset.open);
+});
+$("search").addEventListener("input",e=>{query=e.target.value;category="All";go("tools");render()});
+$("closeModal").addEventListener("click",closeModal);
+$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+function closeModal(){$("modal").classList.remove("open")}
+function show(title,html){$("modalTitle").textContent=title;$("modalContent").innerHTML=html;$("modal").classList.add("open")}
+function area(label="Input",id="v",placeholder="Enter text..."){return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" placeholder="${placeholder}"></textarea></div>`}
+function field(label,id,type="number",placeholder="0"){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}"></div>`}
+function out(s){const el=$("result");if(el)el.textContent=String(s)}
+function getInput(){return $("v")?.value||""}
+function resultUI(){return '<div id="result" class="result" aria-live="polite"></div><button data-copy>Copy result</button>'}
+function buttonUI(engine){return `<button class="primary" data-run="${engine}">Run tool</button>`}
+
+function openTool(id){
+ const t=tools.find(x=>x.id===id);if(!t)return;
+ const e=t.engine;
+ let html=area("Input","v","Enter text or values for this tool...");
+ if(["percent","discount","tip","interest","compound","loan","bmi"].includes(e))html=field("First value (amount / weight)","a")+field("Second value (rate / height)","b")+field("Third value (years / people)","c");
+ if(e==="temperature"||e==="length"||e==="weight"||e==="speed")html=field("Value","a")+`<div class="field"><label for="unit">Conversion</label><select id="unit">${({temperature:'<option value="tc">Celsius → Fahrenheit</option><option value="tf">Fahrenheit → Celsius</option>',length:'<option value="km">Kilometres → Miles</option><option value="mk">Miles → Kilometres</option>',weight:'<option value="kg">Kilograms → Pounds</option><option value="lb">Pounds → Kilograms</option>',speed:'<option value="kmh">km/h → mph</option><option value="mph">mph → km/h</option>'})[e]}</select></div>`;
+ if(e==="password")html=field("Password length (8–64)","a","number","16")+'<label><input id="symbols" type="checkbox" checked style="width:auto"> Include symbols</label>';
+ if(e==="age")html=field("Birth date","a","date");
+ if(e==="datediff")html=field("Start date","a","date")+field("End date","b","date");
+ if(e==="qr")html=area("Text or URL","v","Enter text or a URL...");
+ if(e==="rgbhex")html=area("RGB values","v","255, 120, 20");
+ if(e==="hexrgb")html=area("HEX colour","v","#00d4ff");
+ if(e==="number"||e==="currency")html=field("Number","a","number","1234.56");
+ if(e==="date"||e==="time"||e==="currency"||e==="number")html+='<p>Region: '+esc(regions[t.region].label)+'</p>';
+ show(t.name,html+buttonUI(e)+resultUI());
+}
+function safeNum(id){const n=Number($(id)?.value);if(!Number.isFinite(n))throw Error("Please enter valid numbers.");return n}
+function csvParse(s){
+ const lines=s.trim().split(/\r?\n/);
+ return lines.map(line=>{let cells=[],cur="",q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'&&line[i+1]==='"'&&q){cur+='"';i++}else if(ch==='"')q=!q;else if(ch===","&&!q){cells.push(cur);cur=""}else cur+=ch}cells.push(cur);return cells});
+}
+function runEngine(e,t){
+ const s=getInput(),r=regions[t.region]||regions.GLOBAL;
+ switch(e){
+ case "words":{const words=s.trim()?s.trim().split(/\s+/u).length:0;return `Words: ${words}\nCharacters: ${s.length}\nCharacters excluding spaces: ${s.replace(/\s/g,"").length}\nLines: ${s? s.split(/\r?\n/).length:0}`;}
+ case "chars":return `Characters: ${s.length}\nWithout whitespace: ${s.replace(/\s/g,"").length}`;
+ case "lines":return `Lines: ${s?s.split(/\r?\n/).length:0}`;
+ case "upper":return s.toUpperCase();
+ case "lower":return s.toLowerCase();
+ case "title":return s.toLowerCase().replace(/\b\p{L}/gu,c=>c.toUpperCase());
+ case "reverse":return Array.from(s).reverse().join("");
+ case "spaces":return s.split(/\r?\n/).map(x=>x.replace(/\s+/g," ").trim()).join("\n");
+ case "dedupe":return [...new Set(s.split(/\r?\n/))].join("\n");
+ case "sort":return s.split(/\r?\n/).sort((a,b)=>a.localeCompare(b)).join("\n");
+ case "slug":return s.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+ case "binary":return Array.from(new TextEncoder().encode(s),b=>b.toString(2).padStart(8,"0")).join(" ");
+ case "unbinary":return new TextDecoder().decode(new Uint8Array(s.trim().split(/\s+/).map(x=>{if(!/^[01]{1,8}$/.test(x))throw Error("Use binary bytes separated by spaces.");return parseInt(x,2)})));
+ case "hex":return Array.from(new TextEncoder().encode(s),b=>b.toString(16).padStart(2,"0")).join(" ");
+ case "unhex":return new TextDecoder().decode(new Uint8Array(s.trim().split(/\s+/).map(x=>{if(!/^[\da-f]{1,2}$/i.test(x))throw Error("Use hexadecimal bytes separated by spaces.");return parseInt(x,16)})));
+ case "b64":return btoa(Array.from(new TextEncoder().encode(s),b=>String.fromCharCode(b)).join(""));
+ case "unb64":return new TextDecoder().decode(Uint8Array.from(atob(s.trim()),c=>c.charCodeAt(0)));
+ case "url":return encodeURIComponent(s);
+ case "unurl":return decodeURIComponent(s);
+ case "json":return JSON.stringify(JSON.parse(s),null,2);
+ case "minjson":return JSON.stringify(JSON.parse(s));
+ case "csvjson":{const rows=csvParse(s);if(rows.length<2)throw Error("Add a header row and at least one data row.");const heads=rows[0];return JSON.stringify(rows.slice(1).map(row=>Object.fromEntries(heads.map((h,i)=>[h,row[i]??""]))),null,2);}
+ case "jsoncsv":{const data=JSON.parse(s);if(!Array.isArray(data)||!data.length||typeof data[0]!=="object")throw Error("Enter a non-empty array of objects.");const heads=[...new Set(data.flatMap(Object.keys))];const cell=x=>{const v=String(x??"");return /[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};return [heads.map(cell).join(","),...data.map(o=>heads.map(h=>cell(o[h])).join(","))].join("\n");}
+ case "email":return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim())?"Basic email format looks valid.":"Email format does not look valid.";
+ case "validurl":try{const u=new URL(s);return ["http:","https:"].includes(u.protocol)?"Valid HTTP/HTTPS URL.":"Use an HTTP or HTTPS URL."}catch{return "Invalid URL."}
+ case "password":{const n=Math.max(8,Math.min(64,Math.floor(safeNum("a")||16))),chars="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789"+($("symbols")?.checked?"!@#$%&*_-+=":"");const b=crypto.getRandomValues(new Uint32Array(n));return Array.from(b,x=>chars[x%chars.length]).join("");}
+ case "uuid":return crypto.randomUUID?crypto.randomUUID():"UUID generation is not supported in this browser.";
+ case "hash":return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(buf=>Array.from(new Uint8Array(buf),b=>b.toString(16).padStart(2,"0")).join(""));
+ case "lorem":return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ".repeat(5).trim();
+ case "frequency":{const counts={};for(const w of s.toLowerCase().match(/[\p{L}\p{N}']+/gu)||[])counts[w]=(counts[w]||0)+1;return Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([w,n])=>w+": "+n).join("\n")||"No words found.";}
+ case "percent":{const a=safeNum("a"),b=safeNum("b");return (a*b/100).toFixed(2);}
+ case "discount":{const a=safeNum("a"),b=safeNum("b");return `Savings: ${(a*b/100).toFixed(2)}\nFinal price: ${(a-a*b/100).toFixed(2)}`;}
+ case "tip":{const a=safeNum("a"),b=safeNum("b"),c=Math.max(1,safeNum("c")||1);return `Tip: ${(a*b/100).toFixed(2)}\nTotal: ${(a+a*b/100).toFixed(2)}\nPer person: ${((a+a*b/100)/c).toFixed(2)}`;}
+ case "interest":{const a=safeNum("a"),b=safeNum("b"),c=safeNum("c");return `Interest: ${(a*b*c/100).toFixed(2)}\nTotal: ${(a+a*b*c/100).toFixed(2)}`;}
+ case "compound":{const p=safeNum("a"),rate=safeNum("b")/100,years=safeNum("c");const total=p*Math.pow(1+rate,years);return `Total: ${total.toFixed(2)}\nInterest: ${(total-p).toFixed(2)}`;}
+ case "loan":{const p=safeNum("a"),annual=safeNum("b")/1200,n=Math.round(safeNum("c"));if(p<=0||n<=0)throw Error("Amount and number of months must be positive.");const m=annual===0?p/n:p*annual/(1-Math.pow(1+annual,-n));return `Estimated monthly payment: ${m.toFixed(2)}\nTotal paid: ${(m*n).toFixed(2)}\nThis is an estimate, excluding fees and taxes.`;}
+ case "bmi":{const w=safeNum("a"),h=safeNum("b")/100;if(w<=0||h<=0)throw Error("Enter valid weight in kg and height in cm.");return "BMI: "+(w/(h*h)).toFixed(1)+"\nFor teenagers, BMI needs age-specific interpretation; this number alone is not a diagnosis.";}
+ case "age":{const d=new Date($("a").value),now=new Date();if(isNaN(d)||d>now)throw Error("Choose a valid birth date in the past.");let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth();if(now.getDate()<d.getDate())m--;if(m<0){y--;m+=12}return `${y} years, ${m} months approximately.`;}
+ case "datediff":{const a=new Date($("a").value),b=new Date($("b").value);if(isNaN(a)||isNaN(b))throw Error("Choose both dates.");return Math.round(Math.abs(b-a)/86400000)+" days between dates.";}
+ case "date":return new Intl.DateTimeFormat(r.locale,{dateStyle:"full"}).format(new Date());
+ case "time":return new Intl.DateTimeFormat(r.locale,{timeStyle:"medium"}).format(new Date());
+ case "number":return new Intl.NumberFormat(r.locale,{maximumFractionDigits:4}).format(safeNum("a"));
+ case "currency":return new Intl.NumberFormat(r.locale,{style:"currency",currency:r.currency}).format(safeNum("a"))+"\nFormatting only — not a live exchange-rate conversion.";
+ case "hexrgb":{let h=s.trim().replace("#","");if(!/^(?:[\da-f]{3}|[\da-f]{6})$/i.test(h))throw Error("Enter HEX such as #00AEEF.");if(h.length===3)h=[...h].map(x=>x+x).join("");const n=parseInt(h,16);return "#"+h.toUpperCase()+"\nrgb("+[n>>16,(n>>8)&255,n&255].join(", ")+")";}
+ case "rgbhex":{const a=s.split(/[,\s]+/).map(Number);if(a.length!==3||a.some(n=>!Number.isInteger(n)||n<0||n>255))throw Error("Enter RGB values like 255, 120, 20.");return "#"+a.map(n=>n.toString(16).padStart(2,"0")).join("").toUpperCase();}
+ case "temperature":{const a=safeNum("a"),u=$("unit").value;return (u==="tc"?a*9/5+32:(a-32)*5/9).toFixed(2)+(u==="tc"?" °F":" °C");}
+ case "length":{const a=safeNum("a"),u=$("unit").value;return (u==="km"?a*.621371:a/0.621371).toFixed(4)+(u==="km"?" miles":" km");}
+ case "weight":{const a=safeNum("a"),u=$("unit").value;return (u==="kg"?a*2.20462:a/2.20462).toFixed(4)+(u==="kg"?" lb":" kg");}
+ case "speed":{const a=safeNum("a"),u=$("unit").value;return (u==="kmh"?a/1.609344:a*1.609344).toFixed(3)+(u==="kmh"?" mph":" km/h");}
+ case "qr":return `<img alt="Generated QR code" width="220" height="220" style="background:white;padding:6px;max-width:100%" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(s)}"><p>QR generation uses an external service. Do not encode sensitive information.</p>`;
+ case "markdown":return s;
+ default:throw Error("This utility is not implemented yet.");
+ }
+}
+
+document.addEventListener("click",async e=>{
+ const b=e.target.closest("[data-run]");if(b){
+  const t=tools.find(x=>x.engine===b.dataset.run&&x.region===selectedRegion)||tools.find(x=>x.engine===b.dataset.run);
+  try{
+   const value=runEngine(b.dataset.run,t||{region:selectedRegion});
+   if(value&&typeof value.then==="function")out(await value);
+   else if(b.dataset.run==="qr"){
+    $("result").innerHTML=value;
+   }else out(value);
+  }catch(err){out("Error: "+err.message)}
+  return;
+ }
+ if(e.target.closest("[data-copy]")){
+  const text=$("result")?.innerText||"";
+  try{await navigator.clipboard.writeText(text);e.target.textContent="Copied!"}
+  catch{alert("Clipboard unavailable. Select the result and copy it manually.")}
+ }
+});
+
+$("country").addEventListener("change",()=>{
+ selectedRegion=$("country").value;
+ $("regionalTools").innerHTML="";
+ const r=regions[selectedRegion];
+ [
+  ["Number format",()=>new Intl.NumberFormat(r.locale).format(1234567.89)],
+  ["Currency format",()=>new Intl.NumberFormat(r.locale,{style:"currency",currency:r.currency}).format(1234.56)],
+  ["Date format",()=>new Intl.DateTimeFormat(r.locale,{dateStyle:"full"}).format(new Date())],
+  ["Time format",()=>new Intl.DateTimeFormat(r.locale,{timeStyle:"medium"}).format(new Date())]
+ ].forEach(([name,fn])=>{
+  const el=document.createElement("article");el.className="card";
+  const h=document.createElement("h3");h.textContent=name;
+  const p=document.createElement("p");p.textContent=fn();
+  el.append(h,p);$("regionalTools").append(el);
+ });
+ render();
+});
+$("country").dispatchEvent(new Event("change"));
+
+/* Optional logo preview: local-only, no upload. */
 let logoUrl=null;
-$("gu-logo-file").addEventListener("change",()=>{
- const f=$("gu-logo-file").files[0];
- if(!f)return;
+$("logoFile").addEventListener("change",()=>{
+ const f=$("logoFile").files[0];if(!f)return;
  if(!["image/png","image/jpeg","image/webp"].includes(f.type)||f.size>3*1024*1024){
-  $("gu-logo-status").textContent="Choose a PNG, JPEG or WebP image under 3 MB.";
-  $("gu-logo-file").value="";return;
+  $("logoPreview").textContent="Choose PNG, JPEG or WebP under 3 MB.";$("logoFile").value="";return;
  }
  if(logoUrl)URL.revokeObjectURL(logoUrl);
  logoUrl=URL.createObjectURL(f);
- const img=document.createElement("img");
- img.src=logoUrl;img.alt="Your selected logo";
- img.style.width=$("gu-logo-size").value+"px";
- img.style.maxWidth="100%";
- img.style.height="auto";
- img.style.objectFit="contain";
- $("gu-logo-preview").replaceChildren(img);
- $("gu-logo-status").textContent="Logo preview ready. It has not been uploaded.";
+ const img=document.createElement("img");img.src=logoUrl;img.alt="Logo preview";img.style.width=$("logoSize").value+"px";img.style.maxWidth="100%";
+ $("logoPreview").replaceChildren(img);
 });
-$("gu-logo-size").addEventListener("input",()=>{
- const img=$("gu-logo-preview").querySelector("img");
- if(img)img.style.width=$("gu-logo-size").value+"px";
-});
-$("gu-logo-remove").addEventListener("click",()=>{
- if(logoUrl)URL.revokeObjectURL(logoUrl);
- logoUrl=null;$("gu-logo-preview").replaceChildren();
- $("gu-logo-file").value="";$("gu-logo-status").textContent="No logo selected.";
-});
+$("logoSize").addEventListener("input",()=>{const img=$("logoPreview").querySelector("img");if(img)img.style.width=$("logoSize").value+"px"});
+$("logoRemove").addEventListener("click",()=>{if(logoUrl)URL.revokeObjectURL(logoUrl);logoUrl=null;$("logoFile").value="";$("logoPreview").textContent="No logo selected."});
 
-/* Fitness timer: start, pause, next, and reset */
+/* Gym 2026 timer */
 const exercises=[
  ["🏃","March in place","March gently at a comfortable pace."],
  ["🙌","Wall push-ups","Use a wall and a comfortable range of motion."],
- ["🧍","Standing knee raises","Alternate knees without rushing."],
- ["🏋️","Bodyweight squats","Use a comfortable range of motion."],
+ ["🧍","Standing knee raises","Alternate knees comfortably."],
+ ["🏋️","Bodyweight squats","Use a comfortable range of movement."],
  ["🧘","Rest and breathe","Relax and breathe normally."]
 ];
-let ix=0,seconds=30,timer=null;
-function drawWorkout(){
- const e=exercises[ix];
- $("gu-figure").textContent=e[0];
- $("gu-exercise-name").textContent=e[1];
- $("gu-exercise-desc").textContent=e[2];
- $("gu-clock").textContent="00:"+String(seconds).padStart(2,"0");
+let exerciseIndex=0,seconds=30,gymTimer=null;
+function drawGym(){
+ const x=exercises[exerciseIndex];
+ $("figure").textContent=x[0];$("exerciseName").textContent=x[1];$("exerciseDesc").textContent=x[2];
+ $("clock").textContent="00:"+String(seconds).padStart(2,"0");
+ $("exerciseList").innerHTML=exercises.map((x,i)=>`<button class="exercise" data-exercise="${i}">${x[0]} ${x[1]}</button>`).join("");
 }
-function stopWorkout(){if(timer!==null)clearInterval(timer);timer=null;$("gu-start").textContent="Start";}
-function nextWorkout(){stopWorkout();ix=(ix+1)%exercises.length;seconds=30;drawWorkout();}
-$("gu-start").addEventListener("click",()=>{
- if(timer!==null){stopWorkout();return;}
- if(seconds<=0){nextWorkout();}
- $("gu-start").textContent="Pause";
- timer=setInterval(()=>{
-  seconds--;drawWorkout();
-  if(seconds<=0){stopWorkout();$("gu-start").textContent="Next exercise";}
+function stopGym(){if(gymTimer!==null)clearInterval(gymTimer);gymTimer=null;$("gymStart").textContent="Start"}
+function nextGym(){stopGym();exerciseIndex=(exerciseIndex+1)%exercises.length;seconds=30;drawGym()}
+$("gymStart").addEventListener("click",()=>{
+ if(gymTimer!==null){stopGym();return}
+ if(seconds<=0)nextGym();
+ $("gymStart").textContent="Pause";
+ gymTimer=setInterval(()=>{
+  seconds--;drawGym();
+  if(seconds<=0){stopGym();$("gymStart").textContent="Next exercise"}
  },1000);
 });
-$("gu-next").addEventListener("click",nextWorkout);
-$("gu-reset").addEventListener("click",()=>{stopWorkout();seconds=30;drawWorkout();});
-drawWorkout();
+$("gymNext").addEventListener("click",nextGym);
+$("gymReset").addEventListener("click",()=>{stopGym();seconds=30;drawGym()});
+$("exerciseList").addEventListener("click",e=>{
+ const b=e.target.closest("[data-exercise]");if(!b)return;
+ stopGym();exerciseIndex=Number(b.dataset.exercise);seconds=30;drawGym();
+});
+$("gymStart").addEventListener("dblclick",()=>{if(seconds<=0)nextGym()});
 
-/* Utility engines */
-let lastResult="";
-function setResult(s){lastResult=String(s);$("gu-result").textContent=lastResult;}
-$("gu-run").addEventListener("click",()=>{
- const v=$("gu-input").value,tool=$("gu-tool").value;
- try{
-  switch(tool){
-   case "word":{
-    const n=v.trim()?v.trim().split(/\s+/u).length:0;
-    setResult("Words: "+n+"\nCharacters: "+v.length+"\nCharacters without spaces: "+v.replace(/\s/g,"").length);break;
-   }
-   case "case":setResult(v.toLowerCase().replace(/\b\p{L}/gu,ch=>ch.toUpperCase()));break;
-   case "slug":setResult(v.normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""));break;
-   case "json":setResult(JSON.stringify(JSON.parse(v),null,2));break;
-   case "base64":setResult(btoa(Array.from(new TextEncoder().encode(v),b=>String.fromCharCode(b)).join("")));break;
-   case "url":setResult(encodeURIComponent(v));break;
-   case "percent":{
-    const parts=v.split(/[,\s]+/).map(Number);
-    if(parts.length<2||parts.some(n=>!Number.isFinite(n)))throw Error("Enter amount and percentage, e.g. 250, 15");
-    setResult((parts[0]*parts[1]/100).toFixed(2));break;
-   }
-   case "color":{
-    let h=v.trim().replace("#","");
-    if(!/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(h))throw Error("Enter HEX such as #00AEEF");
-    if(h.length===3)h=[...h].map(x=>x+x).join("");
-    const n=parseInt(h,16);
-    setResult("#"+h.toUpperCase()+"\nrgb("+[n>>16,(n>>8)&255,n&255].join(", ")+")");break;
-   }
-  }
- }catch(e){setResult("Could not process input: "+e.message);}
-});
-$("gu-copy").addEventListener("click",async()=>{
- if(!lastResult)return;
- try{
-  if(!navigator.clipboard||!isSecureContext)throw Error("Clipboard API unavailable");
-  await navigator.clipboard.writeText(lastResult);
-  $("gu-copy").textContent="Copied!";
-  setTimeout(()=>$("gu-copy").textContent="Copy result",1500);
- }catch(e){alert("Copy is unavailable in this browser. Select the result and copy it manually.");}
-});
-})();
+render();drawGym();
 </script>
+</body>
+</html>
