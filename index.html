@@ -1,927 +1,1194 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="SHAHEEN is a practical digital workspace with free online tools, study helpers, focus sessions, daily planning and gentle movement breaks.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://shaheentools.vercel.app/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>SHAHEEN — Free Online Tools & Everyday Workspace</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="SHAHEEN — free everyday tools for text, calculations, study, productivity, fitness and global users. Fast, simple and mobile-friendly.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SHAHEEN — Free Online Tools">
+  <meta property="og:description" content="Useful tools for everyday tasks, study, work and productivity.">
+  <meta property="og:site_name" content="SHAHEEN">
+  <meta name="twitter:card" content="summary">
+  <title>SHAHEEN — Free Online Tools & Productivity</title>
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SHAHEEN">
-<meta property="og:title" content="SHAHEEN — Free Online Tools & Everyday Workspace">
-<meta property="og:description" content="Useful free tools, study helpers, focus sessions, daily planning and more in one mobile-friendly workspace.">
-<meta property="og:url" content="https://shaheentools.vercel.app/">
-<meta property="og:image" content="https://shaheentools.vercel.app/shaheen-og.png">
-<meta property="og:image:alt" content="SHAHEEN digital workspace preview">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SHAHEEN — Free Online Tools & Everyday Workspace">
-<meta name="twitter:description" content="Useful free tools, study helpers, focus sessions, daily planning and more.">
-<meta name="twitter:image" content="https://shaheentools.vercel.app/shaheen-og.png">
+  <!-- Google AdSense Auto ads: your publisher ID -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4971404240076141"
+    crossorigin="anonymous"></script>
 
-<!-- Google Search Console: paste Google's exact verification meta tag here after verification setup. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "SHAHEEN",
-  "url": "https://shaheentools.vercel.app/",
-  "description": "A practical digital workspace for free tools, study, planning and focus.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Shaheen Tools Team"
-  },
-  "inLanguage": "en"
-}
-</script>
+  <!-- Monetag In-Page Push: zone 12088232. Install this zone once per page. -->
+  <script>
+    (function () {
+      var s = document.createElement("script");
+      s.dataset.zone = "12088232";
+      s.src = "https://nap5k.com/tag.min.js";
+      s.async = true;
+      document.head.appendChild(s);
+    })();
+  </script>
 
-<!-- Monetag OnClick zone 12088071: included once. -->
-<script>(function(s){s.dataset.zone='12088071';s.src='https://al5sm.com/tag.min.js'})(document.head.appendChild(document.createElement('script')))</script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: #101e31;
+      --panel2: #14253a;
+      --text: #f4f8ff;
+      --muted: #a8b7cc;
+      --line: #263951;
+      --cyan: #42e8f5;
+      --blue: #4888ff;
+      --green: #75f0bb;
+      --danger: #ff7c8c;
+      --radius: 18px;
+      --shadow: 0 12px 36px #0003;
+    }
 
-<!-- Monetag In-Page Push zone 12088232: included once. -->
-<script>(function(s){s.dataset.zone='12088232';s.src='https://nap5k.com/tag.min.js'})(document.head.appendChild(document.createElement('script')))</script>
-
-<style>
-:root {
-  --bg:#071426; --bg2:#0b1c31; --panel:#0e233a; --panel2:#132c47;
-  --text:#f1f7ff; --muted:#9fb4ca; --line:rgba(190,220,255,.14);
-  --cyan:#41dcff; --blue:#4778ff; --green:#59df9a; --gold:#ffd178;
-  --red:#ff9292; --shadow:0 18px 54px rgba(0,0,0,.24);
-  --r:19px; --max:1280px;
-}
-* { box-sizing:border-box }
-html { scroll-behavior:smooth }
-body {
-  margin:0;
-  background:radial-gradient(ellipse at 15% -8%,rgba(37,123,202,.20),transparent 42%),var(--bg);
-  color:var(--text);
-  font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-  min-height:100vh;
-}
-body.light {
-  --bg:#f2f7fc; --bg2:#e7f0fb; --panel:#fff; --panel2:#f4f8fd;
-  --text:#13243b; --muted:#5c718a; --line:rgba(25,55,90,.15);
-  --shadow:0 16px 42px rgba(26,55,86,.10);
-  background:linear-gradient(130deg,#eff7ff,#f9fbff 55%,#ebfaff);
-}
-button,input,select,textarea { font:inherit }
-button { cursor:pointer }
-button:disabled { opacity:.55;cursor:not-allowed }
-a { color:inherit }
-img { max-width:100% }
-[hidden] { display:none!important }
-button:focus-visible,a:focus-visible,input:focus-visible,
-select:focus-visible,textarea:focus-visible {
-  outline:3px solid var(--cyan);outline-offset:3px;
-}
-.muted { color:var(--muted) }
-.small { font-size:.88rem }
-.tiny { font-size:.76rem }
-.eyebrow {
-  font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;
-  font-weight:850;color:var(--cyan);
-}
-h1,h2,h3,p { margin-top:0 }
-h1 { font-size:clamp(2.1rem,5.2vw,4.3rem);line-height:1.03;letter-spacing:-.048em;margin-bottom:15px }
-h2 { font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:-.025em;margin-bottom:7px }
-h3 { font-size:1.03rem;margin-bottom:7px }
-
-.shell { max-width:var(--max);margin:auto;padding:20px 22px 100px }
-.topbar { display:flex;align-items:center;gap:14px;justify-content:space-between;margin-bottom:20px }
-.brand { display:flex;gap:11px;align-items:center;min-width:150px }
-.brand-mark {
-  width:47px;height:47px;border-radius:15px;border:1px solid rgba(65,220,255,.4);
-  display:grid;place-items:center;background:linear-gradient(135deg,rgba(65,220,255,.18),rgba(71,120,255,.2));
-  color:var(--cyan);font-size:1.6rem;font-weight:1000;overflow:hidden;
-}
-.brand-mark img { width:100%;height:100%;object-fit:cover }
-.brand-name { font-size:1.15rem;font-weight:1000;letter-spacing:.16em }
-.brand-sub { font-size:.72rem;color:var(--muted) }
-.top-actions { display:flex;align-items:center;gap:8px }
-.searchbar {
-  display:flex;align-items:center;gap:9px;flex:1;max-width:490px;min-width:130px;
-  border:1px solid var(--line);border-radius:14px;background:var(--panel);
-  padding:0 12px;min-height:46px;
-}
-.searchbar input {
-  width:100%;min-width:0;border:0!important;outline:0!important;
-  padding:8px 0!important;background:transparent!important;color:var(--text);
-}
-.searchbar span { color:var(--muted) }
-.icon-btn,.btn,.nav-btn,.card,.chip {
-  border:1px solid var(--line);background:var(--panel);color:var(--text);
-  border-radius:12px;transition:transform .15s,border-color .15s,background .15s;
-}
-.icon-btn { height:42px;min-width:42px;display:grid;place-items:center }
-.btn { padding:10px 14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:750 }
-.btn.primary { background:linear-gradient(110deg,var(--blue),#286de0);border-color:transparent;color:white;box-shadow:0 8px 22px rgba(44,111,232,.22) }
-.btn.ghost { background:transparent }
-.btn:hover,.icon-btn:hover,.nav-btn:hover,.card:hover,.chip:hover {
-  border-color:rgba(65,220,255,.6);transform:translateY(-1px);
-}
-select,input,textarea {
-  background:var(--bg2);color:var(--text);border:1px solid var(--line);
-  border-radius:10px;padding:10px 11px;max-width:100%;
-}
-input[type=number],input[type=text],input[type=date],input[type=datetime-local],textarea { width:100% }
-textarea { min-height:115px;resize:vertical }
-
-.layout { display:grid;grid-template-columns:205px minmax(0,1fr);gap:21px }
-.sidebar {
-  position:sticky;top:15px;align-self:start;background:rgba(12,31,53,.72);
-  border:1px solid var(--line);border-radius:19px;padding:10px;backdrop-filter:blur(16px);
-}
-body.light .sidebar { background:rgba(255,255,255,.8) }
-.nav-label { font-size:.67rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:10px 11px 6px }
-.nav-list { display:grid;gap:5px }
-.nav-btn { display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:10px 11px;background:transparent;border-color:transparent;color:var(--muted);font-weight:720 }
-.nav-icon { width:22px;text-align:center;font-size:1.08rem }
-.nav-btn.active { color:var(--text);border-color:rgba(65,220,255,.25);background:linear-gradient(90deg,rgba(65,220,255,.13),rgba(71,120,255,.08)) }
-.side-note { font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding:13px 9px 7px;margin-top:12px }
-.main { min-width:0 }
-.page { animation:appear .18s ease }
-@keyframes appear { from{opacity:.6;transform:translateY(3px)}to{opacity:1;transform:translateY(0)} }
-
-.hero {
-  position:relative;overflow:hidden;border-radius:25px;padding:clamp(24px,4vw,44px);
-  border:1px solid rgba(65,220,255,.24);background:linear-gradient(120deg,#12365a,#0d223c 62%,#163b5e);
-  box-shadow:var(--shadow);margin-bottom:18px;
-}
-.hero:after {
-  content:"S";position:absolute;right:3%;top:-40%;font-size:clamp(13rem,28vw,25rem);
-  font-weight:1000;color:rgba(65,220,255,.05);pointer-events:none;
-}
-.hero-inner { max-width:750px;position:relative;z-index:1 }
-.hero p { color:#c3d8eb;max-width:680px;font-size:1.02rem }
-.hero-actions { display:flex;flex-wrap:wrap;gap:9px;margin-top:20px }
-.tags { display:flex;gap:7px;flex-wrap:wrap;margin-top:18px }
-.tag { border:1px solid rgba(195,223,255,.17);background:rgba(5,20,38,.24);color:#d1e4f4;border-radius:99px;padding:5px 9px;font-size:.75rem }
-.section-head { display:flex;justify-content:space-between;align-items:end;gap:12px;margin:25px 0 13px }
-.section-head p { margin:0 }
-.stats { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:17px }
-.stat { padding:14px;border:1px solid var(--line);border-radius:15px;background:var(--panel) }
-.stat strong { display:block;font-size:1.5rem;letter-spacing:-.04em }
-.stat span { font-size:.77rem;color:var(--muted) }
-.daily-callout { display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(110deg,rgba(50,116,218,.14),rgba(65,220,255,.07));border:1px solid rgba(65,220,255,.19);border-radius:16px;padding:16px }
-.daily-callout p { margin:4px 0 0;color:var(--muted);font-size:.86rem }
-.grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px }
-.grid.two { grid-template-columns:repeat(2,minmax(0,1fr)) }
-.card { min-width:0;min-height:155px;padding:15px;text-align:left;display:flex;flex-direction:column;gap:9px;position:relative }
-.cardtop { display:flex;align-items:center;justify-content:space-between;gap:8px }
-.tool-icon { width:41px;height:41px;border-radius:13px;border:1px solid rgba(65,220,255,.16);background:linear-gradient(140deg,rgba(65,220,255,.14),rgba(71,120,255,.16));display:grid;place-items:center;font-size:1.28rem }
-.card h3 { margin:0 }
-.card p { font-size:.81rem;color:var(--muted);margin:0 }
-.cardbottom { margin-top:auto;font-size:.76rem;color:var(--cyan);font-weight:800 }
-.fav { border:0;background:transparent;color:var(--muted);font-size:1.2rem;padding:3px }
-.fav.on { color:var(--gold) }
-.panel { background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:19px;box-shadow:var(--shadow) }
-.ad-slot { min-height:82px;margin:20px 0;padding:16px;border:1px dashed var(--line);border-radius:14px;background:rgba(120,150,180,.03);display:grid;align-content:center;gap:4px;text-align:center }
-.ad-label { font-size:.63rem;font-weight:850;letter-spacing:.16em;color:var(--muted) }
-.ad-slot p { margin:0;font-size:.77rem;color:var(--muted) }
-.filters { display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 }
-.chip { font-size:.78rem;padding:7px 11px;color:var(--muted) }
-.chip.active { background:rgba(65,220,255,.12);color:var(--text);border-color:rgba(65,220,255,.45) }
-.toolbar { display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:13px 0 }
-.field { display:grid;gap:5px;margin-bottom:13px }
-.field label { font-size:.84rem;font-weight:740 }
-.field small { font-size:.76rem;color:var(--muted) }
-.field-row { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px }
-.result { white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid rgba(65,220,255,.24);background:rgba(65,220,255,.05);padding:14px;border-radius:12px;margin:13px 0;min-height:52px }
-.result img { max-width:100% }
-.list { display:grid;gap:8px }
-.list-row { display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px }
-.grow { flex:1;min-width:0 }
-.list-row p { margin:3px 0 0;color:var(--muted);font-size:.78rem }
-.empty { grid-column:1/-1;border:1px dashed var(--line);border-radius:14px;padding:25px;text-align:center;color:var(--muted) }
-.clockgrid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px }
-.clock { background:var(--panel2);border:1px solid var(--line);border-radius:13px;padding:12px }
-.clock strong { display:block;font-variant-numeric:tabular-nums;font-size:1.15rem }
-.clock span { font-size:.75rem;color:var(--muted) }
-.timer { text-align:center }
-.timer-ring { height:min(72vw,310px);width:min(72vw,310px);border-radius:50%;border:9px solid rgba(65,220,255,.13);border-top-color:var(--cyan);border-right-color:var(--blue);display:grid;place-items:center;margin:22px auto;box-shadow:inset 0 0 35px rgba(65,220,255,.07) }
-.timer-ring.running { animation:spin 18s linear infinite }
-@keyframes spin { to{transform:rotate(360deg)} }
-.timer-ring .timer-content { animation:unspin 18s linear infinite }
-@keyframes unspin { to{transform:rotate(-360deg)} }
-.timer-display { font-size:clamp(3.4rem,10vw,5.8rem);font-weight:1000;letter-spacing:-.07em;font-variant-numeric:tabular-nums;line-height:1.1 }
-.exercise-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px }
-.exercise { background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px }
-.exercise-art { height:100px;border-radius:12px;background:linear-gradient(145deg,rgba(65,220,255,.08),rgba(71,120,255,.09));display:grid;place-items:center;margin-bottom:11px;font-size:2.3rem }
-.exercise-art span { display:inline-block;animation:gentleMove 2.5s ease-in-out infinite alternate }
-.exercise:nth-child(2n) .exercise-art span { animation-delay:.4s }
-.exercise:nth-child(3n) .exercise-art span { animation-delay:.8s }
-@keyframes gentleMove { from{transform:translateY(4px) rotate(-4deg)}to{transform:translateY(-6px) rotate(4deg)} }
-.exercise p,.exercise li { font-size:.79rem;color:var(--muted) }
-.check { width:18px;height:18px;accent-color:var(--cyan) }
-.flashcard { width:100%;min-height:155px;padding:22px;border:1px solid rgba(65,220,255,.25);background:linear-gradient(135deg,rgba(65,220,255,.09),rgba(71,120,255,.12));border-radius:15px;color:var(--text);font-size:1.1rem;font-weight:760 }
-.notice { border-left:3px solid var(--cyan);background:rgba(65,220,255,.045);padding:9px 12px;border-radius:0 9px 9px 0;color:var(--muted);font-size:.8rem }
-.footer { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:var(--muted);font-size:.77rem }
-.footer button { border:0;background:none;color:var(--muted);text-decoration:underline;padding:0 }
-.modal-backdrop { position:fixed;inset:0;z-index:60;background:rgba(0,8,20,.78);backdrop-filter:blur(8px);display:grid;place-items:center;padding:14px }
-.modal { width:min(700px,100%);max-height:91vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 90px rgba(0,0,0,.5) }
-.modal-head { position:sticky;top:0;z-index:2;background:var(--panel);border-bottom:1px solid var(--line);padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px }
-.modal-head h2 { font-size:1.1rem;margin:0 }
-.modal-body { padding:18px }
-.close { height:36px;width:36px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--text);font-size:1.2rem }
-.toast { position:fixed;left:50%;bottom:88px;z-index:100;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#effcff;color:#09233b;border-radius:11px;padding:10px 15px;font-weight:800;max-width:90vw;text-align:center;box-shadow:var(--shadow);transition:.2s }
-.toast.show { opacity:1;transform:translate(-50%,0) }
-.bottom-nav { display:none }
-.logo-file { display:none }
-.exercise-timer { font-size:.8rem;color:var(--cyan) }
-.visual-contrast { padding:20px;text-align:center;border-radius:12px;margin:10px 0 }
-
-@media(max-width:1000px) {
-  .layout { grid-template-columns:175px minmax(0,1fr) }
-  .grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
-  .exercise-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
-}
-@media(max-width:720px) {
-  .shell { padding:12px 12px 95px }
-  .topbar { gap:8px;flex-wrap:wrap }
-  .brand-mark { width:41px;height:41px }
-  .brand-sub { display:none }
-  .top-actions { margin-left:auto }
-  .top-actions .optional { display:none }
-  .searchbar { order:3;max-width:none;flex-basis:100% }
-  .layout { display:block }
-  .sidebar { display:none }
-  .hero { padding:24px 19px }
-  .hero p { font-size:.96rem }
-  .grid,.grid.two { grid-template-columns:repeat(2,minmax(0,1fr));gap:9px }
-  .card { padding:12px;min-height:150px }
-  .card p { font-size:.77rem }
-  .tool-icon { width:37px;height:37px }
-  .stats { gap:7px }
-  .stat { padding:11px }
-  .stat strong { font-size:1.2rem }
-  .stat span { font-size:.7rem }
-  .section-head { align-items:start }
-  .daily-callout { align-items:flex-start }
-  .clockgrid { grid-template-columns:repeat(2,minmax(0,1fr)) }
-  .field-row { grid-template-columns:1fr }
-  .bottom-nav {
-    display:grid;position:fixed;z-index:30;left:8px;right:8px;
-    bottom:max(7px,env(safe-area-inset-bottom));
-    grid-template-columns:repeat(5,minmax(0,1fr));padding:6px;
-    background:rgba(7,22,40,.94);border:1px solid rgba(160,206,245,.22);
-    border-radius:17px;backdrop-filter:blur(22px);box-shadow:0 14px 45px rgba(0,0,0,.35);
-  }
-  body.light .bottom-nav { background:rgba(255,255,255,.95) }
-  .bottom-nav .nav-btn { display:grid;justify-items:center;text-align:center;gap:1px;padding:6px 2px;font-size:.62rem }
-  .bottom-nav .nav-icon { width:auto;font-size:1.06rem }
-  .bottom-nav .nav-btn.active { color:var(--cyan);background:rgba(65,220,255,.1) }
-  .exercise-grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
-  .footer { padding-bottom:10px }
-}
-@media(max-width:420px) {
-  .grid,.grid.two,.exercise-grid { grid-template-columns:1fr }
-  .card { min-height:130px }
-  .brand-name { font-size:1.02rem }
-  .hero-actions .btn { flex:1 }
-  .timer-ring { height:78vw;width:78vw }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important }
-}
-</style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 15% -10%, #174c73 0, transparent 38%),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont,
+            "Segoe UI", sans-serif;
+    }
+    body.light {
+      color-scheme: light;
+      --bg: #f2f6fc;
+      --panel: #fff;
+      --panel2: #edf3fa;
+      --text: #142338;
+      --muted: #53667e;
+      --line: #d9e2ed;
+      --shadow: 0 12px 32px #1c355411;
+      background: var(--bg);
+    }
+    button, input, textarea, select { font: inherit; }
+    button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button:focus-visible, a:focus-visible, input:focus-visible,
+    textarea:focus-visible, select:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 3px;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+    .muted { color: var(--muted); }
+    .small { font-size: .86rem; }
+    .hidden { display: none !important; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .top-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark {
+      width: 43px; height: 43px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      color: #061323; font-weight: 950; font-size: 1.25rem;
+      box-shadow: 0 5px 22px #42e8f52a;
+      overflow: hidden;
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-name { font-weight: 900; letter-spacing: .12em; }
+    .brand-tag { color: var(--muted); font-size: .72rem; }
+    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .btn, .icon-btn, .nav-btn, .chip {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      background: var(--panel);
+      min-height: 43px;
+      padding: 9px 13px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .icon-btn { width: 44px; padding: 0; font-size: 1.1rem; }
+    .btn.primary {
+      color: #031322; font-weight: 800; border-color: transparent;
+      background: linear-gradient(120deg, var(--cyan), #78c5ff);
+    }
+    .btn:hover, .icon-btn:hover, .nav-btn:hover, .chip:hover {
+      border-color: var(--cyan);
+    }
+    .hero { padding: 48px 0 26px; }
+    .eyebrow {
+      color: var(--cyan); text-transform: uppercase;
+      letter-spacing: .14em; font-size: .76rem; font-weight: 800;
+    }
+    h1 { font-size: clamp(2.15rem, 6vw, 4.1rem); line-height: 1.06; margin: 12px 0; letter-spacing: -.045em; }
+    h2 { line-height: 1.2; letter-spacing: -.025em; }
+    .gradient-text {
+      background: linear-gradient(100deg, var(--cyan), #88aaff);
+      color: transparent; background-clip: text;
+    }
+    .hero p { color: var(--muted); max-width: 680px; }
+    .search-row { display: flex; gap: 10px; margin-top: 23px; max-width: 760px; }
+    .searchbox {
+      display: flex; align-items: center; gap: 10px;
+      flex: 1; min-width: 0; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 15px; padding: 0 14px;
+    }
+    .searchbox input {
+      width: 100%; min-width: 0; border: 0; outline: 0;
+      background: transparent; color: var(--text); min-height: 52px;
+    }
+    .searchbox input:focus-visible { outline: none; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 17px; }
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin: 26px 0;
+    }
+    .stat, .panel, .tool-card, .feature-card, .exercise {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .stat { padding: 16px; }
+    .stat strong { display: block; font-size: 1.35rem; }
+    .stat span { font-size: .82rem; color: var(--muted); }
+    .ad-slot {
+      border: 1px dashed var(--line); border-radius: 13px;
+      min-height: 82px; padding: 12px; margin: 22px 0;
+      display: grid; place-items: center; text-align: center;
+      color: var(--muted); background: color-mix(in srgb, var(--panel) 65%, transparent);
+    }
+    .ad-label {
+      display: block; text-transform: uppercase; font-size: .68rem;
+      letter-spacing: .12em; margin-bottom: 5px;
+    }
+    section { scroll-margin-top: 90px; padding: 24px 0; }
+    .section-head {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 16px; margin-bottom: 16px;
+    }
+    .section-head h2 { margin: 0 0 5px; font-size: clamp(1.45rem, 3vw, 2rem); }
+    .section-head p { margin: 0; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 20px; }
+    .chip { min-height: 37px; padding: 7px 12px; font-size: .88rem; }
+    .chip.active { background: #164258; border-color: var(--cyan); color: var(--cyan); }
+    body.light .chip.active { background: #def8fb; }
+    .tool-grid, .feature-grid, .exercise-grid {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px;
+    }
+    .tool-card {
+      min-width: 0; padding: 16px; text-align: left; color: var(--text);
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .tool-card:hover { transform: translateY(-3px); border-color: var(--cyan); }
+    .tool-icon {
+      width: 43px; height: 43px; border-radius: 13px;
+      display: grid; place-items: center; font-size: 1.35rem;
+      background: var(--panel2); margin-bottom: 13px;
+    }
+    .tool-card strong { display: block; margin-bottom: 4px; }
+    .tool-card small { color: var(--muted); display: block; line-height: 1.45; }
+    .tool-card .card-foot {
+      display: flex; justify-content: space-between; gap: 8px;
+      margin-top: 14px; color: var(--cyan); font-size: .78rem;
+    }
+    .feature-card { padding: 18px; }
+    .feature-card h3 { margin: 8px 0 5px; }
+    .feature-card p { color: var(--muted); font-size: .92rem; }
+    .panel { padding: 19px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .field label { font-size: .88rem; color: var(--muted); }
+    .field input, .field textarea, .field select, textarea, input, select {
+      max-width: 100%;
+    }
+    .field input, .field textarea, .field select, .input {
+      width: 100%; color: var(--text); background: var(--bg);
+      border: 1px solid var(--line); border-radius: 11px; padding: 11px 12px;
+    }
+    .field textarea { min-height: 125px; resize: vertical; }
+    .result {
+      white-space: pre-wrap; overflow-wrap: anywhere;
+      background: var(--bg); border: 1px solid var(--line);
+      border-radius: 12px; padding: 14px; min-height: 56px;
+    }
+    .tool-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+    .notice { padding: 12px; border-radius: 12px; background: var(--panel2); color: var(--muted); }
+    .exercise { padding: 15px; }
+    .exercise figure {
+      margin: 0; min-height: 105px; border-radius: 12px;
+      background: var(--panel2); display: grid; place-items: center;
+    }
+    .figure-person {
+      width: 38px; height: 60px; position: relative;
+      animation: move-person 1.5s ease-in-out infinite alternate;
+    }
+    .figure-person:before {
+      content: ""; position: absolute; width: 17px; height: 17px;
+      background: var(--cyan); border-radius: 50%; top: 0; left: 10px;
+    }
+    .figure-person:after {
+      content: ""; position: absolute; width: 8px; height: 32px;
+      border-radius: 8px; background: var(--blue); top: 19px; left: 14px;
+      box-shadow: -12px 8px 0 -1px var(--cyan), 12px 8px 0 -1px var(--cyan),
+                  -7px 35px 0 -1px var(--blue), 7px 35px 0 -1px var(--blue);
+    }
+    @keyframes move-person { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
+    .timer { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; text-align: center; letter-spacing: .04em; }
+    .timer-controls { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .footer { border-top: 1px solid var(--line); padding: 28px 0 100px; margin-top: 30px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 12px; }
+    .footer a { color: var(--muted); }
+    .bottom-nav {
+      display: none; position: fixed; z-index: 30; bottom: 0; left: 0; right: 0;
+      padding: 8px max(8px, env(safe-area-inset-left))
+               calc(8px + env(safe-area-inset-bottom));
+      background: color-mix(in srgb, var(--panel) 94%, transparent);
+      border-top: 1px solid var(--line); backdrop-filter: blur(16px);
+      grid-template-columns: repeat(5, 1fr); gap: 4px;
+    }
+    .nav-btn {
+      flex-direction: column; gap: 2px; padding: 6px 3px;
+      min-height: 54px; background: transparent; border-color: transparent;
+      font-size: .72rem;
+    }
+    .nav-btn span:first-child { font-size: 1.2rem; }
+    .nav-btn.active { color: var(--cyan); }
+    dialog {
+      width: min(720px, calc(100% - 24px)); max-height: 86dvh;
+      overflow: auto; color: var(--text); background: var(--panel);
+      border: 1px solid var(--line); border-radius: 20px; padding: 0;
+      box-shadow: 0 24px 90px #0008;
+    }
+    dialog::backdrop { background: #020711b8; backdrop-filter: blur(4px); }
+    .dialog-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line);
+    }
+    .dialog-body { padding: 18px; }
+    .toast {
+      position: fixed; z-index: 60; bottom: 88px; left: 50%;
+      transform: translateX(-50%); max-width: calc(100% - 28px);
+      padding: 11px 16px; border-radius: 12px;
+      background: var(--text); color: var(--bg); box-shadow: var(--shadow);
+    }
+    .progress { height: 8px; background: var(--panel2); border-radius: 99px; overflow: hidden; }
+    .progress span { display: block; height: 100%; width: 0; background: var(--cyan); transition: width .2s; }
+    @media (max-width: 900px) {
+      .tool-grid, .feature-grid, .exercise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 22px, 1180px); }
+      .top-inner { min-height: 63px; }
+      .brand-tag { display: none; }
+      .header-actions .btn { display: none; }
+      .hero { padding-top: 34px; }
+      .stats { gap: 8px; }
+      .stat { padding: 11px; }
+      .stat strong { font-size: 1.05rem; }
+      .tool-grid, .feature-grid, .exercise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .search-row { flex-direction: column; }
+      .search-row > .btn { width: 100%; }
+      .section-head { align-items: start; flex-direction: column; }
+      .form-grid { grid-template-columns: 1fr; }
+      .bottom-nav { display: grid; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important; animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important; transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="shell">
 <header class="topbar">
-  <div class="brand">
-    <div class="brand-mark" id="brandMark" aria-label="SHAHEEN logo">S</div>
-    <div><div class="brand-name">SHAHEEN</div><div class="brand-sub">Useful things. One workspace.</div></div>
-  </div>
-  <div class="searchbar" role="search">
-    <span aria-hidden="true">⌕</span>
-    <input id="globalSearch" type="search" placeholder="Search 51 tools and daily features…" aria-label="Search SHAHEEN">
-    <button class="icon-btn" id="searchGo" title="Search">↵</button>
-  </div>
-  <div class="top-actions">
-    <select id="regionSelect" aria-label="Choose region" title="Regional formats">
-      <option value="global">Global</option><option value="pk">Pakistan</option>
-      <option value="sa">Saudi Arabia</option><option value="us">United States</option>
-      <option value="uk">United Kingdom</option><option value="bh">Bahrain</option>
-      <option value="ae">UAE</option><option value="ca">Canada</option>
-      <option value="au">Australia</option><option value="in">India</option>
-    </select>
-    <button class="icon-btn optional" id="shareBtn" aria-label="Share website" title="Share">↗</button>
-    <button class="icon-btn optional" id="logoBtn" aria-label="Upload logo" title="Use your logo">▧</button>
-    <input id="logoFile" class="logo-file" type="file" accept="image/png,image/jpeg,image/webp">
-    <button class="icon-btn" id="themeBtn" aria-label="Switch theme" title="Theme">☼</button>
+  <div class="wrap top-inner">
+    <a class="brand" href="#home" aria-label="SHAHEEN home">
+      <span class="brand-mark" id="brandMark">S</span>
+      <span>
+        <span class="brand-name">SHAHEEN</span><br>
+        <span class="brand-tag">Tools · Learn · Create · Grow</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <button class="btn" id="uploadLogoBtn" type="button">＋ Logo</button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme" title="Toggle theme">☼</button>
+      <button class="icon-btn" id="shareBtn" type="button" aria-label="Share SHAHEEN" title="Share">↗</button>
+    </div>
   </div>
 </header>
 
-<div class="layout">
-<aside class="sidebar">
-  <div class="nav-label">Workspace</div>
-  <nav class="nav-list" aria-label="Main navigation">
-    <button class="nav-btn active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
-    <button class="nav-btn" data-page="tools"><span class="nav-icon">▦</span>All tools</button>
-    <button class="nav-btn" data-page="focus"><span class="nav-icon">◷</span>Focus room</button>
-    <button class="nav-btn" data-page="study"><span class="nav-icon">✎</span>Study room</button>
-    <button class="nav-btn" data-page="gym"><span class="nav-icon">↗</span>Gym 2026</button>
-    <button class="nav-btn" data-page="daily"><span class="nav-icon">✓</span>Daily desk</button>
-    <button class="nav-btn" data-page="saved"><span class="nav-icon">☆</span>Saved</button>
-    <button class="nav-btn" data-page="about"><span class="nav-icon">ⓘ</span>About & privacy</button>
-  </nav>
-  <div class="side-note"><strong>Built for usefulness.</strong><br>Take breaks. Keep your data under your control.</div>
-</aside>
+<main id="home" class="wrap">
+  <section class="hero">
+    <div class="eyebrow">One useful place · Worldwide</div>
+    <h1>Everyday tasks,<br><span class="gradient-text">made simpler.</span></h1>
+    <p>Free browser tools for text, calculations, study, planning and fitness. Designed to work comfortably on mobile and desktop.</p>
 
-<main class="main" id="main">
-<section class="page" id="page-home">
-  <div class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Your everyday digital workspace</div>
-      <h1>Make space for<br><span style="color:var(--cyan)">better ideas.</span></h1>
-      <p>Explore practical text, number, file and planning utilities, learn something small, and take a mindful break—all in one mobile-friendly workspace.</p>
-      <div class="hero-actions">
-        <button class="btn primary" data-go="tools">Explore tools →</button>
-        <button class="btn" data-go="study">Open study room</button>
-        <button class="btn ghost" data-go="focus">Start focus session</button>
+    <div class="search-row">
+      <label class="searchbox">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search tools — e.g. word counter, BMI…" autocomplete="off" aria-label="Search tools">
+      </label>
+      <button class="btn primary" id="searchBtn" type="button">Find tools →</button>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="#tools">Explore tools</a>
+      <a class="btn" href="#study">Study & focus</a>
+      <a class="btn" href="#fitness">Gym 2026</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><strong id="toolCount">30+</strong><span>Browser utilities</span></div>
+      <div class="stat"><strong>Free</strong><span>No account required</span></div>
+      <div class="stat"><strong>Mobile-first</strong><span>Responsive interface</span></div>
+    </div>
+  </section>
+
+  <div class="ad-slot" aria-label="Advertisement area">
+    <div><span class="ad-label">Advertisement</span><span class="small">Ad placement area · Content remains accessible</span></div>
+  </div>
+
+  <section id="tools">
+    <div class="section-head">
+      <div>
+        <h2>Explore tools</h2>
+        <p>Choose a task. Enter your information. Get a clear result.</p>
       </div>
-      <div class="tags">
-        <span class="tag">51 core tools</span><span class="tag">10 regional formats</span>
-        <span class="tag">Local-first personal notes</span><span class="tag">Phone-friendly</span>
-      </div>
+      <button class="btn" id="clearSearchBtn" type="button">Reset search</button>
     </div>
-  </div>
+    <div class="chips" id="categoryChips" aria-label="Tool categories"></div>
+    <div class="tool-grid" id="toolGrid"></div>
+    <p class="muted hidden" id="emptyMessage">No matching tools. Try another search or category.</p>
+  </section>
 
-  <div class="stats">
-    <div class="stat"><strong id="toolCount">51</strong><span>Core tools</span></div>
-    <div class="stat"><strong id="regionCount">510</strong><span>Tool-region combinations</span></div>
-    <div class="stat"><strong id="doneCount">0</strong><span>Tasks done today</span></div>
-  </div>
-
-  <div class="daily-callout">
-    <div><div class="eyebrow">Small daily challenge</div><h3 id="challengeTitle" style="margin:5px 0 0">Do one useful thing.</h3><p id="challengeText">Pick a small task that matters to you.</p></div>
-    <button id="challengeBtn" class="btn primary">Mark complete ✓</button>
-  </div>
-
-  <div class="section-head"><div><h2>Quick tools</h2><p class="muted small">A few useful starting points.</p></div><button class="btn ghost" data-go="tools">Browse all →</button></div>
-  <div class="grid" id="featuredGrid"></div>
-
-  <div class="ad-slot">
-    <div class="ad-label">ADVERTISEMENT</div>
-    <p>Ads are provided by the ad network and are separate from website controls.</p>
-    <p>Never click an ad accidentally or just to support SHAHEEN.</p>
-  </div>
-
-  <div class="section-head"><div><h2>World clock</h2><p class="muted small">Current times for common work and study locations.</p></div></div>
-  <div class="clockgrid" id="homeClocks"></div>
-</section>
-
-<section class="page" id="page-tools" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Tool library</div><h2>Find the right utility</h2><p class="muted small">51 tools across ten regional format profiles. Regional formatting changes numbers, currency and time—not the core tool count.</p></div></div>
-  <div class="toolbar"><div class="searchbar" style="max-width:none"><span>⌕</span><input id="toolSearch" type="search" placeholder="Search by name or task" aria-label="Search tool library"></div></div>
-  <div class="filters" id="categoryFilters">
-    <button class="chip active" data-category="All">All</button>
-    <button class="chip" data-category="Numbers">Numbers</button>
-    <button class="chip" data-category="Text">Text</button>
-    <button class="chip" data-category="Files">Files & data</button>
-    <button class="chip" data-category="Colors">Colors</button>
-    <button class="chip" data-category="Time">Time & planning</button>
-    <button class="chip" data-category="Productivity">Productivity</button>
-  </div>
-  <div class="grid" id="toolsGrid"></div>
-</section>
-
-<section class="page" id="page-focus" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Work, then rest</div><h2>Focus room</h2><p class="muted small">Use a short, realistic session. The timer is local to this browser tab.</p></div></div>
-  <div class="panel timer">
-    <div class="filters" style="justify-content:center">
-      <button class="chip active" data-timer="focus">Focus · 25 min</button>
-      <button class="chip" data-timer="short">Break · 5 min</button>
-      <button class="chip" data-timer="long">Long break · 15 min</button>
+  <section id="quick">
+    <div class="section-head">
+      <div><h2>Everyday essentials</h2><p>Quick links for common tasks.</p></div>
     </div>
-    <div class="timer-ring" id="timerRing"><div class="timer-content"><div class="timer-display" id="timerDisplay">25:00</div><div class="muted small">One thing at a time</div></div></div>
-    <div class="hero-actions" style="justify-content:center"><button class="btn primary" id="timerStart">Start</button><button class="btn" id="timerReset">Reset</button></div>
-    <div class="field" style="max-width:560px;margin:20px auto 0;text-align:left"><label for="focusGoal">Session goal</label><input id="focusGoal" type="text" maxlength="160" placeholder="Example: revise one chapter"><button class="btn" id="saveGoal" style="margin-top:7px;align-self:start">Save goal on this device</button></div>
-    <div id="goalView" class="result" hidden></div>
-  </div>
-</section>
-
-<section class="page" id="page-study" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Active recall</div><h2>Study room</h2><p class="muted small">Practice small questions, flip cards and create your own deck in this browser.</p></div></div>
-  <div class="panel"><h3>Quick flashcards</h3><button class="flashcard" id="flashCard">What does URL stand for?</button><div class="hero-actions" style="justify-content:center"><button class="btn" id="flashPrev">← Previous</button><button class="btn primary" id="flashNext">Next card →</button></div><p class="muted tiny" id="flashStatus" style="text-align:center;margin-top:10px"></p></div>
-  <div class="section-head"><div><h2>Your own cards</h2><p class="muted small">Add a question and answer for revision.</p></div></div>
-  <div class="panel"><form id="flashForm"><div class="field"><label for="flashQ">Question</label><input id="flashQ" type="text" maxlength="240" required></div><div class="field"><label for="flashA">Answer</label><textarea id="flashA" required maxlength="1200"></textarea></div><button class="btn primary">Add card</button></form><div id="userCards" class="list" style="margin-top:14px"></div></div>
-</section>
-
-<section class="page" id="page-gym" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Gym 2026 · gentle movement</div><h2>GYM 2026 — Move & stretch</h2><p class="muted small">Animated cues for short breaks, not medical exercise prescriptions. Move comfortably and stop if anything hurts.</p></div></div>
-  <div class="daily-callout"><div><h3 style="margin:0">Balance matters</h3><p>Take screen breaks, hydrate and allow time for rest and sleep.</p></div><span style="font-size:2rem">🌿</span></div>
-  <div class="exercise-grid" id="exerciseGrid" style="margin-top:15px"></div>
-  <div class="notice" style="margin-top:15px">These are simple animated visual cues rather than realistic video demonstrations. If you have an injury or health concern, ask a qualified professional which movements are suitable.</div>
-</section>
-
-<section class="page" id="page-daily" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Your day, your pace</div><h2>Daily desk</h2><p class="muted small">Tasks, notes and habits are saved in this browser. They do not sync to an online account.</p></div></div>
-  <div class="panel"><h3>Add a task</h3><form id="taskForm"><div class="field-row"><div class="field"><label for="taskInput">What do you want to do?</label><input id="taskInput" type="text" maxlength="180" required placeholder="One clear next step"></div><div class="field"><label for="taskArea">Area</label><select id="taskArea"><option>Personal</option><option>Study</option><option>Work</option><option>Movement break</option></select></div></div><button class="btn primary">Add task +</button></form></div>
-  <div class="section-head"><div><h2>Today's tasks</h2><p class="muted small">Progress without pressure.</p></div><button class="btn ghost" id="clearTasks">Clear completed</button></div><div id="taskList" class="list"></div>
-  <div class="section-head"><div><h2>Scratchpad</h2><p class="muted small">Don't store passwords or sensitive secrets here.</p></div></div>
-  <div class="panel"><div class="field"><label for="notes">Notes</label><textarea id="notes" placeholder="Ideas, reminders or a question to explore…"></textarea></div><div class="hero-actions"><button class="btn primary" id="saveNotes">Save notes</button><button class="btn" id="copyNotes">Copy</button><button class="btn ghost" id="downloadNotes">Download .txt</button></div><p class="muted tiny" id="notesStatus" style="margin:10px 0 0">Stored on this device only.</p></div>
-  <div class="section-head"><div><h2>Habits check-in</h2><p class="muted small">Choose one or more realistic daily habits.</p></div></div><div id="habits" class="panel list"></div>
-</section>
-
-<section class="page" id="page-saved" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">Your shortcuts</div><h2>Saved tools</h2><p class="muted small">Tap the star on any tool to save it here.</p></div></div>
-  <div id="savedGrid" class="grid"></div>
-  <div class="section-head"><div><h2>Recently opened</h2><p class="muted small">Your last few tools on this device.</p></div></div>
-  <div id="recentGrid" class="grid"></div>
-</section>
-
-<section class="page" id="page-about" hidden>
-  <div class="section-head" style="margin-top:3px"><div><div class="eyebrow">About this project</div><h2>SHAHEEN</h2><p class="muted small">Developer label: Shaheen Tools Team</p></div></div>
-  <div class="panel">
-    <h3>Purpose</h3><p>SHAHEEN combines practical browser-based utilities with study, planning, focus and wellbeing features. The goal is to save people time and help them complete real tasks.</p>
-    <h3>Data and privacy</h3><p>Saved tools, tasks, notes, habits, theme and custom logo are kept in your browser's local storage. They do not automatically sync across devices. Do not save passwords or confidential information here.</p>
-    <p>The QR generator sends the entered text to an external QR service to generate the image. Image optimization happens locally in your browser. Monetag ad scripts may process information under the ad provider's policies. Review applicable privacy and consent requirements before public launch.</p>
-    <h3>Ads</h3><p>Advertisements are independent from tool controls. We do not ask visitors to click ads, and tools should never be disguised as ads.</p>
-    <h3>Google products</h3><p>Google Search Console monitors a website's search presence. Google Play Console manages Android apps; a website cannot register an Android app listing by adding SEO tags alone.</p>
-    <div class="list">
-      <div class="list-row"><div class="grow"><strong>Google Search Console</strong><p>Verify website ownership, inspect URLs and submit sitemap.</p></div><a class="btn" href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
-      <div class="list-row"><div class="grow"><strong>Bing Webmaster Tools</strong><p>Submit the site and sitemap to Bing.</p></div><a class="btn" href="https://www.bing.com/webmasters/about" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
-      <div class="list-row"><div class="grow"><strong>Monetag dashboard</strong><p>Check zone installation and ad reporting.</p></div><a class="btn" href="https://monetag.com/" target="_blank" rel="noopener noreferrer">Open ↗</a></div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="tool-icon">🌐</div><h3>Language & region</h3>
+        <p>Choose a region for date, number and currency formatting.</p>
+        <label class="field"><span class="muted small">Your region</span>
+          <select id="regionSelect" aria-label="Select region">
+            <option value="PK">Pakistan · PKR</option>
+            <option value="SA">Saudi Arabia · SAR</option>
+            <option value="US">United States · USD</option>
+            <option value="GB">United Kingdom · GBP</option>
+            <option value="BH">Bahrain · BHD</option>
+            <option value="AE">United Arab Emirates · AED</option>
+            <option value="CA">Canada · CAD</option>
+            <option value="AU">Australia · AUD</option>
+            <option value="IN">India · INR</option>
+            <option value="GLOBAL">International</option>
+          </select>
+        </label>
+        <p id="regionInfo" class="small muted"></p>
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">🖼️</div><h3>Your brand</h3>
+        <p>Upload your own logo for this browser session. Your file stays on your device unless you choose to share it.</p>
+        <button class="btn" id="uploadLogoBtn2" type="button">Choose logo</button>
+        <input id="logoInput" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">🔗</div><h3>Share SHAHEEN</h3>
+        <p>Send the site to friends using the device share sheet or WhatsApp.</p>
+        <button class="btn" id="whatsappBtn" type="button">Share on WhatsApp</button>
+      </article>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="study">
+    <div class="section-head">
+      <div><h2>Study & focus</h2><p>Make a small, focused start. Save your own progress locally.</p></div>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="tool-icon">⏱️</div>
+        <h3>Focus timer</h3>
+        <p>Use a focus session and take a break when you need one.</p>
+        <div class="field">
+          <label for="focusMinutes">Session length (minutes)</label>
+          <input id="focusMinutes" type="number" min="1" max="180" value="25">
+        </div>
+        <div class="timer" id="focusClock" aria-live="off">25:00</div>
+        <div class="timer-controls">
+          <button class="btn primary" id="timerStart" type="button">Start</button>
+          <button class="btn" id="timerPause" type="button">Pause</button>
+          <button class="btn" id="timerReset" type="button">Reset</button>
+        </div>
+        <p class="muted small" id="timerStatus" aria-live="polite">Ready when you are.</p>
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">📝</div>
+        <h3>Quick notes</h3>
+        <p>Notes are stored only in this browser using local storage.</p>
+        <label class="field">
+          <span class="muted small">Your note</span>
+          <textarea id="notesInput" placeholder="Write a reminder, idea or study goal…"></textarea>
+        </label>
+        <div class="tool-actions">
+          <button class="btn primary" id="saveNotes" type="button">Save note</button>
+          <button class="btn" id="clearNotes" type="button">Clear</button>
+        </div>
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">📚</div>
+        <h3>Flashcards</h3>
+        <p>Create a simple question and answer card to practise recall.</p>
+        <label class="field"><span class="muted small">Question</span><input id="flashQ" placeholder="What do you want to remember?"></label>
+        <label class="field"><span class="muted small">Answer</span><textarea id="flashA" placeholder="Write the answer…"></textarea></label>
+        <div class="tool-actions">
+          <button class="btn primary" id="saveFlash" type="button">Save card</button>
+          <button class="btn" id="showFlash" type="button">Review saved cards</button>
+        </div>
+        <div id="flashResult" class="notice small hidden"></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="fitness">
+    <div class="section-head">
+      <div><h2>Gym 2026 · Movement break</h2><p>Simple animated illustrations and beginner-friendly movement cues—not medical advice.</p></div>
+    </div>
+    <div class="exercise-grid">
+      <article class="exercise">
+        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
+        <h3>March in place</h3><p class="muted small">Stand comfortably. Alternate lifting your feet at a gentle pace. Keep breathing normally.</p>
+        <button class="btn exerciseBtn" data-exercise="March in place" type="button">Start 30 sec</button>
+      </article>
+      <article class="exercise">
+        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
+        <h3>Shoulder rolls</h3><p class="muted small">Roll your shoulders slowly in a comfortable range. Stop if you feel pain.</p>
+        <button class="btn exerciseBtn" data-exercise="Shoulder rolls" type="button">Start 30 sec</button>
+      </article>
+      <article class="exercise">
+        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
+        <h3>Gentle side steps</h3><p class="muted small">Take small side steps on a clear, stable surface. Move at your own pace.</p>
+        <button class="btn exerciseBtn" data-exercise="Gentle side steps" type="button">Start 30 sec</button>
+      </article>
+    </div>
+    <div class="panel" style="margin-top:14px">
+      <h3 id="exerciseTitle">Ready for a movement break?</h3>
+      <div class="progress" aria-label="Exercise timer progress"><span id="exerciseProgress"></span></div>
+      <p class="muted small" id="exerciseStatus" aria-live="polite">Choose an activity above. Rest whenever you need to.</p>
+      <button class="btn" id="stopExercise" type="button">Stop</button>
+    </div>
+  </section>
+
+  <section id="global">
+    <div class="section-head">
+      <div><h2>Global utilities</h2><p>Useful formats for different countries and everyday situations.</p></div>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="tool-icon">📅</div><h3>Local date & time</h3>
+        <p id="localDate" aria-live="off"></p>
+        <p class="muted small">Uses your device's current date and time settings.</p>
+        <button class="btn" id="refreshDate" type="button">Refresh</button>
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">🔐</div><h3>Privacy by design</h3>
+        <p>Most tools here process inputs in your browser. Do not enter sensitive passwords or confidential information into tools you do not trust.</p>
+        <a class="btn" href="#privacy">Privacy information</a>
+      </article>
+      <article class="feature-card">
+        <div class="tool-icon">💡</div><h3>Suggest a tool</h3>
+        <p>Tell us which everyday task should become easier.</p>
+        <a class="btn" id="suggestBtn" href="#">Send suggestion</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="panel">
+      <h2>Privacy & transparency</h2>
+      <p class="muted">SHAHEEN's browser-based tools are designed to process your input locally whenever practical. Saved notes, favourites and theme settings may use local browser storage. Clearing browser data can remove them. Advertising partners may use cookies or similar technologies according to their own policies and your region's consent requirements.</p>
+      <p class="muted">Do not upload confidential documents or personal information unless you understand how the feature processes it. For an actual public launch, replace this notice with a complete, accurate privacy policy and contact details for the site owner.</p>
+    </div>
+  </section>
 </main>
-</div>
-<footer class="footer"><div>© <span id="year"></span> SHAHEEN · Shaheen Tools Team</div><div class="hero-actions" style="margin:0"><button data-go="about">About & privacy</button><button id="footerShare">Share</button></div></footer>
-</div>
 
-<nav class="bottom-nav" aria-label="Mobile navigation">
-  <button class="nav-btn active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
-  <button class="nav-btn" data-page="tools"><span class="nav-icon">▦</span>Tools</button>
-  <button class="nav-btn" data-page="focus"><span class="nav-icon">◷</span>Focus</button>
-  <button class="nav-btn" data-page="daily"><span class="nav-icon">✓</span>Daily</button>
-  <button class="nav-btn" data-page="saved"><span class="nav-icon">☆</span>Saved</button>
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SHAHEEN</span></a>
+    <p class="muted">Practical digital utilities for everyday life.</p>
+    <div class="footer-links">
+      <a href="#tools">Tools</a><a href="#study">Study</a><a href="#fitness">Fitness</a>
+      <a href="#privacy">Privacy</a><a href="#home">Back to top ↑</a>
+    </div>
+    <p class="muted small">© <span id="year"></span> SHAHEEN. Built for useful tasks, not endless scrolling.</p>
+  </div>
+</footer>
+
+<nav class="bottom-nav" aria-label="Main navigation">
+  <a class="nav-btn active" href="#home"><span>⌂</span><span>Home</span></a>
+  <a class="nav-btn" href="#tools"><span>▦</span><span>Tools</span></a>
+  <a class="nav-btn" href="#study"><span>◷</span><span>Study</span></a>
+  <a class="nav-btn" href="#fitness"><span>♧</span><span>Fitness</span></a>
+  <a class="nav-btn" href="#global"><span>◎</span><span>Global</span></a>
 </nav>
-<div class="modal-backdrop" id="toolModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal"><div class="modal-head"><h2 id="modalTitle">Tool</h2><button class="close" id="modalClose" aria-label="Close tool">×</button></div><div class="modal-body" id="modalBody"></div></div>
-</div>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<dialog id="toolDialog" aria-labelledby="dialogTitle">
+  <div class="dialog-head">
+    <div><strong id="dialogTitle">Tool</strong><div class="muted small" id="dialogDescription"></div></div>
+    <button class="icon-btn" id="closeDialog" type="button" aria-label="Close tool">✕</button>
+  </div>
+  <div class="dialog-body">
+    <div id="toolFields"></div>
+    <div class="tool-actions">
+      <button class="btn primary" id="runTool" type="button">Run tool</button>
+      <button class="btn" id="copyResult" type="button">Copy result</button>
+      <button class="btn" id="clearTool" type="button">Clear</button>
+      <button class="btn" id="saveTool" type="button">☆ Save tool</button>
+    </div>
+    <h3>Result</h3>
+    <div class="result" id="toolResult" aria-live="polite">Your result will appear here.</div>
+    <p class="muted small" id="toolHint"></p>
+  </div>
+</dialog>
+
+<input id="logoFileFallback" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
 <script>
-'use strict';
+(() => {
+  "use strict";
 
-const SITE_URL='https://shaheentools.vercel.app/';
-const STORE={
-  theme:'sh_v3_theme',saved:'sh_v3_saved',recent:'sh_v3_recent',
-  tasks:'sh_v3_tasks',notes:'sh_v3_notes',goal:'sh_v3_goal',
-  logo:'sh_v3_logo',challenge:'sh_v3_challenge',region:'sh_v3_region',
-  habits:'sh_v3_habits',userCards:'sh_v3_usercards'
-};
-
-const REGIONS={
-  global:{label:'Global',locale:'en-US',currency:'USD',symbol:'$',zone:'UTC'},
-  pk:{label:'Pakistan',locale:'en-PK',currency:'PKR',symbol:'Rs',zone:'Asia/Karachi'},
-  sa:{label:'Saudi Arabia',locale:'en-SA',currency:'SAR',symbol:'SAR',zone:'Asia/Riyadh'},
-  us:{label:'United States',locale:'en-US',currency:'USD',symbol:'$',zone:'America/New_York'},
-  uk:{label:'United Kingdom',locale:'en-GB',currency:'GBP',symbol:'£',zone:'Europe/London'},
-  bh:{label:'Bahrain',locale:'en-BH',currency:'BHD',symbol:'BHD',zone:'Asia/Bahrain'},
-  ae:{label:'UAE',locale:'en-AE',currency:'AED',symbol:'AED',zone:'Asia/Dubai'},
-  ca:{label:'Canada',locale:'en-CA',currency:'CAD',symbol:'CA$',zone:'America/Toronto'},
-  au:{label:'Australia',locale:'en-AU',currency:'AUD',symbol:'A$',zone:'Australia/Sydney'},
-  in:{label:'India',locale:'en-IN',currency:'INR',symbol:'₹',zone:'Asia/Kolkata'}
-};
-
-const TOOL_ROWS=[
-['calculator','Everyday calculator','∑','Numbers','calc','Add, subtract, multiply, divide and powers.'],
-['percentage','Percentage calculator','％','Numbers','percent','Find a percentage of a number.'],
-['discount','Discount calculator','🏷','Numbers','discount','Estimate discount amount and final price.'],
-['tip','Tip calculator','☕','Numbers','tip','Calculate a tip and split a bill.'],
-['bill-splitter','Bill splitter','↔','Numbers','split','Split an amount between people.'],
-['tax-estimator','Tax estimator','＄','Numbers','tax','Estimate tax added to a price.'],
-['simple-interest','Simple interest','↗','Numbers','simpleInterest','Calculate simple interest and total.'],
-['compound-growth','Compound growth','📈','Numbers','compoundInterest','Estimate compound growth.'],
-['loan-estimate','Loan payment estimate','▤','Numbers','loan','Estimate monthly payment; not a lending quote.'],
-['savings-goal','Savings goal planner','🎯','Numbers','savings','Estimate months to a savings target.'],
-['date-difference','Date difference','▣','Time','dateDiff','Count calendar days between dates.'],
-['age-calculator','Age calculator','🎂','Time','age','Calculate age from a birth date.'],
-['countdown','Event countdown','⏳','Time','countdown','Count down to a chosen date and time.'],
-['unit-converter','Unit converter','⇄','Numbers','unit','Convert common length, mass and temperature units.'],
-['data-converter','Data size converter','💾','Numbers','data','Convert bytes, KB, MB, GB and TB.'],
-['cooking-volume','Cooking volume converter','🥄','Numbers','cooking','Convert common volume measures.'],
-['word-counter','Word counter','Aa','Text','word','Count words, characters, lines and paragraphs.'],
-['character-counter','Character counter','¶','Text','char','Count characters with and without spaces.'],
-['reading-time','Reading time estimator','📖','Text','reading','Estimate reading time from text.'],
-['word-frequency','Word frequency analyzer','▥','Text','frequency','Count words and show common terms.'],
-['case-converter','Text case converter','Tt','Text','case','Convert uppercase, lowercase and title case.'],
-['reverse-text','Reverse text','↶','Text','reverse','Reverse characters in a string.'],
-['slug-maker','URL slug maker','🔗','Text','slug','Create a readable URL slug.'],
-['deduplicate-lines','Remove duplicate lines','≡','Text','dedupe','Remove repeated lines while preserving order.'],
-['sort-lines','Sort lines','↕','Text','sort','Sort lines alphabetically.'],
-['space-cleaner','Clean extra spaces','␠','Text','spaces','Normalize whitespace in text.'],
-['text-diff','Text difference checker','⇆','Text','compare','Compare two text blocks and show a basic difference summary.'],
-['json-formatter','JSON formatter','{}','Text','jsonFormat','Pretty-print valid JSON.'],
-['json-validator','JSON validator','✓','Text','jsonValidate','Validate JSON syntax.'],
-['base64-encode','Base64 encoder','▧','Text','base64Encode','Encode UTF-8 text as Base64.'],
-['base64-decode','Base64 decoder','▤','Text','base64Decode','Decode Base64 to UTF-8 text.'],
-['url-encode','URL component encoder','↗','Text','urlEncode','Encode URL component text.'],
-['url-decode','URL component decoder','↙','Text','urlDecode','Decode URL component text.'],
-['html-escape','HTML entity escaper','</>','Text','htmlEscape','Escape HTML-sensitive characters.'],
-['markdown-preview','Markdown preview','M↓','Text','markdown','Preview simple Markdown safely.'],
-['rot13','ROT13 converter','🔄','Text','rot13','Apply ROT13 text transformation.'],
-['morse','Morse code tool','·−','Text','morse','Encode text as Morse or decode common Morse.'],
-['binary-encode','Text to binary','010','Text','binaryEncode','Encode UTF-8 text bytes as binary.'],
-['binary-decode','Binary to text','101','Text','binaryDecode','Decode 8-bit binary groups as UTF-8.'],
-['password-generator','Password generator','⛨','Productivity','password','Generate random passwords locally.'],
-['uuid-generator','UUID generator','⌗','Productivity','uuid','Generate a random UUID.'],
-['random-picker','Random list picker','🎲','Productivity','random','Pick one item from your own list.'],
-['qr-maker','QR code generator','▦','Files','qr','Create a QR image for text or a URL.'],
-['image-optimizer','Image optimizer','▧','Files','image','Resize and compress an image locally.'],
-['color-inspector','Color inspector','◉','Colors','color','Inspect color values in HEX, RGB and HSL.'],
-['contrast-checker','Color contrast checker','◒','Colors','contrast','Estimate WCAG contrast for two colors.'],
-['gradient-builder','CSS gradient builder','🌈','Colors','gradient','Build a two-color CSS gradient.'],
-['lorem-maker','Placeholder text maker','¶','Text','lorem','Create placeholder text for layouts.'],
-['csv-to-json','CSV to JSON','⇢','Files','csvjson','Convert a simple CSV table to JSON.'],
-['json-to-csv','JSON to CSV','⇠','Files','jsoncsv','Convert an array of objects to CSV.'],
-['markdown-table','Markdown table maker','▦','Text','mdtable','Turn pipe-separated rows into a Markdown table.']
-];
-const TOOLS=TOOL_ROWS.map(([id,name,icon,category,kind,desc])=>({id,name,icon,category,kind,desc}));
-
-const EXERCISES=[
-{name:'Easy march in place',icon:'🚶',dur:45,desc:'Stand comfortably and move gently at an easy pace.'},
-{name:'Shoulder rolls',icon:'🔄',dur:30,desc:'Roll shoulders slowly forward, then backward.'},
-{name:'Comfortable standing reach',icon:'🙆',dur:30,desc:'Reach upward only as far as feels comfortable, then relax.'},
-{name:'Ankle circles',icon:'🦶',dur:30,desc:'Hold a stable support and draw small circles with each ankle.'},
-{name:'Seated posture reset',icon:'🪑',dur:30,desc:'Sit comfortably, relax your jaw and let shoulders soften.'},
-{name:'Eye break',icon:'👀',dur:20,desc:'Look into the distance and blink naturally for a few moments.'}
-];
-
-const FLASH=[
-{q:'What does URL stand for?',a:'Uniform Resource Locator—the address of a resource on the web.'},
-{q:'What does JSON stand for?',a:'JavaScript Object Notation—a structured data text format.'},
-{q:'What is a sitemap?',a:'A file listing URLs on a website to help search engines discover them.'},
-{q:'What is active recall?',a:'Practising remembering information without first looking at your notes, then checking accuracy.'},
-{q:'What does CSS do?',a:'CSS controls the visual style and layout of HTML content.'},
-{q:'What is two-factor authentication?',a:'A sign-in method using an additional proof beyond the password.'},
-{q:'What is a browser cache?',a:'A local store of resources that can help pages load faster on repeat visits.'},
-{q:'What is a canonical URL?',a:'The preferred URL for a page when similar or duplicate URLs exist.'}
-];
-
-const $=s=>document.querySelector(s);
-const $$=s=>Array.from(document.querySelectorAll(s));
-let activePage='home',activeCategory='All',currentTool=null,toastTimer=null;
-let flashIndex=0,flashShown=false,timerMode='focus',timerSeconds=1500,timerRunning=false,timerInterval=null;
-let activeExerciseTimers=new Map();
-
-function read(key,fallback){try{const raw=localStorage.getItem(key);return raw===null?fallback:JSON.parse(raw)}catch{return fallback}}
-function write(key,val){try{localStorage.setItem(key,JSON.stringify(val));return true}catch{return false}}
-function toast(msg){const e=$('#toast');e.textContent=msg;e.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove('show'),2400)}
-function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function num(v,label){if(v===''||v===null||!Number.isFinite(Number(v)))throw new Error('Enter a valid number for '+label+'.');return Number(v)}
-function region(){return REGIONS[$('#regionSelect').value]||REGIONS.global}
-function fmt(v,max=2){return Number(v).toLocaleString(region().locale,{maximumFractionDigits:max})}
-function money(v){return region().symbol+' '+fmt(v,2)}
-
-function toolCard(t){
- const saved=read(STORE.saved,[]).includes(t.id);
- return `<article class="card" data-tool="${t.id}">
- <div class="cardtop"><span class="tool-icon" aria-hidden="true">${esc(t.icon)}</span>
- <button class="fav ${saved?'on':''}" data-fav="${t.id}" aria-label="${saved?'Unsave':'Save'} ${esc(t.name)}">${saved?'★':'☆'}</button></div>
- <h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p><div class="cardbottom">Open tool →</div></article>`;
-}
-function renderToolGrids(){
- const q=($('#toolSearch')?.value||$('#globalSearch')?.value||'').trim().toLowerCase();
- const found=TOOLS.filter(t=>(activeCategory==='All'||t.category===activeCategory)&&(!q||(t.name+' '+t.desc+' '+t.category).toLowerCase().includes(q)));
- $('#toolsGrid').innerHTML=found.length?found.map(toolCard).join(''):'<div class="empty">No tool matches that search. Try another word or select All.</div>';
- $('#featuredGrid').innerHTML=TOOLS.slice(0,6).map(toolCard).join('');
- renderSaved();
-}
-function renderSaved(){
- const saved=read(STORE.saved,[]),recent=read(STORE.recent,[]);
- $('#savedGrid').innerHTML=saved.length?TOOLS.filter(t=>saved.includes(t.id)).map(toolCard).join():'<div class="empty">No saved tools yet. Tap ☆ on any tool.</div>';
- $('#recentGrid').innerHTML=recent.length?recent.map(id=>TOOLS.find(t=>t.id===id)).filter(Boolean).map(toolCard).join():'<div class="empty">Your recently opened tools will appear here.</div>';
-}
-function showPage(page){
- if(!$('#page-'+page))page='home';
- activePage=page;
- $$('.page').forEach(p=>p.hidden=p.id!=='page-'+page);
- $$('[data-page]').forEach(b=>{const yes=b.dataset.page===page;b.classList.toggle('active',yes);if(yes)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
- if(page==='tools')renderToolGrids();
- if(page==='saved')renderSaved();
- if(page==='daily')renderTasks();
- if(page==='gym')renderExercises();
- if(page==='study')renderFlash();
- if(location.hash!=='#'+page)history.replaceState(null,'','#'+page);
- window.scrollTo({top:0,behavior:'smooth'});
-}
-function toggleSaved(id){
- let arr=read(STORE.saved,[]);
- arr=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];
- write(STORE.saved,arr);renderToolGrids();renderSaved();
- toast(arr.includes(id)?'Saved on this device':'Removed from saved');
-}
-
-/* Each tool has a clearly typed form. */
-function fieldsFor(kind){
- const txt=[{id:'text',label:'Text',type:'textarea',placeholder:'Type or paste text here…'}];
- const map={
- calc:[{id:'a',label:'First number',type:'number',value:'24'},{id:'op',label:'Operation',type:'select',value:'+',options:[['+','Add (+)'],['-','Subtract (-)'],['*','Multiply (×)'],['/','Divide (÷)'],['%','Remainder (%)'],['pow','Power']]},{id:'b',label:'Second number',type:'number',value:'6'}],
- percent:[{id:'base',label:'Number',type:'number',value:'100'},{id:'rate',label:'Percentage (%)',type:'number',value:'15'}],
- discount:[{id:'price',label:'Original price',type:'number',value:'100'},{id:'rate',label:'Discount (%)',type:'number',value:'15'}],
- tip:[{id:'bill',label:'Bill amount',type:'number',value:'100'},{id:'rate',label:'Tip (%)',type:'number',value:'10'},{id:'people',label:'People',type:'number',value:'2'}],
- split:[{id:'total',label:'Total amount',type:'number',value:'100'},{id:'people',label:'People',type:'number',value:'3'}],
- tax:[{id:'amount',label:'Amount before tax',type:'number',value:'100'},{id:'rate',label:'Tax rate (%)',type:'number',value:'5'}],
- simpleInterest:[{id:'principal',label:'Principal',type:'number',value:'1000'},{id:'rate',label:'Annual interest (%)',type:'number',value:'5'},{id:'years',label:'Years',type:'number',value:'2'}],
- compoundInterest:[{id:'principal',label:'Starting amount',type:'number',value:'1000'},{id:'rate',label:'Annual rate (%)',type:'number',value:'5'},{id:'years',label:'Years',type:'number',value:'5'},{id:'freq',label:'Compounds per year',type:'number',value:'12'}],
- loan:[{id:'principal',label:'Loan principal',type:'number',value:'10000'},{id:'rate',label:'Annual rate (%)',type:'number',value:'8'},{id:'months',label:'Months',type:'number',value:'36'}],
- savings:[{id:'target',label:'Target amount',type:'number',value:'5000'},{id:'current',label:'Current savings',type:'number',value:'500'},{id:'monthly',label:'Monthly contribution',type:'number',value:'250'}],
- dateDiff:[{id:'start',label:'Start date',type:'date'},{id:'end',label:'End date',type:'date'}],
- age:[{id:'birth',label:'Date of birth',type:'date'}],
- countdown:[{id:'target',label:'Target date and time',type:'datetime-local'}],
- unit:[{id:'value',label:'Value',type:'number',value:'1'},{id:'group',label:'Category',type:'select',value:'length',options:[['length','Length'],['mass','Mass'],['temperature','Temperature']]},{id:'from',label:'From unit',type:'select',value:'km',options:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles'],['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds'],['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]},{id:'to',label:'To unit',type:'select',value:'mi',options:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles'],['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds'],['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]}],
- data:[{id:'value',label:'Value',type:'number',value:'1'},{id:'from',label:'From',type:'select',value:'MB',options:[['B','Bytes'],['KB','KB'],['MB','MB'],['GB','GB'],['TB','TB']]},{id:'to',label:'To',type:'select',value:'KB',options:[['B','Bytes'],['KB','KB'],['MB','MB'],['GB','GB'],['TB','TB']]}],
- cooking:[{id:'value',label:'Volume',type:'number',value:'1'},{id:'from',label:'From',type:'select',value:'cup',options:[['tsp','Teaspoon'],['tbsp','Tablespoon'],['ml','Milliliter'],['l','Liter'],['cup','US cup']]},{id:'to',label:'To',type:'select',value:'ml',options:[['tsp','Teaspoon'],['tbsp','Tablespoon'],['ml','Milliliter'],['l','Liter'],['cup','US cup']]}],
- word:txt,char:txt,reading:txt,frequency:txt,
- case:[{id:'mode',label:'Conversion',type:'select',value:'title',options:[['upper','UPPERCASE'],['lower','lowercase'],['title','Title Case'],['sentence','Sentence case']]},...txt],
- reverse:txt,slug:txt,dedupe:txt,sort:txt,spaces:txt,
- compare:[{id:'left',label:'First text',type:'textarea',placeholder:'Paste first version…'},{id:'right',label:'Second text',type:'textarea',placeholder:'Paste second version…'}],
- jsonFormat:txt,jsonValidate:txt,base64Encode:txt,base64Decode:txt,urlEncode:txt,urlDecode:txt,htmlEscape:txt,markdown:txt,rot13:txt,
- morse:[{id:'mode',label:'Mode',type:'select',value:'encode',options:[['encode','Encode text'],['decode','Decode Morse']]},...txt],
- binaryEncode:txt,binaryDecode:txt,
- password:[{id:'length',label:'Length (8–64)',type:'number',value:'20'},{id:'charset',label:'Character set',type:'select',value:'full',options:[['full','Letters, numbers, symbols'],['alnum','Letters and numbers'],['easy','Avoid similar-looking characters']]}],
- uuid:[],random:txt,qr:[{id:'text',label:'Text or URL',type:'textarea',placeholder:'https://example.com'}],
- image:[{id:'file',label:'Choose an image (max 15 MB)',type:'file'},{id:'width',label:'Maximum width (pixels)',type:'number',value:'1600'},{id:'quality',label:'Quality (0.2 to 1)',type:'number',value:'0.82'},{id:'format',label:'Output format',type:'select',value:'image/jpeg',options:[['image/jpeg','JPEG'],['image/webp','WebP'],['image/png','PNG']]}],
- color:[{id:'color',label:'Choose a color',type:'color',value:'#41dcff'}],
- contrast:[{id:'fg',label:'Text color',type:'color',value:'#ffffff'},{id:'bg',label:'Background color',type:'color',value:'#071426'}],
- gradient:[{id:'c1',label:'First color',type:'color',value:'#41dcff'},{id:'c2',label:'Second color',type:'color',value:'#4778ff'},{id:'angle',label:'Angle (degrees)',type:'number',value:'135'}],
- lorem:[{id:'paras',label:'Paragraphs (1–10)',type:'number',value:'3'},{id:'words',label:'Words per paragraph (5–100)',type:'number',value:'35'}],
- csvjson:txt,jsoncsv:txt,mdtable:txt
- };
- return map[kind]||txt;
-}
-function fieldHTML(f){
- const id='f-'+f.id,base=`id="${id}" data-in="${f.id}"`;
- if(f.type==='textarea')return `<div class="field"><label for="${id}">${esc(f.label)}</label><textarea ${base} placeholder="${esc(f.placeholder||'')}"></textarea></div>`;
- if(f.type==='select')return `<div class="field"><label for="${id}">${esc(f.label)}</label><select ${base}>${f.options.map(([v,l])=>`<option value="${esc(v)}" ${v===f.value?'selected':''}>${esc(l)}</option>`).join('')}</select></div>`;
- return `<div class="field"><label for="${id}">${esc(f.label)}</label><input ${base} type="${f.type}" ${f.value!==undefined?`value="${esc(f.value)}"`:''} ${f.type==='number'?'step="any"':''} ${f.type==='file'?'accept="image/png,image/jpeg,image/webp"':''}></div>`;
-}
-function modalTemplate(t){
- const fields=fieldsFor(t.kind);
- return `${t.kind==='qr'?'<div class="notice">QR generation uses an external service. Do not enter passwords or confidential information.</div>':''}${t.kind==='image'?'<div class="notice">Image processing runs locally in this browser.</div>':''}<p class="muted small">${esc(t.desc)} · Region: ${esc(region().label)}</p><form id="toolForm">${fields.map(fieldHTML).join('')}<button class="btn primary" type="submit">Run ${esc(t.name)}</button></form><div id="toolResult" class="result" aria-live="polite">Result will appear here.</div><div class="hero-actions"><button class="btn" id="copyResult" type="button">Copy result</button><button class="btn ghost" id="downloadResult" type="button">Download result</button></div>`;
-}
-function getVal(id){const e=$(`[data-in="${id}"]`);return e?e.value:''}
-function resultText(value){const box=$('#toolResult');box.innerHTML='';box.dataset.copy=String(value);box.textContent=String(value)}
-function setResultHTML(html,text){const box=$('#toolResult');box.innerHTML=html;box.dataset.copy=text||box.textContent}
-
-function openTool(id){
- const t=TOOLS.find(x=>x.id===id);if(!t)return;
- currentTool=t;
- let recent=read(STORE.recent,[]).filter(x=>x!==id);recent.unshift(id);write(STORE.recent,recent.slice(0,8));renderSaved();
- $('#modalTitle').textContent=t.name;$('#modalBody').innerHTML=modalTemplate(t);
- $('#toolModal').hidden=false;document.body.style.overflow='hidden';
- $('#toolForm').addEventListener('submit',e=>{e.preventDefault();runTool(t)});
- $('#copyResult').onclick=()=>copyText($('#toolResult').dataset.copy||$('#toolResult').textContent);
- $('#downloadResult').onclick=()=>downloadText(t.id+'-result.txt',$('#toolResult').dataset.copy||$('#toolResult').textContent);
- if(t.kind==='unit'){
-  const group=$('[data-in="group"]'),from=$('[data-in="from"]'),to=$('[data-in="to"]');
-  const optsByGroup={
-   length:[['mm','Millimeters'],['cm','Centimeters'],['m','Meters'],['km','Kilometers'],['in','Inches'],['ft','Feet'],['mi','Miles']],
-   mass:[['mg','Milligrams'],['g','Grams'],['kg','Kilograms'],['oz','Ounces'],['lb','Pounds']],
-   temperature:[['C','Celsius'],['F','Fahrenheit'],['K','Kelvin']]
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const storage = {
+    get(key, fallback) {
+      try {
+        const value = localStorage.getItem("shaheen_" + key);
+        return value === null ? fallback : JSON.parse(value);
+      } catch (_) { return fallback; }
+    },
+    set(key, value) {
+      try { localStorage.setItem("shaheen_" + key, JSON.stringify(value)); }
+      catch (_) { toast("Could not save. Browser storage may be unavailable."); }
+    }
   };
-  const refresh=()=>{
-   const opts=optsByGroup[group.value]||optsByGroup.length,oldFrom=from.value,oldTo=to.value;
-   from.innerHTML=opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
-   to.innerHTML=opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
-   from.value=opts.some(x=>x[0]===oldFrom)?oldFrom:opts[0][0];
-   to.value=opts.some(x=>x[0]===oldTo)&&oldTo!==from.value?oldTo:opts[Math.min(1,opts.length-1)][0];
+
+  let toastTimeout;
+  function toast(message) {
+    const el = $("#toast");
+    el.textContent = message;
+    el.classList.remove("hidden");
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => el.classList.add("hidden"), 2500);
+  }
+
+  const toolData = [
+    ["word-count","Word counter","Count words, characters, lines and paragraphs.","Text","📝","text"],
+    ["case-converter","Case converter","Convert text to upper, lower or title case.","Text","Aa","case"],
+    ["remove-spaces","Clean spaces","Remove extra spaces and blank lines.","Text","↔","clean"],
+    ["reverse-text","Reverse text","Reverse the order of characters.","Text","⇄","reverse"],
+    ["line-sort","Sort lines","Sort lines alphabetically.","Text","↕","sort"],
+    ["duplicate-lines","Remove duplicate lines","Keep one copy of each line.","Text","▤","dedupe"],
+    ["slug-maker","URL slug maker","Create a clean URL-friendly slug.","Text","🔗","slug"],
+    ["json-formatter","JSON formatter","Format and validate JSON data.","Developer","{ }","json"],
+    ["base64","Base64 encoder / decoder","Encode or decode Base64 text.","Developer","64","base64"],
+    ["url-encoder","URL encoder / decoder","Encode text for URLs or decode it.","Developer","％","url"],
+    ["html-escape","HTML text escape","Escape special HTML characters.","Developer","</>","html"],
+    ["password","Password generator","Generate a random password locally.","Security","🔐","password"],
+    ["uuid","UUID generator","Generate a random UUID.","Developer","#","uuid"],
+    ["hash","SHA-256 hash","Hash text using Web Crypto when available.","Security","⌁","hash"],
+    ["percentage","Percentage calculator","Find a percentage of a number.","Math","%","percentage"],
+    ["discount","Discount calculator","Calculate sale price and savings.","Math","🏷️","discount"],
+    ["tip","Tip calculator","Split a bill and calculate a tip.","Math","🧾","tip"],
+    ["simple-interest","Simple interest","Estimate simple interest and total.","Math","＋","interest"],
+    ["compound-interest","Compound interest","Estimate compound growth.","Math","↗","compound"],
+    ["average","Average calculator","Calculate the mean of a list of numbers.","Math","∑","average"],
+    ["bmi","BMI calculator","Calculate BMI from height and weight.","Health","♡","bmi"],
+    ["age","Age calculator","Calculate age from a birth date.","Date & time","🎂","age"],
+    ["date-difference","Date difference","Count days between two dates.","Date & time","📅","datediff"],
+    ["unit-length","Length converter","Convert common length units.","Converters","↔","length"],
+    ["unit-weight","Weight converter","Convert common mass units.","Converters","⚖","weight"],
+    ["unit-temp","Temperature converter","Convert Celsius, Fahrenheit and Kelvin.","Converters","🌡","temperature"],
+    ["number-format","Number formatter","Format a number for your region.","Converters","123","number"],
+    ["color","Color converter","Convert HEX colour to RGB.","Design","🎨","color"],
+    ["lorem","Lorem text generator","Create sample placeholder text.","Writing","¶","lorem"],
+    ["qr","QR code generator","Create a QR code image from text or a URL.","Sharing","▦","qr"],
+    ["typing","Typing practice","Practice typing and measure elapsed time.","Study","⌨","typing"]
+  ].map(([id,name,description,category,icon,engine]) =>
+    ({id,name,description,category,icon,engine}));
+
+  $("#toolCount").textContent = toolData.length + "+";
+  const categories = ["All", ...new Set(toolData.map(t => t.category))];
+  let activeCategory = "All";
+  let activeTool = null;
+  let lastResult = "";
+  const favourites = new Set(storage.get("favourites", []));
+  const recentlyUsed = storage.get("recent", []);
+
+  function renderCategories() {
+    const host = $("#categoryChips");
+    host.replaceChildren();
+    categories.forEach(category => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "chip" + (activeCategory === category ? " active" : "");
+      button.textContent = category;
+      button.setAttribute("aria-pressed", String(activeCategory === category));
+      button.addEventListener("click", () => {
+        activeCategory = category;
+        renderCategories();
+        renderTools();
+      });
+      host.append(button);
+    });
+  }
+
+  function renderTools() {
+    const q = $("#searchInput").value.trim().toLowerCase();
+    const list = toolData.filter(t => {
+      const matchesCategory = activeCategory === "All" || t.category === activeCategory;
+      const matchesQuery = !q || [t.name,t.description,t.category,t.id].join(" ").toLowerCase().includes(q);
+      return matchesCategory && matchesQuery;
+    });
+    const grid = $("#toolGrid");
+    grid.replaceChildren();
+    list.forEach(tool => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "tool-card";
+      card.setAttribute("aria-label", tool.name + ". " + tool.description);
+      const icon = document.createElement("div");
+      icon.className = "tool-icon";
+      icon.textContent = tool.icon;
+      const title = document.createElement("strong");
+      title.textContent = tool.name;
+      const desc = document.createElement("small");
+      desc.textContent = tool.description;
+      const foot = document.createElement("div");
+      foot.className = "card-foot";
+      const cat = document.createElement("span");
+      cat.textContent = tool.category;
+      const star = document.createElement("span");
+      star.textContent = favourites.has(tool.id) ? "★ Saved" : "↗ Open";
+      foot.append(cat,star);
+      card.append(icon,title,desc,foot);
+      card.addEventListener("click", () => openTool(tool));
+      grid.append(card);
+    });
+    $("#emptyMessage").classList.toggle("hidden", list.length !== 0);
+  }
+
+  function openTool(tool) {
+    activeTool = tool;
+    $("#dialogTitle").textContent = tool.name;
+    $("#dialogDescription").textContent = tool.description;
+    $("#toolHint").textContent = hintFor(tool.engine);
+    $("#toolFields").replaceChildren();
+    $("#toolResult").textContent = "Your result will appear here.";
+    lastResult = "";
+    const fieldHost = $("#toolFields");
+
+    const addField = (id,label,type="text",placeholder="",value="") => {
+      const wrap = document.createElement("label");
+      wrap.className = "field";
+      const title = document.createElement("span");
+      title.textContent = label;
+      const input = type === "textarea" ? document.createElement("textarea") :
+        document.createElement("input");
+      input.id = id;
+      if (type !== "textarea") input.type = type;
+      input.placeholder = placeholder;
+      if (value !== "") input.value = value;
+      wrap.append(title,input);
+      fieldHost.append(wrap);
+      return input;
+    };
+    const addSelect = (id,label,options) => {
+      const wrap = document.createElement("label");
+      wrap.className = "field";
+      const title = document.createElement("span");
+      title.textContent = label;
+      const select = document.createElement("select");
+      select.id = id;
+      options.forEach(([value,text]) => {
+        const option = document.createElement("option");
+        option.value = value; option.textContent = text; select.append(option);
+      });
+      wrap.append(title,select); fieldHost.append(wrap); return select;
+    };
+    const addText = (label, placeholder="Paste or type here…") =>
+      addField("inputText",label,"textarea",placeholder);
+
+    const engine = tool.engine;
+    if (["text","case","clean","reverse","sort","dedupe","slug","base64","url","html","hash","lorem","typing"].includes(engine)) {
+      addText(engine === "typing" ? "Text to type" : "Input text",
+        engine === "typing" ? "Copy this text into the practice box below…" : "Enter text here…");
+      if (engine === "case") addSelect("caseMode","Convert to",[
+        ["upper","UPPERCASE"],["lower","lowercase"],["title","Title Case"],["sentence","Sentence case"]]);
+      if (engine === "base64") addSelect("baseMode","Action",[["encode","Encode"],["decode","Decode"]]);
+      if (engine === "url") addSelect("urlMode","Action",[["encode","Encode"],["decode","Decode"]]);
+      if (engine === "typing") {
+        addField("typingInput","Practice typing","textarea","Start typing the text above…");
+      }
+    } else if (engine === "json") {
+      addText("JSON input","Paste JSON here…");
+      addSelect("jsonMode","Output",[["pretty","Pretty print"],["compact","Compact JSON"]]);
+    } else if (engine === "password") {
+      addField("passLength","Password length","number","16","16");
+      addSelect("passSymbols","Symbols",[["yes","Include symbols"],["no","Letters and numbers only"]]);
+    } else if (engine === "uuid") {
+      addField("uuidCount","How many UUIDs?","number","1","1");
+    } else if (engine === "percentage") {
+      addField("numberA","Number","number","e.g. 200");
+      addField("numberB","Percentage (%)","number","e.g. 15");
+    } else if (engine === "discount") {
+      addField("numberA","Original price","number","e.g. 100");
+      addField("numberB","Discount (%)","number","e.g. 20");
+    } else if (engine === "tip") {
+      addField("numberA","Bill amount","number","e.g. 50");
+      addField("numberB","Tip (%)","number","e.g. 10");
+      addField("numberC","People sharing","number","e.g. 2","1");
+    } else if (engine === "interest" || engine === "compound") {
+      addField("numberA","Principal amount","number","e.g. 1000");
+      addField("numberB","Annual interest rate (%)","number","e.g. 5");
+      addField("numberC","Time in years","number","e.g. 3");
+      if (engine === "compound") addField("numberD","Compounding periods per year","number","12","12");
+    } else if (engine === "average") {
+      addText("Numbers separated by commas or new lines","10, 20, 30");
+    } else if (engine === "bmi") {
+      addField("numberA","Weight (kg)","number","e.g. 60");
+      addField("numberB","Height (cm)","number","e.g. 170");
+    } else if (engine === "age") {
+      addField("dateA","Date of birth","date");
+    } else if (engine === "datediff") {
+      addField("dateA","Start date","date");
+      addField("dateB","End date","date");
+    } else if (engine === "length" || engine === "weight" || engine === "temperature") {
+      addField("numberA","Value","number","Enter a value");
+      const units = engine === "length"
+        ? [["m","Metres"],["km","Kilometres"],["cm","Centimetres"],["mi","Miles"],["ft","Feet"],["in","Inches"]]
+        : engine === "weight"
+        ? [["kg","Kilograms"],["g","Grams"],["lb","Pounds"],["oz","Ounces"]]
+        : [["C","Celsius"],["F","Fahrenheit"],["K","Kelvin"]];
+      addSelect("unitFrom","From unit",units);
+      addSelect("unitTo","To unit",units);
+    } else if (engine === "number") {
+      addField("numberA","Number","number","e.g. 1234567.89");
+      addSelect("locale","Format for",[
+        ["en-US","United States"],["en-GB","United Kingdom"],["ur-PK","Pakistan"],
+        ["ar-SA","Saudi Arabia"],["ar-BH","Bahrain"],["en-CA","Canada"],
+        ["en-AU","Australia"],["en-IN","India"]]);
+    } else if (engine === "color") {
+      addField("colorInput","HEX colour","text","#42E8F5","#42E8F5");
+    } else if (engine === "qr") {
+      addText("Text or URL for QR code","https://example.com");
+    }
+    $("#saveTool").textContent = favourites.has(tool.id) ? "★ Saved" : "☆ Save tool";
+    $("#toolDialog").showModal();
+    const recent = [tool.id, ...recentlyUsed.filter(id => id !== tool.id)].slice(0, 8);
+    recentlyUsed.splice(0, recentlyUsed.length, ...recent);
+    storage.set("recent", recentlyUsed);
+    $("#closeDialog").focus();
+  }
+
+  function hintFor(engine) {
+    const hints = {
+      hash:"SHA-256 runs in your browser when Web Crypto is available.",
+      password:"Generated locally. For important accounts, use a trusted password manager.",
+      bmi:"BMI is a screening measure, not a diagnosis. Interpretation depends on age and other factors.",
+      qr:"The QR image is created by an external QR service. Do not encode private information.",
+      typing:"Type the displayed sample. Your speed estimate is based on elapsed time and typed characters.",
+      temperature:"Conversions are calculated locally.",
+      compound:"This is a mathematical estimate and excludes taxes, fees and changing rates."
+    };
+    return hints[engine] || "This tool processes your input in your browser where practical.";
+  }
+
+  const val = id => {
+    const el = $("#" + id);
+    return el ? el.value : "";
   };
-  group.addEventListener('change',refresh);refresh();
- }
- if(t.kind==='dateDiff'){$('[data-in="start"]').value=new Date().toISOString().slice(0,10);$('[data-in="end"]').value=new Date().toISOString().slice(0,10)}
- if(t.kind==='age')$('[data-in="birth"]').max=new Date().toISOString().slice(0,10);
- if(t.kind==='countdown')$('[data-in="target"]').value=new Date(Date.now()+86400000).toISOString().slice(0,16);
- if(t.kind==='password'||t.kind==='uuid')$('#toolForm').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}));
- $('#modalClose').focus();
-}
-function closeTool(){if(currentTool?.cleanup)currentTool.cleanup();$('#toolModal').hidden=true;document.body.style.overflow='';currentTool=null}
+  const num = id => {
+    const n = Number(val(id));
+    if (!val(id).trim() || !Number.isFinite(n)) throw new Error("Enter valid numbers in all required fields.");
+    return n;
+  };
+  const fmt = n => Number(n).toLocaleString(undefined,{maximumFractionDigits:6});
+  const textInput = () => val("inputText");
 
-function parseCSV(line){
- const rows=[];let row=[],cur='',quoted=false;
- for(let i=0;i<line.length;i++){
-  const c=line[i];
-  if(c==='"'&&quoted&&line[i+1]==='"'){cur+='"';i++}
-  else if(c==='"'){quoted=!quoted}
-  else if(c===','&&!quoted){row.push(cur);cur=''}
-  else cur+=c;
- }
- row.push(cur);return row;
-}
-function csvToRows(text){
- const lines=text.replace(/^\uFEFF/,'').split(/\r?\n/).filter(line=>line.trim()!=='');
- if(!lines.length)return [];
- return lines.map(parseCSV);
-}
-function csvCell(v){const s=String(v??'');return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}
-function textToBase64(s){const bytes=new TextEncoder().encode(s);let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));return btoa(bin)}
-function base64ToText(s){const bin=atob(s.trim());const bytes=Uint8Array.from(bin,c=>c.charCodeAt(0));return new TextDecoder('utf-8',{fatal:true}).decode(bytes)}
-const MORSE={A:'.-',B:'-...',C:'-.-.',D:'-..',E:'.',F:'..-.',G:'--.',H:'....',I:'..',J:'.---',K:'-.-',L:'.-..',M:'--',N:'-.',O:'---',P:'.--.',Q:'--.-',R:'.-.',S:'...',T:'-',U:'..-',V:'...-',W:'.--',X:'-..-',Y:'-.--',Z:'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','.':'.-.-.-',',':'--..--','?':'..--..','!':'-.-.--'};
+  async function runActiveTool() {
+    if (!activeTool) return;
+    try {
+      const e = activeTool.engine;
+      let out = "";
+      if (e === "text") {
+        const t = textInput();
+        out = "Words: " + (t.trim() ? t.trim().split(/\s+/u).length : 0) +
+          "\nCharacters (with spaces): " + t.length +
+          "\nCharacters (without whitespace): " + t.replace(/\s/gu,"").length +
+          "\nLines: " + (t.length ? t.split(/\r\n|\r|\n/).length : 0) +
+          "\nParagraphs: " + (t.trim() ? t.trim().split(/\n\s*\n/u).length : 0);
+      } else if (e === "case") {
+        const t = textInput(), mode = val("caseMode");
+        if (mode === "upper") out = t.toLocaleUpperCase();
+        else if (mode === "lower") out = t.toLocaleLowerCase();
+        else if (mode === "title") out = t.toLocaleLowerCase().replace(/(^|[\s\-_])(\p{L})/gu, (_,a,b)=>a+b.toLocaleUpperCase());
+        else out = t.toLocaleLowerCase().replace(/(^\s*\p{L}|[.!?]\s+\p{L})/gu, s=>s.toLocaleUpperCase());
+      } else if (e === "clean") {
+        out = textInput().split(/\r\n|\r|\n/).map(s=>s.trim().replace(/\s+/gu," ")).filter(Boolean).join("\n");
+      } else if (e === "reverse") {
+        out = [...textInput()].reverse().join("");
+      } else if (e === "sort") {
+        out = textInput().split(/\r\n|\r|\n/).sort((a,b)=>a.localeCompare(b)).join("\n");
+      } else if (e === "dedupe") {
+        out = [...new Set(textInput().split(/\r\n|\r|\n/))].join("\n");
+      } else if (e === "slug") {
+        out = textInput().normalize("NFKD").toLowerCase()
+          .replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
+      } else if (e === "json") {
+        const parsed = JSON.parse(textInput());
+        out = val("jsonMode") === "compact" ? JSON.stringify(parsed) : JSON.stringify(parsed,null,2);
+      } else if (e === "base64") {
+        const t = textInput();
+        if (val("baseMode") === "encode") {
+          out = btoa(Array.from(new TextEncoder().encode(t), b=>String.fromCharCode(b)).join(""));
+        } else {
+          const bytes = Uint8Array.from(atob(t.trim()), c=>c.charCodeAt(0));
+          out = new TextDecoder("utf-8",{fatal:true}).decode(bytes);
+        }
+      } else if (e === "url") {
+        out = val("urlMode") === "encode" ? encodeURIComponent(textInput()) : decodeURIComponent(textInput());
+      } else if (e === "html") {
+        out = textInput().replace(/&/g,"&amp;").replace(/</g,"&lt;")
+          .replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+      } else if (e === "password") {
+        const length = Math.floor(num("passLength"));
+        if (length < 8 || length > 128) throw new Error("Choose a length from 8 to 128.");
+        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789" +
+          (val("passSymbols")==="yes" ? "!@#$%^&*()-_=+[]{}?" : "");
+        const random = new Uint32Array(length);
+        crypto.getRandomValues(random);
+        out = Array.from(random, n=>chars[n % chars.length]).join("");
+      } else if (e === "uuid") {
+        const count = Math.floor(num("uuidCount"));
+        if (count < 1 || count > 50) throw new Error("Choose between 1 and 50 UUIDs.");
+        if (!crypto.randomUUID) throw new Error("UUID generation is not supported by this browser.");
+        out = Array.from({length:count},()=>crypto.randomUUID()).join("\n");
+      } else if (e === "hash") {
+        if (!crypto.subtle) throw new Error("SHA-256 requires a secure context such as HTTPS.");
+        const bytes = new TextEncoder().encode(textInput());
+        const digest = await crypto.subtle.digest("SHA-256",bytes);
+        out = [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,"0")).join("");
+      } else if (e === "percentage") {
+        out = fmt(num("numberB") / 100 * num("numberA"));
+      } else if (e === "discount") {
+        const price=num("numberA"), pct=num("numberB");
+        if(price<0 || pct<0 || pct>100) throw new Error("Price must be non-negative and discount between 0 and 100.");
+        out = "Final price: " + fmt(price*(1-pct/100)) + "\nYou save: " + fmt(price*pct/100);
+      } else if (e === "tip") {
+        const bill=num("numberA"), pct=num("numberB"), people=Math.floor(num("numberC"));
+        if(bill<0 || pct<0 || people<1) throw new Error("Enter a non-negative bill/tip and at least one person.");
+        out = "Tip: " + fmt(bill*pct/100) + "\nTotal: " + fmt(bill*(1+pct/100)) +
+          "\nPer person: " + fmt(bill*(1+pct/100)/people);
+      } else if (e === "interest") {
+        const p=num("numberA"), r=num("numberB")/100, t=num("numberC");
+        if(p<0 || r<0 || t<0) throw new Error("Values cannot be negative.");
+        out = "Simple interest: " + fmt(p*r*t) + "\nTotal amount: " + fmt(p*(1+r*t));
+      } else if (e === "compound") {
+        const p=num("numberA"), r=num("numberB")/100, t=num("numberC"), n=Math.floor(num("numberD"));
+        if(p<0 || r<0 || t<0 || n<1 || n>365) throw new Error("Enter non-negative values and 1–365 compounding periods per year.");
+        const total=p*Math.pow(1+r/n,n*t);
+        out = "Estimated final amount: " + fmt(total) + "\nGrowth: " + fmt(total-p);
+      } else if (e === "average") {
+        const values=textInput().split(/[,\s;]+/u).filter(Boolean).map(Number);
+        if(!values.length || values.some(n=>!Number.isFinite(n))) throw new Error("Enter valid numbers separated by commas or spaces.");
+        out = "Count: " + values.length + "\nSum: " + fmt(values.reduce((a,b)=>a+b,0)) +
+          "\nAverage: " + fmt(values.reduce((a,b)=>a+b,0)/values.length);
+      } else if (e === "bmi") {
+        const kg=num("numberA"), cm=num("numberB");
+        if(kg<=0 || cm<=0) throw new Error("Weight and height must be greater than zero.");
+        const bmi=kg/Math.pow(cm/100,2);
+        out = "BMI: " + fmt(bmi) + "\nThis number alone cannot diagnose health. Adult BMI categories may not apply to children or teens.";
+      } else if (e === "age") {
+        const d=new Date(val("dateA")+"T00:00:00");
+        if(!val("dateA") || Number.isNaN(d.getTime()) || d>new Date()) throw new Error("Enter a valid birth date that is not in the future.");
+        const now=new Date();
+        let years=now.getFullYear()-d.getFullYear();
+        const beforeBirthday=now.getMonth()<d.getMonth() || (now.getMonth()===d.getMonth() && now.getDate()<d.getDate());
+        if(beforeBirthday) years--;
+        out = "Age: " + years + " years";
+      } else if (e === "datediff") {
+        const a=new Date(val("dateA")+"T00:00:00Z"), b=new Date(val("dateB")+"T00:00:00Z");
+        if(!val("dateA") || !val("dateB") || Number.isNaN(a.getTime()) || Number.isNaN(b.getTime())) throw new Error("Select both dates.");
+        out = "Difference: " + Math.abs(Math.round((b-a)/86400000)) + " days";
+      } else if (e === "length") {
+        const factors={m:1,km:1000,cm:.01,mi:1609.344,ft:.3048,in:.0254};
+        out = fmt(num("numberA")*factors[val("unitFrom")]/factors[val("unitTo")]) + " " + val("unitTo");
+      } else if (e === "weight") {
+        const factors={kg:1,g:.001,lb:.45359237,oz:.028349523125};
+        out = fmt(num("numberA")*factors[val("unitFrom")]/factors[val("unitTo")]) + " " + val("unitTo");
+      } else if (e === "temperature") {
+        const n=num("numberA"), from=val("unitFrom"), to=val("unitTo");
+        const c=from==="C"?n:from==="F"?(n-32)*5/9:n-273.15;
+        const result=to==="C"?c:to==="F"?c*9/5+32:c+273.15;
+        out = fmt(result) + " °" + to;
+      } else if (e === "number") {
+        const n=num("numberA");
+        out = new Intl.NumberFormat(val("locale"),{maximumFractionDigits:6}).format(n);
+      } else if (e === "color") {
+        let hex=val("colorInput").trim().replace(/^#/,"");
+        if(/^[0-9a-f]{3}$/i.test(hex)) hex=hex.split("").map(c=>c+c).join("");
+        if(!/^[0-9a-f]{6}$/i.test(hex)) throw new Error("Enter a valid 3- or 6-digit HEX colour.");
+        const rgb=hex.match(/.{2}/g).map(c=>parseInt(c,16));
+        out = "HEX: #" + hex.toUpperCase() + "\nRGB: rgb(" + rgb.join(", ") + ")" +
+          "\nCSS: color: #" + hex.toUpperCase() + ";";
+      } else if (e === "lorem") {
+        out = ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+          "Integer posuere, sapien sed facilisis commodo, erat neque feugiat lorem. ").repeat(5).trim();
+      } else if (e === "qr") {
+        const data=textInput().trim();
+        if(!data) throw new Error("Enter text or a URL.");
+        if(data.length>1500) throw new Error("Keep QR input under 1500 characters.");
+        const url="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data="+encodeURIComponent(data);
+        out = "QR code image URL:\n"+url+"\n\nThis uses an external service. Avoid encoding confidential data.";
+      } else if (e === "typing") {
+        const sample=textInput(), typed=val("typingInput");
+        const start=storage.get("typingStart",null);
+        if(!typed) throw new Error("Start typing the sample in the practice field.");
+        const elapsed=start ? Math.max(1,(Date.now()-start)/60000) : 1;
+        out = "Characters typed: " + typed.length + "\nEstimated WPM: " +
+          fmt((typed.trim().split(/\s+/u).filter(Boolean).length)/elapsed) +
+          "\nNote: start the exercise, then run again to update the estimate.";
+        if(!start) storage.set("typingStart",Date.now());
+        if(sample && typed === sample) out += "\nSample matched exactly.";
+      }
+      lastResult=out;
+      const result=$("#toolResult");
+      result.textContent=out;
+      if(e==="qr" && out.startsWith("QR code image URL:")) {
+        const url=out.split("\n")[1];
+        const img=document.createElement("img");
+        img.src=url; img.alt="Generated QR code"; img.width=260; img.height=260;
+        img.loading="lazy"; img.style.cssText="display:block;max-width:100%;height:auto;margin-top:14px;border-radius:12px";
+        result.append(document.createElement("br"),img);
+      }
+    } catch (err) {
+      lastResult="";
+      $("#toolResult").textContent="Could not complete this task: " + (err.message || "Please check your input.");
+    }
+  }
 
-function runTool(t){
- try{
- const val=id=>getVal(id),text=val('text');let out='';
- switch(t.kind){
- case'calc':{
-  const a=num(val('a'),'first number'),b=num(val('b'),'second number'),op=val('op');
-  let r=op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:op==='/'?(b===0?NaN:a/b):op==='%'?(b===0?NaN:a%b):a**b;
-  if(!Number.isFinite(r))throw new Error('This operation has no finite result. Check division by zero or power size.');
-  out='Result: '+fmt(r,10);break;
- }
- case'percent':{const a=num(val('base'),'number'),r=num(val('rate'),'percentage');out=`${fmt(r)}% of ${fmt(a)} = ${fmt(a*r/100,4)}`;break}
- case'discount':{const p=num(val('price'),'price'),r=num(val('rate'),'discount');if(p<0||r<0||r>100)throw new Error('Price must be non-negative and discount must be 0–100%.');out=`Discount amount: ${money(p*r/100)}\nFinal price: ${money(p*(1-r/100))}`;break}
- case'tip':{const b=num(val('bill'),'bill'),r=num(val('rate'),'tip percent'),n=Math.floor(num(val('people'),'people'));if(b<0||r<0||n<1)throw new Error('Use a non-negative bill and tip and at least one person.');out=`Tip: ${money(b*r/100)}\nTotal: ${money(b*(1+r/100))}\nPer person: ${money(b*(1+r/100)/n)}`;break}
- case'split':{const v=num(val('total'),'total'),p=Math.floor(num(val('people'),'people'));if(v<0||p<1)throw new Error('Total must be non-negative and people must be at least one.');out=`Amount per person: ${money(v/p)}\nTotal amount: ${money(v)}`;break}
- case'tax':{const a=num(val('amount'),'amount'),r=num(val('rate'),'tax rate');if(a<0||r<0)throw new Error('Enter non-negative values.');out=`Estimated tax: ${money(a*r/100)}\nTotal including estimated tax: ${money(a*(1+r/100))}\nCalculation only, not tax advice.`;break}
- case'simpleInterest':{const p=num(val('principal'),'principal'),r=num(val('rate'),'rate'),y=num(val('years'),'years');if(p<0||r<0||y<0)throw new Error('Values must be non-negative.');const i=p*r*y/100;out=`Simple interest: ${money(i)}\nTotal: ${money(p+i)}`;break}
- case'compoundInterest':{const p=num(val('principal'),'starting amount'),r=num(val('rate'),'annual rate'),y=num(val('years'),'years'),n=num(val('freq'),'compounds per year');if(p<0||r<0||y<0||n<=0)throw new Error('Use non-negative amount/rate/years and positive compounding frequency.');const total=p*Math.pow(1+r/(100*n),n*y);out=`Estimated final amount: ${money(total)}\nEstimated growth: ${money(total-p)}\nBefore fees, taxes and real rate changes.`;break}
- case'loan':{const p=num(val('principal'),'principal'),annual=num(val('rate'),'annual rate'),n=Math.floor(num(val('months'),'months'));if(p<0||annual<0||n<1)throw new Error('Use non-negative principal/rate and at least one month.');const r=annual/1200,m=r===0?p/n:p*r/(1-Math.pow(1+r,-n));out=`Estimated monthly payment: ${money(m)}\nEstimated total payments: ${money(m*n)}\nEstimated interest: ${money(m*n-p)}\nSimplified estimate, not a loan offer.`;break}
- case'savings':{const target=num(val('target'),'target'),current=num(val('current'),'current savings'),monthly=num(val('monthly'),'monthly contribution');if(target<0||current<0||monthly<0)throw new Error('Values cannot be negative.');out=current>=target?'You have reached or passed this target.':monthly===0?'A positive monthly contribution is needed to estimate a timeline.':`Remaining amount: ${money(target-current)}\nEstimated months: ${Math.ceil((target-current)/monthly)}\nExcludes interest and price changes.`;break}
- case'dateDiff':{const a=val('start'),b=val('end');if(!a||!b)throw new Error('Choose both dates.');const d1=new Date(a+'T12:00:00Z'),d2=new Date(b+'T12:00:00Z'),days=Math.round((d2-d1)/86400000);out=`Difference: ${Math.abs(days).toLocaleString(region().locale)} day(s)${days<0?' (end date comes earlier)':''}\nApproximate weeks: ${(Math.abs(days)/7).toFixed(1)}`;break}
- case'age':{const s=val('birth');if(!s)throw new Error('Choose a birth date.');const b=new Date(s+'T12:00:00'),now=new Date();if(b>now)throw new Error('Birth date must not be in the future.');let y=now.getFullYear()-b.getFullYear(),m=now.getMonth()-b.getMonth(),d=now.getDate()-b.getDate();if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(m<0){y--;m+=12}out=`Age: ${y} years, ${m} months, ${d} days`;break}
- case'countdown':{const v=val('target');if(!v)throw new Error('Choose a target date and time.');const delta=new Date(v).getTime()-Date.now();if(delta<=0)out='That target time is now or in the past.';else{let s=Math.floor(delta/1000),d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;out=`Remaining: ${d} day(s), ${h} hour(s), ${m} minute(s), ${s} second(s).`}break}
- case'unit':{
-  const v=num(val('value'),'value'),from=val('from'),to=val('to'),group=val('group');
-  const length={mm:.001,cm:.01,m:1,km:1000,in:.0254,ft:.3048,mi:1609.344},mass={mg:.000001,g:.001,kg:1,oz:.028349523125,lb:.45359237};
-  let r;
-  if(group==='length'){if(!(from in length)||!(to in length))throw new Error('Choose length units for both fields.');r=v*length[from]/length[to]}
-  else if(group==='mass'){if(!(from in mass)||!(to in mass))throw new Error('Choose mass units for both fields.');r=v*mass[from]/mass[to]}
-  else{const temps=['C','F','K'];if(!temps.includes(from)||!temps.includes(to))throw new Error('Choose temperature units for both fields.');const c=from==='C'?v:from==='F'?(v-32)*5/9:v-273.15;r=to==='C'?c:to==='F'?c*9/5+32:c+273.15}
-  out=`${fmt(v,8)} ${from} = ${fmt(r,8)} ${to}`;break
- }
- case'data':{const v=num(val('value'),'value');if(v<0)throw new Error('Value must be non-negative.');const f={B:1,KB:1000,MB:1e6,GB:1e9,TB:1e12};out=`${fmt(v,8)} ${val('from')} = ${fmt(v*f[val('from')]/f[val('to')],8)} ${val('to')} (decimal units)`;break}
- case'cooking':{const v=num(val('value'),'volume');if(v<0)throw new Error('Volume cannot be negative.');const ml={tsp:4.92892159375,tbsp:14.78676478125,ml:1,l:1000,cup:236.5882365};out=`${fmt(v,6)} ${val('from')} = ${fmt(v*ml[val('from')]/ml[val('to')],6)} ${val('to')}\nUS customary cup approximation.`;break}
- case'word':case'char':case'reading':case'frequency':{
-  const words=text.trim().match(/\S+/g)||[],chars=text.length,lines=text?text.split(/\r\n|\n|\r/).length:0,paragraphs=text.trim()?text.trim().split(/\n\s*\n/).length:0;
-  if(t.kind==='word')out=`Words: ${words.length}\nCharacters (including spaces): ${chars}\nCharacters (excluding whitespace): ${text.replace(/\s/g,'').length}\nLines: ${lines}\nParagraphs: ${paragraphs}`;
-  else if(t.kind==='char')out=`Characters including spaces: ${chars}\nCharacters excluding whitespace: ${text.replace(/\s/g,'').length}\nLetters/numbers: ${(text.match(/[\p{L}\p{N}]/gu)||[]).length}\nWhitespace characters: ${(text.match(/\s/g)||[]).length}`;
-  else if(t.kind==='reading')out=`Words: ${words.length}\nEstimated reading time at 200 words/minute: ${Math.max(1,Math.ceil(words.length/200))} minute(s).`;
-  else{const counts={};words.forEach(w=>{const k=w.toLocaleLowerCase().replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu,'');if(k)counts[k]=(counts[k]||0)+1});out=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([w,n])=>`${w}: ${n}`).join('\n')||'No words found.'}
-  break
- }
- case'case':{const m=val('mode');out=m==='upper'?text.toLocaleUpperCase():m==='lower'?text.toLocaleLowerCase():m==='title'?text.toLocaleLowerCase().replace(/(^|[\s\-'’])\p{L}/gu,c=>c.toLocaleUpperCase()):text.toLocaleLowerCase().replace(/(^\s*|[.!?]\s+)(\p{L})/gu,(_,a,b)=>a+b.toLocaleUpperCase());break}
- case'reverse':out=Array.from(text).reverse().join('');break;
- case'slug':out=text.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');break;
- case'dedupe':out=[...new Set(text.split(/\r?\n/))].join('\n');break;
- case'sort':out=text.split(/\r?\n/).sort((a,b)=>a.localeCompare(b,region().locale)).join('\n');break;
- case'spaces':out=text.replace(/[\t ]+/g,' ').replace(/ *\n */g,'\n').trim();break;
- case'compare':{const a=val('left'),b=val('right');let i=0;while(i<a.length&&i<b.length&&a[i]===b[i])i++;out=a===b?'The two texts are identical.':`Texts differ.\nFirst difference at character index: ${i}\nFirst text length: ${a.length}\nSecond text length: ${b.length}\nFirst text excerpt: ${a.slice(Math.max(0,i-20),i+45)}\nSecond text excerpt: ${b.slice(Math.max(0,i-20),i+45)}`;break}
- case'jsonFormat':case'jsonValidate':{let v;try{v=JSON.parse(text)}catch(e){throw new Error('Invalid JSON: '+e.message)}out=t.kind==='jsonFormat'?JSON.stringify(v,null,2):'Valid JSON ✓\nTop-level type: '+(Array.isArray(v)?'array':v===null?'null':typeof v);break}
- case'base64Encode':out=textToBase64(text);break;
- case'base64Decode':out=base64ToText(text);break;
- case'urlEncode':out=encodeURIComponent(text);break;
- case'urlDecode':out=decodeURIComponent(text.replace(/\+/g,'%20'));break;
- case'htmlEscape':out=text.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));break;
- case'markdown':{const html=esc(text).replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h2>$1</h2>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*([^*]+)\*/g,'<em>$1</em>').replace(/\n/g,'<br>');setResultHTML('<div>'+html+'</div>',text);return}
- case'rot13':out=text.replace(/[a-zA-Z]/g,c=>String.fromCharCode(c.charCodeAt(0)+(c.toLowerCase()<='m'?13:-13)));break;
- case'morse':{if(val('mode')==='encode')out=Array.from(text.toUpperCase()).map(c=>c===' '?'/':MORSE[c]||'').join(' ').replace(/\s+/g,' ').trim();else{const reverse=Object.fromEntries(Object.entries(MORSE).map(([k,v])=>[v,k]));out=text.trim().split(/\s*\/\s*|\s{2,}/).map(part=>part.trim().split(/\s+/).map(code=>reverse[code]||'?').join('')).join(' ')}break}
- case'binaryEncode':out=Array.from(new TextEncoder().encode(text)).map(b=>b.toString(2).padStart(8,'0')).join(' ');break;
- case'binaryDecode':{const groups=text.trim().split(/\s+/);if(!text.trim()){out='';break}if(groups.some(g=>!/^[01]{8}$/.test(g)))throw new Error('Use groups of exactly 8 binary digits separated by spaces.');out=new TextDecoder('utf-8',{fatal:true}).decode(Uint8Array.from(groups,g=>parseInt(g,2)));break}
- case'password':{const n=Math.max(8,Math.min(64,Math.floor(num(val('length'),'length')))),chars=val('charset')==='easy'?'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789':val('charset')==='alnum'?'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789':'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}?';const bytes=new Uint32Array(n);crypto.getRandomValues(bytes);out=Array.from(bytes,b=>chars[b%chars.length]).join('');break}
- case'uuid':out=crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=crypto.getRandomValues(new Uint8Array(1))[0]%16;return(c==='x'?r:(r&3|8)).toString(16)});break;
- case'random':{const items=text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(!items.length)throw new Error('Enter one or more choices, one per line.');const rand=crypto.getRandomValues(new Uint32Array(1))[0]/4294967296;out='Selected item:\n'+items[Math.floor(rand*items.length)];break}
- case'qr':{if(!text.trim())throw new Error('Enter text or a URL first.');const url='https://api.qrserver.com/v1/create-qr-code/?size=260x260&data='+encodeURIComponent(text.trim());setResultHTML(`<p>QR preview (generated by an external service):</p><img id="qrImage" alt="QR code preview" width="260" height="260" style="display:block;background:#fff;padding:8px;border-radius:10px;margin:10px auto" referrerpolicy="no-referrer" src="${url}"><p class="tiny muted">Only use non-confidential text. The text is sent to the QR provider.</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Open QR image</a>`,text.trim());$('#qrImage').onerror=()=>toast('Could not load QR service; check connection.');return}
- case'image':{
-  const f=$('[data-in="file"]').files[0];if(!f)throw new Error('Choose an image first.');if(f.size>15*1024*1024)throw new Error('Choose an image below 15 MB.');if(!f.type.startsWith('image/'))throw new Error('Choose an image file.');
-  const width=Math.max(100,Math.min(6000,num(val('width'),'maximum width'))),quality=Math.max(.2,Math.min(1,num(val('quality'),'quality'))),format=val('format');
-  const img=new Image(),objectURL=URL.createObjectURL(f);
-  img.onload=()=>{const scale=Math.min(1,width/img.width),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));const ctx=canvas.getContext('2d');if(format==='image/jpeg'){ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height)}ctx.drawImage(img,0,0,canvas.width,canvas.height);canvas.toBlob(blob=>{URL.revokeObjectURL(objectURL);if(!blob){resultText('This image format could not be converted in this browser.');return}const outURL=URL.createObjectURL(blob);currentTool.cleanup=()=>URL.revokeObjectURL(outURL);setResultHTML(`<img alt="Optimized image preview" style="display:block;max-height:250px;border-radius:10px;margin:8px auto" src="${outURL}"><p>${canvas.width} × ${canvas.height}; ${(blob.size/1024).toFixed(1)} KB. Original ${(f.size/1024).toFixed(1)} KB.</p><a class="btn primary" download="shaheen-optimized.${format==='image/jpeg'?'jpg':format==='image/png'?'png':'webp'}" href="${outURL}">Download image</a>`,`Image size: ${(blob.size/1024).toFixed(1)} KB`)},format,format==='image/png'?undefined:quality)};
-  img.onerror=()=>{URL.revokeObjectURL(objectURL);resultText('This image could not be opened. Try a JPG, PNG or WebP file.')};
-  img.src=objectURL;resultText('Processing image locally…');return
- }
- case'color':{const c=val('color'),{r,g,b}=hexRgb(c),hsl=rgbHsl(r,g,b);setResultHTML(`<div style="display:flex;gap:12px;align-items:center"><div style="width:70px;height:70px;background:${c};border-radius:13px;border:1px solid var(--line)"></div><div><strong>${c.toUpperCase()}</strong><br>RGB(${r}, ${g}, ${b})<br>HSL(${hsl.h}°, ${hsl.s}%, ${hsl.l}%)</div></div>`,`${c.toUpperCase()}\nRGB(${r}, ${g}, ${b})\nHSL(${hsl.h}°, ${hsl.s}%, ${hsl.l}%)`);return}
- case'contrast':{const fg=val('fg'),bg=val('bg'),ratio=contrastRatio(fg,bg),status=ratio>=7?'AAA for normal text':ratio>=4.5?'AA for normal text':ratio>=3?'Large text only (AA threshold)':'Does not meet common WCAG AA text contrast thresholds';setResultHTML(`<div class="visual-contrast" style="color:${fg};background:${bg}"><strong>Readable text preview</strong><p style="margin:4px 0">Example content for contrast checking</p></div><strong>Contrast ratio: ${ratio.toFixed(2)}:1</strong><p>${status}</p><p class="tiny muted">Review your full interface for accessibility.</p>`,`Contrast ${ratio.toFixed(2)}:1 — ${status}`);return}
- case'gradient':{const c1=val('c1'),c2=val('c2'),a=Math.max(0,Math.min(360,num(val('angle'),'angle'))),css=`linear-gradient(${a}deg, ${c1}, ${c2})`;setResultHTML(`<div style="height:110px;border-radius:12px;background:${css};margin-bottom:12px"></div><code>${esc(css)}</code>`,css);return}
- case'lorem':{const ps=Math.max(1,Math.min(10,Math.floor(num(val('paras'),'paragraphs')))),n=Math.max(5,Math.min(100,Math.floor(num(val('words'),'words per paragraph')))),words='clear useful digital workspace ideas make a small task easier people learn build write plan create improve daily practice simple examples content design testing progress meaningful action'.split(' ');out=Array.from({length:ps},(_,p)=>Array.from({length:n},(_,i)=>words[(i*3+p*7)%words.length]).join(' ')+'.').join('\n\n');break}
- case'csvjson':{const rows=csvToRows(text);if(rows.length<2)throw new Error('Paste a CSV header row plus at least one data row.');const headers=rows[0];out=JSON.stringify(rows.slice(1).map(row=>Object.fromEntries(headers.map((h,i)=>[h,row[i]??'']))),null,2);break}
- case'jsoncsv':{const arr=JSON.parse(text);if(!Array.isArray(arr)||!arr.every(x=>x&&typeof x==='object'&&!Array.isArray(x)))throw new Error('Input must be a JSON array of objects.');const headers=[...new Set(arr.flatMap(x=>Object.keys(x)))];out=[headers.map(csvCell).join(','),...arr.map(row=>headers.map(h=>csvCell(typeof row[h]==='object'&&row[h]!==null?JSON.stringify(row[h]):row[h])).join(','))].join('\r\n');break}
- case'mdtable':{const rows=text.split(/\r?\n/).filter(Boolean).map(row=>row.split('|').map(c=>c.trim()));if(!rows.length)throw new Error('Enter rows separated by newlines and columns separated by |.');const n=Math.max(...rows.map(r=>r.length)),padded=rows.map(r=>Array.from({length:n},(_,i)=>r[i]||''));out='| '+padded[0].join(' | ')+' |\n| '+Array(n).fill('---').join(' | ')+' |'+padded.slice(1).map(r=>'\n| '+r.join(' | ')+' |').join('');break}
- default:throw new Error('This tool type is not implemented.');
- }
- resultText(out);
- }catch(err){resultText('Error: '+(err?.message||'Could not process this input.'))}
-}
-function hexRgb(hex){const s=hex.replace('#','');return{r:parseInt(s.slice(0,2),16),g:parseInt(s.slice(2,4),16),b:parseInt(s.slice(4,6),16)}}
-function rgbHsl(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b);let h=0,s=0,l=(max+min)/2;if(max!==min){const d=max-min;s=l>.5?d/(2-max-min):d/(max+min);switch(max){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;case b:h=(r-g)/d+4;break}h*=60}return{h:Math.round(h),s:Math.round(s*100),l:Math.round(l*100)}}
-function luminance(hex){const {r,g,b}=hexRgb(hex);return[r,g,b].map(v=>{v/=255;return v<=.04045?v/12.92:Math.pow((v+.055)/1.055,2.4)}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0)}
-function contrastRatio(fg,bg){const a=luminance(fg),b=luminance(bg);return(Math.max(a,b)+.05)/(Math.min(a,b)+.05)}
-function copyText(value){const s=String(value??'');if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(s).then(()=>toast('Copied')).catch(()=>fallbackCopy(s));else fallbackCopy(s)}
-function fallbackCopy(s){const ta=document.createElement('textarea');ta.value=s;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Copied')}catch{toast('Browser blocked copying—select the result manually.')}ta.remove()}
-function downloadText(name,text,mime='text/plain;charset=utf-8'){const blob=new Blob([text],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+  $("#searchInput").addEventListener("input",renderTools);
+  $("#searchBtn").addEventListener("click",()=>{ renderTools(); $("#tools").scrollIntoView({behavior:"smooth"}); });
+  $("#clearSearchBtn").addEventListener("click",()=>{
+    $("#searchInput").value=""; activeCategory="All"; renderCategories(); renderTools(); $("#searchInput").focus();
+  });
+  $("#runTool").addEventListener("click",runActiveTool);
+  $("#closeDialog").addEventListener("click",()=>$("#toolDialog").close());
+  $("#toolDialog").addEventListener("click",e=>{
+    if(e.target === $("#toolDialog")) $("#toolDialog").close();
+  });
+  $("#clearTool").addEventListener("click",()=>{
+    $$("#toolFields input, #toolFields textarea").forEach(el=>el.value="");
+    $("#toolResult").textContent="Your result will appear here.";
+    lastResult="";
+  });
+  $("#copyResult").addEventListener("click",async()=>{
+    if(!lastResult) return toast("Run the tool first.");
+    try { await navigator.clipboard.writeText(lastResult); toast("Result copied."); }
+    catch (_) { toast("Copy unavailable. Select and copy the result manually."); }
+  });
+  $("#saveTool").addEventListener("click",()=>{
+    if(!activeTool) return;
+    if(favourites.has(activeTool.id)) favourites.delete(activeTool.id);
+    else favourites.add(activeTool.id);
+    storage.set("favourites",[...favourites]);
+    $("#saveTool").textContent=favourites.has(activeTool.id)?"★ Saved":"☆ Save tool";
+    renderTools(); toast(favourites.has(activeTool.id)?"Tool saved":"Tool removed from saved tools");
+  });
 
-function renderClocks(selector){
- const entries=[['Karachi','Asia/Karachi'],['Riyadh','Asia/Riyadh'],['Manama','Asia/Bahrain'],['London','Europe/London'],['New York','America/New_York'],['UTC','UTC']];
- const node=$(selector);if(!node)return;
- node.innerHTML=entries.map(([name,zone])=>`<div class="clock"><span>${name} · ${zone}</span><strong data-zone="${zone}">--:--:--</strong><span data-datezone="${zone}">Loading date…</span></div>`).join('');
- tickClocks();
-}
-function tickClocks(){
- $$('[data-zone]').forEach(e=>{
-  const z=e.dataset.zone;
-  e.textContent=new Intl.DateTimeFormat('en',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:z}).format(new Date());
-  const d=$(`[data-datezone="${z}"]`);
-  if(d)d.textContent=new Intl.DateTimeFormat('en',{weekday:'short',day:'numeric',month:'short',timeZone:z}).format(new Date());
- });
-}
-function challenge(){
- const a=[['Tidy one small thing','Organize a file, note or workspace corner.'],['Review one flashcard','Practise remembering one concept and check the answer.'],['Take a screen break','Look away and relax for a little while.'],['Write the next action','Make one larger goal easier to begin.'],['Share something useful','Send a helpful resource to someone who may need it.'],['Plan a gentle movement break','Choose comfortable movement and stop if it hurts.'],['Allow time to rest','Rest and sleep matter as much as productive work.']];
- const day=Math.floor(Date.now()/86400000)%a.length;$('#challengeTitle').textContent=a[day][0];$('#challengeText').textContent=a[day][1];
- const done=read(STORE.challenge,'')===new Date().toISOString().slice(0,10);$('#challengeBtn').textContent=done?'Completed ✓':'Mark complete ✓';$('#challengeBtn').disabled=done;
-}
-function renderHome(){const ts=read(STORE.tasks,[]);$('#doneCount').textContent=ts.filter(t=>t.done).length;$('#toolCount').textContent=TOOLS.length;$('#regionCount').textContent=TOOLS.length*Object.keys(REGIONS).length;renderClocks('#homeClocks')}
-function renderTasks(){
- const tasks=read(STORE.tasks,[]);
- $('#taskList').innerHTML=tasks.length?tasks.map(t=>`<div class="list-row"><input class="check" type="checkbox" data-task-check="${esc(t.id)}" ${t.done?'checked':''} aria-label="Mark task complete"><div class="grow"><strong style="${t.done?'opacity:.6;text-decoration:line-through':''}">${esc(t.title)}</strong><p>${esc(t.area)} · ${t.done?'Complete':'Open'}</p></div><button class="icon-btn" data-task-delete="${esc(t.id)}" aria-label="Delete task">×</button></div>`).join(''):'<div class="empty">No tasks yet. Add one small next step above.</div>';
- $('#notes').value=read(STORE.notes,'');
- const done=read(STORE.habits,{}),habits=['Drink water','Take a screen break','Review one thing','Get some fresh air','Make time to rest'];
- $('#habits').innerHTML=habits.map(h=>`<label class="list-row"><input class="check" type="checkbox" data-habit="${esc(h)}" ${done[h]?'checked':''}><span class="grow">${esc(h)}</span></label>`).join('');
- $('#doneCount').textContent=tasks.filter(t=>t.done).length;
-}
-function renderExercises(){
- $('#exerciseGrid').innerHTML=EXERCISES.map((x,i)=>`<article class="exercise"><div class="exercise-art"><span>${x.icon}</span></div><h3>${esc(x.name)}</h3><p>${esc(x.desc)}</p><div class="muted tiny">Suggested break: ${x.dur} seconds</div><button class="btn" data-ex-start="${i}" style="margin-top:10px">Start short timer</button><div class="exercise-timer" id="exTimer${i}" aria-live="polite"></div></article>`).join('');
-}
-function renderFlash(){
- const c=FLASH[flashIndex];$('#flashCard').textContent=flashShown?c.a:c.q;$('#flashStatus').textContent=`Card ${flashIndex+1} of ${FLASH.length} · tap the card to ${flashShown?'show question':'reveal answer'}`;
- const custom=read(STORE.userCards,[]);
- $('#userCards').innerHTML=custom.length?custom.map((x,i)=>`<div class="list-row"><div class="grow"><strong>${esc(x.q)}</strong><p>${esc(x.a)}</p></div><button class="icon-btn" data-card-delete="${i}" aria-label="Delete card">×</button></div>`).join(''):'<div class="empty">Your custom cards will appear here.</div>';
-}
-function setTimer(mode){timerMode=mode;timerRunning=false;clearInterval(timerInterval);timerInterval=null;timerSeconds=mode==='focus'?1500:mode==='short'?300:900;$('#timerStart').textContent='Start';$('#timerRing').classList.remove('running');$$('[data-timer]').forEach(b=>b.classList.toggle('active',b.dataset.timer===mode));updateTimer()}
-function updateTimer(){const m=String(Math.floor(timerSeconds/60)).padStart(2,'0'),s=String(timerSeconds%60).padStart(2,'0');$('#timerDisplay').textContent=m+':'+s;document.title=(timerRunning?m+':'+s+' · ':'')+'SHAHEEN — Free Online Tools & Workspace'}
-function startTimer(){
- if(timerRunning){timerRunning=false;clearInterval(timerInterval);timerInterval=null;$('#timerStart').textContent='Resume';$('#timerRing').classList.remove('running');return}
- timerRunning=true;$('#timerStart').textContent='Pause';$('#timerRing').classList.add('running');
- timerInterval=setInterval(()=>{if(timerSeconds>0){timerSeconds--;updateTimer()}else{clearInterval(timerInterval);timerInterval=null;timerRunning=false;$('#timerStart').textContent='Start again';$('#timerRing').classList.remove('running');updateTimer();toast(timerMode==='focus'?'Focus block finished—take a real break.':'Break finished—continue only if it feels right.')}},1000);
-}
-function shareSite(){
- const url=location.href.split('#')[0]||SITE_URL,data={title:'SHAHEEN — Free Online Tools & Everyday Workspace',text:'Explore SHAHEEN: practical tools, study helpers and daily planning.',url};
- if(navigator.share)navigator.share(data).catch(()=>{});
- else window.open('https://wa.me/?text='+encodeURIComponent(data.title+' — '+data.text+' '+url),'_blank','noopener,noreferrer');
-}
-function applyRegion(){const r=region();$('#regionSelect').title=`Regional display format: ${r.label} · ${r.currency}`;renderToolGrids();renderHome()}
-function applyTheme(){const light=read(STORE.theme,'dark')==='light';document.body.classList.toggle('light',light);$('#themeBtn').textContent=light?'☾':'☼'}
-function restoreLogo(){const data=read(STORE.logo,'');if(data){const b=$('#brandMark');b.innerHTML='';const im=document.createElement('img');im.alt='Custom SHAHEEN logo';im.src=data;b.appendChild(im)}}
-function init(){
- const regionSaved=read(STORE.region,'global');$('#regionSelect').value=REGIONS[regionSaved]?regionSaved:'global';
- $('#year').textContent=new Date().getFullYear();applyTheme();restoreLogo();renderToolGrids();renderExercises();renderTasks();renderHome();challenge();
- $('#focusGoal').value=read(STORE.goal,'');if($('#focusGoal').value){$('#goalView').hidden=false;$('#goalView').textContent='Saved goal: '+$('#focusGoal').value}
- setTimer('focus');const hash=location.hash.slice(1);
- if(['home','tools','focus','study','gym','daily','saved','about'].includes(hash))showPage(hash);
- tickClocks();setInterval(tickClocks,1000);
-}
+  $("#themeBtn").addEventListener("click",()=>{
+    document.body.classList.toggle("light");
+    storage.set("theme",document.body.classList.contains("light")?"light":"dark");
+  });
+  if(storage.get("theme","dark")==="light") document.body.classList.add("light");
 
-document.addEventListener('click',e=>{
- const go=e.target.closest('[data-go]');if(go){showPage(go.dataset.go);return}
- const nav=e.target.closest('[data-page]');if(nav){showPage(nav.dataset.page);return}
- const fav=e.target.closest('[data-fav]');if(fav){e.stopPropagation();toggleSaved(fav.dataset.fav);return}
- const tool=e.target.closest('[data-tool]');if(tool){openTool(tool.dataset.tool);return}
- const cat=e.target.closest('[data-category]');if(cat){activeCategory=cat.dataset.category;$$('[data-category]').forEach(b=>b.classList.toggle('active',b===cat));renderToolGrids();return}
- const start=e.target.closest('[data-ex-start]');
- if(start){
-  const i=Number(start.dataset.exStart),x=EXERCISES[i],node=$('#exTimer'+i);
-  if(activeExerciseTimers.has(i)){clearInterval(activeExerciseTimers.get(i));activeExerciseTimers.delete(i);node.textContent='Timer stopped';start.textContent='Start short timer';return}
-  let n=x.dur;start.textContent='Stop timer';node.textContent=n+' seconds';
-  const id=setInterval(()=>{n--;node.textContent=n+' seconds';if(n<=0){clearInterval(id);activeExerciseTimers.delete(i);start.textContent='Start short timer';node.textContent='Break complete';toast('Short break complete')}},1000);
-  activeExerciseTimers.set(i,id);return;
- }
- const del=e.target.closest('[data-task-delete]');if(del){write(STORE.tasks,read(STORE.tasks,[]).filter(t=>t.id!==del.dataset.taskDelete));renderTasks();renderHome();return}
- const cd=e.target.closest('[data-card-delete]');if(cd){let a=read(STORE.userCards,[]);a.splice(Number(cd.dataset.cardDelete),1);write(STORE.userCards,a);renderFlash();return}
-});
-$('#globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){showPage('tools');$('#toolSearch').value=$('#globalSearch').value;renderToolGrids();$('#toolSearch').focus()}});
-$('#searchGo').onclick=()=>{showPage('tools');$('#toolSearch').value=$('#globalSearch').value;renderToolGrids()};
-$('#toolSearch').addEventListener('input',renderToolGrids);
-$('#regionSelect').addEventListener('change',()=>{write(STORE.region,$('#regionSelect').value);applyRegion();toast('Regional number/date formatting updated')});
-$('#themeBtn').onclick=()=>{write(STORE.theme,document.body.classList.contains('light')?'dark':'light');applyTheme()};
-$('#shareBtn').onclick=shareSite;$('#footerShare').onclick=shareSite;
-$('#logoBtn').onclick=()=>$('#logoFile').click();
-$('#logoFile').onchange=()=>{
- const f=$('#logoFile').files[0];if(!f)return;
- if(!/^image\/(png|jpeg|webp)$/.test(f.type))return toast('Choose PNG, JPG or WebP logo.');
- if(f.size>400*1024)return toast('Logo must be under 400 KB.');
- const reader=new FileReader();reader.onload=()=>{if(write(STORE.logo,reader.result)){restoreLogo();toast('Logo saved on this device')}else toast('Browser storage is full')};reader.readAsDataURL(f);
-};
-$('#challengeBtn').onclick=()=>{write(STORE.challenge,new Date().toISOString().slice(0,10));challenge();toast('Challenge marked complete')};
-$('#taskForm').onsubmit=e=>{e.preventDefault();const title=$('#taskInput').value.trim();if(!title)return;const tasks=read(STORE.tasks,[]);tasks.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),title,area:$('#taskArea').value,done:false});if(!write(STORE.tasks,tasks))return toast('Browser storage is full');$('#taskInput').value='';renderTasks();renderHome();toast('Task added')};
-$('#taskList').addEventListener('change',e=>{const id=e.target.dataset.taskCheck;if(!id)return;write(STORE.tasks,read(STORE.tasks,[]).map(t=>t.id===id?{...t,done:e.target.checked}:t));renderTasks();renderHome()});
-$('#clearTasks').onclick=()=>{write(STORE.tasks,read(STORE.tasks,[]).filter(t=>!t.done));renderTasks();renderHome();toast('Completed tasks cleared')};
-$('#saveNotes').onclick=()=>{if(write(STORE.notes,$('#notes').value)){$('#notesStatus').textContent='Saved locally at '+new Date().toLocaleTimeString();toast('Notes saved')}else toast('Browser storage is full')};
-$('#copyNotes').onclick=()=>copyText($('#notes').value);$('#downloadNotes').onclick=()=>downloadText('shaheen-notes.txt',$('#notes').value);
-$('#habits').addEventListener('change',e=>{const h=e.target.dataset.habit;if(!h)return;const a=read(STORE.habits,{});a[h]=e.target.checked;write(STORE.habits,a)});
-$('#flashCard').onclick=()=>{flashShown=!flashShown;renderFlash()};
-$('#flashNext').onclick=()=>{flashIndex=(flashIndex+1)%FLASH.length;flashShown=false;renderFlash()};
-$('#flashPrev').onclick=()=>{flashIndex=(flashIndex-1+FLASH.length)%FLASH.length;flashShown=false;renderFlash()};
-$('#flashForm').onsubmit=e=>{e.preventDefault();const q=$('#flashQ').value.trim(),a=$('#flashA').value.trim();if(!q||!a)return;const cards=read(STORE.userCards,[]);cards.unshift({q,a});write(STORE.userCards,cards);$('#flashQ').value='';$('#flashA').value='';renderFlash();toast('Flashcard saved locally')};
-$('#timerStart').onclick=startTimer;$('#timerReset').onclick=()=>setTimer(timerMode);$$('[data-timer]').forEach(b=>b.onclick=()=>setTimer(b.dataset.timer));
-$('#saveGoal').onclick=()=>{const v=$('#focusGoal').value.trim();write(STORE.goal,v);$('#goalView').hidden=!v;$('#goalView').textContent=v?'Saved goal: '+v:'';toast(v?'Goal saved on this device':'Goal cleared')};
-$('#modalClose').onclick=closeTool;$('#toolModal').addEventListener('click',e=>{if(e.target===$('#toolModal'))closeTool()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#toolModal').hidden)closeTool();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
-init();
+  async function shareSite() {
+    const payload={title:"SHAHEEN",text:"Try SHAHEEN — useful free tools for everyday tasks.",url:location.href};
+    if(navigator.share) {
+      try { await navigator.share(payload); } catch (_) {}
+    } else {
+      try { await navigator.clipboard.writeText(payload.url); toast("Website link copied."); }
+      catch (_) { toast("Copy this page's address from your browser."); }
+    }
+  }
+  $("#shareBtn").addEventListener("click",shareSite);
+  $("#whatsappBtn").addEventListener("click",()=>{
+    const text=encodeURIComponent("Try SHAHEEN — useful free tools for everyday tasks: "+location.href);
+    window.open("https://wa.me/?text="+text,"_blank","noopener,noreferrer");
+  });
+
+  function chooseLogo() { $("#logoInput").click(); }
+  $("#uploadLogoBtn").addEventListener("click",chooseLogo);
+  $("#uploadLogoBtn2").addEventListener("click",chooseLogo);
+  $("#logoInput").addEventListener("change",()=>{
+    const file=$("#logoInput").files && $("#logoInput").files[0];
+    if(!file) return;
+    if(!file.type.startsWith("image/")) return toast("Choose an image file.");
+    if(file.size>3*1024*1024) return toast("Choose an image under 3 MB.");
+    const reader=new FileReader();
+    reader.onload=()=>{
+      const img=document.createElement("img");
+      img.src=reader.result; img.alt="Your SHAHEEN logo";
+      $("#brandMark").replaceChildren(img);
+      toast("Logo preview updated for this page.");
+    };
+    reader.readAsDataURL(file);
+  });
+
+  $("#regionSelect").addEventListener("change",()=>{
+    const code=$("#regionSelect").value;
+    const names={PK:"Pakistan",SA:"Saudi Arabia",US:"United States",GB:"United Kingdom",
+      BH:"Bahrain",AE:"United Arab Emirates",CA:"Canada",AU:"Australia",IN:"India",GLOBAL:"International"};
+    $("#regionInfo").textContent=names[code]+" selected. Number formatting tools can use this locale.";
+    storage.set("region",code);
+  });
+  $("#regionSelect").value=storage.get("region","PK");
+  $("#regionSelect").dispatchEvent(new Event("change"));
+
+  function refreshDate() {
+    const region=$("#regionSelect").value;
+    const locale=({PK:"en-PK",SA:"ar-SA",US:"en-US",GB:"en-GB",BH:"ar-BH",
+      AE:"en-AE",CA:"en-CA",AU:"en-AU",IN:"en-IN",GLOBAL:"en-GB"})[region] || "en";
+    $("#localDate").textContent=new Intl.DateTimeFormat(locale,{
+      dateStyle:"full",timeStyle:"short"
+    }).format(new Date());
+  }
+  $("#refreshDate").addEventListener("click",refreshDate);
+  refreshDate();
+
+  $("#suggestBtn").href="https://wa.me/?text="+encodeURIComponent("SHAHEEN tool suggestion: ");
+  $("#saveNotes").addEventListener("click",()=>{storage.set("notes",$("#notesInput").value);toast("Note saved in this browser.");});
+  $("#clearNotes").addEventListener("click",()=>{$("#notesInput").value="";storage.set("notes","");toast("Note cleared.");});
+  $("#notesInput").value=storage.get("notes","");
+
+  let flashcards=storage.get("flashcards",[]);
+  $("#saveFlash").addEventListener("click",()=>{
+    const q=$("#flashQ").value.trim(),a=$("#flashA").value.trim();
+    if(!q||!a) return toast("Enter both a question and an answer.");
+    flashcards.push({q,a}); storage.set("flashcards",flashcards);
+    $("#flashQ").value=""; $("#flashA").value="";
+    toast("Flashcard saved.");
+  });
+  $("#showFlash").addEventListener("click",()=>{
+    const box=$("#flashResult");
+    box.classList.remove("hidden");
+    if(!flashcards.length) { box.textContent="No saved flashcards yet."; return; }
+    let index=0;
+    const show=()=>{
+      box.replaceChildren();
+      const p=document.createElement("p"); p.textContent="Card "+(index+1)+" of "+flashcards.length+": "+flashcards[index].q;
+      const answer=document.createElement("p"); answer.className="hidden"; answer.textContent="Answer: "+flashcards[index].a;
+      const reveal=document.createElement("button"); reveal.className="btn"; reveal.type="button"; reveal.textContent="Reveal answer";
+      reveal.addEventListener("click",()=>answer.classList.toggle("hidden"));
+      const next=document.createElement("button"); next.className="btn"; next.type="button"; next.textContent="Next card";
+      next.addEventListener("click",()=>{index=(index+1)%flashcards.length;show();});
+      box.append(p,answer,reveal,next);
+    };
+    show();
+  });
+
+  let timerInterval=null, remaining=25*60;
+  function updateClock() {
+    $("#focusClock").textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+
+      String(remaining%60).padStart(2,"0");
+  }
+  function resetClock() {
+    clearInterval(timerInterval); timerInterval=null;
+    let minutes=Number($("#focusMinutes").value);
+    if(!Number.isFinite(minutes)||minutes<1||minutes>180) minutes=25;
+    remaining=Math.floor(minutes)*60; updateClock();
+    $("#timerStatus").textContent="Timer reset. Ready when you are.";
+  }
+  $("#focusMinutes").addEventListener("change",resetClock);
+  $("#timerStart").addEventListener("click",()=>{
+    if(timerInterval) return;
+    if(remaining<=0) resetClock();
+    $("#timerStatus").textContent="Focus session running.";
+    timerInterval=setInterval(()=>{
+      remaining--; updateClock();
+      if(remaining<=0) {
+        clearInterval(timerInterval);timerInterval=null;
+        $("#timerStatus").textContent="Session complete. Take a break if you need one.";
+        toast("Focus session complete.");
+      }
+    },1000);
+  });
+  $("#timerPause").addEventListener("click",()=>{
+    clearInterval(timerInterval);timerInterval=null;
+    $("#timerStatus").textContent="Timer paused.";
+  });
+  $("#timerReset").addEventListener("click",resetClock);
+  resetClock();
+
+  let exerciseInterval=null, exerciseLeft=30;
+  function stopExercise(message="Movement break stopped.") {
+    clearInterval(exerciseInterval); exerciseInterval=null;
+    $("#exerciseProgress").style.width="0%";
+    $("#exerciseStatus").textContent=message;
+  }
+  $$(".exerciseBtn").forEach(button=>button.addEventListener("click",()=>{
+    stopExercise("");
+    exerciseLeft=30;
+    const title=button.dataset.exercise;
+    $("#exerciseTitle").textContent=title;
+    $("#exerciseStatus").textContent="30 seconds remaining. Stop any time you need to.";
+    $("#exerciseProgress").style.width="0%";
+    exerciseInterval=setInterval(()=>{
+      exerciseLeft--;
+      $("#exerciseProgress").style.width=((30-exerciseLeft)/30*100)+"%";
+      $("#exerciseStatus").textContent=exerciseLeft+" seconds remaining. Move at a comfortable pace.";
+      if(exerciseLeft<=0) {
+        stopExercise("Done. Rest and hydrate if needed.");
+        toast("Movement break complete.");
+      }
+    },1000);
+  }));
+  $("#stopExercise").addEventListener("click",()=>stopExercise());
+
+  const navLinks=$$(".nav-btn");
+  const sections=["home","tools","study","fitness","global"].map(id=>$("#"+id));
+  if("IntersectionObserver" in window) {
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) navLinks.forEach(link=>{
+          link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id);
+        });
+      });
+    },{rootMargin:"-25% 0px -60% 0px"});
+    sections.forEach(section=>section && observer.observe(section));
+  }
+  $("#year").textContent=new Date().getFullYear();
+  renderCategories();
+  renderTools();
+})();
 </script>
 </body>
 </html>
