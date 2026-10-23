@@ -1,32 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071426">
-  <meta name="description" content="SHAHEEN — free everyday tools for text, calculations, study, productivity, fitness and global users. Fast, simple and mobile-friendly.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="SHAHEEN Tools — free online calculators, text utilities, image tools, PDF tools, QR codes, converters and productivity utilities.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SHAHEEN — Free Online Tools">
-  <meta property="og:description" content="Useful tools for everyday tasks, study, work and productivity.">
-  <meta property="og:site_name" content="SHAHEEN">
+  <meta property="og:title" content="SHAHEEN Tools — Your everyday digital toolkit">
+  <meta property="og:description" content="Free, useful online tools for work, study and everyday life.">
+  <meta property="og:site_name" content="SHAHEEN Tools">
+  <meta property="og:url" content="https://shaheentools.vercel.app/">
   <meta name="twitter:card" content="summary">
-  <title>SHAHEEN — Free Online Tools & Productivity</title>
+  <meta name="twitter:title" content="SHAHEEN Tools">
+  <meta name="twitter:description" content="Free online tools for everyday digital tasks.">
+  <link rel="canonical" href="https://shaheentools.vercel.app/">
+  <title>SHAHEEN Tools — Your Everyday Digital Toolkit</title>
 
-  <!-- Google AdSense Auto ads: your publisher ID -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4971404240076141"
-    crossorigin="anonymous"></script>
-  <!-- Monetag In-Page Push: zone 12088232. Install this zone once per page. -->
+  <!-- Monetag OnClick zone. Google AdSense has been removed from this file.
+       Keep your Monetag zone ID and domain exactly as shown in your Monetag account. -->
   <script>
     (function () {
       var s = document.createElement("script");
-      s.dataset.zone = "12088232";
-      s.src = "https://nap5k.com/tag.min.js";
+      s.dataset.zone = "12088071";
+      s.src = "https://al5sm.com/tag.min.js";
       s.async = true;
-      document.head.appendChild(s);
+      document.documentElement.appendChild(s);
     })();
   </script>
 
@@ -34,1161 +33,1610 @@
     :root {
       color-scheme: dark;
       --bg: #07111f;
-      --panel: #101e31;
-      --panel2: #14253a;
+      --bg-2: #0b1728;
+      --panel: rgba(17, 31, 51, .88);
+      --panel-2: #102039;
+      --card: #101e32;
+      --card-hover: #162944;
+      --border: rgba(174, 201, 236, .13);
       --text: #f4f8ff;
-      --muted: #a8b7cc;
-      --line: #263951;
-      --cyan: #42e8f5;
-      --blue: #4888ff;
-      --green: #75f0bb;
-      --danger: #ff7c8c;
-      --radius: 18px;
-      --shadow: 0 12px 36px #0003;
+      --muted: #9bacbf;
+      --accent: #4b8cff;
+      --cyan: #32d8f2;
+      --violet: #a58bfa;
+      --green: #45d6a1;
+      --danger: #ff778d;
+      --shadow: 0 18px 55px rgba(0, 0, 0, .22);
+      --radius: 20px;
+      --max: 1240px;
     }
-
+    :root.light {
+      color-scheme: light;
+      --bg: #f3f7fc;
+      --bg-2: #eaf1fb;
+      --panel: rgba(255, 255, 255, .94);
+      --panel-2: #f5f8fe;
+      --card: #fff;
+      --card-hover: #f0f6ff;
+      --border: rgba(31, 57, 90, .13);
+      --text: #10213a;
+      --muted: #64748b;
+      --accent: #2469df;
+      --cyan: #009eb7;
+      --violet: #7857d9;
+      --green: #078c69;
+      --danger: #c83a58;
+      --shadow: 0 15px 40px rgba(28, 57, 91, .08);
+    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       background:
-        radial-gradient(ellipse at 15% -10%, #174c73 0, transparent 38%),
+        radial-gradient(ellipse at 8% -5%, rgba(48, 120, 255, .16), transparent 35%),
+        radial-gradient(ellipse at 92% 12%, rgba(48, 216, 242, .09), transparent 27%),
         var(--bg);
       color: var(--text);
-      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont,
-            "Segoe UI", sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      line-height: 1.5;
+      transition: background .2s ease, color .2s ease;
     }
-    body.light {
-      color-scheme: light;
-      --bg: #f2f6fc;
-      --panel: #fff;
-      --panel2: #edf3fa;
-      --text: #142338;
-      --muted: #53667e;
-      --line: #d9e2ed;
-      --shadow: 0 12px 32px #1c355411;
-      background: var(--bg);
-    }
-    button, input, textarea, select { font: inherit; }
-    button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+    body, button, input, textarea, select { font-family: inherit; }
+    button, input, textarea, select { font-size: 14px; }
     button { cursor: pointer; }
-    button:focus-visible, a:focus-visible, input:focus-visible,
-    textarea:focus-visible, select:focus-visible {
-      outline: 3px solid var(--cyan);
-      outline-offset: 3px;
-    }
+    button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible,
+    a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
     a { color: inherit; }
-    .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
-    .muted { color: var(--muted); }
-    .small { font-size: .86rem; }
-    .hidden { display: none !important; }
+    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: color-mix(in srgb, var(--bg) 90%, transparent);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
+      position: sticky; top: 0; z-index: 30;
+      backdrop-filter: blur(18px);
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      border-bottom: 1px solid var(--border);
     }
     .top-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+      min-height: 76px; display: flex; align-items: center; gap: 17px;
     }
-    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+      border: 0; background: transparent; color: var(--text); padding: 4px;
+      text-align: left;
+    }
     .brand-mark {
-      width: 43px; height: 43px; border-radius: 14px;
-      display: grid; place-items: center;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      color: #061323; font-weight: 950; font-size: 1.25rem;
-      box-shadow: 0 5px 22px #42e8f52a;
+      width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center;
+      font-weight: 950; font-size: 21px; color: white;
+      background: linear-gradient(135deg, #1462ef, #13c9e5);
+      box-shadow: 0 7px 24px rgba(37, 132, 255, .28);
       overflow: hidden;
     }
     .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
-    .brand-name { font-weight: 900; letter-spacing: .12em; }
-    .brand-tag { color: var(--muted); font-size: .72rem; }
-    .header-actions { display: flex; align-items: center; gap: 8px; }
-    .btn, .icon-btn, .nav-btn, .chip {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--text);
-      background: var(--panel);
-      min-height: 43px;
-      padding: 9px 13px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    .brand-name { font-weight: 900; letter-spacing: .07em; font-size: 15px; line-height: 1.2; }
+    .brand-sub { font-size: 10px; color: var(--muted); letter-spacing: .12em; margin-top: 4px; }
+    .search-wrap { position: relative; flex: 1; max-width: 520px; margin-left: auto; }
+    .search-wrap input {
+      width: 100%; padding: 13px 42px 13px 42px; border-radius: 15px;
+      color: var(--text); background: var(--panel); border: 1px solid var(--border);
     }
-    .icon-btn { width: 44px; padding: 0; font-size: 1.1rem; }
-    .btn.primary {
-      color: #031322; font-weight: 800; border-color: transparent;
-      background: linear-gradient(120deg, var(--cyan), #78c5ff);
+    .search-symbol {
+      position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); pointer-events: none; font-size: 17px;
     }
-    .btn:hover, .icon-btn:hover, .nav-btn:hover, .chip:hover {
-      border-color: var(--cyan);
+    .search-shortcut {
+      position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); font-size: 11px; border: 1px solid var(--border);
+      border-radius: 6px; padding: 2px 5px;
     }
-    .hero { padding: 48px 0 26px; }
-    .eyebrow {
-      color: var(--cyan); text-transform: uppercase;
-      letter-spacing: .14em; font-size: .76rem; font-weight: 800;
+    .icon-button {
+      width: 42px; height: 42px; flex-shrink: 0; border: 1px solid var(--border);
+      border-radius: 14px; background: var(--panel); color: var(--text);
+      display: inline-grid; place-items: center; font-size: 18px;
     }
-    h1 { font-size: clamp(2.15rem, 6vw, 4.1rem); line-height: 1.06; margin: 12px 0; letter-spacing: -.045em; }
-    h2 { line-height: 1.2; letter-spacing: -.025em; }
-    .gradient-text {
-      background: linear-gradient(100deg, var(--cyan), #88aaff);
-      color: transparent; background-clip: text;
+    .icon-button:hover { background: var(--card-hover); }
+    .select-small {
+      max-width: 135px; padding: 10px; border-radius: 12px; border: 1px solid var(--border);
+      background: var(--panel); color: var(--text);
     }
-    .hero p { color: var(--muted); max-width: 680px; }
-    .search-row { display: flex; gap: 10px; margin-top: 23px; max-width: 760px; }
-    .searchbox {
-      display: flex; align-items: center; gap: 10px;
-      flex: 1; min-width: 0; background: var(--panel);
-      border: 1px solid var(--line); border-radius: 15px; padding: 0 14px;
-    }
-    .searchbox input {
-      width: 100%; min-width: 0; border: 0; outline: 0;
-      background: transparent; color: var(--text); min-height: 52px;
-    }
-    .searchbox input:focus-visible { outline: none; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 17px; }
-    .stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 12px; margin: 26px 0;
-    }
-    .stat, .panel, .tool-card, .feature-card, .exercise {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
+    main { min-height: 68vh; padding: 24px 0 100px; }
+    .hero {
+      position: relative; overflow: hidden; border: 1px solid var(--border);
+      border-radius: 28px; padding: clamp(25px, 5vw, 58px);
+      background:
+        radial-gradient(circle at 84% 16%, rgba(52, 218, 242, .18), transparent 25%),
+        radial-gradient(circle at 65% 100%, rgba(82, 104, 255, .25), transparent 43%),
+        linear-gradient(135deg, var(--panel), var(--bg-2));
       box-shadow: var(--shadow);
     }
-    .stat { padding: 16px; }
-    .stat strong { display: block; font-size: 1.35rem; }
-    .stat span { font-size: .82rem; color: var(--muted); }
-    .ad-slot {
-      border: 1px dashed var(--line); border-radius: 13px;
-      min-height: 82px; padding: 12px; margin: 22px 0;
-      display: grid; place-items: center; text-align: center;
-      color: var(--muted); background: color-mix(in srgb, var(--panel) 65%, transparent);
+    .hero:after {
+      content: ""; position: absolute; right: -95px; bottom: -165px; width: 330px; height: 330px;
+      border: 1px solid rgba(74, 160, 255, .25); border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(74,160,255,.035), 0 0 0 70px rgba(74,160,255,.025);
+      pointer-events: none;
     }
-    .ad-label {
-      display: block; text-transform: uppercase; font-size: .68rem;
-      letter-spacing: .12em; margin-bottom: 5px;
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border);
+      background: rgba(63, 137, 255, .1); padding: 7px 11px; border-radius: 999px;
+      color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase;
     }
-    section { scroll-margin-top: 90px; padding: 24px 0; }
+    .status-dot { width: 7px; height: 7px; background: var(--green); border-radius: 99px; }
+    h1 { font-size: clamp(34px, 6vw, 67px); line-height: 1.04; letter-spacing: -.045em; margin: 21px 0 15px; max-width: 770px; }
+    .gradient-text {
+      background: linear-gradient(100deg, #5d9bff, #39dcf1 60%, #a5baff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy { max-width: 650px; font-size: clamp(14px, 2vw, 17px); color: var(--muted); margin: 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 26px; position: relative; z-index: 1; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 16px; border: 1px solid var(--border); border-radius: 13px;
+      background: var(--panel); color: var(--text); font-weight: 750;
+      text-decoration: none; transition: transform .16s ease, background .16s ease;
+    }
+    .btn:hover { transform: translateY(-1px); background: var(--card-hover); }
+    .btn-primary {
+      color: white; border-color: transparent;
+      background: linear-gradient(110deg, #2875f5, #278fe9 55%, #12b9d5);
+      box-shadow: 0 10px 25px rgba(34, 120, 245, .19);
+    }
+    .btn-primary:hover { background: linear-gradient(110deg, #3982fb, #23bcd8); }
+    .btn-danger { color: var(--danger); }
+    .stats-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 26px; max-width: 630px; }
+    .stat { padding: 13px 15px; border: 1px solid var(--border); border-radius: 15px; background: rgba(6, 15, 29, .12); }
+    .stat strong { font-size: 19px; display: block; }
+    .stat span { color: var(--muted); font-size: 11px; }
     .section-head {
-      display: flex; align-items: end; justify-content: space-between;
-      gap: 16px; margin-bottom: 16px;
+      display: flex; align-items: end; justify-content: space-between; gap: 16px;
+      margin: 34px 0 17px;
     }
-    .section-head h2 { margin: 0 0 5px; font-size: clamp(1.45rem, 3vw, 2rem); }
-    .section-head p { margin: 0; color: var(--muted); }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 15px 0 20px; }
-    .chip { min-height: 37px; padding: 7px 12px; font-size: .88rem; }
-    .chip.active { background: #164258; border-color: var(--cyan); color: var(--cyan); }
-    body.light .chip.active { background: #def8fb; }
-    .tool-grid, .feature-grid, .exercise-grid {
-      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px;
+    .section-head h2 { font-size: clamp(21px, 3vw, 29px); margin: 0; letter-spacing: -.025em; }
+    .section-head p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+    .text-link { color: var(--cyan); font-weight: 750; background: transparent; border: 0; padding: 7px 0; }
+    .category-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 18px; }
+    .chip {
+      border: 1px solid var(--border); border-radius: 999px; background: var(--panel);
+      color: var(--muted); padding: 9px 13px; font-size: 12px; font-weight: 700;
     }
+    .chip.active, .chip:hover { background: rgba(50, 139, 255, .14); border-color: rgba(61, 156, 255, .5); color: var(--text); }
+    .tool-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; }
     .tool-card {
-      min-width: 0; padding: 16px; text-align: left; color: var(--text);
-      transition: transform .15s ease, border-color .15s ease;
+      min-width: 0; position: relative; border: 1px solid var(--border); border-radius: 18px;
+      background: var(--card); padding: 17px; text-align: left; color: var(--text);
+      display: flex; flex-direction: column; align-items: stretch; gap: 13px;
+      transition: border-color .18s, transform .18s, background .18s;
     }
-    .tool-card:hover { transform: translateY(-3px); border-color: var(--cyan); }
+    .tool-card:hover { transform: translateY(-3px); border-color: rgba(60, 172, 255, .6); background: var(--card-hover); }
+    .tool-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
     .tool-icon {
-      width: 43px; height: 43px; border-radius: 13px;
-      display: grid; place-items: center; font-size: 1.35rem;
-      background: var(--panel2); margin-bottom: 13px;
+      width: 43px; height: 43px; border-radius: 14px; display: grid; place-items: center;
+      font-size: 21px; flex-shrink: 0; background: linear-gradient(140deg, rgba(53, 124, 255, .22), rgba(46, 218, 236, .12));
+      border: 1px solid rgba(103, 174, 255, .12);
     }
-    .tool-card strong { display: block; margin-bottom: 4px; }
-    .tool-card small { color: var(--muted); display: block; line-height: 1.45; }
-    .tool-card .card-foot {
-      display: flex; justify-content: space-between; gap: 8px;
-      margin-top: 14px; color: var(--cyan); font-size: .78rem;
+    .tool-fav {
+      border: 0; background: transparent; color: var(--muted); font-size: 19px; padding: 2px 3px;
     }
-    .feature-card { padding: 18px; }
-    .feature-card h3 { margin: 8px 0 5px; }
-    .feature-card p { color: var(--muted); font-size: .92rem; }
-    .panel { padding: 19px; }
-    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-    .field label { font-size: .88rem; color: var(--muted); }
-    .field input, .field textarea, .field select, textarea, input, select {
-      max-width: 100%;
+    .tool-fav.is-saved { color: #f7c95d; }
+    .tool-card h3 { font-size: 14px; line-height: 1.3; margin: 0 0 5px; }
+    .tool-card p { color: var(--muted); font-size: 12px; margin: 0; line-height: 1.55; }
+    .tool-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+    .tool-category { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .tool-open { color: var(--cyan); font-size: 12px; font-weight: 800; }
+    .feature-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 26px; }
+    .feature {
+      display: flex; gap: 12px; padding: 18px; background: var(--panel);
+      border: 1px solid var(--border); border-radius: 17px;
     }
+    .feature-icon { font-size: 22px; }
+    .feature h3 { margin: 0 0 5px; font-size: 13px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 12px; }
+    .notice {
+      padding: 15px 17px; border: 1px solid var(--border); border-radius: 15px;
+      background: var(--panel); color: var(--muted); font-size: 12px; margin-top: 16px;
+    }
+    .page-title { margin: 10px 0 7px; font-size: clamp(26px, 4vw, 39px); letter-spacing: -.035em; }
+    .page-subtitle { color: var(--muted); margin: 0 0 20px; }
+    .empty {
+      text-align: center; padding: 45px 20px; border: 1px dashed var(--border); border-radius: 18px;
+      color: var(--muted); background: var(--panel);
+    }
+    .empty-icon { font-size: 34px; margin-bottom: 8px; }
+    .workspace-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .workspace-card { background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 20px; }
+    .workspace-card h3 { margin: 0 0 7px; font-size: 17px; }
+    .workspace-card p { color: var(--muted); font-size: 13px; }
+    .field { display: flex; flex-direction: column; gap: 7px; margin: 12px 0; }
+    .field label { font-size: 12px; color: var(--muted); font-weight: 750; }
     .field input, .field textarea, .field select, .input {
-      width: 100%; color: var(--text); background: var(--bg);
-      border: 1px solid var(--line); border-radius: 11px; padding: 11px 12px;
+      width: 100%; min-width: 0; padding: 12px 13px; border: 1px solid var(--border);
+      border-radius: 12px; background: var(--bg-2); color: var(--text);
     }
-    .field textarea { min-height: 125px; resize: vertical; }
+    .field textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
+    .field select option, select option { background: var(--bg-2); color: var(--text); }
+    .field-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .result {
-      white-space: pre-wrap; overflow-wrap: anywhere;
-      background: var(--bg); border: 1px solid var(--line);
-      border-radius: 12px; padding: 14px; min-height: 56px;
+      margin-top: 15px; padding: 15px; border-radius: 14px; border: 1px solid var(--border);
+      background: rgba(61, 141, 255, .07); overflow-wrap: anywhere;
     }
-    .tool-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
-    .notice { padding: 12px; border-radius: 12px; background: var(--panel2); color: var(--muted); }
-    .exercise { padding: 15px; }
-    .exercise figure {
-      margin: 0; min-height: 105px; border-radius: 12px;
-      background: var(--panel2); display: grid; place-items: center;
+    .result-label { font-size: 10px; color: var(--muted); font-weight: 850; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 6px; }
+    .result-value { font-size: 19px; font-weight: 800; }
+    .result-text { color: var(--text); font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .modal-backdrop {
+      display: none; position: fixed; inset: 0; z-index: 80; background: rgba(1, 7, 16, .78);
+      backdrop-filter: blur(9px); padding: 20px; overflow-y: auto;
     }
-    .figure-person {
-      width: 38px; height: 60px; position: relative;
-      animation: move-person 1.5s ease-in-out infinite alternate;
+    .modal-backdrop.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      width: min(740px, 100%); margin: auto; border: 1px solid var(--border);
+      border-radius: 24px; background: var(--bg-2); box-shadow: 0 28px 90px rgba(0,0,0,.35); overflow: hidden;
     }
-    .figure-person:before {
-      content: ""; position: absolute; width: 17px; height: 17px;
-      background: var(--cyan); border-radius: 50%; top: 0; left: 10px;
+    .modal-head {
+      display: flex; align-items: center; gap: 13px; padding: 20px 22px;
+      border-bottom: 1px solid var(--border); background: var(--panel);
     }
-    .figure-person:after {
-      content: ""; position: absolute; width: 8px; height: 32px;
-      border-radius: 8px; background: var(--blue); top: 19px; left: 14px;
-      box-shadow: -12px 8px 0 -1px var(--cyan), 12px 8px 0 -1px var(--cyan),
-                  -7px 35px 0 -1px var(--blue), 7px 35px 0 -1px var(--blue);
+    .modal-head .tool-icon { width: 47px; height: 47px; }
+    .modal-heading { flex: 1; min-width: 0; }
+    .modal-heading h2 { margin: 0; font-size: 19px; }
+    .modal-heading p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    .modal-body { padding: 22px; }
+    .modal-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 13px; }
+    .modal-close { margin-left: auto; }
+    .mini-card { padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); }
+    .mini-card strong { display: block; font-size: 15px; }
+    .mini-card span { font-size: 11px; color: var(--muted); }
+    .clock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .clock-time { font-size: 21px; font-weight: 850; font-variant-numeric: tabular-nums; }
+    .timer-face {
+      text-align: center; font-weight: 900; font-size: clamp(44px, 10vw, 73px);
+      letter-spacing: -.04em; font-variant-numeric: tabular-nums; padding: 24px 0;
     }
-    @keyframes move-person { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
-    .timer { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; text-align: center; letter-spacing: .04em; }
-    .timer-controls { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .footer { border-top: 1px solid var(--line); padding: 28px 0 100px; margin-top: 30px; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 12px; }
-    .footer a { color: var(--muted); }
+    .timer-state { text-align: center; color: var(--muted); font-size: 12px; }
+    .check-row { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; margin: 8px 0; }
+    .check-row input { accent-color: var(--accent); }
+    .todo-list { list-style: none; padding: 0; margin: 15px 0 0; display: grid; gap: 7px; }
+    .todo-item { padding: 11px 12px; border: 1px solid var(--border); border-radius: 11px; display: flex; align-items: center; gap: 10px; }
+    .todo-item span { flex: 1; overflow-wrap: anywhere; }
+    .todo-item.done span { text-decoration: line-through; color: var(--muted); }
+    .todo-item button { border: 0; background: transparent; color: var(--danger); }
+    .footer { padding: 25px 0 100px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer a, .footer button { color: var(--muted); text-decoration: none; border: 0; background: transparent; padding: 0; }
+    .footer a:hover, .footer button:hover { color: var(--cyan); }
     .bottom-nav {
-      display: none; position: fixed; z-index: 30; bottom: 0; left: 0; right: 0;
-      padding: 8px max(8px, env(safe-area-inset-left))
-               calc(8px + env(safe-area-inset-bottom));
-      background: color-mix(in srgb, var(--panel) 94%, transparent);
-      border-top: 1px solid var(--line); backdrop-filter: blur(16px);
-      grid-template-columns: repeat(5, 1fr); gap: 4px;
+      display: none; position: fixed; z-index: 40; bottom: 0; left: 0; right: 0;
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 91%, transparent);
+      backdrop-filter: blur(18px);
     }
-    .nav-btn {
-      flex-direction: column; gap: 2px; padding: 6px 3px;
-      min-height: 54px; background: transparent; border-color: transparent;
-      font-size: .72rem;
+    .bottom-inner { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; max-width: 550px; margin: 0 auto; }
+    .nav-item {
+      border: 0; background: transparent; color: var(--muted); padding: 5px 1px;
+      display: flex; flex-direction: column; align-items: center; gap: 3px; border-radius: 12px;
+      font-size: 10px; font-weight: 700;
     }
-    .nav-btn span:first-child { font-size: 1.2rem; }
-    .nav-btn.active { color: var(--cyan); }
-    dialog {
-      width: min(720px, calc(100% - 24px)); max-height: 86dvh;
-      overflow: auto; color: var(--text); background: var(--panel);
-      border: 1px solid var(--line); border-radius: 20px; padding: 0;
-      box-shadow: 0 24px 90px #0008;
-    }
-    dialog::backdrop { background: #020711b8; backdrop-filter: blur(4px); }
-    .dialog-head {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; padding: 16px 18px; border-bottom: 1px solid var(--line);
-    }
-    .dialog-body { padding: 18px; }
+    .nav-item .nav-icon { font-size: 19px; line-height: 1.2; }
+    .nav-item.active { color: var(--cyan); background: rgba(59, 141, 255, .1); }
     .toast {
-      position: fixed; z-index: 60; bottom: 88px; left: 50%;
-      transform: translateX(-50%); max-width: calc(100% - 28px);
-      padding: 11px 16px; border-radius: 12px;
-      background: var(--text); color: var(--bg); box-shadow: var(--shadow);
+      position: fixed; z-index: 120; left: 50%; bottom: 95px; transform: translate(-50%, 12px);
+      opacity: 0; pointer-events: none; background: var(--text); color: var(--bg);
+      padding: 11px 16px; border-radius: 12px; box-shadow: var(--shadow); font-size: 12px; font-weight: 800;
+      transition: opacity .18s, transform .18s; max-width: calc(100% - 30px); text-align: center;
     }
-    .progress { height: 8px; background: var(--panel2); border-radius: 99px; overflow: hidden; }
-    .progress span { display: block; height: 100%; width: 0; background: var(--cyan); transition: width .2s; }
-    @media (max-width: 900px) {
-      .tool-grid, .feature-grid, .exercise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .qr-image { display: block; width: min(300px, 100%); margin: 14px auto; border-radius: 14px; background: white; padding: 10px; }
+    .ad-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
+    .ad-space { min-height: 42px; display: grid; place-items: center; margin: 20px 0; border: 1px dashed var(--border); border-radius: 13px; }
+    .hidden { display: none !important; }
+    @media (max-width: 1000px) {
+      .tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .select-small { max-width: 120px; }
     }
-    @media (max-width: 620px) {
-      .wrap { width: min(100% - 22px, 1180px); }
-      .top-inner { min-height: 63px; }
-      .brand-tag { display: none; }
-      .header-actions .btn { display: none; }
-      .hero { padding-top: 34px; }
-      .stats { gap: 8px; }
-      .stat { padding: 11px; }
-      .stat strong { font-size: 1.05rem; }
-      .tool-grid, .feature-grid, .exercise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .search-row { flex-direction: column; }
-      .search-row > .btn { width: 100%; }
-      .section-head { align-items: start; flex-direction: column; }
-      .form-grid { grid-template-columns: 1fr; }
-      .bottom-nav { display: grid; }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 22px, var(--max)); }
+      .top-inner { min-height: 65px; gap: 9px; }
+      .brand-mark { width: 39px; height: 39px; border-radius: 13px; }
+      .brand-sub { display: none; }
+      .brand-name { font-size: 13px; }
+      .search-wrap { max-width: none; }
+      .search-wrap input { padding: 11px 12px 11px 35px; font-size: 12px; }
+      .search-shortcut { display: none; }
+      .search-symbol { left: 12px; }
+      .select-small { display: none; }
+      .top-inner > .icon-button { width: 39px; height: 39px; }
+      main { padding-top: 14px; }
+      .hero { border-radius: 23px; padding: 26px 20px; }
+      h1 { font-size: clamp(34px, 10vw, 48px); }
+      .stats-row { gap: 7px; }
+      .stat { padding: 11px 10px; }
+      .stat strong { font-size: 16px; }
+      .stat span { font-size: 10px; }
+      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+      .tool-card { border-radius: 15px; padding: 13px; gap: 10px; }
+      .tool-icon { width: 38px; height: 38px; border-radius: 12px; font-size: 19px; }
+      .tool-card h3 { font-size: 13px; }
+      .tool-card p { font-size: 11px; }
+      .feature-strip { grid-template-columns: 1fr; gap: 9px; }
+      .workspace-grid { grid-template-columns: 1fr; }
+      .clock-grid { grid-template-columns: 1fr; }
+      .modal-backdrop { padding: 8px; }
+      .modal { border-radius: 20px; margin: auto 0; }
+      .modal-head { padding: 15px; }
+      .modal-body { padding: 15px; }
+      .field-row { grid-template-columns: 1fr; gap: 0; }
+      .bottom-nav { display: block; }
+      .footer { padding-bottom: 100px; }
+    }
+    @media (max-width: 370px) {
+      .brand-name { max-width: 70px; }
+      .tool-card { padding: 11px; }
+      .tool-category { font-size: 9px; }
+      .tool-open { font-size: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important; animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important; transition-duration: .01ms !important;
-      }
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
     }
   </style>
 </head>
 
 <body>
-<header class="topbar">
-  <div class="wrap top-inner">
-    <a class="brand" href="#home" aria-label="SHAHEEN home">
-      <span class="brand-mark" id="brandMark">S</span>
-      <span>
-        <span class="brand-name">SHAHEEN</span><br>
-        <span class="brand-tag">Tools · Learn · Create · Grow</span>
-      </span>
-    </a>
-    <div class="header-actions">
-      <button class="btn" id="uploadLogoBtn" type="button">＋ Logo</button>
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme" title="Toggle theme">☼</button>
-      <button class="icon-btn" id="shareBtn" type="button" aria-label="Share SHAHEEN" title="Share">↗</button>
-    </div>
-  </div>
-</header>
+  <header class="topbar">
+    <div class="shell top-inner">
+      <button class="brand" data-page="home" aria-label="SHAHEEN Tools home">
+        <div class="brand-mark" id="brandMark">S</div>
+        <div>
+          <div class="brand-name">SHAHEEN</div>
+          <div class="brand-sub">TOOLS · EVERYDAY, ELEVATED</div>
+        </div>
+      </button>
 
-<main id="home" class="wrap">
-  <section class="hero">
-    <div class="eyebrow">One useful place · Worldwide</div>
-    <h1>Everyday tasks,<br><span class="gradient-text">made simpler.</span></h1>
-    <p>Free browser tools for text, calculations, study, planning and fitness. Designed to work comfortably on mobile and desktop.</p>
-
-    <div class="search-row">
-      <label class="searchbox">
-        <span aria-hidden="true">⌕</span>
-        <input id="searchInput" type="search" placeholder="Search tools — e.g. word counter, BMI…" autocomplete="off" aria-label="Search tools">
-      </label>
-      <button class="btn primary" id="searchBtn" type="button">Find tools →</button>
-    </div>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="#tools">Explore tools</a>
-      <a class="btn" href="#study">Study & focus</a>
-      <a class="btn" href="#fitness">Gym 2026</a>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><strong id="toolCount">30+</strong><span>Browser utilities</span></div>
-      <div class="stat"><strong>Free</strong><span>No account required</span></div>
-      <div class="stat"><strong>Mobile-first</strong><span>Responsive interface</span></div>
-    </div>
-  </section>
-
-  <div class="ad-slot" aria-label="Advertisement area">
-    <div><span class="ad-label">Advertisement</span><span class="small">Ad placement area · Content remains accessible</span></div>
-  </div>
-
-  <section id="tools">
-    <div class="section-head">
-      <div>
-        <h2>Explore tools</h2>
-        <p>Choose a task. Enter your information. Get a clear result.</p>
+      <div class="search-wrap">
+        <span class="search-symbol">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search 30+ tools…" autocomplete="off" aria-label="Search tools">
+        <span class="search-shortcut">TOOLS</span>
       </div>
-      <button class="btn" id="clearSearchBtn" type="button">Reset search</button>
-    </div>
-    <div class="chips" id="categoryChips" aria-label="Tool categories"></div>
-    <div class="tool-grid" id="toolGrid"></div>
-    <p class="muted hidden" id="emptyMessage">No matching tools. Try another search or category.</p>
-  </section>
 
-  <section id="quick">
-    <div class="section-head">
-      <div><h2>Everyday essentials</h2><p>Quick links for common tasks.</p></div>
+      <select class="select-small" id="regionSelect" aria-label="Choose region">
+        <option value="Global">🌐 Global</option>
+        <option value="Pakistan">🇵🇰 Pakistan</option>
+        <option value="Saudi Arabia">🇸🇦 Saudi Arabia</option>
+        <option value="United States">🇺🇸 United States</option>
+        <option value="United Kingdom">🇬🇧 United Kingdom</option>
+        <option value="Bahrain">🇧🇭 Bahrain</option>
+      </select>
+      <button class="icon-button" id="themeButton" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button>
+      <button class="icon-button" id="logoButton" aria-label="Upload your own logo" title="Customize logo">＋</button>
+      <input type="file" id="logoUpload" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
     </div>
-    <div class="feature-grid">
-      <article class="feature-card">
-        <div class="tool-icon">🌐</div><h3>Language & region</h3>
-        <p>Choose a region for date, number and currency formatting.</p>
-        <label class="field"><span class="muted small">Your region</span>
-          <select id="regionSelect" aria-label="Select region">
-            <option value="PK">Pakistan · PKR</option>
-            <option value="SA">Saudi Arabia · SAR</option>
-            <option value="US">United States · USD</option>
-            <option value="GB">United Kingdom · GBP</option>
-            <option value="BH">Bahrain · BHD</option>
-            <option value="AE">United Arab Emirates · AED</option>
-            <option value="CA">Canada · CAD</option>
-            <option value="AU">Australia · AUD</option>
-            <option value="IN">India · INR</option>
-            <option value="GLOBAL">International</option>
-          </select>
-        </label>
-        <p id="regionInfo" class="small muted"></p>
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">🖼️</div><h3>Your brand</h3>
-        <p>Upload your own logo for this browser session. Your file stays on your device unless you choose to share it.</p>
-        <button class="btn" id="uploadLogoBtn2" type="button">Choose logo</button>
-        <input id="logoInput" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">🔗</div><h3>Share SHAHEEN</h3>
-        <p>Send the site to friends using the device share sheet or WhatsApp.</p>
-        <button class="btn" id="whatsappBtn" type="button">Share on WhatsApp</button>
-      </article>
-    </div>
-  </section>
+  </header>
 
-  <section id="study">
-    <div class="section-head">
-      <div><h2>Study & focus</h2><p>Make a small, focused start. Save your own progress locally.</p></div>
+  <main class="shell" id="view"></main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>
+        <strong style="color:var(--text)">SHAHEEN Tools</strong>
+        <div style="margin-top:5px">Useful digital utilities, designed for everyday work.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about" data-page="about">About</a>
+        <a href="#privacy" data-page="privacy">Privacy</a>
+        <a href="mailto:shaheen.tools.contact@gmail.com">Contact</a>
+        <button id="shareButton">Share website ↗</button>
+      </div>
+      <div>© <span id="year"></span> SHAHEEN. Use tools responsibly.</div>
     </div>
-    <div class="feature-grid">
-      <article class="feature-card">
-        <div class="tool-icon">⏱️</div>
-        <h3>Focus timer</h3>
-        <p>Use a focus session and take a break when you need one.</p>
-        <div class="field">
-          <label for="focusMinutes">Session length (minutes)</label>
-          <input id="focusMinutes" type="number" min="1" max="180" value="25">
+  </footer>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <div class="bottom-inner">
+      <button class="nav-item active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
+      <button class="nav-item" data-page="tools"><span class="nav-icon">▦</span>Tools</button>
+      <button class="nav-item" data-page="daily"><span class="nav-icon">◷</span>Daily</button>
+      <button class="nav-item" data-page="global"><span class="nav-icon">◎</span>Global</button>
+      <button class="nav-item" data-page="saved"><span class="nav-icon">☆</span>Saved</button>
+    </div>
+  </nav>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="tool-icon" id="modalIcon">⚡</div>
+        <div class="modal-heading">
+          <h2 id="modalTitle">Tool</h2>
+          <p id="modalDescription">A simple, useful online tool.</p>
         </div>
-        <div class="timer" id="focusClock" aria-live="off">25:00</div>
-        <div class="timer-controls">
-          <button class="btn primary" id="timerStart" type="button">Start</button>
-          <button class="btn" id="timerPause" type="button">Pause</button>
-          <button class="btn" id="timerReset" type="button">Reset</button>
-        </div>
-        <p class="muted small" id="timerStatus" aria-live="polite">Ready when you are.</p>
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">📝</div>
-        <h3>Quick notes</h3>
-        <p>Notes are stored only in this browser using local storage.</p>
-        <label class="field">
-          <span class="muted small">Your note</span>
-          <textarea id="notesInput" placeholder="Write a reminder, idea or study goal…"></textarea>
-        </label>
-        <div class="tool-actions">
-          <button class="btn primary" id="saveNotes" type="button">Save note</button>
-          <button class="btn" id="clearNotes" type="button">Clear</button>
-        </div>
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">📚</div>
-        <h3>Flashcards</h3>
-        <p>Create a simple question and answer card to practise recall.</p>
-        <label class="field"><span class="muted small">Question</span><input id="flashQ" placeholder="What do you want to remember?"></label>
-        <label class="field"><span class="muted small">Answer</span><textarea id="flashA" placeholder="Write the answer…"></textarea></label>
-        <div class="tool-actions">
-          <button class="btn primary" id="saveFlash" type="button">Save card</button>
-          <button class="btn" id="showFlash" type="button">Review saved cards</button>
-        </div>
-        <div id="flashResult" class="notice small hidden"></div>
-      </article>
+        <button class="icon-button modal-close" id="modalClose" aria-label="Close tool">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
     </div>
-  </section>
-
-  <section id="fitness">
-    <div class="section-head">
-      <div><h2>Gym 2026 · Movement break</h2><p>Simple animated illustrations and beginner-friendly movement cues—not medical advice.</p></div>
-    </div>
-    <div class="exercise-grid">
-      <article class="exercise">
-        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
-        <h3>March in place</h3><p class="muted small">Stand comfortably. Alternate lifting your feet at a gentle pace. Keep breathing normally.</p>
-        <button class="btn exerciseBtn" data-exercise="March in place" type="button">Start 30 sec</button>
-      </article>
-      <article class="exercise">
-        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
-        <h3>Shoulder rolls</h3><p class="muted small">Roll your shoulders slowly in a comfortable range. Stop if you feel pain.</p>
-        <button class="btn exerciseBtn" data-exercise="Shoulder rolls" type="button">Start 30 sec</button>
-      </article>
-      <article class="exercise">
-        <figure aria-label="Animated exercise illustration"><div class="figure-person" aria-hidden="true"></div></figure>
-        <h3>Gentle side steps</h3><p class="muted small">Take small side steps on a clear, stable surface. Move at your own pace.</p>
-        <button class="btn exerciseBtn" data-exercise="Gentle side steps" type="button">Start 30 sec</button>
-      </article>
-    </div>
-    <div class="panel" style="margin-top:14px">
-      <h3 id="exerciseTitle">Ready for a movement break?</h3>
-      <div class="progress" aria-label="Exercise timer progress"><span id="exerciseProgress"></span></div>
-      <p class="muted small" id="exerciseStatus" aria-live="polite">Choose an activity above. Rest whenever you need to.</p>
-      <button class="btn" id="stopExercise" type="button">Stop</button>
-    </div>
-  </section>
-
-  <section id="global">
-    <div class="section-head">
-      <div><h2>Global utilities</h2><p>Useful formats for different countries and everyday situations.</p></div>
-    </div>
-    <div class="feature-grid">
-      <article class="feature-card">
-        <div class="tool-icon">📅</div><h3>Local date & time</h3>
-        <p id="localDate" aria-live="off"></p>
-        <p class="muted small">Uses your device's current date and time settings.</p>
-        <button class="btn" id="refreshDate" type="button">Refresh</button>
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">🔐</div><h3>Privacy by design</h3>
-        <p>Most tools here process inputs in your browser. Do not enter sensitive passwords or confidential information into tools you do not trust.</p>
-        <a class="btn" href="#privacy">Privacy information</a>
-      </article>
-      <article class="feature-card">
-        <div class="tool-icon">💡</div><h3>Suggest a tool</h3>
-        <p>Tell us which everyday task should become easier.</p>
-        <a class="btn" id="suggestBtn" href="#">Send suggestion</a>
-      </article>
-    </div>
-  </section>
-
-  <section id="privacy">
-    <div class="panel">
-      <h2>Privacy & transparency</h2>
-      <p class="muted">SHAHEEN's browser-based tools are designed to process your input locally whenever practical. Saved notes, favourites and theme settings may use local browser storage. Clearing browser data can remove them. Advertising partners may use cookies or similar technologies according to their own policies and your region's consent requirements.</p>
-      <p class="muted">Do not upload confidential documents or personal information unless you understand how the feature processes it. For an actual public launch, replace this notice with a complete, accurate privacy policy and contact details for the site owner.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="wrap">
-    <a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">SHAHEEN</span></a>
-    <p class="muted">Practical digital utilities for everyday life.</p>
-    <div class="footer-links">
-      <a href="#tools">Tools</a><a href="#study">Study</a><a href="#fitness">Fitness</a>
-      <a href="#privacy">Privacy</a><a href="#home">Back to top ↑</a>
-    </div>
-    <p class="muted small">© <span id="year"></span> SHAHEEN. Built for useful tasks, not endless scrolling.</p>
   </div>
-</footer>
 
-<nav class="bottom-nav" aria-label="Main navigation">
-  <a class="nav-btn active" href="#home"><span>⌂</span><span>Home</span></a>
-  <a class="nav-btn" href="#tools"><span>▦</span><span>Tools</span></a>
-  <a class="nav-btn" href="#study"><span>◷</span><span>Study</span></a>
-  <a class="nav-btn" href="#fitness"><span>♧</span><span>Fitness</span></a>
-  <a class="nav-btn" href="#global"><span>◎</span><span>Global</span></a>
-</nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<dialog id="toolDialog" aria-labelledby="dialogTitle">
-  <div class="dialog-head">
-    <div><strong id="dialogTitle">Tool</strong><div class="muted small" id="dialogDescription"></div></div>
-    <button class="icon-btn" id="closeDialog" type="button" aria-label="Close tool">✕</button>
-  </div>
-  <div class="dialog-body">
-    <div id="toolFields"></div>
-    <div class="tool-actions">
-      <button class="btn primary" id="runTool" type="button">Run tool</button>
-      <button class="btn" id="copyResult" type="button">Copy result</button>
-      <button class="btn" id="clearTool" type="button">Clear</button>
-      <button class="btn" id="saveTool" type="button">☆ Save tool</button>
-    </div>
-    <h3>Result</h3>
-    <div class="result" id="toolResult" aria-live="polite">Your result will appear here.</div>
-    <p class="muted small" id="toolHint"></p>
-  </div>
-</dialog>
+  <script>
+    "use strict";
 
-<input id="logoFileFallback" class="hidden" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml">
-<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+    const TOOLS = [
+      { id:"calculator", name:"Smart Calculator", desc:"Evaluate everyday arithmetic safely.", cat:"Calculators", icon:"🧮", tag:"POPULAR" },
+      { id:"percentage", name:"Percentage Calculator", desc:"Find percentages, totals and changes.", cat:"Calculators", icon:"％" },
+      { id:"discount", name:"Discount Calculator", desc:"Calculate sale price and money saved.", cat:"Calculators", icon:"🏷️" },
+      { id:"bmi", name:"BMI Calculator", desc:"Estimate BMI from height and weight.", cat:"Calculators", icon:"⚖️" },
+      { id:"emi", name:"Loan / EMI Calculator", desc:"Estimate monthly payment and interest.", cat:"Calculators", icon:"💳" },
+      { id:"age", name:"Age Calculator", desc:"Calculate age from a date of birth.", cat:"Calculators", icon:"🎂" },
+      { id:"date-diff", name:"Date Difference", desc:"Count days between two dates.", cat:"Calculators", icon:"📅" },
+      { id:"unit-converter", name:"Unit Converter", desc:"Convert length, mass and speed units.", cat:"Converters", icon:"🔄" },
+      { id:"temperature", name:"Temperature Converter", desc:"Convert Celsius, Fahrenheit and Kelvin.", cat:"Converters", icon:"🌡️" },
+      { id:"currency", name:"Currency Converter", desc:"Get an indicative rate from a public API.", cat:"Converters", icon:"💱", tag:"LIVE RATE" },
+      { id:"word-counter", name:"Word & Character Counter", desc:"Count words, characters, lines and reading time.", cat:"Text", icon:"🔤" },
+      { id:"case-converter", name:"Text Case Converter", desc:"Uppercase, lowercase, title case and more.", cat:"Text", icon:"Aa" },
+      { id:"reverse-text", name:"Reverse Text", desc:"Reverse a text string instantly.", cat:"Text", icon:"↔️" },
+      { id:"slug-maker", name:"Slug Generator", desc:"Create clean URL-friendly slugs.", cat:"Text", icon:"🔗" },
+      { id:"duplicate-lines", name:"Remove Duplicate Lines", desc:"Deduplicate or sort a list of lines.", cat:"Text", icon:"☷" },
+      { id:"base64", name:"Base64 Encoder / Decoder", desc:"Encode text or decode Base64 safely.", cat:"Developer", icon:"🔐" },
+      { id:"url-codec", name:"URL Encoder / Decoder", desc:"Encode or decode URL components.", cat:"Developer", icon:"🌐" },
+      { id:"json", name:"JSON Formatter", desc:"Format, minify and validate JSON.", cat:"Developer", icon:"{ }" },
+      { id:"html-escape", name:"HTML Escape Tool", desc:"Escape or unescape HTML special characters.", cat:"Developer", icon:"</>" },
+      { id:"markdown", name:"Markdown Preview", desc:"Preview basic Markdown formatting.", cat:"Developer", icon:"✍️" },
+      { id:"lorem", name:"Lorem Text Generator", desc:"Create placeholder text on demand.", cat:"Text", icon:"📝" },
+      { id:"password", name:"Password Generator", desc:"Generate a random password on this device.", cat:"Security", icon:"🛡️" },
+      { id:"uuid", name:"UUID Generator", desc:"Create a random UUID in your browser.", cat:"Developer", icon:"🧬" },
+      { id:"qr-code", name:"QR Code Generator", desc:"Create a QR code for a link or short text.", cat:"Utilities", icon:"▦" },
+      { id:"image-optimizer", name:"Image Resizer & Compressor", desc:"Resize or export images in your browser.", cat:"Images", icon:"🖼️" },
+      { id:"images-to-pdf", name:"Images to PDF", desc:"Combine images into a PDF document.", cat:"PDF", icon:"📄" },
+      { id:"merge-pdf", name:"Merge PDF Files", desc:"Combine multiple PDFs in your browser.", cat:"PDF", icon:"📚" },
+      { id:"split-pdf", name:"Extract First PDF Page", desc:"Create a new PDF from page one.", cat:"PDF", icon:"✂️" },
+      { id:"pomodoro", name:"Focus Timer", desc:"Use a simple work and break timer.", cat:"Productivity", icon:"⏱️" },
+      { id:"world-clock", name:"World Clock", desc:"Check the time in key global cities.", cat:"Productivity", icon:"🌍" },
+      { id:"translator", name:"Quick Translation", desc:"Open your text in Google Translate.", cat:"Language", icon:"🗣️" },
+      { id:"color-tools", name:"Color & Palette Tool", desc:"Choose a color and generate a palette.", cat:"Design", icon:"🎨" }
+    ];
 
-<script>
-(() => {
-  "use strict";
+    const CATEGORIES = ["All", "Calculators", "Converters", "Text", "Developer", "Images", "PDF", "Utilities", "Productivity", "Security", "Language", "Design"];
+    const STORAGE = {
+      theme: "shaheen-theme-v1",
+      region: "shaheen-region-v1",
+      saved: "shaheen-saved-v1",
+      notes: "shaheen-notes-v1",
+      todos: "shaheen-todos-v1",
+      logo: "shaheen-logo-v1"
+    };
 
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const storage = {
-    get(key, fallback) {
+    const state = {
+      page: "home",
+      category: "All",
+      query: "",
+      saved: readJSON(STORAGE.saved, []),
+      activeTool: null,
+      timerSeconds: 25 * 60,
+      timerRunning: false,
+      timerMode: "Focus",
+      timerInterval: null,
+      imageFile: null,
+      imageOutputUrl: null,
+      region: localStorage.getItem(STORAGE.region) || "Global"
+    };
+
+    function readJSON(key, fallback) {
       try {
-        const value = localStorage.getItem("shaheen_" + key);
-        return value === null ? fallback : JSON.parse(value);
+        const v = JSON.parse(localStorage.getItem(key));
+        return v == null ? fallback : v;
       } catch (_) { return fallback; }
-    },
-    set(key, value) {
-      try { localStorage.setItem("shaheen_" + key, JSON.stringify(value)); }
-      catch (_) { toast("Could not save. Browser storage may be unavailable."); }
     }
-  };
 
-  let toastTimeout;
-  function toast(message) {
-    const el = $("#toast");
-    el.textContent = message;
-    el.classList.remove("hidden");
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => el.classList.add("hidden"), 2500);
-  }
+    function saveJSON(key, value) {
+      try { localStorage.setItem(key, JSON.stringify(value)); }
+      catch (_) { toast("Browser storage is full. Please remove some saved data."); }
+    }
 
-  const toolData = [
-    ["word-count","Word counter","Count words, characters, lines and paragraphs.","Text","📝","text"],
-    ["case-converter","Case converter","Convert text to upper, lower or title case.","Text","Aa","case"],
-    ["remove-spaces","Clean spaces","Remove extra spaces and blank lines.","Text","↔","clean"],
-    ["reverse-text","Reverse text","Reverse the order of characters.","Text","⇄","reverse"],
-    ["line-sort","Sort lines","Sort lines alphabetically.","Text","↕","sort"],
-    ["duplicate-lines","Remove duplicate lines","Keep one copy of each line.","Text","▤","dedupe"],
-    ["slug-maker","URL slug maker","Create a clean URL-friendly slug.","Text","🔗","slug"],
-    ["json-formatter","JSON formatter","Format and validate JSON data.","Developer","{ }","json"],
-    ["base64","Base64 encoder / decoder","Encode or decode Base64 text.","Developer","64","base64"],
-    ["url-encoder","URL encoder / decoder","Encode text for URLs or decode it.","Developer","％","url"],
-    ["html-escape","HTML text escape","Escape special HTML characters.","Developer","</>","html"],
-    ["password","Password generator","Generate a random password locally.","Security","🔐","password"],
-    ["uuid","UUID generator","Generate a random UUID.","Developer","#","uuid"],
-    ["hash","SHA-256 hash","Hash text using Web Crypto when available.","Security","⌁","hash"],
-    ["percentage","Percentage calculator","Find a percentage of a number.","Math","%","percentage"],
-    ["discount","Discount calculator","Calculate sale price and savings.","Math","🏷️","discount"],
-    ["tip","Tip calculator","Split a bill and calculate a tip.","Math","🧾","tip"],
-    ["simple-interest","Simple interest","Estimate simple interest and total.","Math","＋","interest"],
-    ["compound-interest","Compound interest","Estimate compound growth.","Math","↗","compound"],
-    ["average","Average calculator","Calculate the mean of a list of numbers.","Math","∑","average"],
-    ["bmi","BMI calculator","Calculate BMI from height and weight.","Health","♡","bmi"],
-    ["age","Age calculator","Calculate age from a birth date.","Date & time","🎂","age"],
-    ["date-difference","Date difference","Count days between two dates.","Date & time","📅","datediff"],
-    ["unit-length","Length converter","Convert common length units.","Converters","↔","length"],
-    ["unit-weight","Weight converter","Convert common mass units.","Converters","⚖","weight"],
-    ["unit-temp","Temperature converter","Convert Celsius, Fahrenheit and Kelvin.","Converters","🌡","temperature"],
-    ["number-format","Number formatter","Format a number for your region.","Converters","123","number"],
-    ["color","Color converter","Convert HEX colour to RGB.","Design","🎨","color"],
-    ["lorem","Lorem text generator","Create sample placeholder text.","Writing","¶","lorem"],
-    ["qr","QR code generator","Create a QR code image from text or a URL.","Sharing","▦","qr"],
-    ["typing","Typing practice","Practice typing and measure elapsed time.","Study","⌨","typing"]
-  ].map(([id,name,description,category,icon,engine]) =>
-    ({id,name,description,category,icon,engine}));
+    function esc(value) {
+      return String(value ?? "").replace(/[&<>"']/g, c => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      })[c]);
+    }
 
-  $("#toolCount").textContent = toolData.length + "+";
-  const categories = ["All", ...new Set(toolData.map(t => t.category))];
-  let activeCategory = "All";
-  let activeTool = null;
-  let lastResult = "";
-  const favourites = new Set(storage.get("favourites", []));
-  const recentlyUsed = storage.get("recent", []);
+    function toast(message) {
+      const el = document.getElementById("toast");
+      el.textContent = message;
+      el.classList.add("show");
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => el.classList.remove("show"), 2500);
+    }
 
-  function renderCategories() {
-    const host = $("#categoryChips");
-    host.replaceChildren();
-    categories.forEach(category => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "chip" + (activeCategory === category ? " active" : "");
-      button.textContent = category;
-      button.setAttribute("aria-pressed", String(activeCategory === category));
-      button.addEventListener("click", () => {
-        activeCategory = category;
-        renderCategories();
-        renderTools();
-      });
-      host.append(button);
-    });
-  }
+    function isSaved(id) { return state.saved.includes(id); }
 
-  function renderTools() {
-    const q = $("#searchInput").value.trim().toLowerCase();
-    const list = toolData.filter(t => {
-      const matchesCategory = activeCategory === "All" || t.category === activeCategory;
-      const matchesQuery = !q || [t.name,t.description,t.category,t.id].join(" ").toLowerCase().includes(q);
-      return matchesCategory && matchesQuery;
-    });
-    const grid = $("#toolGrid");
-    grid.replaceChildren();
-    list.forEach(tool => {
-      const card = document.createElement("button");
-      card.type = "button";
-      card.className = "tool-card";
-      card.setAttribute("aria-label", tool.name + ". " + tool.description);
-      const icon = document.createElement("div");
-      icon.className = "tool-icon";
-      icon.textContent = tool.icon;
-      const title = document.createElement("strong");
-      title.textContent = tool.name;
-      const desc = document.createElement("small");
-      desc.textContent = tool.description;
-      const foot = document.createElement("div");
-      foot.className = "card-foot";
-      const cat = document.createElement("span");
-      cat.textContent = tool.category;
-      const star = document.createElement("span");
-      star.textContent = favourites.has(tool.id) ? "★ Saved" : "↗ Open";
-      foot.append(cat,star);
-      card.append(icon,title,desc,foot);
-      card.addEventListener("click", () => openTool(tool));
-      grid.append(card);
-    });
-    $("#emptyMessage").classList.toggle("hidden", list.length !== 0);
-  }
+    function toggleSaved(id) {
+      state.saved = isSaved(id) ? state.saved.filter(x => x !== id) : [...state.saved, id];
+      saveJSON(STORAGE.saved, state.saved);
+      toast(isSaved(id) ? "Added to your favourites ★" : "Removed from favourites");
+      render();
+    }
 
-  function openTool(tool) {
-    activeTool = tool;
-    $("#dialogTitle").textContent = tool.name;
-    $("#dialogDescription").textContent = tool.description;
-    $("#toolHint").textContent = hintFor(tool.engine);
-    $("#toolFields").replaceChildren();
-    $("#toolResult").textContent = "Your result will appear here.";
-    lastResult = "";
-    const fieldHost = $("#toolFields");
+    function filteredTools() {
+      let list = TOOLS;
+      if (state.page === "saved") list = list.filter(t => isSaved(t.id));
+      if (state.category !== "All") list = list.filter(t => t.cat === state.category);
+      const q = state.query.trim().toLowerCase();
+      if (q) list = list.filter(t => [t.name, t.desc, t.cat, t.id].join(" ").toLowerCase().includes(q));
+      return list;
+    }
 
-    const addField = (id,label,type="text",placeholder="",value="") => {
-      const wrap = document.createElement("label");
-      wrap.className = "field";
-      const title = document.createElement("span");
-      title.textContent = label;
-      const input = type === "textarea" ? document.createElement("textarea") :
-        document.createElement("input");
-      input.id = id;
-      if (type !== "textarea") input.type = type;
-      input.placeholder = placeholder;
-      if (value !== "") input.value = value;
-      wrap.append(title,input);
-      fieldHost.append(wrap);
-      return input;
-    };
-    const addSelect = (id,label,options) => {
-      const wrap = document.createElement("label");
-      wrap.className = "field";
-      const title = document.createElement("span");
-      title.textContent = label;
-      const select = document.createElement("select");
-      select.id = id;
-      options.forEach(([value,text]) => {
-        const option = document.createElement("option");
-        option.value = value; option.textContent = text; select.append(option);
-      });
-      wrap.append(title,select); fieldHost.append(wrap); return select;
-    };
-    const addText = (label, placeholder="Paste or type here…") =>
-      addField("inputText",label,"textarea",placeholder);
+    function cardMarkup(t) {
+      return `
+        <article class="tool-card">
+          <div class="tool-top">
+            <div class="tool-icon" aria-hidden="true">${esc(t.icon)}</div>
+            <button class="tool-fav ${isSaved(t.id) ? "is-saved" : ""}" data-fav="${esc(t.id)}"
+              aria-label="${isSaved(t.id) ? "Remove" : "Save"} ${esc(t.name)}" title="Save favourite">
+              ${isSaved(t.id) ? "★" : "☆"}
+            </button>
+          </div>
+          <button data-tool="${esc(t.id)}" style="text-align:left;border:0;background:transparent;color:inherit;padding:0;display:flex;flex-direction:column;gap:7px;flex:1">
+            <h3>${esc(t.name)}</h3>
+            <p>${esc(t.desc)}</p>
+          </button>
+          <div class="tool-meta">
+            <span class="tool-category">${esc(t.cat)}</span>
+            <button class="text-link tool-open" data-tool="${esc(t.id)}">Open →</button>
+          </div>
+        </article>`;
+    }
 
-    const engine = tool.engine;
-    if (["text","case","clean","reverse","sort","dedupe","slug","base64","url","html","hash","lorem","typing"].includes(engine)) {
-      addText(engine === "typing" ? "Text to type" : "Input text",
-        engine === "typing" ? "Copy this text into the practice box below…" : "Enter text here…");
-      if (engine === "case") addSelect("caseMode","Convert to",[
-        ["upper","UPPERCASE"],["lower","lowercase"],["title","Title Case"],["sentence","Sentence case"]]);
-      if (engine === "base64") addSelect("baseMode","Action",[["encode","Encode"],["decode","Decode"]]);
-      if (engine === "url") addSelect("urlMode","Action",[["encode","Encode"],["decode","Decode"]]);
-      if (engine === "typing") {
-        addField("typingInput","Practice typing","textarea","Start typing the text above…");
+    function toolsGrid(list) {
+      if (!list.length) return `<div class="empty" style="grid-column:1/-1"><div class="empty-icon">⌕</div><strong>No matching tools</strong><p>Try another keyword or choose a different category.</p><button class="btn" data-clear-search>Clear search</button></div>`;
+      return `<div class="tool-grid" id="toolGrid">${list.map(cardMarkup).join("")}</div>`;
+    }
+
+    function categoryMarkup() {
+      return `<div class="category-row">${CATEGORIES.map(c => `<button class="chip ${state.category === c ? "active" : ""}" data-category="${esc(c)}">${esc(c)}</button>`).join("")}</div>`;
+    }
+
+    function renderHome() {
+      const list = filteredTools();
+      const featured = ["calculator", "word-counter", "qr-code", "image-optimizer", "json", "currency"]
+        .map(id => TOOLS.find(t => t.id === id)).filter(Boolean);
+      return `
+        <section class="hero">
+          <span class="eyebrow"><span class="status-dot"></span> YOUR EVERYDAY DIGITAL TOOLKIT</span>
+          <h1>Big tasks.<br><span class="gradient-text">Smarter shortcuts.</span></h1>
+          <p class="hero-copy">A practical collection of free tools for calculations, text, files and productivity — right in your browser, with no account needed.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-page="tools">Explore all tools <span>↗</span></button>
+            <button class="btn" data-tool="calculator">Try Smart Calculator</button>
+          </div>
+          <div class="stats-row">
+            <div class="stat"><strong>${TOOLS.length}+</strong><span>Useful tools</span></div>
+            <div class="stat"><strong>Browser-first</strong><span>Local processing where possible</span></div>
+            <div class="stat"><strong>Global</strong><span>${esc(state.region)} selected</span></div>
+          </div>
+        </section>
+
+        <div class="section-head">
+          <div><h2>Jump right in</h2><p>Popular starting points for everyday tasks.</p></div>
+          <button class="text-link" data-page="tools">View all tools →</button>
+        </div>
+        <div class="tool-grid">${featured.map(cardMarkup).join("")}</div>
+
+        <div class="section-head"><div><h2>Browse the toolbox</h2><p>Find the right utility without digging through menus.</p></div></div>
+        ${categoryMarkup()}
+        ${toolsGrid(list)}
+
+        <div class="feature-strip">
+          <div class="feature"><div class="feature-icon">🔒</div><div><h3>Privacy-aware by design</h3><p>Many tools process text or images on your device. External services are labelled where used.</p></div></div>
+          <div class="feature"><div class="feature-icon">📱</div><div><h3>Made for mobile</h3><p>Responsive layouts, touch-friendly controls and navigation made for small screens.</p></div></div>
+          <div class="feature"><div class="feature-icon">★</div><div><h3>Your own quick list</h3><p>Save favourites on this device for faster access next time.</p></div></div>
+        </div>
+        <div class="notice"><strong>Transparency:</strong> SHAHEEN is growing. Advanced conversions may use a browser library or external service. Each tool shows what it does; do not upload sensitive files to services you do not trust.</div>
+      `;
+    }
+
+    function renderToolsPage() {
+      return `
+        <h1 class="page-title">All tools, one place.</h1>
+        <p class="page-subtitle">Search by task, browse a category or save the utilities you use most.</p>
+        ${categoryMarkup()}
+        ${toolsGrid(filteredTools())}
+      `;
+    }
+
+    function renderSavedPage() {
+      return `
+        <h1 class="page-title">Your favourites ★</h1>
+        <p class="page-subtitle">Saved locally on this device. No account required.</p>
+        ${toolsGrid(filteredTools())}
+        <div class="notice">Favourites are stored in this browser only. Clearing site data or switching devices may remove them.</div>
+      `;
+    }
+
+    function renderDailyPage() {
+      const todos = readJSON(STORAGE.todos, []);
+      const notes = localStorage.getItem(STORAGE.notes) || "";
+      return `
+        <h1 class="page-title">Your daily workspace.</h1>
+        <p class="page-subtitle">A tiny focus space for notes, tasks and finishing what matters.</p>
+        <div class="workspace-grid">
+          <section class="workspace-card">
+            <h3>⏱️ Focus timer</h3>
+            <p>Use a focused work session, then take a break.</p>
+            <div class="timer-face" id="dailyTimerFace">${formatTime(state.timerSeconds)}</div>
+            <div class="timer-state" id="dailyTimerState">${state.timerMode} · ${state.timerRunning ? "Running" : "Paused"}</div>
+            <div class="modal-actions" style="justify-content:center">
+              <button class="btn btn-primary" data-action="timer-toggle">${state.timerRunning ? "Pause" : "Start focus"}</button>
+              <button class="btn" data-action="timer-reset">Reset</button>
+              <button class="btn" data-action="timer-break">5 min break</button>
+            </div>
+          </section>
+          <section class="workspace-card">
+            <h3>📝 Quick notes</h3>
+            <p>Notes stay in this browser on this device.</p>
+            <div class="field"><textarea id="notesBox" placeholder="Write an idea, reminder or plan…">${esc(notes)}</textarea></div>
+            <button class="btn btn-primary" data-action="save-notes">Save notes</button>
+            <button class="btn" data-action="clear-notes">Clear</button>
+          </section>
+          <section class="workspace-card" style="grid-column:1/-1">
+            <h3>✓ To-do list</h3>
+            <p>Add small tasks and tick them off as you finish.</p>
+            <div class="field-row">
+              <div class="field"><input id="todoInput" placeholder="For example: test website on mobile"></div>
+              <div class="field" style="justify-content:end"><button class="btn btn-primary" data-action="add-todo">Add task +</button></div>
+            </div>
+            <ul class="todo-list">${todos.length ? todos.map((t,i)=>`<li class="todo-item ${t.done?"done":""}"><input type="checkbox" data-todo-toggle="${i}" ${t.done?"checked":""} aria-label="Mark task done"><span>${esc(t.text)}</span><button data-todo-delete="${i}" aria-label="Delete task">✕</button></li>`).join("") : `<li class="notice">No tasks yet. Add one above to get started.</li>`}</ul>
+          </section>
+        </div>`;
+    }
+
+    function renderGlobalPage() {
+      const cityZones = [
+        ["Pakistan", "Asia/Karachi"],
+        ["Riyadh", "Asia/Riyadh"],
+        ["London", "Europe/London"],
+        ["New York", "America/New_York"],
+        ["Manama", "Asia/Bahrain"],
+        ["Tokyo", "Asia/Tokyo"]
+      ];
+      return `
+        <h1 class="page-title">A little more global. 🌍</h1>
+        <p class="page-subtitle">Quick links for common international tasks. Choose a region in the top bar to personalize the workspace.</p>
+        <div class="workspace-grid">
+          <section class="workspace-card">
+            <h3>🕒 World clock</h3>
+            <p>Local times in different time zones.</p>
+            <div class="clock-grid" id="worldClocks">${cityZones.map(([label,zone]) => `<div class="mini-card"><span>${esc(label)}</span><strong class="clock-time" data-zone="${esc(zone)}">--:--</strong><span data-date-zone="${esc(zone)}">Loading…</span></div>`).join("")}</div>
+          </section>
+          <section class="workspace-card">
+            <h3>💱 Currency conversion</h3>
+            <p>Check an indicative exchange rate using a public rates service.</p>
+            <button class="btn btn-primary" data-tool="currency">Open currency converter →</button>
+            <div class="notice">Exchange rates can change. Confirm important payments with your bank or provider.</div>
+          </section>
+          <section class="workspace-card">
+            <h3>🗣️ Language help</h3>
+            <p>Open a third-party translation service when you need a quick translation.</p>
+            <button class="btn" data-tool="translator">Open quick translation →</button>
+          </section>
+          <section class="workspace-card">
+            <h3>🌐 Network speed</h3>
+            <p>Run an external internet speed test. Your test is performed by that service, not SHAHEEN.</p>
+            <a class="btn" href="https://fast.com/" target="_blank" rel="noopener noreferrer">Open Fast.com ↗</a>
+          </section>
+        </div>`;
+    }
+
+    function renderInfoPage(page) {
+      if (page === "about") return `
+        <h1 class="page-title">About SHAHEEN</h1>
+        <div class="workspace-card">
+          <p>SHAHEEN Tools is a developing collection of digital utilities for everyday calculations, text tasks, file workflows and productivity.</p>
+          <p>Our goal is to make common tasks easier to discover and use on mobile and desktop devices.</p>
+          <p>Some functions use third-party services or browser libraries. Those tools are identified in their interface.</p>
+          <p><strong>Developer:</strong> SHAHEEN Team</p>
+        </div>`;
+      return `
+        <h1 class="page-title">Privacy overview</h1>
+        <div class="workspace-card">
+          <h3>What stays on this device?</h3>
+          <p>Text utilities, calculators and several image operations run in your browser. Notes, tasks, theme preference, favourites and uploaded logo are saved locally using browser storage.</p>
+          <h3>Third-party services</h3>
+          <p>Currency rates, QR image creation, translation links, PDF libraries and advertising may connect to external providers. Those providers may receive the data necessary for their function. Avoid sending confidential information to third-party services.</p>
+          <h3>Advertising</h3>
+          <p>This build includes a Monetag advertising tag. Ad behaviour and data practices may depend on the provider and your settings.</p>
+          <h3>Your choice</h3>
+          <p>You can clear saved notes, tasks or site data from this browser. For questions, contact the website owner using a monitored contact address.</p>
+          <div class="notice">Before publishing, replace placeholder contact information and have this privacy notice reviewed for the actual services and regions you support.</div>
+        </div>`;
+    }
+
+    function render() {
+      const view = document.getElementById("view");
+      document.getElementById("searchInput").value = state.query;
+      document.getElementById("regionSelect").value = state.region;
+      document.querySelectorAll(".nav-item").forEach(n => n.classList.toggle("active", n.dataset.page === state.page));
+      if (state.page === "home") view.innerHTML = renderHome();
+      else if (state.page === "tools") view.innerHTML = renderToolsPage();
+      else if (state.page === "saved") view.innerHTML = renderSavedPage();
+      else if (state.page === "daily") view.innerHTML = renderDailyPage();
+      else if (state.page === "global") view.innerHTML = renderGlobalPage();
+      else if (state.page === "about" || state.page === "privacy") view.innerHTML = renderInfoPage(state.page);
+      else view.innerHTML = renderHome();
+      updateClocks();
+      updateTimerDisplays();
+    }
+
+    function navigate(page) {
+      state.page = page;
+      state.category = "All";
+      if (page !== "home" && page !== "tools" && page !== "saved") state.query = "";
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openTool(id) {
+      const tool = TOOLS.find(t => t.id === id);
+      if (!tool) return;
+      state.activeTool = id;
+      state.imageFile = null;
+      if (state.imageOutputUrl) { URL.revokeObjectURL(state.imageOutputUrl); state.imageOutputUrl = null; }
+
+      document.getElementById("modalIcon").textContent = tool.icon;
+      document.getElementById("modalTitle").textContent = tool.name;
+      document.getElementById("modalDescription").textContent = tool.desc;
+      document.getElementById("modalBody").innerHTML = toolForm(id);
+      document.getElementById("modalBackdrop").classList.add("open");
+      document.body.style.overflow = "hidden";
+      if (id === "world-clock") updateClocks();
+      if (id === "pomodoro") updateTimerDisplays();
+    }
+
+    function closeTool() {
+      document.getElementById("modalBackdrop").classList.remove("open");
+      document.body.style.overflow = "";
+      state.activeTool = null;
+      if (state.imageOutputUrl) {
+        URL.revokeObjectURL(state.imageOutputUrl);
+        state.imageOutputUrl = null;
       }
-    } else if (engine === "json") {
-      addText("JSON input","Paste JSON here…");
-      addSelect("jsonMode","Output",[["pretty","Pretty print"],["compact","Compact JSON"]]);
-    } else if (engine === "password") {
-      addField("passLength","Password length","number","16","16");
-      addSelect("passSymbols","Symbols",[["yes","Include symbols"],["no","Letters and numbers only"]]);
-    } else if (engine === "uuid") {
-      addField("uuidCount","How many UUIDs?","number","1","1");
-    } else if (engine === "percentage") {
-      addField("numberA","Number","number","e.g. 200");
-      addField("numberB","Percentage (%)","number","e.g. 15");
-    } else if (engine === "discount") {
-      addField("numberA","Original price","number","e.g. 100");
-      addField("numberB","Discount (%)","number","e.g. 20");
-    } else if (engine === "tip") {
-      addField("numberA","Bill amount","number","e.g. 50");
-      addField("numberB","Tip (%)","number","e.g. 10");
-      addField("numberC","People sharing","number","e.g. 2","1");
-    } else if (engine === "interest" || engine === "compound") {
-      addField("numberA","Principal amount","number","e.g. 1000");
-      addField("numberB","Annual interest rate (%)","number","e.g. 5");
-      addField("numberC","Time in years","number","e.g. 3");
-      if (engine === "compound") addField("numberD","Compounding periods per year","number","12","12");
-    } else if (engine === "average") {
-      addText("Numbers separated by commas or new lines","10, 20, 30");
-    } else if (engine === "bmi") {
-      addField("numberA","Weight (kg)","number","e.g. 60");
-      addField("numberB","Height (cm)","number","e.g. 170");
-    } else if (engine === "age") {
-      addField("dateA","Date of birth","date");
-    } else if (engine === "datediff") {
-      addField("dateA","Start date","date");
-      addField("dateB","End date","date");
-    } else if (engine === "length" || engine === "weight" || engine === "temperature") {
-      addField("numberA","Value","number","Enter a value");
-      const units = engine === "length"
-        ? [["m","Metres"],["km","Kilometres"],["cm","Centimetres"],["mi","Miles"],["ft","Feet"],["in","Inches"]]
-        : engine === "weight"
-        ? [["kg","Kilograms"],["g","Grams"],["lb","Pounds"],["oz","Ounces"]]
-        : [["C","Celsius"],["F","Fahrenheit"],["K","Kelvin"]];
-      addSelect("unitFrom","From unit",units);
-      addSelect("unitTo","To unit",units);
-    } else if (engine === "number") {
-      addField("numberA","Number","number","e.g. 1234567.89");
-      addSelect("locale","Format for",[
-        ["en-US","United States"],["en-GB","United Kingdom"],["ur-PK","Pakistan"],
-        ["ar-SA","Saudi Arabia"],["ar-BH","Bahrain"],["en-CA","Canada"],
-        ["en-AU","Australia"],["en-IN","India"]]);
-    } else if (engine === "color") {
-      addField("colorInput","HEX colour","text","#42E8F5","#42E8F5");
-    } else if (engine === "qr") {
-      addText("Text or URL for QR code","https://example.com");
     }
-    $("#saveTool").textContent = favourites.has(tool.id) ? "★ Saved" : "☆ Save tool";
-    $("#toolDialog").showModal();
-    const recent = [tool.id, ...recentlyUsed.filter(id => id !== tool.id)].slice(0, 8);
-    recentlyUsed.splice(0, recentlyUsed.length, ...recent);
-    storage.set("recent", recentlyUsed);
-    $("#closeDialog").focus();
-  }
 
-  function hintFor(engine) {
-    const hints = {
-      hash:"SHA-256 runs in your browser when Web Crypto is available.",
-      password:"Generated locally. For important accounts, use a trusted password manager.",
-      bmi:"BMI is a screening measure, not a diagnosis. Interpretation depends on age and other factors.",
-      qr:"The QR image is created by an external QR service. Do not encode private information.",
-      typing:"Type the displayed sample. Your speed estimate is based on elapsed time and typed characters.",
-      temperature:"Conversions are calculated locally.",
-      compound:"This is a mathematical estimate and excludes taxes, fees and changing rates."
-    };
-    return hints[engine] || "This tool processes your input in your browser where practical.";
-  }
+    function field(label, id, type="text", placeholder="", value="") {
+      return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}" value="${value}"></div>`;
+    }
+    function textareaField(label, id, placeholder="Paste or type here…", value="") {
+      return `<div class="field"><label for="${id}">${label}</label><textarea id="${id}" placeholder="${placeholder}">${esc(value)}</textarea></div>`;
+    }
+    function selectField(label, id, options) {
+      return `<div class="field"><label for="${id}">${label}</label><select id="${id}">${options.map(o=>`<option value="${esc(o[0])}">${esc(o[1])}</option>`).join("")}</select></div>`;
+    }
+    function outputBox() {
+      return `<div class="result" id="toolOutput" aria-live="polite"><div class="result-label">Result</div><div class="result-text">Your result will appear here.</div></div>
+        <div class="modal-actions"><button class="btn" data-action="copy-output">Copy result</button></div>`;
+    }
 
-  const val = id => {
-    const el = $("#" + id);
-    return el ? el.value : "";
-  };
-  const num = id => {
-    const n = Number(val(id));
-    if (!val(id).trim() || !Number.isFinite(n)) throw new Error("Enter valid numbers in all required fields.");
-    return n;
-  };
-  const fmt = n => Number(n).toLocaleString(undefined,{maximumFractionDigits:6});
-  const textInput = () => val("inputText");
+    function toolForm(id) {
+      switch (id) {
+        case "word-counter":
+          return `${textareaField("Your text", "textInput", "Start typing or paste your text…")}
+            <div class="workspace-grid" id="countResults">
+              <div class="mini-card"><span>Words</span><strong id="wordsCount">0</strong></div>
+              <div class="mini-card"><span>Characters</span><strong id="charsCount">0</strong></div>
+              <div class="mini-card"><span>Characters without spaces</span><strong id="charsNoSpaces">0</strong></div>
+              <div class="mini-card"><span>Lines / reading time</span><strong id="linesCount">0 / 0 min</strong></div>
+            </div><p class="notice">Counting is done locally in this browser.</p>`;
+        case "case-converter":
+          return `${textareaField("Your text", "textInput")}
+            <div class="modal-actions">
+              <button class="btn btn-primary" data-action="case-upper">UPPERCASE</button>
+              <button class="btn" data-action="case-lower">lowercase</button>
+              <button class="btn" data-action="case-title">Title Case</button>
+              <button class="btn" data-action="case-sentence">Sentence case</button>
+            </div>${outputBox()}`;
+        case "reverse-text":
+          return `${textareaField("Text to reverse", "textInput")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="reverse">Reverse text</button></div>${outputBox()}`;
+        case "slug-maker":
+          return `${field("Text for URL slug", "textInput", "text", "Your page title")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="slug">Generate slug</button></div>${outputBox()}`;
+        case "duplicate-lines":
+          return `${textareaField("Enter lines", "textInput", "One item per line…")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="unique-lines">Remove duplicates</button><button class="btn" data-action="sort-lines">Sort lines A–Z</button></div>${outputBox()}`;
+        case "base64":
+          return `${textareaField("Input text", "textInput")}
+            ${selectField("Operation", "operation", [["encode","Encode to Base64"],["decode","Decode Base64"]])}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="base64">Run</button></div>${outputBox()}
+            <div class="notice">Base64 is an encoding format, not encryption.</div>`;
+        case "url-codec":
+          return `${textareaField("Input", "textInput")}
+            ${selectField("Operation", "operation", [["encode","URL encode"],["decode","URL decode"]])}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="url-codec">Run</button></div>${outputBox()}`;
+        case "json":
+          return `${textareaField("JSON input", "textInput", '{"hello":"world","items":[1,2,3]}')}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="json-pretty">Format</button><button class="btn" data-action="json-minify">Minify</button><button class="btn" data-action="json-validate">Validate</button></div>${outputBox()}`;
+        case "html-escape":
+          return `${textareaField("Input", "textInput", '<h1>Hello & welcome</h1>')}
+            ${selectField("Operation", "operation", [["escape","Escape HTML"],["unescape","Unescape HTML"]])}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="html-escape">Convert</button></div>${outputBox()}`;
+        case "markdown":
+          return `${textareaField("Markdown text", "textInput", "# Hello\n\nWrite **bold** text, *italic* text and a list:\n- One\n- Two")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="markdown-preview">Preview</button></div>
+            <div class="result"><div class="result-label">Preview</div><div id="markdownResult" class="result-text"></div></div>
+            <div class="notice">Basic Markdown preview only; raw HTML is not rendered as HTML.</div>`;
+        case "lorem":
+          return `${field("Number of words", "loremCount", "number", "", "100")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="lorem">Generate placeholder text</button></div>${outputBox()}`;
+        case "password":
+          return `${field("Password length (8–128)", "passLength", "number", "", "20")}
+            <label class="check-row"><input type="checkbox" id="passUpper" checked> Uppercase letters (A–Z)</label>
+            <label class="check-row"><input type="checkbox" id="passLower" checked> Lowercase letters (a–z)</label>
+            <label class="check-row"><input type="checkbox" id="passNumbers" checked> Numbers (0–9)</label>
+            <label class="check-row"><input type="checkbox" id="passSymbols" checked> Symbols</label>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="password">Generate password</button></div>${outputBox()}
+            <div class="notice">A random password is generated on this device. Store it in a reputable password manager.</div>`;
+        case "uuid":
+          return `<p>Generate a random UUID using your browser's cryptographic API when available.</p>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="uuid">Generate UUID</button></div>${outputBox()}`;
+        case "calculator":
+          return `${field("Expression", "calcInput", "text", "Example: (12 + 4) * 3 / 2", "12 * (4 + 3)")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="calculate">Calculate</button>
+            ${["7","8","9","/","4","5","6","*","1","2","3","-","0",".","(",")","+","%"].map(c=>`<button class="btn" data-calc-char="${esc(c)}">${esc(c)}</button>`).join("")}
+            <button class="btn" data-action="calc-clear">Clear</button></div>${outputBox()}
+            <div class="notice">Supports numbers, parentheses and + − × ÷ %. It does not run arbitrary JavaScript.</div>`;
+        case "percentage":
+          return `<div class="field-row">${field("Percentage (%)", "percentRate", "number", "", "15")}${field("Number", "percentNumber", "number", "", "200")}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="percentage">Calculate</button></div>${outputBox()}`;
+        case "discount":
+          return `<div class="field-row">${field("Original price", "discountPrice", "number", "", "100")}${field("Discount (%)", "discountRate", "number", "", "20")}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="discount">Calculate sale price</button></div>${outputBox()}`;
+        case "bmi":
+          return `<div class="field-row">${field("Weight (kg)", "bmiWeight", "number", "", "65")}${field("Height (cm)", "bmiHeight", "number", "", "170")}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="bmi">Calculate BMI</button></div>${outputBox()}
+            <div class="notice">BMI is a rough screening measure for adults, not a diagnosis or a complete assessment of health.</div>`;
+        case "emi":
+          return `${field("Loan amount", "emiPrincipal", "number", "", "100000")}
+            <div class="field-row">${field("Annual interest rate (%)", "emiRate", "number", "", "10")}${field("Loan term (months)", "emiMonths", "number", "", "12")}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="emi">Estimate payments</button></div>${outputBox()}
+            <div class="notice">Estimate only. Fees, compounding rules and lender terms may change the actual payment.</div>`;
+        case "age":
+          return `${field("Date of birth", "birthDate", "date")}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="age">Calculate age</button></div>${outputBox()}`;
+        case "date-diff":
+          return `<div class="field-row">${field("Start date", "dateStart", "date")}${field("End date", "dateEnd", "date")}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="date-diff">Count days</button></div>${outputBox()}`;
+        case "unit-converter":
+          return `${selectField("Type", "unitType", [["length","Length"],["mass","Mass / weight"],["speed","Speed"]])}
+            <div class="field-row">${field("Value", "unitValue", "number", "", "1")}${selectField("From", "unitFrom", [["m","Meters"],["km","Kilometers"],["cm","Centimeters"],["mi","Miles"],["ft","Feet"],["kg","Kilograms"],["g","Grams"],["lb","Pounds"],["kmh","km/h"],["mph","mph"],["ms","m/s"]])}</div>
+            ${selectField("To", "unitTo", [["km","Kilometers"],["m","Meters"],["cm","Centimeters"],["mi","Miles"],["ft","Feet"],["kg","Kilograms"],["g","Grams"],["lb","Pounds"],["kmh","km/h"],["mph","mph"],["ms","m/s"]])}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="unit-convert">Convert</button></div>${outputBox()}
+            <div class="notice">Choose units from the same type (length, mass or speed).</div>`;
+        case "temperature":
+          return `${field("Value", "tempValue", "number", "", "25")}
+            <div class="field-row">${selectField("From", "tempFrom", [["C","Celsius"],["F","Fahrenheit"],["K","Kelvin"]])}${selectField("To", "tempTo", [["F","Fahrenheit"],["C","Celsius"],["K","Kelvin"]])}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="temperature">Convert</button></div>${outputBox()}`;
+        case "currency":
+          return `${field("Amount", "currencyAmount", "number", "", "100")}
+            <div class="field-row">${selectField("From", "currencyFrom", [["USD","USD — US dollar"],["PKR","PKR — Pakistani rupee"],["SAR","SAR — Saudi riyal"],["GBP","GBP — Pound sterling"],["EUR","EUR — Euro"],["BHD","BHD — Bahraini dinar"],["AED","AED — UAE dirham"],["INR","INR — Indian rupee"],["CAD","CAD — Canadian dollar"],["AUD","AUD — Australian dollar"],["JPY","JPY — Japanese yen"]])}
+            ${selectField("To", "currencyTo", [["PKR","PKR — Pakistani rupee"],["USD","USD — US dollar"],["SAR","SAR — Saudi riyal"],["GBP","GBP — Pound sterling"],["EUR","EUR — Euro"],["BHD","BHD — Bahraini dinar"],["AED","AED — UAE dirham"],["INR","INR — Indian rupee"],["CAD","CAD — Canadian dollar"],["AUD","AUD — Australian dollar"],["JPY","JPY — Japanese yen"]])}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="currency">Get latest available rate</button></div>${outputBox()}
+            <div class="notice">Connects to open.er-api.com. Rates may be delayed or unavailable and are not financial advice.</div>`;
+        case "qr-code":
+          return `${field("Text or URL", "qrText", "text", "https://example.com", location.href)}
+            <div class="modal-actions"><button class="btn btn-primary" data-action="qr">Generate QR</button></div>
+            <div id="qrResult"></div>
+            <div class="notice">QR creation uses a third-party service, which receives the text or URL you enter. Do not encode private information.</div>`;
+        case "image-optimizer":
+          return `<div class="field"><label for="imageFile">Choose an image</label><input type="file" id="imageFile" accept="image/*"></div>
+            <div class="field-row">${field("Target width (pixels)", "imageWidth", "number", "", "1200")}
+              ${selectField("Output format", "imageFormat", [["image/webp","WebP"],["image/jpeg","JPEG"],["image/png","PNG"]])}</div>
+            <div class="field"><label for="imageQuality">Quality for WebP/JPEG: <span id="imageQualityLabel">82%</span></label><input id="imageQuality" type="range" min="30" max="100" value="82"></div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="image-optimize">Resize / export image</button></div>
+            <div id="imageResult"></div>
+            <div class="notice">Image processing runs on this device using Canvas. Very large images may use considerable memory.</div>`;
+        case "images-to-pdf":
+          return `<div class="field"><label for="pdfImages">Choose images (JPG or PNG)</label><input type="file" id="pdfImages" accept="image/jpeg,image/png" multiple></div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="images-to-pdf">Create PDF</button></div>${outputBox()}
+            <div class="notice">Images are processed in the browser. The PDF library is loaded from a public CDN when needed.</div>`;
+        case "merge-pdf":
+          return `<div class="field"><label for="pdfFiles">Choose two or more PDF files</label><input type="file" id="pdfFiles" accept="application/pdf,.pdf" multiple></div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="merge-pdf">Merge PDFs</button></div>${outputBox()}
+            <div class="notice">The PDF library is downloaded from a public CDN when needed. File contents are processed by your browser after the library loads.</div>`;
+        case "split-pdf":
+          return `<div class="field"><label for="pdfSingle">Choose a PDF</label><input type="file" id="pdfSingle" accept="application/pdf,.pdf"></div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="split-pdf">Extract first page</button></div>${outputBox()}
+            <div class="notice">This simple version extracts the first page only. It is not a complete page-range editor.</div>`;
+        case "pomodoro":
+          return `<div class="timer-face" id="modalTimerFace">${formatTime(state.timerSeconds)}</div>
+            <div class="timer-state" id="modalTimerState">${state.timerMode} · ${state.timerRunning ? "Running" : "Paused"}</div>
+            <div class="modal-actions" style="justify-content:center"><button class="btn btn-primary" data-action="timer-toggle">${state.timerRunning ? "Pause" : "Start"}</button><button class="btn" data-action="timer-reset">Reset</button><button class="btn" data-action="timer-break">5 min break</button><button class="btn" data-action="timer-focus">25 min focus</button></div>`;
+        case "world-clock":
+          return `<p>Current times in selected world cities.</p><div class="clock-grid" id="modalClocks">
+            ${[["Pakistan","Asia/Karachi"],["Riyadh","Asia/Riyadh"],["London","Europe/London"],["New York","America/New_York"],["Manama","Asia/Bahrain"],["Tokyo","Asia/Tokyo"]].map(([label,zone])=>`<div class="mini-card"><span>${esc(label)}</span><strong class="clock-time" data-zone="${esc(zone)}">--:--</strong><span data-date-zone="${esc(zone)}">Loading…</span></div>`).join("")}
+            </div>`;
+        case "translator":
+          return `${textareaField("Text to translate", "translateText", "Type or paste a short text…")}
+            <div class="field-row">${selectField("Translate from", "translateFrom", [["auto","Detect language"],["en","English"],["ur","Urdu"],["ar","Arabic"],["es","Spanish"],["fr","French"],["de","German"],["hi","Hindi"],["zh-CN","Chinese"]])}
+            ${selectField("Translate to", "translateTo", [["ur","Urdu"],["en","English"],["ar","Arabic"],["es","Spanish"],["fr","French"],["de","German"],["hi","Hindi"],["zh-CN","Chinese"]])}</div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="translate">Continue in Google Translate ↗</button></div>
+            <div class="notice">Translation opens an external service. The text you submit will be sent to that service.</div>`;
+        case "color-tools":
+          return `<div class="field"><label for="colorInput">Choose a color</label><input id="colorInput" type="color" value="#2878f0" style="height:55px;padding:5px"></div>
+            <div class="modal-actions"><button class="btn btn-primary" data-action="palette">Create palette</button></div>
+            <div id="paletteResult"></div>`;
+        default:
+          return `<div class="notice">This tool is not available in this build yet.</div>`;
+      }
+    }
 
-  async function runActiveTool() {
-    if (!activeTool) return;
-    try {
-      const e = activeTool.engine;
-      let out = "";
-      if (e === "text") {
-        const t = textInput();
-        out = "Words: " + (t.trim() ? t.trim().split(/\s+/u).length : 0) +
-          "\nCharacters (with spaces): " + t.length +
-          "\nCharacters (without whitespace): " + t.replace(/\s/gu,"").length +
-          "\nLines: " + (t.length ? t.split(/\r\n|\r|\n/).length : 0) +
-          "\nParagraphs: " + (t.trim() ? t.trim().split(/\n\s*\n/u).length : 0);
-      } else if (e === "case") {
-        const t = textInput(), mode = val("caseMode");
-        if (mode === "upper") out = t.toLocaleUpperCase();
-        else if (mode === "lower") out = t.toLocaleLowerCase();
-        else if (mode === "title") out = t.toLocaleLowerCase().replace(/(^|[\s\-_])(\p{L})/gu, (_,a,b)=>a+b.toLocaleUpperCase());
-        else out = t.toLocaleLowerCase().replace(/(^\s*\p{L}|[.!?]\s+\p{L})/gu, s=>s.toLocaleUpperCase());
-      } else if (e === "clean") {
-        out = textInput().split(/\r\n|\r|\n/).map(s=>s.trim().replace(/\s+/gu," ")).filter(Boolean).join("\n");
-      } else if (e === "reverse") {
-        out = [...textInput()].reverse().join("");
-      } else if (e === "sort") {
-        out = textInput().split(/\r\n|\r|\n/).sort((a,b)=>a.localeCompare(b)).join("\n");
-      } else if (e === "dedupe") {
-        out = [...new Set(textInput().split(/\r\n|\r|\n/))].join("\n");
-      } else if (e === "slug") {
-        out = textInput().normalize("NFKD").toLowerCase()
-          .replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");
-      } else if (e === "json") {
-        const parsed = JSON.parse(textInput());
-        out = val("jsonMode") === "compact" ? JSON.stringify(parsed) : JSON.stringify(parsed,null,2);
-      } else if (e === "base64") {
-        const t = textInput();
-        if (val("baseMode") === "encode") {
-          out = btoa(Array.from(new TextEncoder().encode(t), b=>String.fromCharCode(b)).join(""));
-        } else {
-          const bytes = Uint8Array.from(atob(t.trim()), c=>c.charCodeAt(0));
-          out = new TextDecoder("utf-8",{fatal:true}).decode(bytes);
+    function putOutput(value, label="Result") {
+      const out = document.getElementById("toolOutput");
+      if (!out) return;
+      out.innerHTML = `<div class="result-label">${esc(label)}</div><div class="result-text" id="resultValue">${esc(value)}</div>`;
+    }
+
+    function getInput(id) {
+      const el = document.getElementById(id);
+      return el ? el.value : "";
+    }
+
+    function toNumber(id) {
+      const n = Number(getInput(id));
+      if (!Number.isFinite(n)) throw new Error("Please enter a valid number.");
+      return n;
+    }
+
+    function formatNumber(num, digits=6) {
+      return Number(num.toFixed(digits)).toLocaleString(undefined, { maximumFractionDigits: digits });
+    }
+
+    async function copyText(value) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(value);
+        else {
+          const ta = document.createElement("textarea");
+          ta.value = value; ta.style.position = "fixed"; ta.style.opacity = "0";
+          document.body.appendChild(ta); ta.select();
+          const ok = document.execCommand("copy"); ta.remove();
+          if (!ok) throw new Error("Copy not supported");
         }
-      } else if (e === "url") {
-        out = val("urlMode") === "encode" ? encodeURIComponent(textInput()) : decodeURIComponent(textInput());
-      } else if (e === "html") {
-        out = textInput().replace(/&/g,"&amp;").replace(/</g,"&lt;")
-          .replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
-      } else if (e === "password") {
-        const length = Math.floor(num("passLength"));
-        if (length < 8 || length > 128) throw new Error("Choose a length from 8 to 128.");
-        const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789" +
-          (val("passSymbols")==="yes" ? "!@#$%^&*()-_=+[]{}?" : "");
-        const random = new Uint32Array(length);
-        crypto.getRandomValues(random);
-        out = Array.from(random, n=>chars[n % chars.length]).join("");
-      } else if (e === "uuid") {
-        const count = Math.floor(num("uuidCount"));
-        if (count < 1 || count > 50) throw new Error("Choose between 1 and 50 UUIDs.");
-        if (!crypto.randomUUID) throw new Error("UUID generation is not supported by this browser.");
-        out = Array.from({length:count},()=>crypto.randomUUID()).join("\n");
-      } else if (e === "hash") {
-        if (!crypto.subtle) throw new Error("SHA-256 requires a secure context such as HTTPS.");
-        const bytes = new TextEncoder().encode(textInput());
-        const digest = await crypto.subtle.digest("SHA-256",bytes);
-        out = [...new Uint8Array(digest)].map(b=>b.toString(16).padStart(2,"0")).join("");
-      } else if (e === "percentage") {
-        out = fmt(num("numberB") / 100 * num("numberA"));
-      } else if (e === "discount") {
-        const price=num("numberA"), pct=num("numberB");
-        if(price<0 || pct<0 || pct>100) throw new Error("Price must be non-negative and discount between 0 and 100.");
-        out = "Final price: " + fmt(price*(1-pct/100)) + "\nYou save: " + fmt(price*pct/100);
-      } else if (e === "tip") {
-        const bill=num("numberA"), pct=num("numberB"), people=Math.floor(num("numberC"));
-        if(bill<0 || pct<0 || people<1) throw new Error("Enter a non-negative bill/tip and at least one person.");
-        out = "Tip: " + fmt(bill*pct/100) + "\nTotal: " + fmt(bill*(1+pct/100)) +
-          "\nPer person: " + fmt(bill*(1+pct/100)/people);
-      } else if (e === "interest") {
-        const p=num("numberA"), r=num("numberB")/100, t=num("numberC");
-        if(p<0 || r<0 || t<0) throw new Error("Values cannot be negative.");
-        out = "Simple interest: " + fmt(p*r*t) + "\nTotal amount: " + fmt(p*(1+r*t));
-      } else if (e === "compound") {
-        const p=num("numberA"), r=num("numberB")/100, t=num("numberC"), n=Math.floor(num("numberD"));
-        if(p<0 || r<0 || t<0 || n<1 || n>365) throw new Error("Enter non-negative values and 1–365 compounding periods per year.");
-        const total=p*Math.pow(1+r/n,n*t);
-        out = "Estimated final amount: " + fmt(total) + "\nGrowth: " + fmt(total-p);
-      } else if (e === "average") {
-        const values=textInput().split(/[,\s;]+/u).filter(Boolean).map(Number);
-        if(!values.length || values.some(n=>!Number.isFinite(n))) throw new Error("Enter valid numbers separated by commas or spaces.");
-        out = "Count: " + values.length + "\nSum: " + fmt(values.reduce((a,b)=>a+b,0)) +
-          "\nAverage: " + fmt(values.reduce((a,b)=>a+b,0)/values.length);
-      } else if (e === "bmi") {
-        const kg=num("numberA"), cm=num("numberB");
-        if(kg<=0 || cm<=0) throw new Error("Weight and height must be greater than zero.");
-        const bmi=kg/Math.pow(cm/100,2);
-        out = "BMI: " + fmt(bmi) + "\nThis number alone cannot diagnose health. Adult BMI categories may not apply to children or teens.";
-      } else if (e === "age") {
-        const d=new Date(val("dateA")+"T00:00:00");
-        if(!val("dateA") || Number.isNaN(d.getTime()) || d>new Date()) throw new Error("Enter a valid birth date that is not in the future.");
-        const now=new Date();
-        let years=now.getFullYear()-d.getFullYear();
-        const beforeBirthday=now.getMonth()<d.getMonth() || (now.getMonth()===d.getMonth() && now.getDate()<d.getDate());
-        if(beforeBirthday) years--;
-        out = "Age: " + years + " years";
-      } else if (e === "datediff") {
-        const a=new Date(val("dateA")+"T00:00:00Z"), b=new Date(val("dateB")+"T00:00:00Z");
-        if(!val("dateA") || !val("dateB") || Number.isNaN(a.getTime()) || Number.isNaN(b.getTime())) throw new Error("Select both dates.");
-        out = "Difference: " + Math.abs(Math.round((b-a)/86400000)) + " days";
-      } else if (e === "length") {
-        const factors={m:1,km:1000,cm:.01,mi:1609.344,ft:.3048,in:.0254};
-        out = fmt(num("numberA")*factors[val("unitFrom")]/factors[val("unitTo")]) + " " + val("unitTo");
-      } else if (e === "weight") {
-        const factors={kg:1,g:.001,lb:.45359237,oz:.028349523125};
-        out = fmt(num("numberA")*factors[val("unitFrom")]/factors[val("unitTo")]) + " " + val("unitTo");
-      } else if (e === "temperature") {
-        const n=num("numberA"), from=val("unitFrom"), to=val("unitTo");
-        const c=from==="C"?n:from==="F"?(n-32)*5/9:n-273.15;
-        const result=to==="C"?c:to==="F"?c*9/5+32:c+273.15;
-        out = fmt(result) + " °" + to;
-      } else if (e === "number") {
-        const n=num("numberA");
-        out = new Intl.NumberFormat(val("locale"),{maximumFractionDigits:6}).format(n);
-      } else if (e === "color") {
-        let hex=val("colorInput").trim().replace(/^#/,"");
-        if(/^[0-9a-f]{3}$/i.test(hex)) hex=hex.split("").map(c=>c+c).join("");
-        if(!/^[0-9a-f]{6}$/i.test(hex)) throw new Error("Enter a valid 3- or 6-digit HEX colour.");
-        const rgb=hex.match(/.{2}/g).map(c=>parseInt(c,16));
-        out = "HEX: #" + hex.toUpperCase() + "\nRGB: rgb(" + rgb.join(", ") + ")" +
-          "\nCSS: color: #" + hex.toUpperCase() + ";";
-      } else if (e === "lorem") {
-        out = ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-          "Integer posuere, sapien sed facilisis commodo, erat neque feugiat lorem. ").repeat(5).trim();
-      } else if (e === "qr") {
-        const data=textInput().trim();
-        if(!data) throw new Error("Enter text or a URL.");
-        if(data.length>1500) throw new Error("Keep QR input under 1500 characters.");
-        const url="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data="+encodeURIComponent(data);
-        out = "QR code image URL:\n"+url+"\n\nThis uses an external service. Avoid encoding confidential data.";
-      } else if (e === "typing") {
-        const sample=textInput(), typed=val("typingInput");
-        const start=storage.get("typingStart",null);
-        if(!typed) throw new Error("Start typing the sample in the practice field.");
-        const elapsed=start ? Math.max(1,(Date.now()-start)/60000) : 1;
-        out = "Characters typed: " + typed.length + "\nEstimated WPM: " +
-          fmt((typed.trim().split(/\s+/u).filter(Boolean).length)/elapsed) +
-          "\nNote: start the exercise, then run again to update the estimate.";
-        if(!start) storage.set("typingStart",Date.now());
-        if(sample && typed === sample) out += "\nSample matched exactly.";
-      }
-      lastResult=out;
-      const result=$("#toolResult");
-      result.textContent=out;
-      if(e==="qr" && out.startsWith("QR code image URL:")) {
-        const url=out.split("\n")[1];
-        const img=document.createElement("img");
-        img.src=url; img.alt="Generated QR code"; img.width=260; img.height=260;
-        img.loading="lazy"; img.style.cssText="display:block;max-width:100%;height:auto;margin-top:14px;border-radius:12px";
-        result.append(document.createElement("br"),img);
-      }
-    } catch (err) {
-      lastResult="";
-      $("#toolResult").textContent="Could not complete this task: " + (err.message || "Please check your input.");
+        toast("Copied to clipboard");
+      } catch (_) { toast("Copy failed. Select the text and copy it manually."); }
     }
-  }
 
-  $("#searchInput").addEventListener("input",renderTools);
-  $("#searchBtn").addEventListener("click",()=>{ renderTools(); $("#tools").scrollIntoView({behavior:"smooth"}); });
-  $("#clearSearchBtn").addEventListener("click",()=>{
-    $("#searchInput").value=""; activeCategory="All"; renderCategories(); renderTools(); $("#searchInput").focus();
-  });
-  $("#runTool").addEventListener("click",runActiveTool);
-  $("#closeDialog").addEventListener("click",()=>$("#toolDialog").close());
-  $("#toolDialog").addEventListener("click",e=>{
-    if(e.target === $("#toolDialog")) $("#toolDialog").close();
-  });
-  $("#clearTool").addEventListener("click",()=>{
-    $$("#toolFields input, #toolFields textarea").forEach(el=>el.value="");
-    $("#toolResult").textContent="Your result will appear here.";
-    lastResult="";
-  });
-  $("#copyResult").addEventListener("click",async()=>{
-    if(!lastResult) return toast("Run the tool first.");
-    try { await navigator.clipboard.writeText(lastResult); toast("Result copied."); }
-    catch (_) { toast("Copy unavailable. Select and copy the result manually."); }
-  });
-  $("#saveTool").addEventListener("click",()=>{
-    if(!activeTool) return;
-    if(favourites.has(activeTool.id)) favourites.delete(activeTool.id);
-    else favourites.add(activeTool.id);
-    storage.set("favourites",[...favourites]);
-    $("#saveTool").textContent=favourites.has(activeTool.id)?"★ Saved":"☆ Save tool";
-    renderTools(); toast(favourites.has(activeTool.id)?"Tool saved":"Tool removed from saved tools");
-  });
-
-  $("#themeBtn").addEventListener("click",()=>{
-    document.body.classList.toggle("light");
-    storage.set("theme",document.body.classList.contains("light")?"light":"dark");
-  });
-  if(storage.get("theme","dark")==="light") document.body.classList.add("light");
-
-  async function shareSite() {
-    const payload={title:"SHAHEEN",text:"Try SHAHEEN — useful free tools for everyday tasks.",url:location.href};
-    if(navigator.share) {
-      try { await navigator.share(payload); } catch (_) {}
-    } else {
-      try { await navigator.clipboard.writeText(payload.url); toast("Website link copied."); }
-      catch (_) { toast("Copy this page's address from your browser."); }
+    function safeEvaluate(expression) {
+      const s = String(expression).replace(/\s+/g, "");
+      if (!s || !/^[0-9.+\-*/()%]+$/.test(s)) throw new Error("Use numbers and the operators + − × ÷ % with parentheses.");
+      let i = 0;
+      function expr() {
+        let v = term();
+        while (s[i] === "+" || s[i] === "-") {
+          const op = s[i++];
+          const r = term();
+          v = op === "+" ? v + r : v - r;
+        }
+        return v;
+      }
+      function term() {
+        let v = factor();
+        while (s[i] === "*" || s[i] === "/" || s[i] === "%") {
+          const op = s[i++];
+          const r = factor();
+          if ((op === "/" || op === "%") && r === 0) throw new Error("Cannot divide by zero.");
+          v = op === "*" ? v * r : op === "/" ? v / r : v % r;
+        }
+        return v;
+      }
+      function factor() {
+        if (s[i] === "+") { i++; return factor(); }
+        if (s[i] === "-") { i++; return -factor(); }
+        if (s[i] === "(") {
+          i++;
+          const v = expr();
+          if (s[i] !== ")") throw new Error("Missing closing parenthesis.");
+          i++;
+          return v;
+        }
+        const start = i;
+        while (i < s.length && /[0-9.]/.test(s[i])) i++;
+        if (start === i) throw new Error("Expected a number.");
+        const part = s.slice(start, i);
+        if ((part.match(/\./g) || []).length > 1) throw new Error("Invalid number.");
+        return Number(part);
+      }
+      const result = expr();
+      if (i !== s.length || !Number.isFinite(result)) throw new Error("Please check the expression.");
+      return result;
     }
-  }
-  $("#shareBtn").addEventListener("click",shareSite);
-  $("#whatsappBtn").addEventListener("click",()=>{
-    const text=encodeURIComponent("Try SHAHEEN — useful free tools for everyday tasks: "+location.href);
-    window.open("https://wa.me/?text="+text,"_blank","noopener,noreferrer");
-  });
 
-  function chooseLogo() { $("#logoInput").click(); }
-  $("#uploadLogoBtn").addEventListener("click",chooseLogo);
-  $("#uploadLogoBtn2").addEventListener("click",chooseLogo);
-  $("#logoInput").addEventListener("change",()=>{
-    const file=$("#logoInput").files && $("#logoInput").files[0];
-    if(!file) return;
-    if(!file.type.startsWith("image/")) return toast("Choose an image file.");
-    if(file.size>3*1024*1024) return toast("Choose an image under 3 MB.");
-    const reader=new FileReader();
-    reader.onload=()=>{
-      const img=document.createElement("img");
-      img.src=reader.result; img.alt="Your SHAHEEN logo";
-      $("#brandMark").replaceChildren(img);
-      toast("Logo preview updated for this page.");
-    };
-    reader.readAsDataURL(file);
-  });
+    function titleCase(s) {
+      return s.toLowerCase().replace(/\b[\p{L}\p{N}]/gu, c => c.toUpperCase());
+    }
 
-  $("#regionSelect").addEventListener("change",()=>{
-    const code=$("#regionSelect").value;
-    const names={PK:"Pakistan",SA:"Saudi Arabia",US:"United States",GB:"United Kingdom",
-      BH:"Bahrain",AE:"United Arab Emirates",CA:"Canada",AU:"Australia",IN:"India",GLOBAL:"International"};
-    $("#regionInfo").textContent=names[code]+" selected. Number formatting tools can use this locale.";
-    storage.set("region",code);
-  });
-  $("#regionSelect").value=storage.get("region","PK");
-  $("#regionSelect").dispatchEvent(new Event("change"));
+    function htmlUnescape(s) {
+      const t = document.createElement("textarea");
+      t.innerHTML = s;
+      return t.value;
+    }
 
-  function refreshDate() {
-    const region=$("#regionSelect").value;
-    const locale=({PK:"en-PK",SA:"ar-SA",US:"en-US",GB:"en-GB",BH:"ar-BH",
-      AE:"en-AE",CA:"en-CA",AU:"en-AU",IN:"en-IN",GLOBAL:"en-GB"})[region] || "en";
-    $("#localDate").textContent=new Intl.DateTimeFormat(locale,{
-      dateStyle:"full",timeStyle:"short"
-    }).format(new Date());
-  }
-  $("#refreshDate").addEventListener("click",refreshDate);
-  refreshDate();
+    function markdownSafePreview(s) {
+      let x = esc(s);
+      x = x.replace(/^### (.*)$/gm, "<strong>$1</strong>")
+           .replace(/^## (.*)$/gm, "<strong>$1</strong>")
+           .replace(/^# (.*)$/gm, "<strong style='font-size:1.3em'>$1</strong>")
+           .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+           .replace(/\*(.+?)\*/g, "<em>$1</em>")
+           .replace(/`([^`]+)`/g, "<code>$1</code>")
+           .replace(/^- (.*)$/gm, "• $1")
+           .replace(/\n/g, "<br>");
+      return x;
+    }
 
-  $("#suggestBtn").href="https://wa.me/?text="+encodeURIComponent("SHAHEEN tool suggestion: ");
-  $("#saveNotes").addEventListener("click",()=>{storage.set("notes",$("#notesInput").value);toast("Note saved in this browser.");});
-  $("#clearNotes").addEventListener("click",()=>{$("#notesInput").value="";storage.set("notes","");toast("Note cleared.");});
-  $("#notesInput").value=storage.get("notes","");
+    function updateWordCount() {
+      const text = getInput("textInput");
+      const words = text.trim() ? text.trim().split(/\s+/u).length : 0;
+      const chars = text.length;
+      const nonspace = [...text].filter(c => !/\s/u.test(c)).length;
+      const lines = text ? text.split(/\r\n|\r|\n/).length : 0;
+      const w = document.getElementById("wordsCount");
+      if (!w) return;
+      w.textContent = words;
+      document.getElementById("charsCount").textContent = chars;
+      document.getElementById("charsNoSpaces").textContent = nonspace;
+      document.getElementById("linesCount").textContent = `${lines} / ${words ? Math.max(1, Math.ceil(words / 200)) : 0} min`;
+    }
 
-  let flashcards=storage.get("flashcards",[]);
-  $("#saveFlash").addEventListener("click",()=>{
-    const q=$("#flashQ").value.trim(),a=$("#flashA").value.trim();
-    if(!q||!a) return toast("Enter both a question and an answer.");
-    flashcards.push({q,a}); storage.set("flashcards",flashcards);
-    $("#flashQ").value=""; $("#flashA").value="";
-    toast("Flashcard saved.");
-  });
-  $("#showFlash").addEventListener("click",()=>{
-    const box=$("#flashResult");
-    box.classList.remove("hidden");
-    if(!flashcards.length) { box.textContent="No saved flashcards yet."; return; }
-    let index=0;
-    const show=()=>{
-      box.replaceChildren();
-      const p=document.createElement("p"); p.textContent="Card "+(index+1)+" of "+flashcards.length+": "+flashcards[index].q;
-      const answer=document.createElement("p"); answer.className="hidden"; answer.textContent="Answer: "+flashcards[index].a;
-      const reveal=document.createElement("button"); reveal.className="btn"; reveal.type="button"; reveal.textContent="Reveal answer";
-      reveal.addEventListener("click",()=>answer.classList.toggle("hidden"));
-      const next=document.createElement("button"); next.className="btn"; next.type="button"; next.textContent="Next card";
-      next.addEventListener("click",()=>{index=(index+1)%flashcards.length;show();});
-      box.append(p,answer,reveal,next);
-    };
-    show();
-  });
-
-  let timerInterval=null, remaining=25*60;
-  function updateClock() {
-    $("#focusClock").textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+
-      String(remaining%60).padStart(2,"0");
-  }
-  function resetClock() {
-    clearInterval(timerInterval); timerInterval=null;
-    let minutes=Number($("#focusMinutes").value);
-    if(!Number.isFinite(minutes)||minutes<1||minutes>180) minutes=25;
-    remaining=Math.floor(minutes)*60; updateClock();
-    $("#timerStatus").textContent="Timer reset. Ready when you are.";
-  }
-  $("#focusMinutes").addEventListener("change",resetClock);
-  $("#timerStart").addEventListener("click",()=>{
-    if(timerInterval) return;
-    if(remaining<=0) resetClock();
-    $("#timerStatus").textContent="Focus session running.";
-    timerInterval=setInterval(()=>{
-      remaining--; updateClock();
-      if(remaining<=0) {
-        clearInterval(timerInterval);timerInterval=null;
-        $("#timerStatus").textContent="Session complete. Take a break if you need one.";
-        toast("Focus session complete.");
-      }
-    },1000);
-  });
-  $("#timerPause").addEventListener("click",()=>{
-    clearInterval(timerInterval);timerInterval=null;
-    $("#timerStatus").textContent="Timer paused.";
-  });
-  $("#timerReset").addEventListener("click",resetClock);
-  resetClock();
-
-  let exerciseInterval=null, exerciseLeft=30;
-  function stopExercise(message="Movement break stopped.") {
-    clearInterval(exerciseInterval); exerciseInterval=null;
-    $("#exerciseProgress").style.width="0%";
-    $("#exerciseStatus").textContent=message;
-  }
-  $$(".exerciseBtn").forEach(button=>button.addEventListener("click",()=>{
-    stopExercise("");
-    exerciseLeft=30;
-    const title=button.dataset.exercise;
-    $("#exerciseTitle").textContent=title;
-    $("#exerciseStatus").textContent="30 seconds remaining. Stop any time you need to.";
-    $("#exerciseProgress").style.width="0%";
-    exerciseInterval=setInterval(()=>{
-      exerciseLeft--;
-      $("#exerciseProgress").style.width=((30-exerciseLeft)/30*100)+"%";
-      $("#exerciseStatus").textContent=exerciseLeft+" seconds remaining. Move at a comfortable pace.";
-      if(exerciseLeft<=0) {
-        stopExercise("Done. Rest and hydrate if needed.");
-        toast("Movement break complete.");
-      }
-    },1000);
-  }));
-  $("#stopExercise").addEventListener("click",()=>stopExercise());
-
-  const navLinks=$$(".nav-btn");
-  const sections=["home","tools","study","fitness","global"].map(id=>$("#"+id));
-  if("IntersectionObserver" in window) {
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting) navLinks.forEach(link=>{
-          link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id);
-        });
+    function renderTimerFace() {
+      const ids = ["dailyTimerFace", "modalTimerFace"];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = formatTime(state.timerSeconds);
       });
-    },{rootMargin:"-25% 0px -60% 0px"});
-    sections.forEach(section=>section && observer.observe(section));
-  }
-  $("#year").textContent=new Date().getFullYear();
-  renderCategories();
-  renderTools();
-})();
-</script>
+      ["dailyTimerState", "modalTimerState"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = `${state.timerMode} · ${state.timerRunning ? "Running" : "Paused"}`;
+      });
+      document.querySelectorAll('[data-action="timer-toggle"]').forEach(el => el.textContent = state.timerRunning ? "Pause" : "Start");
+    }
+
+    function formatTime(total) {
+      const mm = String(Math.floor(total / 60)).padStart(2, "0");
+      const ss = String(total % 60).padStart(2, "0");
+      return `${mm}:${ss}`;
+    }
+
+    function updateTimerDisplays() { renderTimerFace(); }
+
+    function startTimer() {
+      if (state.timerRunning) {
+        clearInterval(state.timerInterval);
+        state.timerInterval = null;
+        state.timerRunning = false;
+      } else {
+        state.timerRunning = true;
+        state.timerInterval = setInterval(() => {
+          if (state.timerSeconds > 0) state.timerSeconds--;
+          else {
+            clearInterval(state.timerInterval);
+            state.timerInterval = null;
+            state.timerRunning = false;
+            toast(state.timerMode + " session complete!");
+            try {
+              if ("Notification" in window && Notification.permission === "granted") {
+                new Notification("SHAHEEN Focus Timer", { body: state.timerMode + " session complete." });
+              }
+            } catch (_) {}
+          }
+          renderTimerFace();
+        }, 1000);
+      }
+      renderTimerFace();
+    }
+
+    function setTimer(seconds, mode) {
+      clearInterval(state.timerInterval);
+      state.timerInterval = null;
+      state.timerRunning = false;
+      state.timerSeconds = seconds;
+      state.timerMode = mode;
+      renderTimerFace();
+    }
+
+    function updateClocks() {
+      document.querySelectorAll("[data-zone]").forEach(el => {
+        try {
+          el.textContent = new Intl.DateTimeFormat(undefined, {
+            timeZone: el.dataset.zone, hour: "2-digit", minute: "2-digit", hour12: true
+          }).format(new Date());
+        } catch (_) { el.textContent = "--:--"; }
+      });
+      document.querySelectorAll("[data-date-zone]").forEach(el => {
+        try {
+          el.textContent = new Intl.DateTimeFormat(undefined, {
+            timeZone: el.dataset.dateZone, weekday: "short", month: "short", day: "numeric"
+          }).format(new Date());
+        } catch (_) { el.textContent = ""; }
+      });
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    }
+
+    function loadScript(src, globalName) {
+      return new Promise((resolve, reject) => {
+        if (window[globalName]) return resolve(window[globalName]);
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = () => window[globalName] ? resolve(window[globalName]) : reject(new Error("Library failed to load."));
+        script.onerror = () => reject(new Error("Could not load the required library. Check your internet connection."));
+        document.head.appendChild(script);
+      });
+    }
+
+    async function getPDFLib() {
+      const lib = await loadScript("https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js", "PDFLib");
+      return lib;
+    }
+
+    async function handleAction(action) {
+      try {
+        switch (action) {
+          case "copy-output": {
+            const el = document.getElementById("resultValue");
+            const txt = el ? el.textContent : document.getElementById("toolOutput")?.innerText || "";
+            if (!txt.trim()) return toast("There is no result to copy yet.");
+            await copyText(txt); break;
+          }
+          case "case-upper": putOutput(getInput("textInput").toUpperCase()); break;
+          case "case-lower": putOutput(getInput("textInput").toLowerCase()); break;
+          case "case-title": putOutput(titleCase(getInput("textInput"))); break;
+          case "case-sentence": {
+            const s = getInput("textInput").toLowerCase().replace(/(^\s*[a-z])|([.!?]\s+[a-z])/g, m => m.toUpperCase());
+            putOutput(s); break;
+          }
+          case "reverse": putOutput([...getInput("textInput")].reverse().join("")); break;
+          case "slug": putOutput(getInput("textInput").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")); break;
+          case "unique-lines": {
+            const lines = getInput("textInput").split(/\r\n|\r|\n/);
+            const out = [...new Set(lines)];
+            putOutput(out.join("\n"), `${lines.length - out.length} duplicate line(s) removed`); break;
+          }
+          case "sort-lines": putOutput(getInput("textInput").split(/\r\n|\r|\n/).sort((a,b)=>a.localeCompare(b)).join("\n")); break;
+          case "base64": {
+            const v = getInput("textInput");
+            const result = getInput("operation") === "encode" ? btoa(unescape(encodeURIComponent(v))) : decodeURIComponent(escape(atob(v.trim())));
+            putOutput(result); break;
+          }
+          case "url-codec": putOutput(getInput("operation") === "encode" ? encodeURIComponent(getInput("textInput")) : decodeURIComponent(getInput("textInput"))); break;
+          case "json-pretty": putOutput(JSON.stringify(JSON.parse(getInput("textInput")), null, 2)); break;
+          case "json-minify": putOutput(JSON.stringify(JSON.parse(getInput("textInput")))); break;
+          case "json-validate": JSON.parse(getInput("textInput")); putOutput("Valid JSON ✓", "Validation"); break;
+          case "html-escape": putOutput(getInput("operation") === "escape" ? esc(getInput("textInput")) : htmlUnescape(getInput("textInput"))); break;
+          case "markdown-preview": {
+            const el = document.getElementById("markdownResult");
+            if (el) el.innerHTML = markdownSafePreview(getInput("textInput"));
+            break;
+          }
+          case "lorem": {
+            const count = Math.max(1, Math.min(2000, Math.floor(toNumber("loremCount"))));
+            const words = "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".split(" ");
+            const out = Array.from({length: count}, (_,i) => words[i % words.length]);
+            const text = out.join(" ").replace(/^lorem/, "Lorem");
+            putOutput(text); break;
+          }
+          case "password": {
+            const length = Math.max(8, Math.min(128, Math.floor(toNumber("passLength"))));
+            let alphabet = "";
+            if (document.getElementById("passUpper").checked) alphabet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (document.getElementById("passLower").checked) alphabet += "abcdefghijklmnopqrstuvwxyz";
+            if (document.getElementById("passNumbers").checked) alphabet += "0123456789";
+            if (document.getElementById("passSymbols").checked) alphabet += "!@#$%^&*()-_=+[]{};:,.?";
+            if (!alphabet) throw new Error("Choose at least one character group.");
+            const buf = new Uint32Array(length);
+            if (crypto.getRandomValues) crypto.getRandomValues(buf);
+            else for (let i=0;i<length;i++) buf[i] = Math.floor(Math.random()*4294967295);
+            putOutput(Array.from(buf, n => alphabet[n % alphabet.length]).join("")); break;
+          }
+          case "uuid": {
+            const id = crypto.randomUUID ? crypto.randomUUID() : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
+              const r = Math.random() * 16 | 0;
+              return (c === "x" ? r : (r & 3 | 8)).toString(16);
+            });
+            putOutput(id); break;
+          }
+          case "calculate": putOutput(formatNumber(safeEvaluate(getInput("calcInput")), 10)); break;
+          case "calc-clear": document.getElementById("calcInput").value = ""; putOutput(""); break;
+          case "percentage": {
+            const p = toNumber("percentRate"), n = toNumber("percentNumber");
+            putOutput(`${p}% of ${formatNumber(n)} = ${formatNumber(n*p/100)}\n${formatNumber(n)} + ${p}% = ${formatNumber(n*(1+p/100))}\n${formatNumber(n)} - ${p}% = ${formatNumber(n*(1-p/100))}`); break;
+          }
+          case "discount": {
+            const price = toNumber("discountPrice"), rate = toNumber("discountRate");
+            if (price < 0 || rate < 0 || rate > 100) throw new Error("Price must be non-negative and discount must be 0–100%.");
+            putOutput(`Sale price: ${formatNumber(price*(1-rate/100))}\nYou save: ${formatNumber(price*rate/100)} (${rate}%)`); break;
+          }
+          case "bmi": {
+            const kg = toNumber("bmiWeight"), cm = toNumber("bmiHeight");
+            if (kg <= 0 || cm <= 0) throw new Error("Weight and height must be positive.");
+            const bmi = kg / ((cm/100) ** 2);
+            putOutput(`BMI: ${formatNumber(bmi, 2)}\nFor adults, common screening ranges are: below 18.5, 18.5–24.9, 25–29.9, and 30 or more. BMI alone does not determine health.`); break;
+          }
+          case "emi": {
+            const principal = toNumber("emiPrincipal"), annual = toNumber("emiRate"), months = Math.floor(toNumber("emiMonths"));
+            if (principal <= 0 || annual < 0 || months <= 0) throw new Error("Enter a positive loan amount and term, and a non-negative interest rate.");
+            const r = annual / 1200;
+            const payment = r === 0 ? principal/months : principal*r*Math.pow(1+r,months)/(Math.pow(1+r,months)-1);
+            putOutput(`Estimated monthly payment: ${formatNumber(payment, 2)}\nTotal paid: ${formatNumber(payment*months, 2)}\nEstimated total interest: ${formatNumber(payment*months-principal, 2)}`); break;
+          }
+          case "age": {
+            const value = getInput("birthDate");
+            if (!value) throw new Error("Choose a date of birth.");
+            const birth = new Date(value + "T00:00:00");
+            const today = new Date();
+            if (birth > today) throw new Error("Date of birth cannot be in the future.");
+            let years = today.getFullYear() - birth.getFullYear();
+            let months = today.getMonth() - birth.getMonth();
+            let days = today.getDate() - birth.getDate();
+            if (days < 0) { months--; days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); }
+            if (months < 0) { years--; months += 12; }
+            putOutput(`${years} years, ${months} months and ${days} days`); break;
+          }
+          case "date-diff": {
+            const a = getInput("dateStart"), b = getInput("dateEnd");
+            if (!a || !b) throw new Error("Choose both dates.");
+            const days = Math.round(Math.abs(new Date(a+"T00:00:00Z") - new Date(b+"T00:00:00Z")) / 86400000);
+            putOutput(`${days.toLocaleString()} day(s) between the dates. The count excludes the starting day.`); break;
+          }
+          case "unit-convert": {
+            const type = getInput("unitType"), value = toNumber("unitValue");
+            const tables = {
+              length: {m:1, km:1000, cm:.01, mi:1609.344, ft:.3048},
+              mass: {kg:1, g:.001, lb:.45359237},
+              speed: {kmh:1, mph:1.609344, ms:3.6}
+            };
+            const from = getInput("unitFrom"), to = getInput("unitTo");
+            const table = tables[type];
+            if (!(from in table) || !(to in table)) throw new Error("Choose units that match the selected type.");
+            putOutput(`${formatNumber(value)} ${from} = ${formatNumber(value*table[from]/table[to])} ${to}`); break;
+          }
+          case "temperature": {
+            const value = toNumber("tempValue"), from = getInput("tempFrom"), to = getInput("tempTo");
+            let c = from === "C" ? value : from === "F" ? (value-32)*5/9 : value-273.15;
+            let result = to === "C" ? c : to === "F" ? c*9/5+32 : c+273.15;
+            if (to === "K" && result < 0) throw new Error("Temperature cannot be below absolute zero.");
+            putOutput(`${formatNumber(value)}°${from} = ${formatNumber(result)}°${to}`); break;
+          }
+          case "currency": {
+            const amount = toNumber("currencyAmount");
+            const from = getInput("currencyFrom"), to = getInput("currencyTo");
+            if (amount < 0) throw new Error("Amount must be non-negative.");
+            putOutput("Fetching rate…");
+            const resp = await fetch(`https://open.er-api.com/v6/latest/${encodeURIComponent(from)}`);
+            if (!resp.ok) throw new Error("The currency service is currently unavailable.");
+            const data = await resp.json();
+            if (data.result !== "success" || !data.rates || !data.rates[to]) throw new Error("No rate available for this currency pair.");
+            putOutput(`${formatNumber(amount)} ${from} ≈ ${formatNumber(amount * data.rates[to], 4)} ${to}\nRate timestamp: ${data.time_last_update_utc || "not provided"}\nSource: open.er-api.com`); break;
+          }
+          case "qr": {
+            const val = getInput("qrText").trim();
+            if (!val) throw new Error("Enter some text or a URL.");
+            const src = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&data=${encodeURIComponent(val)}`;
+            document.getElementById("qrResult").innerHTML = `<img class="qr-image" alt="Generated QR code" src="${src}"><p class="text-link" style="text-align:center"><a href="${src}" target="_blank" rel="noopener noreferrer">Open / save QR image ↗</a></p>`;
+            break;
+          }
+          case "image-optimize": {
+            const file = state.imageFile;
+            if (!file) throw new Error("Choose an image first.");
+            const widthTarget = Math.max(1, Math.min(12000, Math.floor(toNumber("imageWidth"))));
+            const format = getInput("imageFormat");
+            const quality = Math.max(.3, Math.min(1, Number(getInput("imageQuality"))/100));
+            const bitmap = await createImageBitmap(file);
+            const scale = Math.min(1, widthTarget / bitmap.width);
+            const canvas = document.createElement("canvas");
+            canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+            canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+            const ctx = canvas.getContext("2d", {alpha: format !== "image/jpeg"});
+            if (!ctx) throw new Error("Canvas is not available in this browser.");
+            if (format === "image/jpeg") { ctx.fillStyle = "#ffffff"; ctx.fillRect(0,0,canvas.width,canvas.height); }
+            ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+            bitmap.close();
+            const blob = await new Promise(resolve => canvas.toBlob(resolve, format, quality));
+            if (!blob) throw new Error("This image format could not be created by your browser.");
+            if (state.imageOutputUrl) URL.revokeObjectURL(state.imageOutputUrl);
+            state.imageOutputUrl = URL.createObjectURL(blob);
+            const ext = format === "image/jpeg" ? "jpg" : format === "image/png" ? "png" : "webp";
+            document.getElementById("imageResult").innerHTML = `
+              <div class="result"><div class="result-label">Processed image</div>
+              <p class="result-text">${canvas.width} × ${canvas.height}px · ${formatBytes(blob.size)}</p>
+              <img src="${state.imageOutputUrl}" alt="Processed preview" style="display:block;max-width:100%;max-height:350px;margin:12px auto;border-radius:12px">
+              <a class="btn btn-primary" download="shaheen-image.${ext}" href="${state.imageOutputUrl}">Download image ↓</a></div>`;
+            break;
+          }
+          case "images-to-pdf": {
+            const files = [...(document.getElementById("pdfImages")?.files || [])];
+            if (!files.length) throw new Error("Choose one or more JPG or PNG images.");
+            const { PDFDocument } = await getPDFLib();
+            const pdf = await PDFDocument.create();
+            for (const file of files) {
+              const bytes = await file.arrayBuffer();
+              const image = file.type === "image/png" ? await pdf.embedPng(bytes) :
+                file.type === "image/jpeg" ? await pdf.embedJpg(bytes) : null;
+              if (!image) continue;
+              const page = pdf.addPage([image.width, image.height]);
+              page.drawImage(image, {x:0, y:0, width:image.width, height:image.height});
+            }
+            if (!pdf.getPageCount()) throw new Error("No supported JPG or PNG images found.");
+            const bytes = await pdf.save();
+            downloadBlob(new Blob([bytes], {type:"application/pdf"}), "shaheen-images.pdf");
+            putOutput(`Created a PDF from ${pdf.getPageCount()} image(s). Your download should start shortly.`);
+            break;
+          }
+          case "merge-pdf": {
+            const files = [...(document.getElementById("pdfFiles")?.files || [])];
+            if (files.length < 2) throw new Error("Choose at least two PDF files.");
+            const { PDFDocument } = await getPDFLib();
+            const merged = await PDFDocument.create();
+            for (const file of files) {
+              const doc = await PDFDocument.load(await file.arrayBuffer());
+              const pages = await merged.copyPages(doc, doc.getPageIndices());
+              pages.forEach(p => merged.addPage(p));
+            }
+            const bytes = await merged.save();
+            downloadBlob(new Blob([bytes], {type:"application/pdf"}), "shaheen-merged.pdf");
+            putOutput(`Merged ${files.length} PDF files into one document. Download should start shortly.`);
+            break;
+          }
+          case "split-pdf": {
+            const file = document.getElementById("pdfSingle")?.files?.[0];
+            if (!file) throw new Error("Choose a PDF file.");
+            const { PDFDocument } = await getPDFLib();
+            const src = await PDFDocument.load(await file.arrayBuffer());
+            if (!src.getPageCount()) throw new Error("The PDF contains no pages.");
+            const dst = await PDFDocument.create();
+            const [page] = await dst.copyPages(src, [0]);
+            dst.addPage(page);
+            const bytes = await dst.save();
+            downloadBlob(new Blob([bytes], {type:"application/pdf"}), "shaheen-first-page.pdf");
+            putOutput("The first page has been extracted. Download should start shortly.");
+            break;
+          }
+          case "translate": {
+            const text = getInput("translateText").trim();
+            if (!text) throw new Error("Enter text to translate.");
+            const from = getInput("translateFrom"), to = getInput("translateTo");
+            const url = `https://translate.google.com/?sl=${encodeURIComponent(from)}&tl=${encodeURIComponent(to)}&text=${encodeURIComponent(text)}&op=translate`;
+            window.open(url, "_blank", "noopener,noreferrer");
+            toast("Opening translation in a new tab"); break;
+          }
+          case "palette": {
+            const hex = getInput("colorInput").replace("#","");
+            const base = [0,2,4].map(i=>parseInt(hex.slice(i,i+2),16));
+            const toHex = a => "#" + a.map(n=>Math.max(0,Math.min(255,Math.round(n))).toString(16).padStart(2,"0")).join("");
+            const mix = (a,b,t) => a.map((v,i)=>v*(1-t)+b[i]*t);
+            const colors = [mix(base,[0,0,0],.35), mix(base,[255,255,255],.25), base, mix(base,[255,255,255],.55), mix(base,[255,255,255],.8)].map(toHex);
+            document.getElementById("paletteResult").innerHTML = `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:18px">${colors.map(c=>`<button data-copy-color="${c}" title="Copy ${c}" style="height:85px;border:1px solid var(--border);border-radius:12px;background:${c};color:${parseInt(c.slice(1),16)>0x777777?"#111":"#fff"};font-size:10px;font-weight:800">${c}</button>`).join("")}</div><p class="notice">Tap a swatch to copy its hex value.</p>`;
+            break;
+          }
+          default: toast("This action is not available.");
+        }
+      } catch (error) {
+        const message = error && error.message ? error.message : "Something went wrong. Please try again.";
+        if (document.getElementById("toolOutput")) putOutput(message, "Please check");
+        else toast(message);
+      }
+    }
+
+    function formatBytes(bytes) {
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + " KB";
+      return (bytes/(1024*1024)).toFixed(2) + " MB";
+    }
+
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const text = input?.value.trim();
+      if (!text) return toast("Enter a task first.");
+      const todos = readJSON(STORAGE.todos, []);
+      todos.push({ text, done:false });
+      saveJSON(STORAGE.todos, todos);
+      render();
+      toast("Task added");
+    }
+
+    async function shareWebsite() {
+      const shareData = {
+        title: "SHAHEEN Tools",
+        text: "Useful free online tools for everyday tasks.",
+        url: location.href.split("#")[0]
+      };
+      try {
+        if (navigator.share) await navigator.share(shareData);
+        else await copyText(shareData.url);
+      } catch (e) {
+        if (e.name !== "AbortError") toast("Sharing cancelled or not available.");
+      }
+    }
+
+    document.addEventListener("click", async e => {
+      const pageButton = e.target.closest("[data-page]");
+      if (pageButton) { e.preventDefault(); navigate(pageButton.dataset.page); return; }
+
+      const categoryButton = e.target.closest("[data-category]");
+      if (categoryButton) {
+        state.category = categoryButton.dataset.category;
+        render(); return;
+      }
+
+      const fav = e.target.closest("[data-fav]");
+      if (fav) { e.preventDefault(); toggleSaved(fav.dataset.fav); return; }
+
+      const tool = e.target.closest("[data-tool]");
+      if (tool) { openTool(tool.dataset.tool); return; }
+
+      const act = e.target.closest("[data-action]");
+      if (act) {
+        const action = act.dataset.action;
+        if (action === "timer-toggle") { startTimer(); return; }
+        if (action === "timer-reset") { setTimer(25*60, "Focus"); return; }
+        if (action === "timer-break") { setTimer(5*60, "Break"); return; }
+        if (action === "timer-focus") { setTimer(25*60, "Focus"); return; }
+        if (action === "save-notes") {
+          localStorage.setItem(STORAGE.notes, getInput("notesBox"));
+          toast("Notes saved on this device"); return;
+        }
+        if (action === "clear-notes") {
+          localStorage.removeItem(STORAGE.notes);
+          const box = document.getElementById("notesBox");
+          if (box) box.value = "";
+          toast("Notes cleared"); return;
+        }
+        if (action === "add-todo") { addTodo(); return; }
+        await handleAction(action);
+        return;
+      }
+
+      const todoToggle = e.target.closest("[data-todo-toggle]");
+      if (todoToggle) {
+        const todos = readJSON(STORAGE.todos, []);
+        const i = Number(todoToggle.dataset.todoToggle);
+        if (todos[i]) todos[i].done = todoToggle.checked;
+        saveJSON(STORAGE.todos, todos); render(); return;
+      }
+
+      const todoDelete = e.target.closest("[data-todo-delete]");
+      if (todoDelete) {
+        const todos = readJSON(STORAGE.todos, []);
+        todos.splice(Number(todoDelete.dataset.todoDelete), 1);
+        saveJSON(STORAGE.todos, todos); render(); return;
+      }
+
+      const calcChar = e.target.closest("[data-calc-char]");
+      if (calcChar) {
+        const input = document.getElementById("calcInput");
+        if (input) { input.value += calcChar.dataset.calcChar; input.focus(); }
+        return;
+      }
+
+      const color = e.target.closest("[data-copy-color]");
+      if (color) { await copyText(color.dataset.copyColor); return; }
+
+      if (e.target.closest("[data-clear-search]")) {
+        state.query = ""; state.category = "All"; render(); return;
+      }
+    });
+
+    document.addEventListener("input", e => {
+      if (e.target.id === "searchInput") {
+        state.query = e.target.value;
+        const view = document.getElementById("view");
+        if (state.page === "home") {
+          const grid = document.getElementById("toolGrid");
+          if (grid) grid.outerHTML = toolsGrid(filteredTools());
+          else render();
+        } else if (["tools","saved"].includes(state.page)) {
+          const grid = document.getElementById("toolGrid");
+          if (grid) grid.outerHTML = toolsGrid(filteredTools());
+          else render();
+        }
+      }
+      if (e.target.id === "textInput" && state.activeTool === "word-counter") updateWordCount();
+      if (e.target.id === "imageQuality") {
+        const label = document.getElementById("imageQualityLabel");
+        if (label) label.textContent = e.target.value + "%";
+      }
+    });
+
+    document.addEventListener("change", e => {
+      if (e.target.id === "regionSelect") {
+        state.region = e.target.value;
+        localStorage.setItem(STORAGE.region, state.region);
+        render();
+      }
+      if (e.target.id === "unitType") {
+        const type = e.target.value;
+        const opts = {
+          length: [["m","Meters"],["km","Kilometers"],["cm","Centimeters"],["mi","Miles"],["ft","Feet"]],
+          mass: [["kg","Kilograms"],["g","Grams"],["lb","Pounds"]],
+          speed: [["kmh","km/h"],["mph","mph"],["ms","m/s"]]
+        }[type];
+        ["unitFrom","unitTo"].forEach((id,i) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.innerHTML = opts.map((o,j)=>`<option value="${o[0]}">${o[1]}</option>`).join("");
+            el.value = opts[Math.min(i, opts.length-1)][0];
+          }
+        });
+      }
+      if (e.target.id === "imageFile") {
+        state.imageFile = e.target.files?.[0] || null;
+        if (state.imageFile) toast("Image ready to process");
+      }
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeTool);
+    document.getElementById("modalBackdrop").addEventListener("click", e => {
+      if (e.target.id === "modalBackdrop") closeTool();
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeTool();
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); document.getElementById("searchInput").focus();
+      }
+      if (e.key === "Enter" && state.activeTool === "calculator" && document.activeElement?.id === "calcInput") {
+        e.preventDefault(); handleAction("calculate");
+      }
+    });
+
+    document.getElementById("themeButton").addEventListener("click", () => {
+      const light = document.documentElement.classList.toggle("light");
+      localStorage.setItem(STORAGE.theme, light ? "light" : "dark");
+      document.getElementById("themeButton").textContent = light ? "☾" : "☼";
+    });
+
+    document.getElementById("logoButton").addEventListener("click", () => document.getElementById("logoUpload").click());
+    document.getElementById("logoUpload").addEventListener("change", e => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+      if (file.size > 1024*1024) { toast("Please choose a logo smaller than 1 MB."); return; }
+      if (!file.type.startsWith("image/")) { toast("Choose an image file."); return; }
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          localStorage.setItem(STORAGE.logo, reader.result);
+          applyLogo();
+          toast("Custom logo saved on this device");
+        } catch (_) { toast("Logo could not be saved. Try a smaller image."); }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function applyLogo() {
+      const data = localStorage.getItem(STORAGE.logo);
+      const mark = document.getElementById("brandMark");
+      if (data) mark.innerHTML = `<img alt="Custom SHAHEEN logo" src="${data}">`;
+      else mark.textContent = "S";
+    }
+
+    document.getElementById("shareButton").addEventListener("click", shareWebsite);
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem(STORAGE.theme);
+    if (savedTheme === "light") {
+      document.documentElement.classList.add("light");
+      document.getElementById("themeButton").textContent = "☾";
+    }
+    applyLogo();
+    render();
+    setInterval(updateClocks, 30000);
+
+    /*
+      IMPORTANT:
+      - Google AdSense is not included in this version.
+      - Keep the Monetag zone configured for your own website in your Monetag account.
+      - Add Monetag's separate verification meta tag/file only if your account asks for it.
+      - Do not add fake publisher details or copy verification records from another website.
+      - Some utilities intentionally use third-party services; those limitations are stated in the UI.
+    */
+  </script>
 </body>
 </html>
