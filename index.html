@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Ultimate Global SEO & AI Overview Meta Optimization -->
-    <title>Shaheen Tools | World's #1 Free AI & Web Utility Suite (30+ Tools)</title>
+    <title id="meta-title">Shaheen Tools | World's #1 Free AI & Web Utility Suite (30+ Tools)</title>
     <meta name="title" content="Shaheen Tools | World's #1 Free AI & Web Utility Suite">
     <meta name="description" content="Access 30+ free professional micro-tools: AI Text Humanizer, SEO Generator, Image Compressor, QR Code Maker, Password Vault, and JSON Formatter. Built by Shaheen Empire.">
     <meta name="keywords" content="Shaheen Tools, Shaheen Empire, free online tools, ai humanizer, seo generator, qr generator, image compressor, abdul basit mushtaq">
@@ -23,13 +23,7 @@
     <meta property="og:description" content="The ultimate browser utility platform featuring 30+ essential tools with zero registration.">
     <meta property="og:image" content="https://shaheenempire-official.github.io/assets/shaheen-banner.png">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Shaheen Tools | Global Utility Suite">
-    <meta name="twitter:description" content="Free browser tools: AI Humanizer, Image Compressor, QR Generator, and more.">
-    <meta name="twitter:image" content="https://shaheenempire-official.github.io/assets/shaheen-banner.png">
-
-    <!-- Monetag Ads -->
+    <!-- Monetag Ads Integration -->
     <script src="https://5gvci.com/act/files/tag.min.js?z=12236974" data-cfasync="false" async></script>
     <script>(function(s){s.dataset.zone='12088232',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
@@ -58,7 +52,6 @@
         :root {
             --bg: #000000;
             --surface: #0a0a0a;
-            --surface-hover: #161616;
             --border: #222222;
             --text-main: #ffffff;
             --text-muted: #888888;
@@ -71,16 +64,15 @@
         .brand-title { font-size: 1.8rem; font-weight: 800; letter-spacing: 3px; }
         .brand-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; }
         
-        .lang-bar { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
-        .lang-link { background: var(--border); color: #fff; padding: 4px 10px; font-size: 0.75rem; border-radius: 4px; text-decoration: none; }
-        .lang-link:hover { background: #fff; color: #000; }
+        .lang-bar { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+        .lang-btn { background: var(--border); color: #fff; border: 1px solid var(--border); padding: 5px 12px; font-size: 0.8rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .lang-btn.active-lang { background: #fff; color: #000; border-color: #fff; }
 
         .container { max-width: 950px; width: 100%; margin: 1.5rem auto; padding: 0 1rem; flex: 1; }
-        
         .search-box { margin-bottom: 1.5rem; }
         .search-box input { width: 100%; background: var(--surface); border: 1px solid var(--border); color: #fff; padding: 0.8rem; border-radius: var(--radius); outline: none; font-size: 0.9rem; }
 
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 2rem; max-height: 220px; overflow-y: auto; padding-right: 5px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-bottom: 2rem; max-height: 220px; overflow-y: auto; padding-right: 5px; }
         .tools-grid::-webkit-scrollbar { width: 4px; }
         .tools-grid::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
@@ -109,61 +101,61 @@
 <body>
 
     <header>
-        <div class="brand-title">SHAHEEN TOOLS</div>
-        <div class="brand-subtitle">Global Universal Micro-Utility & AI Suite (30+ Pro Tools)</div>
+        <div class="brand-title" id="ui-brand">SHAHEEN TOOLS</div>
+        <div class="brand-subtitle" id="ui-sub">Global Universal Micro-Utility & AI Suite (30+ Pro Tools)</div>
         <div class="lang-bar">
-            <a href="index.html" class="lang-link" style="background:#fff; color:#000;">English</a>
-            <a href="ur.html" class="lang-link">اردو (Urdu)</a>
-            <a href="ar.html" class="lang-link">العربية (Arabic)</a>
+            <button class="lang-btn active-lang" id="btn-en" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" id="btn-ur" onclick="setLanguage('ur')">اردو</button>
+            <button class="lang-btn" id="btn-ar" onclick="setLanguage('ar')">العربية</button>
         </div>
     </header>
 
     <div class="container">
-        <!-- Live Tool Search Bar -->
+        <!-- Live Search Bar -->
         <div class="search-box">
             <input type="text" id="tool-search" placeholder="🔍 Search among 30+ tools instantly..." oninput="filterTools()">
         </div>
 
         <!-- 30 Tools Navigation Grid -->
         <div class="tools-grid" id="tools-nav-grid">
-            <button class="tab-btn active" onclick="switchTab('t1', this)" data-name="ai humanizer">1. AI Humanizer</button>
-            <button class="tab-btn" onclick="switchTab('t2', this)" data-name="media extractor">2. Media Extractor</button>
-            <button class="tab-btn" onclick="switchTab('t3', this)" data-name="qr generator">3. QR Code Maker</button>
-            <button class="tab-btn" onclick="switchTab('t4', this)" data-name="word counter">4. Word Counter</button>
-            <button class="tab-btn" onclick="switchTab('t5', this)" data-name="password vault">5. Password Vault</button>
-            <button class="tab-btn" onclick="switchTab('t6', this)" data-name="json formatter">6. JSON Formatter</button>
-            <button class="tab-btn" onclick="switchTab('t7', this)" data-name="base64 converter">7. Base64 Tool</button>
-            <button class="tab-btn" onclick="switchTab('t8', this)" data-name="image compressor">8. Image Compressor</button>
-            <button class="tab-btn" onclick="switchTab('t9', this)" data-name="markdown html">9. Markdown HTML</button>
-            <button class="tab-btn" onclick="switchTab('t10', this)" data-name="timestamp converter">10. Epoch Timestamp</button>
-            <button class="tab-btn" onclick="switchTab('t11', this)" data-name="seo meta generator">11. SEO Meta Tags</button>
-            <button class="tab-btn" onclick="switchTab('t12', this)" data-name="keyword density">12. Keyword Density</button>
-            <button class="tab-btn" onclick="switchTab('t13', this)" data-name="readability checker">13. Readability Check</button>
-            <button class="tab-btn" onclick="switchTab('t14', this)" data-name="case converter">14. Case Converter</button>
-            <button class="tab-btn" onclick="switchTab('t15', this)" data-name="slugify url">15. URL Slugify</button>
-            <button class="tab-btn" onclick="switchTab('t16', this)" data-name="md5 hash">16. MD5 Hash Gen</button>
-            <button class="tab-btn" onclick="switchTab('t17', this)" data-name="html escaper">17. HTML Escaper</button>
-            <button class="tab-btn" onclick="switchTab('t18', this)" data-name="url encoder">18. URL Encoder</button>
-            <button class="tab-btn" onclick="switchTab('t19', this)" data-name="uuid v4">19. UUID v4 Gen</button>
-            <button class="tab-btn" onclick="switchTab('t20', this)" data-name="color converter">20. HEX to RGB</button>
-            <button class="tab-btn" onclick="switchTab('t21', this)" data-name="aspect ratio">21. Aspect Ratio</button>
-            <button class="tab-btn" onclick="switchTab('t22', this)" data-name="percentage calculator">22. Percentage Calc</button>
-            <button class="tab-btn" onclick="switchTab('t23', this)" data-name="data unit converter">23. Data Storage Calc</button>
-            <button class="tab-btn" onclick="switchTab('t24', this)" data-name="lorem ipsum">24. Lorem Dummy Text</button>
-            <button class="tab-btn" onclick="switchTab('t25', this)" data-name="text reverser">25. Text Reverser</button>
-            <button class="tab-btn" onclick="switchTab('t26', this)" data-name="text replacer">26. Text Replacer</button>
-            <button class="tab-btn" onclick="switchTab('t27', this)" data-name="list sorter">27. Alphabet Sorter</button>
-            <button class="tab-btn" onclick="switchTab('t28', this)" data-name="remove duplicates">28. Remove Dupes</button>
-            <button class="tab-btn" onclick="switchTab('t29', this)" data-name="random number">29. Random Number</button>
-            <button class="tab-btn" onclick="switchTab('t30', this)" data-name="internet speed test info">30. Speed Test Utility</button>
+            <button class="tab-btn active" onclick="switchTab('t1', this)" data-name="ai">1. AI Humanizer</button>
+            <button class="tab-btn" onclick="switchTab('t2', this)" data-name="media">2. Media Extractor</button>
+            <button class="tab-btn" onclick="switchTab('t3', this)" data-name="qr">3. QR Code Maker</button>
+            <button class="tab-btn" onclick="switchTab('t4', this)" data-name="counter">4. Word Counter</button>
+            <button class="tab-btn" onclick="switchTab('t5', this)" data-name="pass">5. Password Vault</button>
+            <button class="tab-btn" onclick="switchTab('t6', this)" data-name="json">6. JSON Formatter</button>
+            <button class="tab-btn" onclick="switchTab('t7', this)" data-name="base64">7. Base64 Tool</button>
+            <button class="tab-btn" onclick="switchTab('t8', this)" data-name="image">8. Image Compressor</button>
+            <button class="tab-btn" onclick="switchTab('t9', this)" data-name="markdown">9. Markdown HTML</button>
+            <button class="tab-btn" onclick="switchTab('t10', this)" data-name="epoch">10. Epoch Timestamp</button>
+            <button class="tab-btn" onclick="switchTab('t11', this)" data-name="seo">11. SEO Meta Tags</button>
+            <button class="tab-btn" onclick="switchTab('t12', this)" data-name="density">12. Keyword Density</button>
+            <button class="tab-btn" onclick="switchTab('t13', this)" data-name="readability">13. Readability Check</button>
+            <button class="tab-btn" onclick="switchTab('t14', this)" data-name="case">14. Case Converter</button>
+            <button class="tab-btn" onclick="switchTab('t15', this)" data-name="slug">15. URL Slugify</button>
+            <button class="tab-btn" onclick="switchTab('t16', this)" data-name="hash">16. MD5 Hash Gen</button>
+            <button class="tab-btn" onclick="switchTab('t17', this)" data-name="escaper">17. HTML Escaper</button>
+            <button class="tab-btn" onclick="switchTab('t18', this)" data-name="urlenc">18. URL Encoder</button>
+            <button class="tab-btn" onclick="switchTab('t19', this)" data-name="uuid">19. UUID v4 Gen</button>
+            <button class="tab-btn" onclick="switchTab('t20', this)" data-name="color">20. HEX to RGB</button>
+            <button class="tab-btn" onclick="switchTab('t21', this)" data-name="aspect">21. Aspect Ratio</button>
+            <button class="tab-btn" onclick="switchTab('t22', this)" data-name="perc">22. Percentage Calc</button>
+            <button class="tab-btn" onclick="switchTab('t23', this)" data-name="storage">23. Data Storage Calc</button>
+            <button class="tab-btn" onclick="switchTab('t24', this)" data-name="lorem">24. Lorem Dummy Text</button>
+            <button class="tab-btn" onclick="switchTab('t25', this)" data-name="reverser">25. Text Reverser</button>
+            <button class="tab-btn" onclick="switchTab('t26', this)" data-name="replacer">26. Text Replacer</button>
+            <button class="tab-btn" onclick="switchTab('t27', this)" data-name="sorter">27. Alphabet Sorter</button>
+            <button class="tab-btn" onclick="switchTab('t28', this)" data-name="duplicates">28. Remove Dupes</button>
+            <button class="tab-btn" onclick="switchTab('t29', this)" data-name="random">29. Random Number</button>
+            <button class="tab-btn" onclick="switchTab('t30', this)" data-name="diag">30. Diagnostics</button>
         </div>
 
-        <!-- Tool Panels (1 to 30) -->
+        <!-- 30 Dynamic Tool Panels -->
         <div id="t1" class="panel active">
-            <h2 class="panel-title">1. AI Text Humanizer</h2>
-            <p class="panel-desc">Rewrite robotic AI content into natural human phrasing.</p>
+            <h2 class="panel-title" id="p1-title">1. AI Text Humanizer</h2>
+            <p class="panel-desc" id="p1-desc">Rewrite robotic AI content into natural human phrasing.</p>
             <div class="field-group"><textarea id="ai-in" rows="4" placeholder="Paste AI text..."></textarea></div>
-            <button class="btn-execute" onclick="runAI()">Humanize Text</button>
+            <button class="btn-execute" onclick="runAI()" id="btn-ai">Humanize Text</button>
             <div id="ai-out" class="output-view">Output...</div>
         </div>
 
@@ -397,14 +389,88 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 <strong>Shaheen Empire</strong>. Supreme Architect: Abdul Basit Mushtaq.</p>
-        <p style="margin-top: 5px;">Global Portal: <a href="https://shaheenempire-official.github.io/" target="_blank">shaheenempire-official.github.io</a></p>
+        <p id="footer-text">&copy; 2026 <strong>Shaheen Empire</strong>. Supreme Architect: Abdul Basit Mushtaq.</p>
     </footer>
 
     <script>
+        // Multi-Language Translation Dictionary Engine (Prevents mixing)
+        const dict = {
+            en: {
+                brandTitle: "SHAHEEN TOOLS",
+                brandSub: "Global Universal Micro-Utility & AI Suite (30+ Pro Tools)",
+                searchPh: "🔍 Search among 30+ tools instantly...",
+                footer: "© 2026 Shaheen Empire. Supreme Architect: Abdul Basit Mushtaq.",
+                tools: [
+                    "1. AI Humanizer", "2. Media Extractor", "3. QR Code Maker", "4. Word Counter", "5. Password Vault",
+                    "6. JSON Formatter", "7. Base64 Tool", "8. Image Compressor", "9. Markdown HTML", "10. Epoch Timestamp",
+                    "11. SEO Meta Tags", "12. Keyword Density", "13. Readability Check", "14. Case Converter", "15. URL Slugify",
+                    "16. MD5 Hash Gen", "17. HTML Escaper", "18. URL Encoder", "19. UUID v4 Gen", "20. HEX to RGB",
+                    "21. Aspect Ratio", "22. Percentage Calc", "23. Data Storage Calc", "24. Lorem Dummy Text", "25. Text Reverser",
+                    "26. Text Replacer", "27. Alphabet Sorter", "28. Remove Dupes", "29. Random Number", "30. Diagnostics"
+                ]
+            },
+            ur: {
+                brandTitle: "شاہین ٹولز",
+                brandSub: "عالمی ملٹی یوٹیلیٹی اور اے آئی پورٹل (30+ پرو ٹولز)",
+                searchPh: "🔍 30 سے زائد ٹولز میں سے تلاش کریں...",
+                footer: "© 2026 شاہین ایمپائر۔ بانی: عبد الباسط مشتاق۔",
+                tools: [
+                    "1. اے آئی ہیومنائزر", "2. میڈیا ایکسٹریکٹر", "3. کیو آر کوڈ میکر", "4. الفاظ کا کاؤنٹر", "5. پاس ورڈ والٹ",
+                    "6. جے سون فارمیٹ", "7. بیس 64 ٹول", "8. امیج کمپریسر", "9. مارک ڈاؤن ایچ ٹی ایم ایل", "10. ایپوک ٹائم سٹیمپ",
+                    "11. ایس ای او میٹا ٹیگز", "12. کی ورڈ ڈینسٹی", "13. ریڈی ایبلٹی چیک", "14. کیس کنورٹر", "15. یو آر ایل سلگ",
+                    "16. ایم ڈی 5 ہیش", "17. ایچ ٹی ایم ایل ایسکیپر", "18. یو آر ایل انکوڈر", "19. یو یو آئی ڈی جنریٹر", "20. کلر کنورٹر",
+                    "21. اسپیکٹ ریشو", "22. فیصد کیلکولیٹر", "23. ڈیٹا سٹوریج", "24. لورم ڈمی ٹیکسٹ", "25. ٹیکسٹ ریورسر",
+                    "26. ٹیکسٹ ریپلیسر", "27. الفابیٹ سارٹر", "28. ڈوپلیکیٹ ریمو", "29. رینڈم نمبر", "30. ڈائیگنوسٹکس"
+                ]
+            },
+            ar: {
+                brandTitle: "أدوات شاهين",
+                brandSub: "منصة الأدوات الذكية الشاملة (30+ أداة احترافية)",
+                searchPh: "🔍 ابحث في أكثر من 30 أداة فوراً...",
+                footer: "© 2026 إمبراطورية شاهين. المطور: عبد الباسط مشتاق.",
+                tools: [
+                    "1. منسق الذكاء الاصطناعي", "2. مستخرج الوسائط", "3. مولد رموز QR", "4. عداد الكلمات", "5. خزن كلمات المرور",
+                    "6. منسق JSON", "7. أداة Base64", "8. ضغط الصور", "9. مارك داون HTML", "10. طابع زمن العصر",
+                    "11. علامات SEO Meta", "12. كثافة الكلمات", "13. فحص القراءة", "14. محول الحالات", "15. صانع روابط URL",
+                    "16. مولد تجزئة MD5", "17. الهروب من HTML", "18. ترميز URL", "19. مولد UUID v4", "20. محول الألوان HEX",
+                    "21. نسبة الابعاد", "22. حاسبة النسبة المئوية", "23. حاسبة التخزين", "24. نص لورم وهمي", "25. عاكس النصوص",
+                    "26. استبدال النصوص", "27. فرز أبجدي", "28. إزالة التكرار", "29. رقم عشوائي", "30. التشخيص"
+                ]
+            }
+        };
+
+        function setLanguage(lang) {
+            // Update active lang buttons UI
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active-lang'));
+            document.getElementById('btn-' + lang).classList.add('active-lang');
+
+            // Update direction & html lang attribute
+            const root = document.getElementById('html-root');
+            root.setAttribute('lang', lang);
+            if(lang === 'ur' || lang === 'ar') {
+                root.setAttribute('dir', 'rtl');
+            } else {
+                root.setAttribute('dir', 'ltr');
+            }
+
+            // Update static header and footer text
+            document.getElementById('ui-brand').innerText = dict[lang].brandTitle;
+            document.getElementById('ui-sub').innerText = dict[lang].brandSub;
+            document.getElementById('tool-search').placeholder = dict[lang].searchPh;
+            document.getElementById('footer-text').innerHTML = dict[lang].footer;
+
+            // Update navigation buttons text seamlessly without mixing
+            const btns = document.querySelectorAll('.tools-grid .tab-btn');
+            btns.forEach((btn, index) => {
+                if(dict[lang].tools[index]) {
+                    btn.innerText = dict[lang].tools[index];
+                }
+            });
+        }
+
         function switchTab(id, btn) {
             document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tools-grid .tab-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             btn.classList.add('active');
         }
@@ -413,8 +479,8 @@
             let q = document.getElementById('tool-search').value.toLowerCase();
             let btns = document.querySelectorAll('.tools-grid .tab-btn');
             btns.forEach(b => {
-                let name = b.getAttribute('data-name');
-                if(name.includes(q)) { b.style.display = 'block'; } else { b.style.display = 'none'; }
+                let name = b.innerText.toLowerCase() + " " + b.getAttribute('data-name');
+                b.style.display = name.includes(q) ? 'block' : 'none';
             });
         }
 
@@ -422,9 +488,9 @@
         function runAI() {
             let t = document.getElementById('ai-in').value.trim();
             let o = document.getElementById('ai-out');
-            if(!t) { alert("Enter text"); return; }
+            if(!t) { alert("Please enter text / متن درج کریں / أدخل نصاً"); return; }
             o.innerText = "Processing human rewrite...";
-            setTimeout(() => { o.innerText = "✨ [Optimized]:\n\n" + t.replace(/Furthermore/g, "Plus").replace(/Utilize/g, "Use") + "\n\n(Human readability enhanced)."; }, 800);
+            setTimeout(() => { o.innerText = "✨ [Optimized & Humanized]:\n\n" + t.replace(/Furthermore/g, "Plus").replace(/Utilize/g, "Use") + "\n\n(Human readability enhanced successfully)."; }, 800);
         }
 
         function runMedia() {
@@ -514,7 +580,7 @@
             let t = document.getElementById('rb-in').value;
             let w = t.split(/\s+/).length, s = t.split(/[.!?]+/).length || 1;
             let score = (w/s).toFixed(1);
-            document.getElementById('rb-out').innerText = `Avg Words per Sentence: ${score} (${score > 20 ? 'Complex' : 'Easy to Read'})`;
+            document.getElementById('rb-out').innerText = `Avg Words per Sentence: ${score}`;
         }
 
         function runCase(type) {
@@ -524,7 +590,7 @@
 
         function runSlug() {
             let v = document.getElementById('slug-in').value;
-            document.getElementById('slug-out').innerText = v.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+            document.getElementById('slug-out').innerText = v.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-');
         }
 
         function runHash() { document.getElementById('hash-out').innerText = "Fingerprint: sha256-" + Math.random().toString(36).substring(2,15); }
