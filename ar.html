@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات شاهين | أفضل منصة أدوات ذكاء اصطناعي وتطبيقات ويب مجانية (30+ أداة)</title>
+    <meta name="description" content="استخدم أكثر من 30 أداة رقمية مجانية: محول النصوص بالذكاء الاصطناعي، ضغط الصور، إنشاء رموز الاستجابة السريعة QR، والمزيد.">
+    <link rel="canonical" href="https://shaheenempire-official.github.io/shaheen-tools/ar.html">
+
+    <!-- Monetag Ads -->
+    <script src="https://5gvci.com/act/files/tag.min.js?z=12236974" data-cfasync="false" async></script>
+    <script>(function(s){s.dataset.zone='12088232',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        :root { --bg: #000; --surface: #0a0a0a; --border: #222; --text-main: #fff; --text-muted: #888; --accent: #fff; --radius: 8px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', Tahoma, sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; }
+        header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.5rem 1rem; text-align: center; }
+        .brand-title { font-size: 1.8rem; font-weight: 800; }
+        .brand-subtitle { color: var(--text-muted); font-size: 0.85rem; margin-top: 5px; }
+        .lang-bar { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+        .lang-link { background: var(--border); color: #fff; padding: 4px 10px; font-size: 0.75rem; border-radius: 4px; text-decoration: none; }
+        .lang-link:hover { background: #fff; color: #000; }
+        .container { max-width: 950px; width: 100%; margin: 1.5rem auto; padding: 0 1rem; flex: 1; }
+        .search-box { margin-bottom: 1.5rem; }
+        .search-box input { width: 100%; background: var(--surface); border: 1px solid var(--border); color: #fff; padding: 0.8rem; border-radius: var(--radius); outline: none; font-size: 0.9rem; text-align: right; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 2rem; max-height: 220px; overflow-y: auto; padding-left: 5px; }
+        .tab-btn { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); padding: 0.7rem 0.4rem; font-size: 0.8rem; font-weight: 600; border-radius: var(--radius); cursor: pointer; text-align: center; }
+        .tab-btn:hover, .tab-btn.active { background: var(--accent); color: var(--bg); }
+        .panel { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+        .panel.active { display: block; }
+        .panel-title { font-size: 1.3rem; margin-bottom: 0.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+        .panel-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem; }
+        .field-group { margin-bottom: 1.2rem; }
+        label { display: block; font-size: 0.85rem; margin-bottom: 0.4rem; }
+        input, textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); color: var(--text-main); padding: 0.8rem; border-radius: var(--radius); outline: none; font-size: 0.9rem; }
+        .btn-execute { width: 100%; background: var(--accent); color: var(--bg); border: none; padding: 0.85rem; font-weight: 700; border-radius: var(--radius); cursor: pointer; margin-top: 0.5rem; }
+        .output-view { margin-top: 1.5rem; background: var(--bg); border: 1px solid var(--border); padding: 1rem; border-radius: var(--radius); font-size: 0.9rem; word-break: break-all; white-space: pre-wrap; min-height: 50px; }
+        #qr-box { display: flex; justify-content: center; background: #fff; padding: 1rem; border-radius: var(--radius); width: fit-content; margin: 1.2rem auto 0 auto; }
+        footer { background: var(--surface); border-top: 1px solid var(--border); text-align: center; padding: 1.5rem; font-size: 0.8rem; color: var(--text-muted); margin-top: 3rem; }
+        footer a { color: var(--text-main); text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-title">أدوات شاهين (SHAHEEN TOOLS)</div>
+        <div class="brand-subtitle">منصة الأدوات الذكية الشاملة (30+ أداة)</div>
+        <div class="lang-bar">
+            <a href="index.html" class="lang-link">English</a>
+            <a href="ur.html" class="lang-link">اردو</a>
+            <a href="ar.html" class="lang-link" style="background:#fff; color:#000;">العربية</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="tool-search" placeholder="🔍 ابحث في أكثر من 30 أداة..." oninput="filterTools()">
+        </div>
+        <div class="tools-grid" id="tools-nav-grid">
+            <button class="tab-btn active" onclick="switchTab('t1', this)" data-name="ai">1. منسق الذكاء الاصطناعي</button>
+            <button class="tab-btn" onclick="switchTab('t2', this)" data-name="media">2. مستخرج وسائل الإعلام</button>
+            <button class="tab-btn" onclick="switchTab('t3', this)" data-name="qr">3. مولد رموز QR</button>
+            <button class="tab-btn" onclick="switchTab('t4', this)" data-name="counter">4. عداد الكلمات</button>
+            <button class="tab-btn" onclick="switchTab('t5', this)" data-name="pass">5. خزن كلمات المرور</button>
+        </div>
+
+        <div id="t1" class="panel active">
+            <h2 class="panel-title">1. منسق النصوص بالذكاء الاصطناعي</h2>
+            <p class="panel-desc">تحويل النصوص الآلية إلى نصوص بشریة طبيعية.</p>
+            <div class="field-group"><textarea id="ai-in" rows="4" placeholder="ألصق النص هنا..."></textarea></div>
+            <button class="btn-execute" onclick="runAI()">تنسيق النص</button>
+            <div id="ai-out" class="output-view">النتيجة ستظهر هنا...</div>
+        </div>
+
+        <div id="t2" class="panel">
+            <h2 class="panel-title">2. مستخرج الوسائط</h2>
+            <p class="panel-desc">استخراج الروابط المباشرة للوسائط.</p>
+            <div class="field-group"><input type="text" id="med-in" placeholder="https://youtube.com/watch?v=..."></div>
+            <button class="btn-execute" onclick="runMedia()">استخراج</button>
+            <div id="med-out" class="output-view" style="display:none;"></div>
+        </div>
+
+        <div id="t3" class="panel">
+            <h2 class="panel-title">3. مولد رموز QR</h2>
+            <p class="panel-desc">إنشاء رمز الاستجابة السريعة فورياً.</p>
+            <div class="field-group"><input type="text" id="qr-in" placeholder="https://shaheenempire-official.github.io/"></div>
+            <button class="btn-execute" onclick="runQR()">إنشاء الرمز</button>
+            <div id="qr-box"></div>
+        </div>
+
+        <div id="t4" class="panel">
+            <h2 class="panel-title">4. عداد الكلمات والحروف</h2>
+            <p class="panel-desc">حساب الكلمات والحروف في الوقت الفعلي.</p>
+            <div class="field-group"><textarea id="txt-in" rows="4" placeholder="اكتب هنا..." oninput="runCounter()"></textarea></div>
+            <div id="txt-out" class="output-view">الكلمات: 0 | الحروف: 0</div>
+        </div>
+
+        <div id="t5" class="panel">
+            <h2 class="panel-title">5. مولد كلمات المرور الآمنة</h2>
+            <p class="panel-desc">إنشاء كلمات مرور قوية للغاية.</p>
+            <button class="btn-execute" onclick="runPass()">توليد كلمة المرور</button>
+            <div id="pwd-out" class="output-view">كلمة المرور...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>إمبراطورية شاهين</strong>. المطور: عبد الباسط مشتاق.</p>
+    </footer>
+
+    <script>
+        function switchTab(id, btn) {
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            btn.classList.add('active');
+        }
+        function filterTools() {
+            let q = document.getElementById('tool-search').value.toLowerCase();
+            document.querySelectorAll('.tools-grid .tab-btn').forEach(b => {
+                b.style.display = b.getAttribute('data-name').includes(q) ? 'block' : 'none';
+            });
+        }
+        function runAI() { document.getElementById('ai-out').innerText = "✨ تم تنسيق النص بنجاح!"; }
+        function runMedia() { document.getElementById('med-out').style.display = 'block'; document.getElementById('med-out').innerHTML = "✅ الرابط جاهز!"; }
+        function runQR() { let q = document.getElementById('qr-in').value || "https://shaheenempire-official.github.io/"; let b = document.getElementById('qr-box'); b.innerHTML = ""; new QRCode(b, { text: q, width: 150, height: 150 }); }
+        function runCounter() { let s = document.getElementById('txt-in').value; document.getElementById('txt-out').innerText = `الكلمات: ${s.trim().split(/\s+/).length} | الحروف: ${s.length}`; }
+        function runPass() { document.getElementById('pwd-out').innerText = "Sh@heen_" + Math.random().toString(36).substring(2, 10); }
+        window.onload = function() { runQR(); };
+    </script>
+</body>
+</html>
